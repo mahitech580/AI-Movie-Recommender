@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Movie Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="shell">
+  <header class="hero">
+    <div class="eyebrow">MACHINE LEARNING • RECOMMENDATION SYSTEM</div>
+    <h1>Find your next <span>great movie.</span></h1>
+    <p>Choose a movie you like and get recommendations based on genres, tags, and similarity from the MovieLens dataset.</p>
+  </header>
+
+  <main>
+    <section class="card search-card">
+      <label for="movieSearch">Search a movie</label>
+      <div class="search-row">
+        <input id="movieSearch" autocomplete="off" placeholder="Try: Interstellar, Toy Story, The Matrix...">
+        <button id="recommendBtn" disabled>Recommend</button>
+      </div>
+      <div id="suggestions" class="suggestions"></div>
+      <div class="hint">Content-based filtering • TF-IDF • Cosine similarity</div>
+    </section>
+
+    <section id="result" class="card hidden">
+      <div class="section-head"><div><span>SELECTED MOVIE</span><h2 id="selectedTitle"></h2></div><div id="selectedMeta" class="meta"></div></div>
+      <div id="recommendations" class="grid"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head"><div><span>YOUR SESSION</span><h2>Recommendation history</h2></div><button id="clearHistory" class="ghost">Clear</button></div>
+      <div id="history" class="history"></div>
+    </section>
+  </main>
+
+  <footer>Built by <strong>Mahendra Kondaveeti</strong> • Python • Flask • Scikit-learn • SQLite</footer>
+</div>
+<div id="toast" class="toast"></div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
