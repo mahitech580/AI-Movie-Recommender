@@ -30,6 +30,24 @@ async function testDesktop(browser) {
   if (!heroTitle) throw new Error("hero title did not initialize");
   if (cards < 10) throw new Error("movie rails rendered fewer than 10 cards");
 
+  // Requested Home spotlight: RRR must lead the hero and the curated spotlight
+  // must contain all nine requested titles.
+  const heroFirst = (await page.locator("#heroTitle").textContent()).trim();
+  if (heroFirst !== "RRR") throw new Error("Home hero did not start with RRR");
+  const spotlightExpected = ["RRR","Magadheera","Iron Man","Avengers: Endgame","Baahubali: The Beginning","Project Hail Mary","Spider-Man: No Way Home","Dangal","Interstellar"];
+  const spotlightTitles = await page.locator("#homeSpotlightRail .movie-card h3").allTextContents();
+  for (const title of spotlightExpected) {
+    if (!spotlightTitles.some(t => t.trim() === title)) {
+      throw new Error("Home spotlight missing "+title);
+    }
+  }
+  const spotlightImages = await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs =>
+    imgs.filter(img => (img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
+  );
+  if (spotlightImages < 3) throw new Error("Home spotlight did not load enough real poster images");
+
+
+
   await page.locator(".movie-card").first().click();
   await page.locator("#movieModal:not(.hidden)").waitFor({ state: "visible", timeout: 1500 });
   await page.locator("#movieModal .modal-close").click();
@@ -93,6 +111,18 @@ async function testDesktop(browser) {
     if (secondBatch <= firstBatch) throw new Error("filter Show more did not reveal additional Telugu titles");
   }
 
+  // Search trigger must actually focus the search field and route to Discover.
+  await page.locator("#searchTrigger").click();
+  await sleep(350);
+  if (await page.locator("#searchInput").evaluate(el => document.activeElement !== el)) {
+    throw new Error("Search button did not focus search input");
+  }
+  const discoverVisible = await page.locator("#discover").evaluate(el => {
+    const r=el.getBoundingClientRect();
+    return r.bottom>0 && r.top<window.innerHeight;
+  });
+  if(!discoverVisible) throw new Error("Search button did not bring Discover into view");
+
   const search = page.locator("#searchInput");
   await search.fill("matrix");
   await sleep(250);
@@ -100,6 +130,28 @@ async function testDesktop(browser) {
   if (!titles.some(t => t.toLowerCase().includes("matrix"))) {
     throw new Error("local movie search did not surface Matrix");
   }
+
+  await search.fill("breaking bad");
+  await sleep(250);
+  const seriesSearchTitles = await page.locator("#aiRail .movie-card h3").allTextContents();
+  if (!seriesSearchTitles.some(t => t.toLowerCase().includes("breaking bad"))) {
+    throw new Error("local web-series search did not surface Breaking Bad");
+  }
+
+  // Web Series: exactly 100 poster-backed records, clickable into the title modal.
+  const seriesCount = await page.locator("#seriesRail .movie-card").count();
+  if (seriesCount !== 100) throw new Error("Web Series rail did not render exactly 100 titles");
+  const seriesPosterCount = await page.locator("#seriesRail .movie-card img").evaluateAll(imgs =>
+    imgs.filter(img => (img.getAttribute("src") || "").includes("/tvposter/")).length
+  );
+  if (seriesPosterCount !== 100) throw new Error("Web Series contains a non-poster artwork URL");
+  const firstSeries = page.locator("#seriesRail .movie-card").first();
+  await firstSeries.click();
+  await page.locator("#movieModal:not(.hidden)").waitFor({state:"visible",timeout:1500});
+  const seriesKicker = (await page.locator("#modalKicker").textContent()).trim();
+  if (!seriesKicker.includes("WEB SERIES")) throw new Error("Web Series title opened as a movie");
+  await page.locator("#movieModal .modal-close").click();
+  await page.locator("#movieModal.hidden").waitFor({state:"attached",timeout:1000});
 
   await page.close();
   if (errors.length) throw new Error(errors.join("\n"));
@@ -144,6 +196,16 @@ async function testMobile(browser) {
     return r.bottom > 0 && r.top < window.innerHeight;
   });
   if (!activityVisible) throw new Error("activity deep link did not bring Activity section into the viewport");
+
+  await page.goto(base + "#/web-series", { waitUntil: "networkidle" });
+  await sleep(350);
+  const seriesActive = await page.locator('.main-nav a.active').getAttribute("href");
+  if (seriesActive !== "#web-series") throw new Error("web-series deep link did not activate Web Series navigation");
+  const seriesVisible = await page.locator("#web-series").evaluate(el => {
+    const r=el.getBoundingClientRect();
+    return r.bottom>0 && r.top<window.innerHeight;
+  });
+  if (!seriesVisible) throw new Error("web-series deep link did not bring Web Series into view");
 
   await page.goto(base + "#/my-list", { waitUntil: "networkidle" });
   await sleep(250);
