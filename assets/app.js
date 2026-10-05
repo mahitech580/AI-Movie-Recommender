@@ -38,6 +38,7 @@
     heroIndex: 0,
     selected: null,
     filter: "all",
+    filterPage: 24,
     query: "",
     live: false,
     liveCount: 0,
