@@ -631,7 +631,7 @@
       '<div><span>QUALITY</span><b>'+state.model.quality.toFixed(3)+'</b></div>'+
       '<div><span>FRESHNESS</span><b>'+state.model.freshness.toFixed(3)+'</b></div>'+
       '<div><span>EXPLORATION</span><b>'+state.model.exploration.toFixed(3)+'</b></div>'+
-      '<div class="console-footer"><span>'+Math.floor(s)+' local signals</span><span>'+state.movies.length+' indexed titles</span><span>'+state.model.profile>0.28?"ADAPTIVE":"BASELINE"+"</span></div>";
+      '<div class="console-footer"><span>'+Math.floor(s)+' local signals</span><span>'+state.movies.length+' indexed titles</span><span>'+(state.model.profile>0.28?"ADAPTIVE":"BASELINE")+"</span></div>";
   }
 
   function openMovie(movie, autoplay=false) {
