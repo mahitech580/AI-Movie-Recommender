@@ -486,14 +486,38 @@ a{color:inherit;text-decoration:none}
 
 /* CINEPLAY final visual polish */
 .search-box.is-focused{border-color:rgba(39,220,145,.48);box-shadow:0 0 0 4px rgba(39,220,145,.06),0 18px 55px rgba(0,0,0,.42);transform:translateY(-1px)}
-.home-spotlight{scroll-margin-top:96px}
+.home-spotlight{
+  position:relative;
+  width:100%;
+  margin-top:34px;
+  padding:34px 3vw 38px;
+  scroll-margin-top:96px;
+  overflow:visible;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(39,220,145,.10),transparent 28%),
+    radial-gradient(circle at 88% 80%,rgba(255,62,85,.09),transparent 30%),
+    linear-gradient(180deg,rgba(10,16,12,.96),rgba(4,6,5,.98));
+  border-top:1px solid rgba(255,255,255,.055);
+  border-bottom:1px solid rgba(255,255,255,.055);
+  box-shadow:inset 0 1px 0 rgba(39,220,145,.04),0 28px 70px rgba(0,0,0,.22);
+}
+.home-spotlight .section-heading{
+  margin:0 0 20px;
+  padding:0;
+}
+.home-spotlight .section-heading h2{font-size:31px}
 #homeSpotlightRail{
   display:grid;
   grid-template-columns:repeat(9,minmax(0,1fr));
-  gap:18px;
+  gap:12px;
+  width:100%;
   overflow:visible;
-  padding:2px 0 16px;
+  padding:2px 0 5px;
   scroll-snap-type:none;
+}
+#homeSpotlightRail .spotlight-poster{
+  filter:saturate(1.04) contrast(1.03);
+  background:#0a0f0c;
 }
 #homeSpotlightRail .movie-card{
   min-width:0;
@@ -506,14 +530,21 @@ a{color:inherit;text-decoration:none}
   aspect-ratio:2 / 3;
 }
 #homeSpotlightRail .movie-caption h3{font-size:11px}
+#homeSpotlightRail .movie-caption{padding-top:8px}
+#homeSpotlightRail .movie-caption>div{font-size:8px}
 #homeSpotlightRail .movie-card:hover .poster-frame{transform:translateY(-6px) scale(1.012)}
 @media(max-width:1180px){
-  #homeSpotlightRail{grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
+  .home-spotlight{padding-left:2.5vw;padding-right:2.5vw}
+  #homeSpotlightRail{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 }
 @media(max-width:900px){
-  #homeSpotlightRail{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+  .home-spotlight{padding:28px 20px 30px}
+  #homeSpotlightRail{grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
 }
 @media(max-width:640px){
+  .home-spotlight{padding:24px 16px 28px}
+  .home-spotlight .section-heading h2{font-size:24px}
+  .home-spotlight .section-heading p{max-width:42ch}
   #homeSpotlightRail{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   #homeSpotlightRail .movie-caption h3{font-size:12px}
 }
