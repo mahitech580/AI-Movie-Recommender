@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#040605">
-  <meta name="description" content="CINEPLAY — intelligent movie discovery with adaptive recommendations and optional live TMDB data.">
+  <meta name="description" content="CINEPLAY — cinematic movie discovery with live TMDB data, adaptive recommendations, instant search, and browser-local ML.">
   <meta name="author" content="Mahi">
   <meta name="color-scheme" content="dark">
   <meta property="og:title" content="CINEPLAY — AI Movie Discovery">
@@ -20,6 +20,22 @@
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+
+  <div class="cinema-loader" id="cinemaLoader" aria-hidden="false">
+    <div class="cinema-loader-backdrop"></div>
+    <div class="cinema-loader-grid"></div>
+    <div class="cinema-loader-orbit orbit-a"></div>
+    <div class="cinema-loader-orbit orbit-b"></div>
+    <div class="cinema-loader-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="cinema-loader-core">
+      <div class="loader-reel" aria-hidden="true"><span></span><span></span><span></span><span></span><b></b></div>
+      <div class="loader-wordmark"><strong>CINEPLAY</strong><small>AI CINEMA</small></div>
+      <div class="loader-kicker"><i></i> OPENING THE CINEMA <i></i></div>
+      <div class="loader-progress"><span id="cinemaLoaderBar"></span></div>
+      <div class="loader-status" id="cinemaLoaderStatus">Warming up the title index…</div>
+    </div>
+    <div class="cinema-loader-footer"><span>BY MAHI</span><span>DISCOVER · WATCH · REPEAT</span></div>
+  </div>
   <div class="app-shell">
     <div class="ambient ambient-green"></div>
     <div class="ambient ambient-red"></div>
@@ -68,7 +84,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-topline">
           <span class="live-badge"><i></i> LIVE DISCOVERY</span>
-          <span class="hero-source" id="sourceLabel">CURATED + AI</span>
+          <span class="hero-source" id="sourceLabel">CURATED + AI</span><span class="hero-live-age" id="heroLiveAge">LOCAL CATALOG</span>
         </div>
 
         <div class="hero-content">
