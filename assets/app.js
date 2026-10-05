@@ -1258,18 +1258,22 @@
 
   function syncNavigation(scroll=true) {
     const route=normalizeRouteHash();
-    const links=$$(".main-nav a");
+    const links=$(".main-nav a");
     links.forEach(link=>{
       const href=link.getAttribute("href") || "";
       const target=href.replace(/^#\/?/,"").split(/[?&]/)[0];
       link.classList.toggle("active",target===route);
     });
     if(!scroll) return;
+
     const target=$(route);
     if(target) {
-      requestAnimationFrame(()=>{
-        target.scrollIntoView({behavior:"auto",block:"start"});
-      });
+      window.setTimeout(()=>{
+        const topbar=document.querySelector(".topbar");
+        const offset=(topbar?.getBoundingClientRect().height || 72) + 14;
+        const top=Math.max(0,window.scrollY + target.getBoundingClientRect().top - offset);
+        window.scrollTo({top,behavior:"auto"});
+      },0);
     }
   }
 
