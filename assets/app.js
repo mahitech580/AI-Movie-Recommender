@@ -768,6 +768,8 @@
     renderRail("indianRail",indiaMovies.slice(0,16));
     renderRail("teluguRail",telugu.slice(0,18));
     renderRail("homeSpotlightRail",HOME_SPOTLIGHT_TITLES.map(title=>state.movies.find(m=>m.title===title)).filter(Boolean),false,true);
+    const spotlightImages=$("#homeSpotlightRail .movie-card img");
+    spotlightImages.forEach(img=>{ img.loading="eager"; img.fetchPriority="high"; img.decoding="async"; });
     renderSeries();
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     updateFilterButtons();
