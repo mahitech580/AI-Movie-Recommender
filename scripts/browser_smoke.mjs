@@ -41,6 +41,8 @@ async function testDesktop(browser) {
       throw new Error("Home spotlight missing "+title);
     }
   }
+  await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs => imgs.forEach(img => { img.loading="eager"; img.scrollIntoView({block:"center"}); }));
+  await page.waitForFunction(() => Array.from(document.querySelectorAll("#homeSpotlightRail .movie-card img")).every(img => img.complete), null, {timeout:15000});
   const spotlightImages = await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs =>
     imgs.filter(img => (img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
   );
@@ -113,6 +115,8 @@ async function testDesktop(browser) {
   if (teluguTotal < 50) throw new Error("Telugu/TFI catalogue count is unexpectedly low");
   const firstBatch = await page.locator("#filterResultsGrid .movie-card").count();
   if (firstBatch < 24) throw new Error("Telugu filter first page rendered too few movies");
+  await page.locator("#filterResultsGrid img").evaluateAll(imgs => imgs.forEach(img => { img.loading="eager"; img.scrollIntoView({block:"center"}); }));
+  await page.waitForFunction(() => Array.from(document.querySelectorAll("#filterResultsGrid img")).every(img => img.complete), null, {timeout:15000});
   const teluguRealImages = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
     imgs.filter(img => (img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
   );
