@@ -80,7 +80,11 @@ The bundled catalog uses TMDB image paths and the documented TMDB image URL patt
 
 TMDB documents that a working image URL is assembled from its secure base URL, image size, and the returned poster/backdrop path. citeturn618842search1
 
-Keep the applicable TMDB attribution and usage requirements with the deployed project.
+### TMDB attribution
+
+**This product uses the TMDB API but is not endorsed or certified by TMDB.**
+
+TMDB remains the source of the live catalog metadata and artwork used by the optional live mode. See the official TMDB API documentation and applicable terms before deploying your own live credentials. citeturn975072search12turn975072search13
 
 ## GitHub Pages
 
