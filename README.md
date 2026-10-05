@@ -1,135 +1,150 @@
-# 🎬 AI Movie Recommender System
+# MOTION — AI Movie Recommender
 
-> A machine-learning recommendation web app that suggests movies similar to a selected title using TF-IDF and cosine similarity on MovieLens metadata and tags.
+A Netflix-inspired, GitHub Pages-ready movie discovery experience with real movie artwork, browser-side AI recommendations, local personalization, and optional live TMDB data.
 
-**Built by Mahendra Kondaveeti**
+**Built by Mahi — Mahendra Sai Kondaveeti**
 
-## Features
-- Movie search with live suggestions
-- Content-based recommendations
-- TF-IDF feature extraction
-- Cosine-similarity ranking
-- Movie ratings and rating counts
-- SQLite recommendation history
-- REST API endpoints
-- Responsive web UI
-- Input validation and error handling
-- Automated tests
+## What this version is
 
-## Tech Stack
-Python • Flask • Pandas • Scikit-learn • SQLite • JavaScript • HTML • CSS
+MOTION is now a **pure static HTML/CSS/JavaScript application** designed to run on GitHub Pages. The previous Flask/Python runtime is no longer required for the deployed experience.
 
-## How it works
-```text
-Movie title
-   ↓
-MovieLens metadata + tags
-   ↓
-Text feature construction
-   ↓
-TF-IDF vectorization
-   ↓
-Cosine similarity
-   ↓
-Ranking + rating signal
-   ↓
-Top recommendations
-```
+GitHub Pages publishes static files and does not support running server-side Python on the Pages host, so the recommendation engine, search, My List, history and personalization are all handled in the browser. citeturn618842search2turn618842search5
 
-## Setup
-### 1. Clone
-```bash
-git clone https://github.com/mahitech580/AI-Movie-Recommender.git
-cd AI-Movie-Recommender
-```
+## Product experience
 
-### 2. Virtual environment
-Windows:
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
+- Cinematic streaming-style homepage
+- Large rotating hero banner
+- Dark green + deep red visual system
+- Animated smoke/glow atmosphere
+- Real movie posters and backdrop artwork
+- AI Picks shelf
+- Trending shelf
+- Top Rated shelf
+- New & Rising shelf
+- Browse by Vibe
+- My List
+- Recently explored
+- Movie details modal
+- Trailer search
+- Search/autocomplete
+- Genre filters
+- Ctrl/Cmd + K command palette
+- Responsive desktop and mobile layout
+- Browser localStorage personalization
+- Optional live TMDB mode
 
-macOS/Linux:
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
+## Browser AI recommendation engine
 
-### 3. Install
-```bash
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
+The deployed recommendation logic is intentionally lightweight so it can run without a server:
 
-### 4. Download the dataset
-```bash
-python setup_data.py
-```
-The script downloads and extracts the **MovieLens latest-small** dataset from GroupLens into `data/`.
+~~~text
+Title + genres + tags + overview
+              ↓
+        term-frequency vector
+              ↓
+        cosine similarity
+              ↓
+       shared-genre signal
+              ↓
+        rating strength
+              ↓
+       local taste signals
+              ↓
+         ranked AI queue
+~~~
 
-### 5. Run
-```bash
-python app.py
-```
-Open `http://127.0.0.1:5000`.
+The system is a content-based recommender rather than a production collaborative-filtering service. Its purpose is to demonstrate the recommendation workflow in a fully static project.
 
-## API
-`GET /api/health` — application health
+## Live mode
 
-`GET /api/search?q=interstellar` — title search
+MOTION supports optional real-time TMDB integration.
 
-`POST /api/recommend` — JSON body: `{ "title": "Interstellar (2014)" }`
+TMDB provides API endpoints for movie/search/trending data and an image CDN for poster and backdrop assets. citeturn618842search0turn618842search1turn618842search9turn618842search10
 
-`GET /api/history` — recent recommendation history
+### Enable it
 
-`DELETE /api/history` — clear history
+1. Create a TMDB API key.
+2. Open MOTION.
+3. Click the status button in the top-right corner.
+4. Paste your key.
+5. Save.
+6. Live trending and search are then fetched directly from the browser.
 
-## Project Structure
-```text
+The key is stored only in browser local storage and is **not written into this repository**.
+
+Because this is GitHub Pages only, there is deliberately no private backend proxy. Do not hard-code a private credential into the repository.
+
+## Movie artwork
+
+The bundled catalog uses TMDB image paths and the documented TMDB image URL pattern.
+
+TMDB documents that a working image URL is assembled from its secure base URL, image size, and the returned poster/backdrop path. citeturn618842search1
+
+Keep the applicable TMDB attribution and usage requirements with the deployed project.
+
+## GitHub Pages
+
+Repository:
+
+https://github.com/mahitech580/AI-Movie-Recommender
+
+Expected project site:
+
+https://mahitech580.github.io/AI-Movie-Recommender/
+
+GitHub Pages supports project sites at the owner.github.io/repository-name path. citeturn618842search5
+
+### Pages configuration
+
+In the repository:
+
+**Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**
+
+The repository also contains a root .nojekyll file so the static asset folders are served directly.
+
+## Project structure
+
+~~~text
 AI-Movie-Recommender/
-├── app.py
-├── setup_data.py
-├── requirements.txt
-├── model/recommender.py
-├── services/app_state.py
-├── database/database.py
-├── utils/
-├── templates/index.html
-├── static/css/style.css
-├── static/js/script.js
-├── tests/test_api.py
-└── data/
-```
+├── index.html
+├── .nojekyll
+├── README.md
+├── data/
+│   └── movies.js
+└── assets/
+    ├── app.js
+    └── styles.css
+~~~
 
-## Recommendation Method
-The system combines movie title, genres, and user-generated tags into a text representation. TF-IDF converts this text into sparse feature vectors, and cosine similarity measures how close movies are to the selected title. A small rating-based component is then blended into the final ranking.
+## Local persistence
 
-This is a **content-based recommender**, not a production-scale collaborative filtering system.
+MOTION stores these browser-local values:
 
-## Dataset
-This project uses the **MovieLens latest-small** dataset provided by GroupLens Research. Dataset files are downloaded locally by `setup_data.py` and are excluded from Git through `.gitignore`.
+- My List
+- Recently explored titles
+- Recommendation signals
+- Optional TMDB API key
 
-## Testing
-```bash
-pytest
-```
+No SQLite database is required by the deployed version.
 
-## Limitations
-- Recommendations depend on the available MovieLens metadata and tags.
-- The model does not learn a personal user's long-term preferences.
-- A title's similarity score is not the same as real-world recommendation quality.
-- The first setup requires an internet connection to download the dataset.
+## Technology
 
-## Future Improvements
-- Collaborative filtering
-- User accounts and personalized profiles
-- Hybrid recommendation model
-- TMDB poster and metadata integration
-- Deployment with a production WSGI server
-- A/B testing and offline recommendation evaluation
+**Frontend:** HTML5, CSS3, Vanilla JavaScript
+
+**Recommendation:** term vectors, cosine similarity, genre overlap, rating signal, local preference signals
+
+**Live data:** TMDB REST API
+
+**Hosting:** GitHub Pages
+
+## Notes
+
+The application is inspired by modern streaming-service information architecture, but it does not use Netflix branding or assets.
+
+The project is intended as a portfolio demonstration of frontend engineering, data handling, recommendation logic, API integration and static deployment.
 
 ## Author
-**Mahendra Kondaveeti**
+
+**Mahi / Mahendra Sai Kondaveeti**
 
 GitHub: https://github.com/mahitech580
