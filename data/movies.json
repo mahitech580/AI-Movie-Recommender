@@ -1,0 +1,775 @@
+[
+  {
+    "id": 157336,
+    "title": "Interstellar",
+    "year": 2014,
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "rating": 8.5,
+    "votes": 41338,
+    "popularity": 72.1,
+    "language": "en",
+    "overview": "A group of explorers uses a newly discovered wormhole to travel beyond the limits of human spaceflight and search for a future for humanity.",
+    "tags": [
+      "space",
+      "wormhole",
+      "time",
+      "science",
+      "family",
+      "survival",
+      "epic"
+    ],
+    "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+    "backdrop": "/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 27205,
+    "title": "Inception",
+    "year": 2010,
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "rating": 8.4,
+    "votes": 40307,
+    "popularity": 51.5,
+    "language": "en",
+    "overview": "A skilled thief who steals secrets through dream-sharing technology is offered a chance to erase his past by planting an idea in a target's subconscious.",
+    "tags": [
+      "dreams",
+      "heist",
+      "mind-bending",
+      "technology",
+      "team",
+      "time"
+    ],
+    "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+    "backdrop": "/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 603,
+    "title": "The Matrix",
+    "year": 1999,
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "rating": 8.3,
+    "votes": 28851,
+    "popularity": 45.9,
+    "language": "en",
+    "overview": "A computer hacker discovers that reality is a constructed system and joins an underground resistance fighting the machines that control humanity.",
+    "tags": [
+      "simulation",
+      "hacker",
+      "technology",
+      "rebellion",
+      "future",
+      "mind-bending"
+    ],
+    "poster": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+    "backdrop": "/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 155,
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8.5,
+    "votes": 36855,
+    "popularity": 60.4,
+    "language": "en",
+    "overview": "Batman raises the stakes in his war on crime as a criminal mastermind pushes Gotham and its heroes toward chaos.",
+    "tags": [
+      "hero",
+      "villain",
+      "gotham",
+      "crime",
+      "chaos",
+      "vigilante"
+    ],
+    "poster": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "backdrop": "/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 680,
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Comedy"
+    ],
+    "rating": 8.5,
+    "votes": 30964,
+    "popularity": 46.3,
+    "language": "en",
+    "overview": "A collection of intertwined stories follows hitmen, a gangster's wife and a boxer through a darkly comic crime odyssey.",
+    "tags": [
+      "crime",
+      "dialogue",
+      "nonlinear",
+      "hitmen",
+      "gangsters",
+      "dark comedy"
+    ],
+    "poster": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+    "backdrop": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 238,
+    "title": "The Godfather",
+    "year": 1972,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.7,
+    "votes": 23654,
+    "popularity": 61.2,
+    "language": "en",
+    "overview": "The Corleone family saga begins as patriarch Vito survives an assassination attempt and his youngest son Michael is drawn into the family business.",
+    "tags": [
+      "mafia",
+      "family",
+      "power",
+      "crime",
+      "legacy",
+      "betrayal"
+    ],
+    "poster": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "backdrop": "/tSPT36ZKlP2WVHJLM4cQPLSzv3b.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 278,
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 8.7,
+    "votes": 31444,
+    "popularity": 62.6,
+    "language": "en",
+    "overview": "An imprisoned banker uses intelligence, patience and friendship to build a life shaped by hope inside Shawshank prison.",
+    "tags": [
+      "hope",
+      "friendship",
+      "prison",
+      "redemption",
+      "survival",
+      "human spirit"
+    ],
+    "poster": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+    "backdrop": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 550,
+    "title": "Fight Club",
+    "year": 1999,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 8.4,
+    "votes": 32954,
+    "popularity": 47.4,
+    "language": "en",
+    "overview": "An insomniac office worker and an eccentric soap salesman create an underground fight club that spirals into something much larger.",
+    "tags": [
+      "identity",
+      "anarchy",
+      "consumerism",
+      "psychology",
+      "dark",
+      "twist"
+    ],
+    "poster": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+    "backdrop": "/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 120,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ],
+    "rating": 8.5,
+    "votes": 28466,
+    "popularity": 51.2,
+    "language": "en",
+    "overview": "A young hobbit begins a journey to keep a powerful ring from the Dark Lord, joined by a fellowship of unlikely heroes.",
+    "tags": [
+      "fantasy",
+      "quest",
+      "friendship",
+      "magic",
+      "war",
+      "epic"
+    ],
+    "poster": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+    "backdrop": "/oiwc338EoBgS4sEI2ixAny4KQKg.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 122,
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ],
+    "rating": 8.5,
+    "votes": 27465,
+    "popularity": 63.8,
+    "language": "en",
+    "overview": "Middle-earth prepares for its final battle while Frodo and Sam make their way toward Mount Doom.",
+    "tags": [
+      "fantasy",
+      "quest",
+      "war",
+      "friendship",
+      "magic",
+      "epic"
+    ],
+    "poster": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+    "backdrop": "/ctiw6FZK4N36LmkjSklWEbuvlq9.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 13,
+    "title": "Forrest Gump",
+    "year": 1994,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8.5,
+    "votes": 30540,
+    "popularity": 36.1,
+    "language": "en",
+    "overview": "A gentle man lives an extraordinary life, touching history and inspiring everyone around him while searching for his true love.",
+    "tags": [
+      "life",
+      "friendship",
+      "love",
+      "history",
+      "journey",
+      "heartwarming"
+    ],
+    "poster": "/Cw4hIUIAmSYfK9QfaUW5igp9La.jpg",
+    "backdrop": "/66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 769,
+    "title": "GoodFellas",
+    "year": 1990,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.5,
+    "votes": 14802,
+    "popularity": 30,
+    "language": "en",
+    "overview": "A young man rises through a Brooklyn Mafia family and discovers the costs of loyalty, power and violence.",
+    "tags": [
+      "mafia",
+      "crime",
+      "rise",
+      "fall",
+      "betrayal",
+      "family"
+    ],
+    "poster": "/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg",
+    "backdrop": "/gILte6Zd7m1YneIr6MVhh30S9pr.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 129,
+    "title": "Spirited Away",
+    "year": 2001,
+    "genres": [
+      "Animation",
+      "Fantasy",
+      "Adventure"
+    ],
+    "rating": 8.5,
+    "votes": 18970,
+    "popularity": 38.9,
+    "language": "ja",
+    "overview": "A young girl enters a mysterious spirit world and must find courage and compassion to save her transformed family.",
+    "tags": [
+      "magic",
+      "spirits",
+      "family",
+      "coming of age",
+      "imagination",
+      "journey"
+    ],
+    "poster": "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+    "backdrop": "/6oaL4DP75yABrd5EbC4H2zq5ghc.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 372058,
+    "title": "Your Name.",
+    "year": 2016,
+    "genres": [
+      "Animation",
+      "Romance",
+      "Drama"
+    ],
+    "rating": 8.5,
+    "votes": 9922,
+    "popularity": 40.2,
+    "language": "ja",
+    "overview": "Two teenagers living separate lives mysteriously begin switching bodies and searching for the connection between them.",
+    "tags": [
+      "romance",
+      "time",
+      "identity",
+      "fate",
+      "teen",
+      "body swap"
+    ],
+    "poster": "/q719jXXEzOoYaps6babgKnONONX.jpg",
+    "backdrop": "/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 496243,
+    "title": "Parasite",
+    "year": 2019,
+    "genres": [
+      "Comedy",
+      "Thriller",
+      "Drama"
+    ],
+    "rating": 8.5,
+    "votes": 15867,
+    "popularity": 65.9,
+    "language": "ko",
+    "overview": "A struggling family slowly enters the lives of a wealthy household, setting off an unexpected chain of events.",
+    "tags": [
+      "class",
+      "family",
+      "social",
+      "dark comedy",
+      "twist",
+      "wealth"
+    ],
+    "poster": "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    "backdrop": "/ApiBzeaa95TNYliSbQ8pJv4Fje7.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 496,
+    "title": "The Green Mile",
+    "year": 1999,
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.6,
+    "votes": 15000,
+    "popularity": 34.2,
+    "language": "en",
+    "overview": "A prison guard encounters a gentle giant with a mysterious gift while working on death row.",
+    "tags": [
+      "supernatural",
+      "prison",
+      "empathy",
+      "justice",
+      "healing",
+      "emotion"
+    ],
+    "poster": "/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",
+    "backdrop": "/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 569094,
+    "title": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "genres": [
+      "Animation",
+      "Action",
+      "Sci-Fi"
+    ],
+    "rating": 8.8,
+    "votes": 1226,
+    "popularity": 95,
+    "language": "en",
+    "overview": "Miles Morales is catapulted across the multiverse and finds himself caught between Spider-People and a threat that could fracture reality.",
+    "tags": [
+      "multiverse",
+      "hero",
+      "animation",
+      "friendship",
+      "family",
+      "parallel worlds"
+    ],
+    "poster": "/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+    "backdrop": "/nGxUxi3PfXDRm7Vg95VBNgNM8yc.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 140607,
+    "title": "Star Wars: The Force Awakens",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 7.8,
+    "votes": 19000,
+    "popularity": 52,
+    "language": "en",
+    "overview": "A new threat rises decades after the fall of the Galactic Empire, bringing together a scavenger, a stormtrooper and a legendary hero.",
+    "tags": [
+      "space",
+      "hero",
+      "rebellion",
+      "adventure",
+      "galaxy",
+      "legacy"
+    ],
+    "poster": "/fYzpM9GmpBlIC893fNjoWCwE24H.jpg",
+    "backdrop": "/c2Ax8Rox5g6CneChwy1gmu4UbSb.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 102899,
+    "title": "Ant-Man",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 7,
+    "votes": 2063,
+    "popularity": 36.1,
+    "language": "en",
+    "overview": "A con artist must embrace the ability to shrink and become a hero while pulling off an impossible heist.",
+    "tags": [
+      "heist",
+      "hero",
+      "science",
+      "comedy",
+      "technology",
+      "team"
+    ],
+    "poster": "/D6e8RJf2qUstnfkTslTXNTUAlT.jpg",
+    "backdrop": "/kvXLZqY0Ngl1XSw7EaMQO0C1CCj.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 299534,
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 8.3,
+    "votes": 39000,
+    "popularity": 91,
+    "language": "en",
+    "overview": "After a devastating loss, the remaining Avengers unite for one final attempt to undo the damage and bring their world back.",
+    "tags": [
+      "hero",
+      "team",
+      "time",
+      "sacrifice",
+      "space",
+      "final battle"
+    ],
+    "poster": "/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+    "backdrop": "/7RyHsO4yDXtBv1zUU38J2a5L0hP.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 137113,
+    "title": "Edge of Tomorrow",
+    "year": 2014,
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "rating": 7.9,
+    "votes": 13000,
+    "popularity": 43,
+    "language": "en",
+    "overview": "A soldier caught in a time loop gains the ability to relive a battle and use each cycle to change the outcome.",
+    "tags": [
+      "time loop",
+      "aliens",
+      "military",
+      "strategy",
+      "survival",
+      "future"
+    ],
+    "poster": "/xjw5trHV7Mwo61P0kCTy8K1oK7Z.jpg",
+    "backdrop": "/c4aPtn8D02GfZt8R5P6s2y6NQ6L.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 438631,
+    "title": "Dune",
+    "year": 2021,
+    "genres": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "rating": 8,
+    "votes": 26000,
+    "popularity": 75,
+    "language": "en",
+    "overview": "A gifted young man is drawn into an interstellar struggle over a desert world and the most valuable resource in the universe.",
+    "tags": [
+      "desert",
+      "prophecy",
+      "space",
+      "politics",
+      "family",
+      "epic"
+    ],
+    "poster": "/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+    "backdrop": "/jYEW5xZkZk2WTrdbMGAPJZ1A.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 872585,
+    "title": "Oppenheimer",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "rating": 8.1,
+    "votes": 30000,
+    "popularity": 88,
+    "language": "en",
+    "overview": "A brilliant scientist leads a secret wartime project that changes the course of history and transforms his own life.",
+    "tags": [
+      "science",
+      "history",
+      "genius",
+      "ethics",
+      "war",
+      "politics"
+    ],
+    "poster": "/8Gxv8gSFCU0XGDykoUeT5wW5B0F.jpg",
+    "backdrop": "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 346698,
+    "title": "Barbie",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Adventure",
+      "Fantasy"
+    ],
+    "rating": 7,
+    "votes": 22000,
+    "popularity": 98,
+    "language": "en",
+    "overview": "Barbie leaves her perfect world after an existential crisis sends her on a colorful journey into the real world.",
+    "tags": [
+      "identity",
+      "comedy",
+      "fantasy",
+      "self discovery",
+      "friendship",
+      "color"
+    ],
+    "poster": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+    "backdrop": "/yY76zq9XSu2jM7iZ9pQ1.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 361743,
+    "title": "Top Gun: Maverick",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "rating": 8.2,
+    "votes": 22000,
+    "popularity": 70,
+    "language": "en",
+    "overview": "An elite pilot returns to train a new generation for a mission that demands courage, skill and sacrifice.",
+    "tags": [
+      "aviation",
+      "mentor",
+      "military",
+      "legacy",
+      "adrenaline",
+      "team"
+    ],
+    "poster": "/62HCnUTziyWcpDaBO2i1i4R47Cx.jpg",
+    "backdrop": "/AaV1YIdWKUzZks1TIKfW0hwL1Oa.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 447365,
+    "title": "Guardians of the Galaxy Vol. 2",
+    "year": 2017,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "rating": 7.6,
+    "votes": 20000,
+    "popularity": 47,
+    "language": "en",
+    "overview": "The Guardians struggle to keep their newfound family together while unraveling one of their leader's mysterious origins.",
+    "tags": [
+      "space",
+      "team",
+      "family",
+      "comedy",
+      "music",
+      "adventure"
+    ],
+    "poster": "/y4MBh0EjBlMuOzv9axsznkS5M2c.jpg",
+    "backdrop": "/aJn9XeesqsrSLKcHfHP4eIYjE.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 687163,
+    "title": "Project Hail Mary",
+    "year": 2026,
+    "genres": [
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "rating": 8.6,
+    "votes": 8024,
+    "popularity": 107.1,
+    "language": "en",
+    "overview": "A science teacher wakes on a spaceship with no memory and must solve the mystery of a dying sun before time runs out.",
+    "tags": [
+      "space",
+      "science",
+      "survival",
+      "mystery",
+      "friendship",
+      "future"
+    ],
+    "poster": "/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
+    "backdrop": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 1084244,
+    "title": "Toy Story 5",
+    "year": 2026,
+    "genres": [
+      "Animation",
+      "Family",
+      "Comedy",
+      "Adventure"
+    ],
+    "rating": 8.3,
+    "votes": 2436,
+    "popularity": 179.6,
+    "language": "en",
+    "overview": "Buzz, Woody and Jessie face an all-new threat to playtime when Bonnie becomes obsessed with a new piece of technology.",
+    "tags": [
+      "animation",
+      "family",
+      "friendship",
+      "technology",
+      "comedy",
+      "adventure"
+    ],
+    "poster": "/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",
+    "backdrop": "/4D1pdB27uph7J8HQzNf8QvvH9bn.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 1311031,
+    "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+    "year": 2025,
+    "genres": [
+      "Animation",
+      "Action",
+      "Fantasy"
+    ],
+    "rating": 8.8,
+    "votes": 2219,
+    "popularity": 61.6,
+    "language": "ja",
+    "overview": "The Demon Slayer Corps are drawn into the Infinity Castle for a desperate battle against the Upper Rank demons.",
+    "tags": [
+      "anime",
+      "demons",
+      "battle",
+      "fantasy",
+      "sword",
+      "final"
+    ],
+    "poster": "/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
+    "backdrop": "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 1083381,
+    "title": "Backrooms",
+    "year": 2026,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "rating": 7,
+    "votes": 3528,
+    "popularity": 99.8,
+    "language": "en",
+    "overview": "A strange doorway appears beneath a furniture showroom, leading into a surreal space with rules no one understands.",
+    "tags": [
+      "horror",
+      "liminal",
+      "mystery",
+      "survival",
+      "weird",
+      "science"
+    ],
+    "poster": "/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
+    "backdrop": "/dqmMWNWfLnExDRpMtIMqI97GQFR.jpg",
+    "accent": "green"
+  }
+]
