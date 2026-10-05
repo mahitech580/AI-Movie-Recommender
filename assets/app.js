@@ -120,9 +120,9 @@
     }
   }
 
-  function imageMarkup(url, alt, extraClass="") {
+  function imageMarkup(url, alt, extraClass="", loading="lazy", priority="auto") {
     const src = url || fallbackImage(alt);
-    return '<img class="'+extraClass+'" src="'+esc(src)+'" alt="'+esc(alt)+'" loading="lazy" ' +
+    return '<img class="'+extraClass+'" src="'+esc(src)+'" alt="'+esc(alt)+'" loading="'+loading+'" fetchpriority="'+priority+'" decoding="async" ' +
       'onerror="window.repairCineplayImage(this)">';
   }
 
@@ -516,13 +516,16 @@
     const live = movie.live ? '<span class="live-card-badge"><i></i>LIVE</span>' : "";
     const matchMarkup = match ? '<span class="ai-match">'+match+'% match</span>' : "";
     const regionalBadge = isIndianMovie(movie) ? '<span class="region-badge">'+esc(movie.industry || languageName(movie))+'</span>' : "";
-    const posterUrl = poster(movie, compact ? "w342" : "w500");
+    const posterUrl = poster(movie, compact ? "w780" : "w500");
+    const imageClass = compact ? "spotlight-poster" : "";
+    const imageLoading = compact ? "eager" : "lazy";
+    const imagePriority = compact ? "high" : "auto";
 
     const mediaType=(movie.media_type==="tv" || movie.type==="series") ? "series" : "movie";
     const ratingLabel=mediaType==="series" ? "★ "+esc(rating(movie))+" · series" : "★ "+esc(rating(movie));
     return '<article class="movie-card '+(compact?"compact":"")+'" data-movie-id="'+esc(movie.id)+'" data-media-type="'+mediaType+'" tabindex="0" aria-label="'+esc(movie.title)+'">'+
       '<div class="poster-frame" style="--card-accent:'+(movie.accent==="green"?"#21d58c":"#ff334d")+'">'+
-        imageMarkup(posterUrl, movie.title)+
+        imageMarkup(posterUrl, movie.title, imageClass, imageLoading, imagePriority)+
         '<div class="poster-gradient"></div>'+
         rank+live+matchMarkup+regionalBadge+
         '<button class="mini-list '+(listed(movie)?"added":"")+'" data-list-id="'+esc(movie.id)+'" type="button" aria-label="'+(listed(movie)?"Remove from My List":"Add to My List")+'">'+add+'</button>'+
@@ -838,7 +841,23 @@
   }
 
   function updateFilterButtons() {
-    $$(".filter-chip").forEach(btn=>btn.classList.toggle("active",btn.dataset.filter===state.filter));
+    $(".filter-chip").forEach(btn=>btn.classList.toggle("active",btn.dataset.filter===state.filter));
+  }
+
+  function setFilter(filter, scroll=true) {
+    const next=String(filter || "all").toLowerCase();
+    state.filter=next;
+    state.filterPage=24;
+    updateFilterButtons();
+    applyFilter();
+    if(scroll) renderFilterResults(true);
+    else renderFilterResults(false);
+    if(next!=="all"){
+      const active=$('#filterRow .filter-chip[data-filter="'+next+'"]');
+      active?.classList.add("active");
+      const label=active?.textContent?.trim() || next;
+      toast("Showing "+label+" titles");
+    }
   }
 
   function renderTop10() {
@@ -1486,7 +1505,7 @@
   function initEvents() {
     $("searchInput").addEventListener("input",e=>performSearch(e.target.value,false));
     $("searchInput").addEventListener("focus",()=>{if(state.query)performSearch(state.query,false);});
-    $("clearSearch").onclick=()=>{$("searchInput").value="";state.query="";$("searchPanel")?.classList.add("hidden");applyFilter();};
+    $("clearSearch").onclick=()=>{$("searchInput").value="";state.query="";$("searchPanel")?.classList.add("hidden");state.filter="all";updateFilterButtons();applyFilter();};
     $("searchTrigger").onclick=openSearch;
     $("liveBtn").onclick=openSettings;
     $("saveBackend").onclick=saveBackendConfig;
@@ -1531,12 +1550,12 @@
       if(e.key==="Escape"){closeMovie();closeSettings();closeCommand();hideModal("aiLabModal");}
     });
 
-    $$(".filter-chip").forEach(btn=>btn.onclick=()=>{
-      state.filter=btn.dataset.filter||"all";
-      state.filterPage=24;
-      applyFilter();
-      renderFilterResults(true);
-      if(state.filter!=="all") toast("Showing "+btn.textContent+" titles");
+    const filterRow=$("filterRow");
+    filterRow && filterRow.addEventListener("click",event=>{
+      const btn=event.target.closest(".filter-chip");
+      if(!btn || !filterRow.contains(btn)) return;
+      event.preventDefault();
+      setFilter(btn.dataset.filter||"all",true);
     });
 
     $("filterShowMore") && ($("filterShowMore").onclick=()=>{
