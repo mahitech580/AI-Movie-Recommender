@@ -854,7 +854,10 @@
     const cacheKey="resolve:"+String(movie.id);
     if (state.detailCache[cacheKey]?.id) return Number(state.detailCache[cacheKey].id);
     try {
-      const data=await tmdb("/search/movie",{query:movie.title,year:Number(year(movie)) || undefined,region:"IN",page:1});
+      const params={query:movie.title,region:"IN",page:1};
+      const movieYear=Number(year(movie));
+      if (movieYear>=1888 && movieYear<=2100) params.year=movieYear;
+      const data=await tmdb("/search/movie",params);
       const candidates=Array.isArray(data.results)?data.results:[];
       const exact=candidates.find(x=>String(x.title||"").toLowerCase()===String(movie.title||"").toLowerCase());
       const sameLang=candidates.find(x=>x.original_language===movie.language);
