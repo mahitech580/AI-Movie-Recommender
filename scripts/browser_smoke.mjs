@@ -146,7 +146,11 @@ async function testDesktop(browser) {
   const indiaChip=page.locator('#filterRow .filter-chip[data-filter="india"]');
   await indiaChip.scrollIntoViewIfNeeded();
   await indiaChip.click({force:true});
-  await page.locator('#filterRow .filter-chip[data-filter="india"].active').waitFor({state:"attached",timeout:3000});
+  await page.locator('#filterResultsTitle').waitFor({state:"visible",timeout:3000});
+  await page.waitForFunction(() => {
+    const title=document.querySelector("#filterResultsTitle")?.textContent?.trim()?.toLowerCase();
+    return title==="india";
+  }, null, {timeout:3000});
   await sleep(160);
   const expectedIndiaTotal = await page.evaluate(() => {
     const languages = new Set(["hi","te","ta","ml","kn","bn","mr","pa","gu","as","or","ur"]);
