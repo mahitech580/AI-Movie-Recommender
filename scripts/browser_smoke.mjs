@@ -145,13 +145,10 @@ async function testDesktop(browser) {
   // India filter: load every page and verify every Indian movie has usable artwork.
   const indiaChip=page.locator('#filterRow .filter-chip[data-filter="india"]');
   await indiaChip.scrollIntoViewIfNeeded();
-  await indiaChip.click({force:true});
-  await page.locator('#filterResultsTitle').waitFor({state:"visible",timeout:3000});
-  await page.waitForFunction(() => {
-    const title=document.querySelector("#filterResultsTitle")?.textContent?.trim()?.toLowerCase();
-    return title==="india";
-  }, null, {timeout:3000});
-  await sleep(160);
+  await indiaChip.click();
+  await sleep(260);
+  const indiaTitle=(await page.locator("#filterResultsTitle").textContent()).trim().toLowerCase();
+  if(indiaTitle!=="india") throw new Error("India filter click did not activate the India results view");
   const expectedIndiaTotal = await page.evaluate(() => {
     const languages = new Set(["hi","te","ta","ml","kn","bn","mr","pa","gu","as","or","ur"]);
     return Array.from(window.MOVIES || []).filter(movie => {
