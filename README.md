@@ -1,151 +1,235 @@
-# MOTION — AI Movie Recommender
+# CINEPLAY — AI Movie Discovery
 
-A Netflix-inspired, GitHub Pages-ready movie discovery experience with real movie artwork, browser-side AI recommendations, local personalization, and optional live TMDB data.
+**CINEPLAY** is a cinematic, streaming-platform-style movie discovery experience built as a static-first web application for GitHub Pages.
 
 **Built by Mahi — Mahendra Sai Kondaveeti**
 
-## What this version is
+Repository: https://github.com/mahitech580/AI-Movie-Recommender  
+Project site: https://mahitech580.github.io/AI-Movie-Recommender/
 
-MOTION is now a **pure static HTML/CSS/JavaScript application** designed to run on GitHub Pages. The previous Flask/Python runtime is no longer required for the deployed experience.
-
-GitHub Pages publishes static files and does not support running server-side Python on the Pages host, so the recommendation engine, search, My List, history and personalization are all handled in the browser. See the official [GitHub Pages documentation](https://docs.github.com/en/pages) for static hosting details.
+> CINEPLAY is inspired by modern streaming-service information architecture, but it does not use Netflix, Hotstar, or other streaming-service branding or assets.
 
 ## Product experience
 
-- Cinematic streaming-style homepage
-- Large rotating hero banner
-- Dark green + deep red visual system
-- Animated smoke/glow atmosphere
-- Real movie posters and backdrop artwork
-- AI Picks shelf
-- Trending shelf
-- Top Rated shelf
-- New & Rising shelf
-- Browse by Vibe
-- My List
-- Recently explored
-- Movie details modal
-- Trailer search
-- Search/autocomplete
-- Genre filters
+This version is designed to feel like a real OTT product rather than a basic movie dashboard:
+
+- Cinematic full-screen hero with rotating featured titles
+- Streaming rails with poster hover states and micro-interactions
+- Top 10 ranking shelf
+- Continue-exploring trail
+- Adaptive “Made for you” recommendations
+- Mood-based discovery
+- Trending, top-rated, fresh-release and India-focused shelves
+- Hidden-gems discovery
+- Search autocomplete and semantic-style local search
 - Ctrl/Cmd + K command palette
-- Responsive desktop and mobile layout
-- Browser localStorage personalization
-- Optional live TMDB mode
+- Movie details experience with AI match explanation
+- My List with persistent browser storage
+- Activity history and local taste profile
+- AI Recommendation Lab
+- Dark green + red ambient smoke, glow, depth and motion
+- Responsive desktop/tablet/mobile layout
+- PWA-style manifest and branded icon
+- Optional live TMDB synchronization
 
-## Browser AI recommendation engine
+## Recommendation engine
 
-The deployed recommendation logic is intentionally lightweight so it can run without a server:
+CINEPLAY is intentionally serverless so the deployed project can stay on GitHub Pages.
 
-~~~text
-Title + genres + tags + overview
-              ↓
-        term-frequency vector
-              ↓
-        cosine similarity
-              ↓
-       shared-genre signal
-              ↓
-        rating strength
-              ↓
-       local taste signals
-              ↓
-         ranked AI queue
-~~~
+The browser builds a local preference profile from user interactions and combines:
 
-The system is a content-based recommender rather than a production collaborative-filtering service. Its purpose is to demonstrate the recommendation workflow in a fully static project.
+- Content-vector similarity
+- Genre affinity
+- User taste profile
+- Rating confidence
+- Popularity/trending signal
+- Freshness
+- Novelty/exploration
+- Local interaction signals
 
-## Live mode
+The flow is:
 
-MOTION supports optional real-time TMDB integration.
+    Movie metadata
+       |
+       +-- title
+       +-- genres
+       +-- tags
+       +-- overview
+       +-- language
+       |
+       v
+    TF/IDF-like feature vector
+       |
+       v
+    Cosine similarity
+       |
+       +-----------------------------+
+       | Local taste profile         |
+       | Genre affinity              |
+       | Rating confidence           |
+       | Popularity                  |
+       | Freshness                   |
+       | Novelty                     |
+       +-----------------------------+
+                    |
+                    v
+             Adaptive ranking
+                    |
+                    v
+               Made for you
 
-TMDB provides API endpoints for movie/search/trending data and an image CDN for poster and backdrop assets. See the official [TMDB API documentation](https://developer.themoviedb.org/docs) and [image documentation](https://developer.themoviedb.org/docs/image-basics).
+The local model also applies an online-learning-style update after positive actions such as opening a title, saving it, creating similar recommendations, or playing a preview. Feature signals and model weights are stored in localStorage and can be reset from the AI Lab.
 
-### Enable it
+This is a portfolio-scale recommender implementation, not a claim of production-grade collaborative filtering. A production service would normally use server-side event pipelines, larger catalogs, candidate generation, offline training, experimentation and evaluation.
 
-1. Create a TMDB API key.
-2. Open MOTION.
-3. Click the status button in the top-right corner.
-4. Paste your key.
-5. Save.
-6. Live trending and search are then fetched directly from the browser.
+## Live movie data
 
-The key is stored only in browser local storage and is **not written into this repository**.
+CINEPLAY can connect directly to the TMDB API from the browser.
 
-Because this is GitHub Pages only, there is deliberately no private backend proxy. Do not hard-code a private credential into the repository.
+Live synchronization can populate:
 
-## Movie artwork
+- Trending movies
+- Popular movies in India
+- Top-rated movies
+- Now playing
+- Upcoming titles
+- Indian-origin discovery
+- Live movie search
 
-The bundled catalog uses TMDB image paths and the documented TMDB image URL pattern.
+The browser caches the latest successful live response locally, then refreshes it when the live credential is available. A failed live request falls back to the bundled catalog so the website remains usable.
 
-TMDB documents that a working image URL is assembled from its secure base URL, image size, and the returned poster/backdrop path. See the official [TMDB image basics](https://developer.themoviedb.org/docs/image-basics).
+### Enable live mode
 
-### TMDB attribution
+1. Create a TMDB API credential.
+2. Open CINEPLAY.
+3. Click the LIVE control in the top-right.
+4. Paste your TMDB v3 API key.
+5. Connect.
+6. Use Sync on the shelves or let the browser refresh automatically.
 
-**This product uses the TMDB API but is not endorsed or certified by TMDB.**
+The credential is stored only in this browser using localStorage. It is not written to the GitHub repository.
 
-TMDB remains the source of the live catalog metadata and artwork used by the optional live mode. See the official TMDB API documentation and applicable terms before deploying your own live credentials. See the official [TMDB API getting started](https://developer.themoviedb.org/reference/intro/getting-started) and [TMDB FAQ/requirements](https://developer.themoviedb.org/docs/faq).
+**Important:** a browser-side credential is not a secret. Do not hard-code a credential into the source code and do not assume localStorage makes a public API key private.
 
-## GitHub Pages
+## Images and attribution
 
-Repository:
+CINEPLAY uses TMDB image paths for movie posters and backdrops in the bundled catalog and in live mode.
 
-https://github.com/mahitech580/AI-Movie-Recommender
+The website displays:
 
-Expected project site:
+> This product uses the TMDB API but is not endorsed or certified by TMDB.
 
-https://mahitech580.github.io/AI-Movie-Recommender/
+Review TMDB's current API terms, attribution and rate-limiting requirements before publishing a public live integration.
 
-GitHub Pages supports project sites at the owner.github.io/repository-name path. See the official [GitHub Pages documentation](https://docs.github.com/en/pages).
+## GitHub Pages architecture
 
-### Pages configuration
+GitHub Pages is used as the only hosting layer.
 
-In the repository:
+There is no Flask server, Python runtime, SQLite database or private API proxy in the deployed architecture.
 
-**Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**
+The deployed application is:
 
-The repository also contains a root .nojekyll file so the static asset folders are served directly.
+    Browser
+       |
+       +--> index.html
+       +--> assets/styles.css
+       +--> assets/app.js
+       +--> data/movies.js
+       |
+       +--> localStorage
+       |
+       +--> optional TMDB REST API
+       |
+       v
+    GitHub Pages
+
+This keeps the core experience functional even when live API access is unavailable.
+
+### Publish
+
+In GitHub:
+
+**Settings → Pages → Build and deployment → Deploy from a branch → main → /(root)**
+
+The repository contains a root .nojekyll file so the static asset directories are served directly.
 
 ## Project structure
 
-~~~text
-AI-Movie-Recommender/
-├── index.html
-├── .nojekyll
-├── README.md
-├── data/
-│   └── movies.js
-└── assets/
-    ├── app.js
-    └── styles.css
-~~~
+    AI-Movie-Recommender/
+    ├── index.html
+    ├── manifest.webmanifest
+    ├── .nojekyll
+    ├── README.md
+    ├── data/
+    │   └── movies.js
+    └── assets/
+        ├── app.js
+        ├── styles.css
+        └── cineplay-icon.svg
 
-## Local persistence
+## Browser storage
 
-MOTION stores these browser-local values:
+CINEPLAY stores only local application state:
 
 - My List
-- Recently explored titles
+- Activity/history
 - Recommendation signals
-- Optional TMDB API key
+- Taste-feature weights
+- Adaptive model weights
+- Optional TMDB credential
+- Cached live catalog response
 
-No SQLite database is required by the deployed version.
+No server database is required for the deployed site.
+
+## Reliability features
+
+The frontend includes:
+
+- Curated fallback catalog
+- Graceful live API failure handling
+- Cached live data
+- Automatic live refresh when a credential exists
+- Manual sync controls
+- Lazy-loaded posters
+- Broken-image-safe rendering
+- Responsive layouts
+- Keyboard navigation
+- Escape-to-close dialogs
+- Reduced-motion support
+- Local model reset
+- Persistent My List and activity
 
 ## Technology
 
-**Frontend:** HTML5, CSS3, Vanilla JavaScript
+**Frontend:** HTML5, CSS3, Vanilla JavaScript  
+**Recommendation:** TF/IDF-like content vectors, cosine similarity, genre affinity, Bayesian-style rating confidence, popularity, freshness, novelty and online preference updates  
+**Live API:** TMDB REST API  
+**Hosting:** GitHub Pages  
+**Storage:** Browser localStorage  
+**Brand:** CINEPLAY
 
-**Recommendation:** term vectors, cosine similarity, genre overlap, rating signal, local preference signals
+## Portfolio highlights
 
-**Live data:** TMDB REST API
+CINEPLAY demonstrates:
 
-**Hosting:** GitHub Pages
+- Static-site architecture
+- Responsive UI engineering
+- Client-side state management
+- Recommendation-system design
+- API integration and graceful fallback
+- Local personalization
+- Search ranking
+- Data normalization
+- Persistent browser storage
+- Keyboard-accessible interactions
+- Animation and micro-interaction design
+- GitHub Pages deployment constraints
 
-## Notes
+The core product decision is deliberate: **the experience remains useful without a backend, while live TMDB data is an optional enhancement.**
 
-The application is inspired by modern streaming-service information architecture, but it does not use Netflix branding or assets.
+## Third-party service
 
-The project is intended as a portfolio demonstration of frontend engineering, data handling, recommendation logic, API integration and static deployment.
+Movie metadata and artwork used through live TMDB mode are supplied by TMDB and remain subject to TMDB's current policies and terms.
 
 ## Author
 
