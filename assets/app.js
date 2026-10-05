@@ -616,7 +616,7 @@
     updateListButtons(movie);
   }
 
-  const HOME_SPOTLIGHT_TITLES=["RRR","Magadheera","Iron Man","Avengers: Endgame","Baahubali: The Beginning","Project Hail Mary","Spider-Man: No Way Home","Dangal","Interstellar"];
+  const HOME_SPOTLIGHT_TITLES=["Spider-Man: No Way Home","Iron Man","Avengers: Age of Ultron","Avengers: Endgame","Black Panther","Avengers: Doomsday","Pushpa: The Rise","Interstellar","Project Hail Mary"];
 
   function buildHero() {
     const wanted=HOME_SPOTLIGHT_TITLES.map(title=>state.movies.find(m=>m.title===title)).filter(Boolean);
