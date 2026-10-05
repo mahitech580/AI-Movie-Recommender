@@ -1,0 +1,31 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg://cineplay:cineplay@postgres:5432/cineplay
+      MONGODB_URI: mongodb://mongo:27017
+      MONGODB_DATABASE: cineplay
+      CORS_ORIGINS: http://localhost:8000,http://localhost:5500,https://mahitech580.github.io
+    depends_on:
+      - postgres
+      - mongo
+
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: cineplay
+      POSTGRES_USER: cineplay
+      POSTGRES_PASSWORD: cineplay
+    volumes:
+      - cineplay_pg:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:8
+    volumes:
+      - cineplay_mongo:/data/db
+
+volumes:
+  cineplay_pg:
+  cineplay_mongo:
