@@ -360,3 +360,10 @@ Watch-provider information is surfaced through TMDB's provider integration and a
 ## Latest frontend focus
 
 The current presentation pass specifically targets the “black screen” opening state, premium motion, movie-card depth, live freshness visibility, instant adaptive shelves, and network recovery. The goal is a cinematic streaming-style experience while preserving CINEPLAY's static-first GitHub Pages constraint and real Python ML companion architecture.
+
+
+## Browser-level QA
+
+CINEPLAY now includes an automated Playwright smoke test in GitHub Actions. The test starts the static site locally and verifies the real browser runtime on desktop and mobile: the cinematic loader releases, the hero initializes, movie cards render, title details open and close, My List persists to localStorage, local search surfaces a known title, and the mobile navigation drawer opens and closes. Browser console/page errors fail the test.
+
+The frontend also uses versioned asset URLs and an emergency loader-release guard so stale browser caches or a JavaScript loading/runtime failure cannot leave visitors permanently trapped behind the black cinematic opening screen.
