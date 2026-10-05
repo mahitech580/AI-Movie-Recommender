@@ -12,7 +12,7 @@ async function testDesktop(browser) {
     if (msg.type() === "error") errors.push("console: " + msg.text());
   });
 
-  await page.goto(base, { waitUntil: "networkidle" });
+  await page.goto(base, { waitUntil: "domcontentloaded" });
   await sleep(900);
 
   const loaderDone = await page.locator("#cinemaLoader").evaluate(el => el.classList.contains("is-done"));
