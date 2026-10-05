@@ -248,6 +248,22 @@
   }
 
 
+
+  async function hydrateCatalog() {
+    if (state.movies.length) return true;
+    try {
+      const response = await fetch("data/movies.json?v=20261005-03", { cache: "no-store" });
+      if (!response.ok) throw new Error("CATALOG_"+response.status);
+      const data = await response.json();
+      if (!Array.isArray(data) || !data.length) throw new Error("CATALOG_EMPTY");
+      mergeMovies(data);
+      return true;
+    } catch (error) {
+      console.error("CINEPLAY catalog load failed", error);
+      return false;
+    }
+  }
+
   function finishCinemaBoot(fast=false) {
     const loader=$("cinemaLoader");
     if(!loader || loader.classList.contains("is-done")) return;
@@ -1283,7 +1299,8 @@
     hero?.addEventListener("mouseleave",()=>{$("heroMedia").style.transform="scale(1.02) translate3d(0,0,0)";});
   }
 
-  function init() {
+  async function init() {
+    await hydrateCatalog();
     renderStats();
     renderMoods();
     buildHero();
@@ -1328,11 +1345,9 @@
     });
   }
 
-  try {
-    init();
-  } catch (error) {
+  init().catch(error => {
     console.error("CINEPLAY initialization error", error);
     finishCinemaBoot(true);
-  }
+  });
   finishCinemaBoot();
 })();
