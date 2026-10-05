@@ -23,9 +23,10 @@ window.MOVIES = [
       "epic"
     ],
     "poster": "https://image.tmdb.org/t/p/original/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
-    "backdrop": "/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
     "accent": "green",
-    "featured": true
+    "featured": true,
+    "poster_source": "TMDB original image CDN"
   },
   {
     "id": 27205,
@@ -512,9 +513,10 @@ window.MOVIES = [
       "final battle"
     ],
     "poster": "https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-    "backdrop": "/7RyHsO4yDXtBv1zUU38J2a5L0hP.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
     "accent": "red",
-    "featured": true
+    "featured": true,
+    "poster_source": "TMDB original image CDN"
   },
   {
     "id": 137113,
@@ -692,9 +694,10 @@ window.MOVIES = [
       "future"
     ],
     "poster": "https://image.tmdb.org/t/p/original/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
-    "backdrop": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
     "accent": "green",
-    "featured": true
+    "featured": true,
+    "poster_source": "TMDB original image CDN"
   },
   {
     "id": 1084244,
@@ -1220,7 +1223,9 @@ window.MOVIES = [
     ],
     "overview": "A labourer rises through a dangerous red-sandalwood smuggling network.",
     "accent": "red",
-    "poster": "https://image.tmdb.org/t/p/w500/oaRk2HgOirEeNuDCwwScmq7rKvS.jpg"
+    "poster": "https://image.tmdb.org/t/p/original/oaRk2HgOirEeNuDCwwScmq7rKvS.jpg",
+    "featured": true,
+    "poster_source": "TMDB original image CDN"
   },
   {
     "id": 10017,
@@ -3679,7 +3684,7 @@ window.MOVIES = [
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
-    "id": 11001,
+    "id": 1726,
     "title": "Iron Man",
     "year": 2008,
     "genres": [
@@ -3688,7 +3693,7 @@ window.MOVIES = [
       "Sci-Fi"
     ],
     "rating": 7.9,
-    "votes": 24000,
+    "votes": 24800,
     "popularity": 93,
     "language": "en",
     "country": "US",
@@ -3703,7 +3708,8 @@ window.MOVIES = [
     "poster": "https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
     "backdrop": "https://image.tmdb.org/t/p/original/cyecB7godJ6kNHGONFjUyVN9OX5.jpg",
     "accent": "red",
-    "featured": true
+    "featured": true,
+    "poster_source": "TMDB original image CDN"
   },
   {
     "id": 11002,
@@ -3730,7 +3736,9 @@ window.MOVIES = [
     "overview": "Peter Parker's secret identity is revealed, pushing him into a multiverse adventure with unexpected allies and enemies.",
     "poster": "https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
     "accent": "red",
-    "featured": true
+    "featured": true,
+    "backdrop": "https://image.tmdb.org/t/p/original/zD5v1E4joAzFvmAEytt7fM3ivyT.jpg",
+    "poster_source": "TMDB original image CDN"
   },
   {
     "id": 11003,
@@ -3782,6 +3790,68 @@ window.MOVIES = [
     "overview": "T'Challa returns home to the advanced African nation of Wakanda and must confront a challenger to the throne.",
     "poster": "https://image.tmdb.org/t/p/original/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
     "accent": "green",
-    "featured": true
+    "featured": true,
+    "backdrop": "https://image.tmdb.org/t/p/original/19Ed4XgjahPm4U8JT7SnntERIlt.jpg",
+    "poster_source": "TMDB original image CDN"
+  },
+  {
+    "id": 99861,
+    "title": "Avengers: Age of Ultron",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 7.4,
+    "votes": 22000,
+    "popularity": 88,
+    "language": "en",
+    "country": "US",
+    "tags": [
+      "mcu",
+      "marvel",
+      "avengers",
+      "ultron",
+      "ai",
+      "superhero",
+      "team"
+    ],
+    "overview": "Tony Stark and the Avengers face Ultron, a peacekeeping artificial intelligence that turns against humanity.",
+    "poster": "https://image.tmdb.org/t/p/original/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/570qhjGZmGPrBGnfx70jcwIuBr4.jpg",
+    "accent": "green",
+    "featured": true,
+    "poster_source": "TMDB original image CDN"
+  },
+  {
+    "id": 1003596,
+    "title": "Avengers: Doomsday",
+    "year": 2026,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 0,
+    "votes": 0,
+    "popularity": 100,
+    "language": "en",
+    "country": "US",
+    "tags": [
+      "mcu",
+      "marvel",
+      "avengers",
+      "doctor doom",
+      "superhero",
+      "multiverse",
+      "event"
+    ],
+    "overview": "Beloved heroes from three distinct universes are set on a deadly collision course with an existential threat.",
+    "poster": "https://image.tmdb.org/t/p/original/jzPwsojjFStf5lR5Nm07w2hH56G.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/6KDDoTq8Vq3HuQHULzuvPiCJbMI.jpg",
+    "accent": "green",
+    "featured": true,
+    "poster_source": "TMDB original image CDN"
   }
 ];
