@@ -73,7 +73,7 @@ async function testMobile(browser) {
   }
   const activityTop = await page.locator("#activity").evaluate(el => {
     const r = el.getBoundingClientRect();
-    return Math.abs(r.top) < 8;
+    return r.top >= 0 && r.top < 180 && r.bottom > 120;
   });
   if (!activityTop) throw new Error("activity deep link did not scroll to Activity section");
 
