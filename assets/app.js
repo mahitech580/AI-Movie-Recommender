@@ -312,7 +312,7 @@
   async function hydrateCatalog() {
     if (state.movies.length) return true;
     try {
-      const response = await fetch("data/movies.json?v=20261005-08", { cache: "no-store" });
+      const response = await fetch("data/movies.json?v=20261005-21", { cache: "no-store" });
       if (!response.ok) throw new Error("CATALOG_"+response.status);
       const data = await response.json();
       if (!Array.isArray(data) || !data.length) throw new Error("CATALOG_EMPTY");
