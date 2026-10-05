@@ -51,6 +51,8 @@ async function testDesktop(browser) {
     imgs.filter(img => /^https:\/\/image\.tmdb\.org\/t\/p\/(original|w780)\//.test(img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
   );
   if (spotlightHighRes !== spotlightExpected.length) throw new Error("Home spotlight has "+(spotlightExpected.length-spotlightHighRes)+" missing high-resolution TMDB images");
+  await page.mouse.move(2,2);
+  await sleep(80);
   const spotlightLayout = await page.locator("#homeSpotlightRail").evaluate(el => {
     const style = getComputedStyle(el);
     const cards = Array.from(el.querySelectorAll(".movie-card"));
