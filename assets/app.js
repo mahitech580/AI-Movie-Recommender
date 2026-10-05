@@ -225,7 +225,20 @@
     [...(state.movies || []), ...(window.MOVIES || []), ...(incoming || [])].forEach(movie => {
       if (!movie?.id || !movie?.title) return;
       const existing = map.get(String(movie.id));
-      map.set(String(movie.id), existing ? {...existing, ...movie} : {...movie});
+      if (existing) {
+        map.set(String(movie.id), {
+          ...existing,
+          ...movie,
+          genres: Array.isArray(movie.genres) && movie.genres.length ? movie.genres : existing.genres,
+          tags: Array.isArray(movie.tags) && movie.tags.length ? movie.tags : existing.tags,
+          poster: movie.poster || existing.poster,
+          backdrop: movie.backdrop || existing.backdrop,
+          overview: movie.overview || existing.overview,
+          year: movie.year && movie.year !== "—" ? movie.year : existing.year
+        });
+      } else {
+        map.set(String(movie.id), {...movie});
+      }
     });
     state.movies = Array.from(map.values());
   }
@@ -969,6 +982,14 @@
 
     const key=localStorage.getItem(STORE.key);
     if (key && Date.now()-state.lastSync>8*60*1000) syncLive(false);
+    setInterval(()=>{
+      const liveKey=localStorage.getItem(STORE.key);
+      if (liveKey && document.visibilityState==="visible") syncLive(false);
+    },10*60*1000);
+    document.addEventListener("visibilitychange",()=>{
+      const liveKey=localStorage.getItem(STORE.key);
+      if (document.visibilityState==="visible" && liveKey && Date.now()-state.lastSync>8*60*1000) syncLive(false);
+    });
   }
 
   init();
