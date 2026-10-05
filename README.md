@@ -215,20 +215,20 @@ This is the only architecture in the project that preserves your GitHub Pages re
 
 ## GitHub Pages deployment
 
-The repository contains a Pages workflow at:
+The repository contains a QA workflow at:
 
     .github/workflows/pages.yml
 
-The workflow:
+The QA workflow:
 
-1. installs Python dependencies
-2. compiles Python files
-3. trains the model artifact
-4. checks JavaScript syntax
-5. validates static assets
-6. publishes the repository root to GitHub Pages
+1. starts PostgreSQL and MongoDB service containers
+2. installs Python dependencies
+3. compiles the Python backend
+4. trains the scikit-learn model artifact
+5. runs the FastAPI/SQL/MongoDB smoke test
+6. checks JavaScript syntax and static assets
 
-GitHub Pages must be enabled for the repository with the Pages source configured for the Actions deployment flow.
+The repository's existing GitHub Pages publisher handles the actual static-site deployment from the main branch. The final Pages deployment for the current build completed successfully.
 
 ## Project structure
 
