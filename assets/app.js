@@ -110,7 +110,7 @@
   }
 
   function backendUrl() {
-    return (localStorage.getItem(BACKEND_STORE) || "").trim().replace(/\\/$/,"");
+    return (localStorage.getItem(BACKEND_STORE) || "").trim().replace(/\/$/,"");
   }
 
   async function backendFetch(path, options={}) {
