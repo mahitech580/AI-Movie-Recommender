@@ -257,11 +257,13 @@
       <p>CINEPLAY can run entirely from GitHub Pages. Add your own TMDB credential to turn on live trend, search, regional discovery and fresh releases directly in your browser.</p>
       <label for="tmdbKey">TMDB v3 API key</label>
       <div class="key-row"><input id="tmdbKey" type="password" autocomplete="off" placeholder="Paste your TMDB API key"><button class="btn btn-primary" id="saveKey" type="button">Connect</button></div>
+      <label for="backendUrl">Optional Python ML API URL</label>
+      <div class="key-row"><input id="backendUrl" type="url" autocomplete="off" placeholder="https://your-api.example.com"><button class="btn btn-outline" id="saveBackend" type="button">Use API</button></div>
       <div class="settings-status" id="settingsStatus"></div>
       <div class="settings-grid">
         <div><b>Live endpoints</b><span>Trending · popular · top rated · new releases · India discovery · search</span></div>
-        <div><b>Credential storage</b><span>Browser localStorage only. Never committed to GitHub.</span></div>
-        <div><b>Fallback mode</b><span>The curated catalog stays usable when the live API is unavailable.</span></div>
+        <div><b>Python ML layer</b><span>Optional FastAPI + SQL + MongoDB + scikit-learn companion API.</span></div>
+        <div><b>Fallback mode</b><span>Core CINEPLAY stays usable when either external service is unavailable.</span></div>
       </div>
       <div class="settings-actions"><button class="btn btn-outline" id="removeKey" type="button">Remove</button><button class="btn btn-ghost" data-close-settings type="button">Done</button></div>
       <small>Use a credential you are authorized to use with TMDB. Public client-side credentials can be viewed by visitors, so do not treat a browser-stored API key as a secret.</small>
