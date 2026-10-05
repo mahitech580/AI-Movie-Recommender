@@ -1,34 +1,3609 @@
 window.MOVIES = [
-{id:157336,title:"Interstellar",year:2014,genres:["Adventure","Drama","Sci-Fi"],rating:8.5,votes:41338,popularity:72.1,language:"en",overview:"A group of explorers uses a newly discovered wormhole to travel beyond the limits of human spaceflight and search for a future for humanity.",tags:["space","wormhole","time","science","family","survival","epic"],poster:"/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",backdrop:"/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",accent:"green"},
-{id:27205,title:"Inception",year:2010,genres:["Action","Sci-Fi","Thriller"],rating:8.4,votes:40307,popularity:51.5,language:"en",overview:"A skilled thief who steals secrets through dream-sharing technology is offered a chance to erase his past by planting an idea in a target's subconscious.",tags:["dreams","heist","mind-bending","technology","team","time"],poster:"/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",backdrop:"/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",accent:"red"},
-{id:603,title:"The Matrix",year:1999,genres:["Action","Sci-Fi"],rating:8.3,votes:28851,popularity:45.9,language:"en",overview:"A computer hacker discovers that reality is a constructed system and joins an underground resistance fighting the machines that control humanity.",tags:["simulation","hacker","technology","rebellion","future","mind-bending"],poster:"/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",backdrop:"/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",accent:"green"},
-{id:155,title:"The Dark Knight",year:2008,genres:["Action","Crime","Thriller"],rating:8.5,votes:36855,popularity:60.4,language:"en",overview:"Batman raises the stakes in his war on crime as a criminal mastermind pushes Gotham and its heroes toward chaos.",tags:["hero","villain","gotham","crime","chaos","vigilante"],poster:"/qJ2tW6WMUDux911r6m7haRef0WH.jpg",backdrop:"/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",accent:"red"},
-{id:680,title:"Pulp Fiction",year:1994,genres:["Crime","Thriller","Comedy"],rating:8.5,votes:30964,popularity:46.3,language:"en",overview:"A collection of intertwined stories follows hitmen, a gangster's wife and a boxer through a darkly comic crime odyssey.",tags:["crime","dialogue","nonlinear","hitmen","gangsters","dark comedy"],poster:"/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",backdrop:"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",accent:"red"},
-{id:238,title:"The Godfather",year:1972,genres:["Drama","Crime"],rating:8.7,votes:23654,popularity:61.2,language:"en",overview:"The Corleone family saga begins as patriarch Vito survives an assassination attempt and his youngest son Michael is drawn into the family business.",tags:["mafia","family","power","crime","legacy","betrayal"],poster:"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",backdrop:"/tSPT36ZKlP2WVHJLM4cQPLSzv3b.jpg",accent:"red"},
-{id:278,title:"The Shawshank Redemption",year:1994,genres:["Drama"],rating:8.7,votes:31444,popularity:62.6,language:"en",overview:"An imprisoned banker uses intelligence, patience and friendship to build a life shaped by hope inside Shawshank prison.",tags:["hope","friendship","prison","redemption","survival","human spirit"],poster:"/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",backdrop:"/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",accent:"green"},
-{id:550,title:"Fight Club",year:1999,genres:["Drama","Thriller"],rating:8.4,votes:32954,popularity:47.4,language:"en",overview:"An insomniac office worker and an eccentric soap salesman create an underground fight club that spirals into something much larger.",tags:["identity","anarchy","consumerism","psychology","dark","twist"],poster:"/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",backdrop:"/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",accent:"red"},
-{id:120,title:"The Lord of the Rings: The Fellowship of the Ring",year:2001,genres:["Adventure","Fantasy","Action"],rating:8.5,votes:28466,popularity:51.2,language:"en",overview:"A young hobbit begins a journey to keep a powerful ring from the Dark Lord, joined by a fellowship of unlikely heroes.",tags:["fantasy","quest","friendship","magic","war","epic"],poster:"/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",backdrop:"/oiwc338EoBgS4sEI2ixAny4KQKg.jpg",accent:"green"},
-{id:122,title:"The Lord of the Rings: The Return of the King",year:2003,genres:["Adventure","Fantasy","Action"],rating:8.5,votes:27465,popularity:63.8,language:"en",overview:"Middle-earth prepares for its final battle while Frodo and Sam make their way toward Mount Doom.",tags:["fantasy","quest","war","friendship","magic","epic"],poster:"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",backdrop:"/ctiw6FZK4N36LmkjSklWEbuvlq9.jpg",accent:"green"},
-{id:13,title:"Forrest Gump",year:1994,genres:["Comedy","Drama","Romance"],rating:8.5,votes:30540,popularity:36.1,language:"en",overview:"A gentle man lives an extraordinary life, touching history and inspiring everyone around him while searching for his true love.",tags:["life","friendship","love","history","journey","heartwarming"],poster:"/Cw4hIUIAmSYfK9QfaUW5igp9La.jpg",backdrop:"/66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",accent:"green"},
-{id:769,title:"GoodFellas",year:1990,genres:["Drama","Crime"],rating:8.5,votes:14802,popularity:30.0,language:"en",overview:"A young man rises through a Brooklyn Mafia family and discovers the costs of loyalty, power and violence.",tags:["mafia","crime","rise","fall","betrayal","family"],poster:"/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg",backdrop:"/gILte6Zd7m1YneIr6MVhh30S9pr.jpg",accent:"red"},
-{id:129,title:"Spirited Away",year:2001,genres:["Animation","Fantasy","Adventure"],rating:8.5,votes:18970,popularity:38.9,language:"ja",overview:"A young girl enters a mysterious spirit world and must find courage and compassion to save her transformed family.",tags:["magic","spirits","family","coming of age","imagination","journey"],poster:"/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",backdrop:"/6oaL4DP75yABrd5EbC4H2zq5ghc.jpg",accent:"green"},
-{id:372058,title:"Your Name.",year:2016,genres:["Animation","Romance","Drama"],rating:8.5,votes:9922,popularity:40.2,language:"ja",overview:"Two teenagers living separate lives mysteriously begin switching bodies and searching for the connection between them.",tags:["romance","time","identity","fate","teen","body swap"],poster:"/q719jXXEzOoYaps6babgKnONONX.jpg",backdrop:"/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg",accent:"red"},
-{id:496243,title:"Parasite",year:2019,genres:["Comedy","Thriller","Drama"],rating:8.5,votes:15867,popularity:65.9,language:"ko",overview:"A struggling family slowly enters the lives of a wealthy household, setting off an unexpected chain of events.",tags:["class","family","social","dark comedy","twist","wealth"],poster:"/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",backdrop:"/ApiBzeaa95TNYliSbQ8pJv4Fje7.jpg",accent:"green"},
-{id:496,title:"The Green Mile",year:1999,genres:["Fantasy","Drama","Crime"],rating:8.6,votes:15000,popularity:34.2,language:"en",overview:"A prison guard encounters a gentle giant with a mysterious gift while working on death row.",tags:["supernatural","prison","empathy","justice","healing","emotion"],poster:"/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",backdrop:"/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",accent:"green"},
-{id:569094,title:"Spider-Man: Across the Spider-Verse",year:2023,genres:["Animation","Action","Sci-Fi"],rating:8.8,votes:1226,popularity:95.0,language:"en",overview:"Miles Morales is catapulted across the multiverse and finds himself caught between Spider-People and a threat that could fracture reality.",tags:["multiverse","hero","animation","friendship","family","parallel worlds"],poster:"/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",backdrop:"/nGxUxi3PfXDRm7Vg95VBNgNM8yc.jpg",accent:"red"},
-{id:140607,title:"Star Wars: The Force Awakens",year:2015,genres:["Action","Adventure","Sci-Fi"],rating:7.8,votes:19000,popularity:52.0,language:"en",overview:"A new threat rises decades after the fall of the Galactic Empire, bringing together a scavenger, a stormtrooper and a legendary hero.",tags:["space","hero","rebellion","adventure","galaxy","legacy"],poster:"/fYzpM9GmpBlIC893fNjoWCwE24H.jpg",backdrop:"/c2Ax8Rox5g6CneChwy1gmu4UbSb.jpg",accent:"green"},
-{id:102899,title:"Ant-Man",year:2015,genres:["Action","Adventure","Sci-Fi"],rating:7.0,votes:2063,popularity:36.1,language:"en",overview:"A con artist must embrace the ability to shrink and become a hero while pulling off an impossible heist.",tags:["heist","hero","science","comedy","technology","team"],poster:"/D6e8RJf2qUstnfkTslTXNTUAlT.jpg",backdrop:"/kvXLZqY0Ngl1XSw7EaMQO0C1CCj.jpg",accent:"green"},
-{id:299534,title:"Avengers: Endgame",year:2019,genres:["Action","Adventure","Sci-Fi"],rating:8.3,votes:39000,popularity:91.0,language:"en",overview:"After a devastating loss, the remaining Avengers unite for one final attempt to undo the damage and bring their world back.",tags:["hero","team","time","sacrifice","space","final battle"],poster:"/or06FN3Dka5tukK1e9sl16pB3iy.jpg",backdrop:"/7RyHsO4yDXtBv1zUU38J2a5L0hP.jpg",accent:"red"},
-{id:137113,title:"Edge of Tomorrow",year:2014,genres:["Action","Sci-Fi"],rating:7.9,votes:13000,popularity:43.0,language:"en",overview:"A soldier caught in a time loop gains the ability to relive a battle and use each cycle to change the outcome.",tags:["time loop","aliens","military","strategy","survival","future"],poster:"/xjw5trHV7Mwo61P0kCTy8K1oK7Z.jpg",backdrop:"/c4aPtn8D02GfZt8R5P6s2y6NQ6L.jpg",accent:"red"},
-{id:438631,title:"Dune",year:2021,genres:["Sci-Fi","Adventure","Drama"],rating:8.0,votes:26000,popularity:75.0,language:"en",overview:"A gifted young man is drawn into an interstellar struggle over a desert world and the most valuable resource in the universe.",tags:["desert","prophecy","space","politics","family","epic"],poster:"/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",backdrop:"/jYEW5xZkZk2WTrdbMGAPJZ1A.jpg",accent:"green"},
-{id:872585,title:"Oppenheimer",year:2023,genres:["Drama","History","Thriller"],rating:8.1,votes:30000,popularity:88.0,language:"en",overview:"A brilliant scientist leads a secret wartime project that changes the course of history and transforms his own life.",tags:["science","history","genius","ethics","war","politics"],poster:"/8Gxv8gSFCU0XGDykoUeT5wW5B0F.jpg",backdrop:"/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",accent:"red"},
-{id:346698,title:"Barbie",year:2023,genres:["Comedy","Adventure","Fantasy"],rating:7.0,votes:22000,popularity:98.0,language:"en",overview:"Barbie leaves her perfect world after an existential crisis sends her on a colorful journey into the real world.",tags:["identity","comedy","fantasy","self discovery","friendship","color"],poster:"/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",backdrop:"/yY76zq9XSu2jM7iZ9pQ1.jpg",accent:"red"},
-{id:361743,title:"Top Gun: Maverick",year:2022,genres:["Action","Drama"],rating:8.2,votes:22000,popularity:70.0,language:"en",overview:"An elite pilot returns to train a new generation for a mission that demands courage, skill and sacrifice.",tags:["aviation","mentor","military","legacy","adrenaline","team"],poster:"/62HCnUTziyWcpDaBO2i1i4R47Cx.jpg",backdrop:"/AaV1YIdWKUzZks1TIKfW0hwL1Oa.jpg",accent:"red"},
-{id:447365,title:"Guardians of the Galaxy Vol. 2",year:2017,genres:["Action","Adventure","Comedy"],rating:7.6,votes:20000,popularity:47.0,language:"en",overview:"The Guardians struggle to keep their newfound family together while unraveling one of their leader's mysterious origins.",tags:["space","team","family","comedy","music","adventure"],poster:"/y4MBh0EjBlMuOzv9axsznkS5M2c.jpg",backdrop:"/aJn9XeesqsrSLKcHfHP4eIYjE.jpg",accent:"green"},
-{id:687163,title:"Project Hail Mary",year:2026,genres:["Sci-Fi","Adventure"],rating:8.6,votes:8024,popularity:107.1,language:"en",overview:"A science teacher wakes on a spaceship with no memory and must solve the mystery of a dying sun before time runs out.",tags:["space","science","survival","mystery","friendship","future"],poster:"/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",backdrop:"/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",accent:"green"},
-{id:1084244,title:"Toy Story 5",year:2026,genres:["Animation","Family","Comedy","Adventure"],rating:8.3,votes:2436,popularity:179.6,language:"en",overview:"Buzz, Woody and Jessie face an all-new threat to playtime when Bonnie becomes obsessed with a new piece of technology.",tags:["animation","family","friendship","technology","comedy","adventure"],poster:"/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",backdrop:"/4D1pdB27uph7J8HQzNf8QvvH9bn.jpg",accent:"red"},
-{id:1311031,title:"Demon Slayer: Kimetsu no Yaiba Infinity Castle",year:2025,genres:["Animation","Action","Fantasy"],rating:8.8,votes:2219,popularity:61.6,language:"ja",overview:"The Demon Slayer Corps are drawn into the Infinity Castle for a desperate battle against the Upper Rank demons.",tags:["anime","demons","battle","fantasy","sword","final"],poster:"/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",backdrop:"/1RgPyOhN4DRs225BGTlHJqCudII.jpg",accent:"red"},
-{id:1083381,title:"Backrooms",year:2026,genres:["Horror","Mystery","Sci-Fi"],rating:7.0,votes:3528,popularity:99.8,language:"en",overview:"A strange doorway appears beneath a furniture showroom, leading into a surreal space with rules no one understands.",tags:["horror","liminal","mystery","survival","weird","science"],poster:"/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",backdrop:"/dqmMWNWfLnExDRpMtIMqI97GQFR.jpg",accent:"green"},
-[{"id":10001,"title":"RRR","year":2022,"genres":["Action","Adventure","Drama","History"],"rating":7.8,"votes":227000,"popularity":96,"language":"te","industry":"TFI","country":"IN","tags":["freedom","revolution","brotherhood","epic","british-era","hero"],"overview":"Two legendary revolutionaries form a powerful friendship while taking on the British Raj.","accent":"red"},{"id":10002,"title":"Baahubali: The Beginning","year":2015,"genres":["Action","Adventure","Drama","Fantasy"],"rating":8,"votes":115000,"popularity":88,"language":"te","industry":"TFI","country":"IN","tags":["kingdom","war","royalty","revenge","epic","mythic"],"overview":"A young man discovers his royal heritage and is drawn into a struggle for a legendary kingdom.","accent":"green"},{"id":10003,"title":"Baahubali 2: The Conclusion","year":2017,"genres":["Action","Adventure","Drama","Fantasy","War"],"rating":8.2,"votes":120000,"popularity":91,"language":"te","industry":"TFI","country":"IN","tags":["kingdom","legacy","war","royalty","betrayal","epic"],"overview":"A son uncovers the truth behind his father's fall and rises to reclaim his kingdom.","accent":"green"},{"id":10004,"title":"Eega","year":2012,"genres":["Action","Comedy","Drama","Fantasy","Romance"],"rating":7.7,"votes":31000,"popularity":44,"language":"te","industry":"TFI","country":"IN","tags":["revenge","reincarnation","fly","love","fantasy","invention"],"overview":"A murdered lover returns as a housefly and engineers an extraordinary revenge.","accent":"red"},{"id":10005,"title":"Rangasthalam","year":2018,"genres":["Action","Drama","History"],"rating":8.2,"votes":32000,"popularity":42,"language":"te","industry":"TFI","country":"IN","tags":["village","politics","brotherhood","rebellion","period"],"overview":"A hearing-impaired villager confronts an entrenched local power structure.","accent":"red"},{"id":10006,"title":"Jersey","year":2019,"genres":["Drama","Sport"],"rating":8.5,"votes":30000,"popularity":48,"language":"te","industry":"TFI","country":"IN","tags":["cricket","father","comeback","dreams","family"],"overview":"A failed cricketer attempts a late-career comeback for himself and his son.","accent":"green"},{"id":10007,"title":"Sita Ramam","year":2022,"genres":["Drama","Romance","History","Mystery","Musical"],"rating":8.5,"votes":86000,"popularity":71,"language":"te","industry":"TFI","country":"IN","tags":["letters","love","war","kashmir","mystery","romance"],"overview":"A mysterious letter sets a soldier and a woman on a romantic journey shaped by war.","accent":"green"},{"id":10008,"title":"C/o Kancharapalem","year":2018,"genres":["Drama","Romance","Comedy"],"rating":8.8,"votes":12000,"popularity":27,"language":"te","industry":"TFI","country":"IN","tags":["love","small-town","relationships","anthology","human"],"overview":"Eight intertwined stories explore love across different ages and lives in a small coastal town.","accent":"green"},{"id":10009,"title":"Agent Sai Srinivasa Athreya","year":2019,"genres":["Comedy","Crime","Mystery","Thriller"],"rating":8.3,"votes":18000,"popularity":36,"language":"te","industry":"TFI","country":"IN","tags":["detective","mystery","investigation","humor","crime"],"overview":"An independent detective takes on an unusual missing-person case that becomes much darker.","accent":"red"},{"id":10010,"title":"Goodachari","year":2018,"genres":["Action","Thriller","Mystery"],"rating":7.8,"votes":16000,"popularity":40,"language":"te","industry":"TFI","country":"IN","tags":["spy","espionage","conspiracy","agent","action"],"overview":"A young intelligence agent is framed and must uncover the conspiracy behind his mission.","accent":"red"},{"id":10011,"title":"HIT: The First Case","year":2020,"genres":["Crime","Mystery","Thriller","Drama"],"rating":7.7,"votes":17000,"popularity":37,"language":"te","industry":"TFI","country":"IN","tags":["police","missing","investigation","trauma","crime"],"overview":"A troubled police officer investigates a missing woman while battling his own past.","accent":"red"},{"id":10012,"title":"Major","year":2022,"genres":["Action","Biography","Drama","History","War"],"rating":8.1,"votes":33000,"popularity":55,"language":"te","industry":"TFI","country":"IN","tags":["hero","army","mumbai","biography","sacrifice"],"overview":"The life and bravery of an Indian Army officer are dramatized through his final mission.","accent":"green"},{"id":10013,"title":"Karthikeya 2","year":2022,"genres":["Adventure","Mystery","Fantasy","Thriller"],"rating":7.9,"votes":28000,"popularity":62,"language":"te","industry":"TFI","country":"IN","tags":["mythology","treasure","temple","adventure","mystery"],"overview":"A doctor is pulled into a mythic treasure hunt connected to an ancient legend.","accent":"green"},{"id":10014,"title":"Arjun Reddy","year":2017,"genres":["Drama","Romance"],"rating":8,"votes":62000,"popularity":58,"language":"te","industry":"TFI","country":"IN","tags":["love","medical","self-destruction","passion","relationships"],"overview":"A brilliant but impulsive surgeon spirals after a painful breakup and struggles to regain control.","accent":"red"},{"id":10015,"title":"Mahanati","year":2018,"genres":["Biography","Drama","History","Musical"],"rating":8.4,"votes":24000,"popularity":40,"language":"te","industry":"TFI","country":"IN","tags":["actress","biography","savitri","cinema","classic"],"overview":"The rise, triumphs and struggles of iconic actress Savitri are told through a cinematic biography.","accent":"green"},{"id":10016,"title":"Pushpa: The Rise","year":2021,"genres":["Action","Crime","Drama","Thriller"],"rating":7.6,"votes":95000,"popularity":84,"language":"te","industry":"TFI","country":"IN","tags":["smuggling","forest","labour","ambition","crime"],"overview":"A labourer rises through a dangerous red-sandalwood smuggling network.","accent":"red"},{"id":10017,"title":"Pushpa 2: The Rule","year":2024,"genres":["Action","Crime","Drama","Thriller"],"rating":7,"votes":95000,"popularity":98,"language":"te","industry":"TFI","country":"IN","tags":["smuggling","power","politics","crime","mass"],"overview":"Pushpa faces powerful rivals as his influence and ambitions expand.","accent":"red"},{"id":10018,"title":"Ala Vaikunthapurramuloo","year":2020,"genres":["Action","Comedy","Drama"],"rating":7.3,"votes":38000,"popularity":66,"language":"te","industry":"TFI","country":"IN","tags":["family","identity","class","romance","music"],"overview":"A family identity secret changes the life of a young man seeking his father's approval.","accent":"green"},{"id":10019,"title":"Athadu","year":2005,"genres":["Action","Comedy","Crime","Thriller"],"rating":8.1,"votes":19000,"popularity":33,"language":"te","industry":"TFI","country":"IN","tags":["assassin","identity","family","crime","humor"],"overview":"A professional killer takes refuge with a rural family after being framed for murder.","accent":"red"},{"id":10020,"title":"Pokiri","year":2006,"genres":["Action","Crime","Thriller"],"rating":8,"votes":23000,"popularity":51,"language":"te","industry":"TFI","country":"IN","tags":["undercover","gangster","police","romance","action"],"overview":"A mysterious street fighter becomes entangled in a dangerous crime network.","accent":"red"},{"id":10021,"title":"Oopiri","year":2016,"genres":["Comedy","Drama"],"rating":8,"votes":13000,"popularity":30,"language":"te","industry":"TFI","country":"IN","tags":["friendship","disability","travel","family","life"],"overview":"An unlikely friendship changes two men as they travel beyond their comfort zones.","accent":"green"},{"id":10022,"title":"Pelli Choopulu","year":2016,"genres":["Comedy","Romance","Drama"],"rating":8.2,"votes":14000,"popularity":34,"language":"te","industry":"TFI","country":"IN","tags":["startup","food","entrepreneur","love","youth"],"overview":"Two young people turn an accidental meeting into a shared entrepreneurial journey.","accent":"green"},{"id":10023,"title":"Ee Nagaraniki Emaindi","year":2018,"genres":["Comedy","Drama"],"rating":8.1,"votes":12000,"popularity":35,"language":"te","industry":"TFI","country":"IN","tags":["friends","film","beach","youth","dreams"],"overview":"Four friends reunite for a filmmaking adventure that tests their friendship.","accent":"green"},{"id":10024,"title":"Jathi Ratnalu","year":2021,"genres":["Comedy","Drama"],"rating":7.9,"votes":22000,"popularity":72,"language":"te","industry":"TFI","country":"IN","tags":["friendship","politics","mistake","chaos","humor"],"overview":"Three lovable friends stumble into trouble after moving to the city.","accent":"green"},{"id":10025,"title":"Mathu Vadalara","year":2019,"genres":["Comedy","Crime","Thriller","Mystery"],"rating":8.2,"votes":13000,"popularity":38,"language":"te","industry":"TFI","country":"IN","tags":["delivery","crime","twist","dark-comedy","mistake"],"overview":"A delivery worker and his friend become trapped in a chain of criminal misunderstandings.","accent":"red"},{"id":10026,"title":"Brochevarevarura","year":2019,"genres":["Comedy","Crime","Drama","Thriller"],"rating":8,"votes":8000,"popularity":29,"language":"te","industry":"TFI","country":"IN","tags":["friends","college","kidnapping","mistake","heist"],"overview":"Three underachieving friends agree to help with a fake kidnapping and trigger real danger.","accent":"green"},{"id":10027,"title":"Kushi","year":2001,"genres":["Comedy","Romance","Drama"],"rating":8,"votes":9000,"popularity":28,"language":"te","industry":"TFI","country":"IN","tags":["college","love","family","friendship","romance"],"overview":"Two young people fall in love while family pride and misunderstandings keep them apart.","accent":"green"},{"id":10028,"title":"Bommarillu","year":2006,"genres":["Comedy","Romance","Drama","Family"],"rating":8.2,"votes":13000,"popularity":35,"language":"te","industry":"TFI","country":"IN","tags":["family","father","love","marriage","youth"],"overview":"A young man struggles to balance his own choices with an overprotective father's expectations.","accent":"green"},{"id":10029,"title":"Manam","year":2014,"genres":["Drama","Romance","Fantasy","Family"],"rating":8,"votes":12000,"popularity":31,"language":"te","industry":"TFI","country":"IN","tags":["rebirth","family","love","destiny","generations"],"overview":"A family discovers a mysterious connection that links their lives across generations.","accent":"green"},{"id":10030,"title":"Sye Raa Narasimha Reddy","year":2019,"genres":["Action","Drama","History","War"],"rating":7.3,"votes":27000,"popularity":58,"language":"te","industry":"TFI","country":"IN","tags":["revolt","freedom","kingdom","war","history"],"overview":"A regional ruler leads an early resistance against British colonial power.","accent":"red"},{"id":10031,"title":"Dasara","year":2023,"genres":["Action","Drama"],"rating":7.6,"votes":24000,"popularity":68,"language":"te","industry":"TFI","country":"IN","tags":["coal","friendship","village","revenge","class"],"overview":"A friendship story turns into a violent conflict in a mining village marked by class divisions.","accent":"red"},{"id":10032,"title":"Hi Nanna","year":2023,"genres":["Drama","Romance","Family"],"rating":8.2,"votes":30000,"popularity":70,"language":"te","industry":"TFI","country":"IN","tags":["father","daughter","memory","love","family"],"overview":"A single father and his daughter are drawn into a tender story about love and memory.","accent":"green"},{"id":10033,"title":"Virupaksha","year":2023,"genres":["Horror","Mystery","Thriller","Drama"],"rating":7.2,"votes":21000,"popularity":67,"language":"te","industry":"TFI","country":"IN","tags":["village","curse","occult","mystery","supernatural"],"overview":"A mysterious series of deaths leads a young man into a village haunted by an ancient curse.","accent":"red"},{"id":10034,"title":"Masooda","year":2022,"genres":["Horror","Mystery","Thriller"],"rating":7.3,"votes":9000,"popularity":41,"language":"te","industry":"TFI","country":"IN","tags":["possession","family","occult","horror","investigation"],"overview":"A family is drawn into a terrifying supernatural mystery after a disturbing possession.","accent":"red"},{"id":10035,"title":"Hanu-Man","year":2024,"genres":["Action","Adventure","Fantasy","Family"],"rating":7.8,"votes":50000,"popularity":86,"language":"te","industry":"TFI","country":"IN","tags":["superhero","mythology","village","powers","hero"],"overview":"A small-town man gains extraordinary powers and discovers a larger mythic destiny.","accent":"green"},{"id":10036,"title":"Kalki 2898 AD","year":2024,"genres":["Action","Sci-Fi","Fantasy","Drama"],"rating":7,"votes":95000,"popularity":93,"language":"te","industry":"TFI","country":"IN","tags":["future","mythology","dystopia","technology","epic"],"overview":"In a dystopian future, a group of unlikely heroes becomes part of an ancient prophecy.","accent":"red"},{"id":10037,"title":"Salaar: Part 1 – Ceasefire","year":2023,"genres":["Action","Crime","Drama"],"rating":6.5,"votes":61000,"popularity":88,"language":"te","industry":"TFI","country":"IN","tags":["friendship","kingdom","violence","crime","rebel"],"overview":"Two friends are pulled into a violent succession struggle within a brutal fictional kingdom.","accent":"red"},{"id":10038,"title":"Devara: Part 1","year":2024,"genres":["Action","Drama","Thriller"],"rating":6,"votes":42000,"popularity":82,"language":"te","industry":"TFI","country":"IN","tags":["coast","warrior","smuggling","family","sea"],"overview":"A coastal community is caught in a high-stakes conflict led by a fearless protector.","accent":"red"},{"id":10039,"title":"Evaru","year":2019,"genres":["Mystery","Crime","Thriller","Drama"],"rating":8.2,"votes":18000,"popularity":39,"language":"te","industry":"TFI","country":"IN","tags":["murder","investigation","twist","police","conspiracy"],"overview":"A police officer reopens a murder case whose hidden layers challenge every assumption.","accent":"red"},{"id":10040,"title":"Colour Photo","year":2020,"genres":["Drama","Romance"],"rating":8,"votes":8000,"popularity":24,"language":"te","industry":"TFI","country":"IN","tags":["love","caste","colorism","youth","social"],"overview":"A young couple fights social prejudice and family pressure to stay together.","accent":"green"},{"id":10041,"title":"DJ Tillu","year":2022,"genres":["Comedy","Crime","Romance"],"rating":7.1,"votes":13000,"popularity":61,"language":"te","industry":"TFI","country":"IN","tags":["chaos","crime","love","city","humor"],"overview":"A carefree DJ gets caught in a chaotic criminal mess after meeting a mysterious woman.","accent":"red"},{"id":10042,"title":"Jalsa","year":2008,"genres":["Action","Comedy","Drama","Thriller"],"rating":8,"votes":14000,"popularity":32,"language":"te","industry":"TFI","country":"IN","tags":["politics","police","crime","romance","action"],"overview":"A rebellious man gets caught between a political conspiracy and a determined police officer.","accent":"red"},{"id":10043,"title":"Khaleja","year":2010,"genres":["Action","Comedy","Fantasy","Drama"],"rating":7.6,"votes":13000,"popularity":34,"language":"te","industry":"TFI","country":"IN","tags":["village","destiny","humor","hero","mystery"],"overview":"A cab driver becomes the unexpected hero of a village suffering from a mysterious crisis.","accent":"green"},{"id":10044,"title":"Magadheera","year":2009,"genres":["Action","Adventure","Fantasy","Romance"],"rating":7.7,"votes":35000,"popularity":54,"language":"te","industry":"TFI","country":"IN","tags":["rebirth","war","kingdom","romance","hero"],"overview":"A modern man begins recovering memories of a warrior from a previous life.","accent":"red"},{"id":10045,"title":"Ye Maaya Chesave","year":2010,"genres":["Drama","Romance","Musical"],"rating":7.8,"votes":12000,"popularity":36,"language":"te","industry":"TFI","country":"IN","tags":["love","filmmaker","music","youth","relationships"],"overview":"A young aspiring filmmaker falls for a woman whose family and beliefs complicate their relationship.","accent":"green"},{"id":10046,"title":"Fidaa","year":2017,"genres":["Drama","Romance","Comedy"],"rating":7.4,"votes":10000,"popularity":42,"language":"te","industry":"TFI","country":"IN","tags":["village","love","family","culture","romance"],"overview":"A city-raised doctor and a strong-willed village woman fall in love despite cultural differences.","accent":"green"},{"id":10047,"title":"Middle Class Melodies","year":2020,"genres":["Comedy","Drama","Romance","Family"],"rating":7.4,"votes":6000,"popularity":23,"language":"te","industry":"TFI","country":"IN","tags":["food","family","small-town","ambition"],"overview":"A small-town cook dreams of running a tiffin centre while navigating family expectations.","accent":"green"},{"id":10048,"title":"Patas","year":2015,"genres":["Action","Comedy","Crime"],"rating":7.3,"votes":7000,"popularity":28,"language":"te","industry":"TFI","country":"IN","tags":["police","corruption","humor","crime"],"overview":"A corrupt police officer gets a chance to transform himself while taking down a criminal network.","accent":"red"},{"id":10049,"title":"Hit: The Second Case","year":2022,"genres":["Crime","Mystery","Thriller"],"rating":7.5,"votes":15000,"popularity":55,"language":"te","industry":"TFI","country":"IN","tags":["detective","serial-killer","investigation","crime"],"overview":"A police officer faces a disturbing serial-killer case that pushes his investigative skills to the limit.","accent":"red"},{"id":10050,"title":"Awe!","year":2018,"genres":["Drama","Fantasy","Horror","Mystery","Sci-Fi","Thriller"],"rating":7.6,"votes":6600,"popularity":39,"language":"te","industry":"TFI","country":"IN","tags":["psychological","restaurant","mystery","horror","fantasy","sci-fi"],"overview":"Unusual people meet at a restaurant and their lives become connected through a mysterious story.","accent":"red"},{"id":10101,"title":"3 Idiots","year":2009,"genres":["Comedy","Drama","Family"],"rating":8.4,"votes":430000,"popularity":92,"language":"hi","industry":"Bollywood","country":"IN","tags":["college","engineering","friendship","education"],"overview":"Three engineering students challenge convention while chasing friendship and purpose.","accent":"green"},{"id":10102,"title":"Dangal","year":2016,"genres":["Biography","Drama","Sport","Family"],"rating":8.3,"votes":220000,"popularity":81,"language":"hi","industry":"Bollywood","country":"IN","tags":["wrestling","father","daughters","sport","family"],"overview":"A former wrestler trains his daughters to compete at the highest levels of wrestling.","accent":"green"},{"id":10103,"title":"Lagaan","year":2001,"genres":["Drama","Musical","Sport","History"],"rating":8.1,"votes":120000,"popularity":57,"language":"hi","industry":"Bollywood","country":"IN","tags":["cricket","colonial","village","freedom","music"],"overview":"Villagers challenge colonial rule through an impossible cricket match.","accent":"red"},{"id":10104,"title":"Andhadhun","year":2018,"genres":["Comedy","Crime","Mystery","Thriller"],"rating":8.2,"votes":115000,"popularity":67,"language":"hi","industry":"Bollywood","country":"IN","tags":["piano","murder","blindness","twist","crime"],"overview":"A pianist becomes entangled in a series of murders after witnessing something he should not have seen.","accent":"red"},{"id":10105,"title":"Queen","year":2013,"genres":["Comedy","Drama","Romance"],"rating":8.1,"votes":120000,"popularity":49,"language":"hi","industry":"Bollywood","country":"IN","tags":["self-discovery","travel","friendship","independence"],"overview":"A young woman travels alone and discovers a new sense of confidence after her wedding falls apart.","accent":"green"},{"id":10106,"title":"Gully Boy","year":2019,"genres":["Drama","Musical"],"rating":7.9,"votes":48000,"popularity":48,"language":"hi","industry":"Bollywood","country":"IN","tags":["rap","music","class","ambition","mumbai"],"overview":"A young man from Mumbai's streets finds his voice through rap and music.","accent":"red"},{"id":10107,"title":"Tumbbad","year":2018,"genres":["Fantasy","Horror","Drama"],"rating":8.2,"votes":42000,"popularity":45,"language":"hi","industry":"Bollywood","country":"IN","tags":["mythology","greed","horror","treasure","curse"],"overview":"A family's pursuit of a hidden fortune awakens an ancient supernatural horror.","accent":"red"},{"id":10108,"title":"Drishyam","year":2015,"genres":["Crime","Drama","Thriller","Mystery"],"rating":8.2,"votes":95000,"popularity":66,"language":"hi","industry":"Bollywood","country":"IN","tags":["family","police","cover-up","crime","thriller"],"overview":"A father goes to extraordinary lengths to protect his family after a life-changing incident.","accent":"red"},{"id":10109,"title":"Stree","year":2018,"genres":["Comedy","Horror"],"rating":7.5,"votes":45000,"popularity":52,"language":"hi","industry":"Bollywood","country":"IN","tags":["small-town","ghost","folklore","comedy"],"overview":"A town battles a mysterious female spirit through a mix of folklore and dark comedy.","accent":"green"},{"id":10110,"title":"Taare Zameen Par","year":2007,"genres":["Drama","Family"],"rating":8.3,"votes":210000,"popularity":44,"language":"hi","industry":"Bollywood","country":"IN","tags":["school","teacher","child","art","education"],"overview":"An art teacher helps a struggling child discover his strengths and confidence.","accent":"green"},{"id":10111,"title":"Zindagi Na Milegi Dobara","year":2011,"genres":["Comedy","Drama","Romance","Adventure"],"rating":8.2,"votes":200000,"popularity":54,"language":"hi","industry":"Bollywood","country":"IN","tags":["friends","road-trip","spain","self-discovery","life"],"overview":"Three friends take a road trip that changes how they see friendship, love and life.","accent":"green"},{"id":10112,"title":"Rockstar","year":2011,"genres":["Drama","Romance","Musical"],"rating":7.7,"votes":90000,"popularity":47,"language":"hi","industry":"Bollywood","country":"IN","tags":["music","artist","love","ambition","pain"],"overview":"An aspiring musician discovers that heartbreak and ambition shape his artistic identity.","accent":"red"},{"id":10113,"title":"Barfi!","year":2012,"genres":["Comedy","Drama","Romance"],"rating":8.1,"votes":90000,"popularity":42,"language":"hi","industry":"Bollywood","country":"IN","tags":["love","friendship","joy","relationships"],"overview":"A charming young man finds unexpected love and friendship despite social and personal challenges.","accent":"green"},{"id":10114,"title":"Kahaani","year":2012,"genres":["Mystery","Thriller","Drama"],"rating":8.1,"votes":80000,"popularity":43,"language":"hi","industry":"Bollywood","country":"IN","tags":["missing","kolkata","investigation","pregnancy","twist"],"overview":"A pregnant woman searches Kolkata for her missing husband while uncovering a larger conspiracy.","accent":"red"},{"id":10115,"title":"Uri: The Surgical Strike","year":2019,"genres":["Action","War","Drama","History"],"rating":8.2,"votes":80000,"popularity":63,"language":"hi","industry":"Bollywood","country":"IN","tags":["army","mission","war","patriotism","operation"],"overview":"Indian special forces prepare and execute a high-risk cross-border military mission.","accent":"red"},{"id":10116,"title":"12th Fail","year":2023,"genres":["Biography","Drama"],"rating":8.7,"votes":110000,"popularity":74,"language":"hi","industry":"Bollywood","country":"IN","tags":["education","civil-service","perseverance","small-town"],"overview":"A young man from a modest background perseveres through repeated setbacks while pursuing public service.","accent":"green"},{"id":10117,"title":"Laapataa Ladies","year":2024,"genres":["Comedy","Drama"],"rating":8.3,"votes":90000,"popularity":76,"language":"hi","industry":"Bollywood","country":"IN","tags":["village","identity","women","mistaken-identity","social"],"overview":"Two newly married women become separated on a train journey and set off unexpected events.","accent":"green"},{"id":10118,"title":"Piku","year":2015,"genres":["Comedy","Drama","Family"],"rating":7.6,"votes":42000,"popularity":40,"language":"hi","industry":"Bollywood","country":"IN","tags":["father","daughter","road-trip","family"],"overview":"A stubborn father and his daughter take a road trip that exposes the strengths and frustrations of family.","accent":"green"},{"id":10119,"title":"Swades","year":2004,"genres":["Drama","Family"],"rating":8.2,"votes":110000,"popularity":43,"language":"hi","industry":"Bollywood","country":"IN","tags":["village","return","education","social","india"],"overview":"A successful professional returns to India and reconnects with community and purpose.","accent":"green"},{"id":10201,"title":"Vikram","year":2022,"genres":["Action","Crime","Thriller"],"rating":8.3,"votes":85000,"popularity":80,"language":"ta","industry":"Kollywood","country":"IN","tags":["undercover","drugs","police","assassin","crime"],"overview":"A black-ops team uncovers a ruthless drug network while chasing a mysterious killer.","accent":"red"},{"id":10202,"title":"Kaithi","year":2019,"genres":["Action","Crime","Thriller"],"rating":8.4,"votes":65000,"popularity":58,"language":"ta","industry":"Kollywood","country":"IN","tags":["night","prisoner","police","drugs","survival"],"overview":"An ex-convict helps a police officer transport seized drugs during one dangerous night.","accent":"red"},{"id":10203,"title":"Super Deluxe","year":2019,"genres":["Comedy","Crime","Drama","Thriller"],"rating":8.3,"votes":30000,"popularity":37,"language":"ta","industry":"Kollywood","country":"IN","tags":["anthology","relationships","identity","crime","dark-comedy"],"overview":"Multiple lives collide through a series of unpredictable events involving love, crime and identity.","accent":"red"},{"id":10204,"title":"Soorarai Pottru","year":2020,"genres":["Biography","Drama"],"rating":8.6,"votes":110000,"popularity":72,"language":"ta","industry":"Kollywood","country":"IN","tags":["aviation","entrepreneur","dreams","business","barriers"],"overview":"An ambitious man fights entrenched systems to make affordable air travel possible.","accent":"green"},{"id":10205,"title":"Jai Bhim","year":2021,"genres":["Crime","Drama","History"],"rating":9,"votes":220000,"popularity":69,"language":"ta","industry":"Kollywood","country":"IN","tags":["law","justice","tribal","court","human-rights"],"overview":"A lawyer fights for justice for a marginalized family after a custodial disappearance.","accent":"red"},{"id":10206,"title":"96","year":2018,"genres":["Drama","Romance"],"rating":8.5,"votes":30000,"popularity":40,"language":"ta","industry":"Kollywood","country":"IN","tags":["school","reunion","memories","love","nostalgia"],"overview":"Two former classmates reconnect years later and revisit a love that never fully disappeared.","accent":"green"},{"id":10207,"title":"Ratsasan","year":2018,"genres":["Crime","Mystery","Thriller","Horror"],"rating":8.3,"votes":48000,"popularity":50,"language":"ta","industry":"Kollywood","country":"IN","tags":["serial-killer","police","investigation","psychology"],"overview":"A police officer hunts a calculated serial killer who leaves behind unsettling clues.","accent":"red"},{"id":10208,"title":"Asuran","year":2019,"genres":["Action","Drama"],"rating":8.5,"votes":32000,"popularity":45,"language":"ta","industry":"Kollywood","country":"IN","tags":["land","family","revenge","rural","caste"],"overview":"A farmer confronts violence and injustice to protect his family and land.","accent":"red"},{"id":10209,"title":"Vada Chennai","year":2018,"genres":["Crime","Drama"],"rating":8.4,"votes":26000,"popularity":39,"language":"ta","industry":"Kollywood","country":"IN","tags":["gangs","politics","chennai","betrayal","crime"],"overview":"A talented carrom player becomes entangled in decades of gang rivalries and political conflict.","accent":"red"},{"id":10210,"title":"Enthiran","year":2010,"genres":["Action","Sci-Fi","Romance"],"rating":7.1,"votes":40000,"popularity":57,"language":"ta","industry":"Kollywood","country":"IN","tags":["robot","science","technology","ai","romance"],"overview":"A scientist's humanoid creation develops emotions and becomes a threat to its maker.","accent":"green"},{"id":10211,"title":"Ponniyin Selvan: Part I","year":2022,"genres":["Action","Adventure","Drama","History"],"rating":7.6,"votes":44000,"popularity":71,"language":"ta","industry":"Kollywood","country":"IN","tags":["empire","royalty","war","chola","politics"],"overview":"A historical epic follows palace intrigue and rivalries around the Chola succession.","accent":"red"},{"id":10212,"title":"Maanaadu","year":2021,"genres":["Action","Thriller","Sci-Fi"],"rating":8,"votes":24000,"popularity":49,"language":"ta","industry":"Kollywood","country":"IN","tags":["time-loop","politics","action","thriller"],"overview":"A man becomes trapped in a repeating day while a political conspiracy unfolds around him.","accent":"red"},{"id":10213,"title":"Good Night","year":2023,"genres":["Comedy","Romance","Drama"],"rating":7.5,"votes":18000,"popularity":42,"language":"ta","industry":"Kollywood","country":"IN","tags":["snoring","marriage","humor","relationships"],"overview":"A couple's relationship is tested by an unusual sleep problem in this warm romantic comedy.","accent":"green"},{"id":10301,"title":"Drishyam","year":2013,"genres":["Crime","Drama","Thriller","Mystery"],"rating":8.6,"votes":55000,"popularity":45,"language":"ml","industry":"Mollywood","country":"IN","tags":["family","police","cover-up","crime"],"overview":"A family man takes extraordinary steps to protect his family from a police investigation.","accent":"red"},{"id":10302,"title":"Kumbalangi Nights","year":2019,"genres":["Drama","Family"],"rating":8.5,"votes":45000,"popularity":39,"language":"ml","industry":"Mollywood","country":"IN","tags":["brothers","family","village","relationships","healing"],"overview":"Four brothers learn to live together while finding unexpected connections with a neighboring family.","accent":"green"},{"id":10303,"title":"Premam","year":2015,"genres":["Comedy","Drama","Romance"],"rating":8.3,"votes":70000,"popularity":53,"language":"ml","industry":"Mollywood","country":"IN","tags":["college","love","growing-up","music"],"overview":"A young man's romantic life evolves through different stages of adulthood.","accent":"green"},{"id":10304,"title":"Bangalore Days","year":2014,"genres":["Comedy","Drama","Romance"],"rating":8.3,"votes":55000,"popularity":45,"language":"ml","industry":"Mollywood","country":"IN","tags":["cousins","city","friendship","dreams"],"overview":"Three cousins move to Bengaluru and discover new identities, friendships and love.","accent":"green"},{"id":10305,"title":"Minnal Murali","year":2021,"genres":["Action","Comedy","Fantasy","Family"],"rating":7.8,"votes":58000,"popularity":73,"language":"ml","industry":"Mollywood","country":"IN","tags":["superhero","village","powers","hero"],"overview":"A tailor gains superpowers and faces another empowered man in his hometown.","accent":"red"},{"id":10306,"title":"Joji","year":2021,"genres":["Crime","Drama","Thriller"],"rating":7.8,"votes":25000,"popularity":41,"language":"ml","industry":"Mollywood","country":"IN","tags":["family","greed","crime","psychology"],"overview":"A frustrated young man becomes consumed by greed and a dangerous plan inside his wealthy family.","accent":"red"},{"id":10307,"title":"Manjummel Boys","year":2024,"genres":["Adventure","Drama","Thriller"],"rating":8.2,"votes":47000,"popularity":78,"language":"ml","industry":"Mollywood","country":"IN","tags":["friends","cave","survival","rescue"],"overview":"A group of friends becomes trapped in a cave and must rely on loyalty and courage to survive.","accent":"green"},{"id":10308,"title":"Ayyappanum Koshiyum","year":2020,"genres":["Action","Drama","Thriller"],"rating":8,"votes":30000,"popularity":44,"language":"ml","industry":"Mollywood","country":"IN","tags":["ego","police","conflict","revenge"],"overview":"Two strong-willed men enter a tense confrontation driven by pride, power and personal history.","accent":"red"},{"id":10401,"title":"KGF: Chapter 1","year":2018,"genres":["Action","Crime","Drama"],"rating":8.2,"votes":110000,"popularity":76,"language":"kn","industry":"Sandalwood","country":"IN","tags":["gold","gangster","mine","ambition","mass"],"overview":"A ruthless man rises through a violent gold-mining underworld to fulfill a promise.","accent":"red"},{"id":10402,"title":"KGF: Chapter 2","year":2022,"genres":["Action","Crime","Drama"],"rating":8.3,"votes":105000,"popularity":86,"language":"kn","industry":"Sandalwood","country":"IN","tags":["gold","power","empire","revenge","gangster"],"overview":"Rocky consolidates his power while facing government forces and rival crime bosses.","accent":"red"},{"id":10403,"title":"Kantara","year":2022,"genres":["Action","Drama","Fantasy","History"],"rating":8.1,"votes":75000,"popularity":82,"language":"kn","industry":"Sandalwood","country":"IN","tags":["folklore","land","forest","ritual","village"],"overview":"A village protector is drawn into an ancient conflict connecting land, ritual and power.","accent":"green"},{"id":10404,"title":"777 Charlie","year":2022,"genres":["Adventure","Comedy","Drama","Family"],"rating":8.7,"votes":34000,"popularity":51,"language":"kn","industry":"Sandalwood","country":"IN","tags":["dog","friendship","travel","healing","family"],"overview":"A lonely man and a stray dog change each other's lives through an unexpected road journey.","accent":"green"},{"id":10405,"title":"U-Turn","year":2016,"genres":["Mystery","Thriller","Horror"],"rating":7.4,"votes":10000,"popularity":31,"language":"kn","industry":"Sandalwood","country":"IN","tags":["mystery","road","journalist","supernatural"],"overview":"A journalist investigates deaths linked to an unusual road ritual.","accent":"red"},{"id":10406,"title":"Lucia","year":2013,"genres":["Sci-Fi","Drama","Thriller","Romance"],"rating":7.5,"votes":14000,"popularity":30,"language":"kn","industry":"Sandalwood","country":"IN","tags":["dreams","reality","identity","nightlife"],"overview":"A man with insomnia begins taking pills that blur the line between dreams and reality.","accent":"green"},{"id":10501,"title":"Pather Panchali","year":1955,"genres":["Drama","Family"],"rating":8.5,"votes":38000,"popularity":33,"language":"bn","industry":"Bengali","country":"IN","tags":["family","village","childhood","humanism"],"overview":"A family living in rural Bengal faces everyday hardship and small moments of wonder.","accent":"green"},{"id":10502,"title":"Aparajito","year":1956,"genres":["Drama","Family"],"rating":8.4,"votes":21000,"popularity":26,"language":"bn","industry":"Bengali","country":"IN","tags":["coming-of-age","family","education","loss"],"overview":"A young boy grows up between rural roots, education and changing expectations of family.","accent":"green"},{"id":10503,"title":"Nayak","year":1966,"genres":["Drama"],"rating":8,"votes":12000,"popularity":22,"language":"bn","industry":"Bengali","country":"IN","tags":["actor","journey","cinema","identity"],"overview":"A famous actor reflects on success, fear and identity during a train journey.","accent":"green"},{"id":10601,"title":"Sairat","year":2016,"genres":["Drama","Romance","Musical"],"rating":8.2,"votes":48000,"popularity":45,"language":"mr","industry":"Marathi","country":"IN","tags":["love","caste","youth","rural"],"overview":"Two young lovers challenge social divisions and family expectations.","accent":"red"},{"id":10602,"title":"Court","year":2014,"genres":["Drama"],"rating":7.6,"votes":12000,"popularity":20,"language":"mr","industry":"Marathi","country":"IN","tags":["justice","law","society","courtroom"],"overview":"A courtroom case reveals tensions between law, bureaucracy and everyday life.","accent":"green"},{"id":10603,"title":"Natrang","year":2010,"genres":["Drama","Musical"],"rating":7.7,"votes":9000,"popularity":21,"language":"mr","industry":"Marathi","country":"IN","tags":["theatre","dance","art","identity"],"overview":"A village performer pursues his passion for theatre despite social pressure.","accent":"green"},{"id":10701,"title":"Punjab 1984","year":2014,"genres":["Drama","History"],"rating":8.4,"votes":11000,"popularity":25,"language":"pa","industry":"Punjabi","country":"IN","tags":["family","conflict","mother","history"],"overview":"A mother searches for her missing son during a turbulent period in Punjab's history.","accent":"green"},{"id":10702,"title":"Carry On Jatta","year":2012,"genres":["Comedy","Romance"],"rating":8.2,"votes":16000,"popularity":34,"language":"pa","industry":"Punjabi","country":"IN","tags":["marriage","mistaken-identity","family","humor"],"overview":"A chaotic marriage setup spirals through lies, misunderstandings and family comedy.","accent":"green"},{"id":10801,"title":"The Elephant Whisperers","year":2022,"genres":["Documentary","Family"],"rating":8.5,"votes":36000,"popularity":46,"language":"ta","industry":"South India","country":"IN","tags":["elephants","conservation","family","nature"],"overview":"A documentary follows caretakers who form a deep bond with an orphaned elephant.","accent":"green"},{"id":10802,"title":"Ramayana: The Legend of Prince Rama","year":1993,"genres":["Animation","Adventure","Fantasy"],"rating":8.6,"votes":11000,"popularity":29,"language":"hi","industry":"Indian Animation","country":"IN","tags":["ramayana","epic","animation","mythology"],"overview":"An animated adaptation of the Ramayana follows Prince Rama through exile and battle.","accent":"red"},{"id":10803,"title":"Delhi Safari","year":2012,"genres":["Animation","Adventure","Comedy","Family"],"rating":5.7,"votes":2500,"popularity":19,"language":"hi","industry":"Indian Animation","country":"IN","tags":["animals","conservation","journey","family"],"overview":"A group of animals travels to Delhi to protest the destruction of their habitat.","accent":"green"}],
-[{id:10901,title:"Sholay",year:1975,genres:["Action","Adventure","Comedy","Crime","Drama","Musical","Western"],rating:8.1,votes:64000,popularity:82,language:"hi",industry:"Bollywood",country:"IN",tags:["gabbar","jai","veeru","bandit","revenge","friendship","classic","curry-western"],overview:"A retired police officer recruits two outlaws to help capture a ruthless bandit who terrorizes a rural village.",accent:"red"},{id:10902,title:"Rock On!!",year:2008,genres:["Drama","Music"],rating:7.7,votes:24000,popularity:43,language:"hi",industry:"Bollywood",country:"IN",tags:["rock-band","friendship","music","reunion","dreams","mumbai"],overview:"Four friends reunite to relive the music, friendship and unfinished dreams of their former rock band.",accent:"green"}]
+  {
+    "id": 157336,
+    "title": "Interstellar",
+    "year": 2014,
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "rating": 8.5,
+    "votes": 41338,
+    "popularity": 72.1,
+    "language": "en",
+    "overview": "A group of explorers uses a newly discovered wormhole to travel beyond the limits of human spaceflight and search for a future for humanity.",
+    "tags": [
+      "space",
+      "wormhole",
+      "time",
+      "science",
+      "family",
+      "survival",
+      "epic"
+    ],
+    "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+    "backdrop": "/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 27205,
+    "title": "Inception",
+    "year": 2010,
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "rating": 8.4,
+    "votes": 40307,
+    "popularity": 51.5,
+    "language": "en",
+    "overview": "A skilled thief who steals secrets through dream-sharing technology is offered a chance to erase his past by planting an idea in a target's subconscious.",
+    "tags": [
+      "dreams",
+      "heist",
+      "mind-bending",
+      "technology",
+      "team",
+      "time"
+    ],
+    "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+    "backdrop": "/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 603,
+    "title": "The Matrix",
+    "year": 1999,
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "rating": 8.3,
+    "votes": 28851,
+    "popularity": 45.9,
+    "language": "en",
+    "overview": "A computer hacker discovers that reality is a constructed system and joins an underground resistance fighting the machines that control humanity.",
+    "tags": [
+      "simulation",
+      "hacker",
+      "technology",
+      "rebellion",
+      "future",
+      "mind-bending"
+    ],
+    "poster": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+    "backdrop": "/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 155,
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8.5,
+    "votes": 36855,
+    "popularity": 60.4,
+    "language": "en",
+    "overview": "Batman raises the stakes in his war on crime as a criminal mastermind pushes Gotham and its heroes toward chaos.",
+    "tags": [
+      "hero",
+      "villain",
+      "gotham",
+      "crime",
+      "chaos",
+      "vigilante"
+    ],
+    "poster": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "backdrop": "/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 680,
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Comedy"
+    ],
+    "rating": 8.5,
+    "votes": 30964,
+    "popularity": 46.3,
+    "language": "en",
+    "overview": "A collection of intertwined stories follows hitmen, a gangster's wife and a boxer through a darkly comic crime odyssey.",
+    "tags": [
+      "crime",
+      "dialogue",
+      "nonlinear",
+      "hitmen",
+      "gangsters",
+      "dark comedy"
+    ],
+    "poster": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+    "backdrop": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 238,
+    "title": "The Godfather",
+    "year": 1972,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.7,
+    "votes": 23654,
+    "popularity": 61.2,
+    "language": "en",
+    "overview": "The Corleone family saga begins as patriarch Vito survives an assassination attempt and his youngest son Michael is drawn into the family business.",
+    "tags": [
+      "mafia",
+      "family",
+      "power",
+      "crime",
+      "legacy",
+      "betrayal"
+    ],
+    "poster": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "backdrop": "/tSPT36ZKlP2WVHJLM4cQPLSzv3b.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 278,
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 8.7,
+    "votes": 31444,
+    "popularity": 62.6,
+    "language": "en",
+    "overview": "An imprisoned banker uses intelligence, patience and friendship to build a life shaped by hope inside Shawshank prison.",
+    "tags": [
+      "hope",
+      "friendship",
+      "prison",
+      "redemption",
+      "survival",
+      "human spirit"
+    ],
+    "poster": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+    "backdrop": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 550,
+    "title": "Fight Club",
+    "year": 1999,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 8.4,
+    "votes": 32954,
+    "popularity": 47.4,
+    "language": "en",
+    "overview": "An insomniac office worker and an eccentric soap salesman create an underground fight club that spirals into something much larger.",
+    "tags": [
+      "identity",
+      "anarchy",
+      "consumerism",
+      "psychology",
+      "dark",
+      "twist"
+    ],
+    "poster": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+    "backdrop": "/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 120,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ],
+    "rating": 8.5,
+    "votes": 28466,
+    "popularity": 51.2,
+    "language": "en",
+    "overview": "A young hobbit begins a journey to keep a powerful ring from the Dark Lord, joined by a fellowship of unlikely heroes.",
+    "tags": [
+      "fantasy",
+      "quest",
+      "friendship",
+      "magic",
+      "war",
+      "epic"
+    ],
+    "poster": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+    "backdrop": "/oiwc338EoBgS4sEI2ixAny4KQKg.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 122,
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ],
+    "rating": 8.5,
+    "votes": 27465,
+    "popularity": 63.8,
+    "language": "en",
+    "overview": "Middle-earth prepares for its final battle while Frodo and Sam make their way toward Mount Doom.",
+    "tags": [
+      "fantasy",
+      "quest",
+      "war",
+      "friendship",
+      "magic",
+      "epic"
+    ],
+    "poster": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+    "backdrop": "/ctiw6FZK4N36LmkjSklWEbuvlq9.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 13,
+    "title": "Forrest Gump",
+    "year": 1994,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8.5,
+    "votes": 30540,
+    "popularity": 36.1,
+    "language": "en",
+    "overview": "A gentle man lives an extraordinary life, touching history and inspiring everyone around him while searching for his true love.",
+    "tags": [
+      "life",
+      "friendship",
+      "love",
+      "history",
+      "journey",
+      "heartwarming"
+    ],
+    "poster": "/Cw4hIUIAmSYfK9QfaUW5igp9La.jpg",
+    "backdrop": "/66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 769,
+    "title": "GoodFellas",
+    "year": 1990,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.5,
+    "votes": 14802,
+    "popularity": 30,
+    "language": "en",
+    "overview": "A young man rises through a Brooklyn Mafia family and discovers the costs of loyalty, power and violence.",
+    "tags": [
+      "mafia",
+      "crime",
+      "rise",
+      "fall",
+      "betrayal",
+      "family"
+    ],
+    "poster": "/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg",
+    "backdrop": "/gILte6Zd7m1YneIr6MVhh30S9pr.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 129,
+    "title": "Spirited Away",
+    "year": 2001,
+    "genres": [
+      "Animation",
+      "Fantasy",
+      "Adventure"
+    ],
+    "rating": 8.5,
+    "votes": 18970,
+    "popularity": 38.9,
+    "language": "ja",
+    "overview": "A young girl enters a mysterious spirit world and must find courage and compassion to save her transformed family.",
+    "tags": [
+      "magic",
+      "spirits",
+      "family",
+      "coming of age",
+      "imagination",
+      "journey"
+    ],
+    "poster": "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+    "backdrop": "/6oaL4DP75yABrd5EbC4H2zq5ghc.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 372058,
+    "title": "Your Name.",
+    "year": 2016,
+    "genres": [
+      "Animation",
+      "Romance",
+      "Drama"
+    ],
+    "rating": 8.5,
+    "votes": 9922,
+    "popularity": 40.2,
+    "language": "ja",
+    "overview": "Two teenagers living separate lives mysteriously begin switching bodies and searching for the connection between them.",
+    "tags": [
+      "romance",
+      "time",
+      "identity",
+      "fate",
+      "teen",
+      "body swap"
+    ],
+    "poster": "/q719jXXEzOoYaps6babgKnONONX.jpg",
+    "backdrop": "/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 496243,
+    "title": "Parasite",
+    "year": 2019,
+    "genres": [
+      "Comedy",
+      "Thriller",
+      "Drama"
+    ],
+    "rating": 8.5,
+    "votes": 15867,
+    "popularity": 65.9,
+    "language": "ko",
+    "overview": "A struggling family slowly enters the lives of a wealthy household, setting off an unexpected chain of events.",
+    "tags": [
+      "class",
+      "family",
+      "social",
+      "dark comedy",
+      "twist",
+      "wealth"
+    ],
+    "poster": "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    "backdrop": "/ApiBzeaa95TNYliSbQ8pJv4Fje7.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 496,
+    "title": "The Green Mile",
+    "year": 1999,
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.6,
+    "votes": 15000,
+    "popularity": 34.2,
+    "language": "en",
+    "overview": "A prison guard encounters a gentle giant with a mysterious gift while working on death row.",
+    "tags": [
+      "supernatural",
+      "prison",
+      "empathy",
+      "justice",
+      "healing",
+      "emotion"
+    ],
+    "poster": "/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",
+    "backdrop": "/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 569094,
+    "title": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "genres": [
+      "Animation",
+      "Action",
+      "Sci-Fi"
+    ],
+    "rating": 8.8,
+    "votes": 1226,
+    "popularity": 95,
+    "language": "en",
+    "overview": "Miles Morales is catapulted across the multiverse and finds himself caught between Spider-People and a threat that could fracture reality.",
+    "tags": [
+      "multiverse",
+      "hero",
+      "animation",
+      "friendship",
+      "family",
+      "parallel worlds"
+    ],
+    "poster": "/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+    "backdrop": "/nGxUxi3PfXDRm7Vg95VBNgNM8yc.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 140607,
+    "title": "Star Wars: The Force Awakens",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 7.8,
+    "votes": 19000,
+    "popularity": 52,
+    "language": "en",
+    "overview": "A new threat rises decades after the fall of the Galactic Empire, bringing together a scavenger, a stormtrooper and a legendary hero.",
+    "tags": [
+      "space",
+      "hero",
+      "rebellion",
+      "adventure",
+      "galaxy",
+      "legacy"
+    ],
+    "poster": "/fYzpM9GmpBlIC893fNjoWCwE24H.jpg",
+    "backdrop": "/c2Ax8Rox5g6CneChwy1gmu4UbSb.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 102899,
+    "title": "Ant-Man",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 7,
+    "votes": 2063,
+    "popularity": 36.1,
+    "language": "en",
+    "overview": "A con artist must embrace the ability to shrink and become a hero while pulling off an impossible heist.",
+    "tags": [
+      "heist",
+      "hero",
+      "science",
+      "comedy",
+      "technology",
+      "team"
+    ],
+    "poster": "/D6e8RJf2qUstnfkTslTXNTUAlT.jpg",
+    "backdrop": "/kvXLZqY0Ngl1XSw7EaMQO0C1CCj.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 299534,
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 8.3,
+    "votes": 39000,
+    "popularity": 91,
+    "language": "en",
+    "overview": "After a devastating loss, the remaining Avengers unite for one final attempt to undo the damage and bring their world back.",
+    "tags": [
+      "hero",
+      "team",
+      "time",
+      "sacrifice",
+      "space",
+      "final battle"
+    ],
+    "poster": "/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+    "backdrop": "/7RyHsO4yDXtBv1zUU38J2a5L0hP.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 137113,
+    "title": "Edge of Tomorrow",
+    "year": 2014,
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "rating": 7.9,
+    "votes": 13000,
+    "popularity": 43,
+    "language": "en",
+    "overview": "A soldier caught in a time loop gains the ability to relive a battle and use each cycle to change the outcome.",
+    "tags": [
+      "time loop",
+      "aliens",
+      "military",
+      "strategy",
+      "survival",
+      "future"
+    ],
+    "poster": "/xjw5trHV7Mwo61P0kCTy8K1oK7Z.jpg",
+    "backdrop": "/c4aPtn8D02GfZt8R5P6s2y6NQ6L.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 438631,
+    "title": "Dune",
+    "year": 2021,
+    "genres": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "rating": 8,
+    "votes": 26000,
+    "popularity": 75,
+    "language": "en",
+    "overview": "A gifted young man is drawn into an interstellar struggle over a desert world and the most valuable resource in the universe.",
+    "tags": [
+      "desert",
+      "prophecy",
+      "space",
+      "politics",
+      "family",
+      "epic"
+    ],
+    "poster": "/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
+    "backdrop": "/jYEW5xZkZk2WTrdbMGAPJZ1A.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 872585,
+    "title": "Oppenheimer",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "History",
+      "Thriller"
+    ],
+    "rating": 8.1,
+    "votes": 30000,
+    "popularity": 88,
+    "language": "en",
+    "overview": "A brilliant scientist leads a secret wartime project that changes the course of history and transforms his own life.",
+    "tags": [
+      "science",
+      "history",
+      "genius",
+      "ethics",
+      "war",
+      "politics"
+    ],
+    "poster": "/8Gxv8gSFCU0XGDykoUeT5wW5B0F.jpg",
+    "backdrop": "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 346698,
+    "title": "Barbie",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Adventure",
+      "Fantasy"
+    ],
+    "rating": 7,
+    "votes": 22000,
+    "popularity": 98,
+    "language": "en",
+    "overview": "Barbie leaves her perfect world after an existential crisis sends her on a colorful journey into the real world.",
+    "tags": [
+      "identity",
+      "comedy",
+      "fantasy",
+      "self discovery",
+      "friendship",
+      "color"
+    ],
+    "poster": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+    "backdrop": "/yY76zq9XSu2jM7iZ9pQ1.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 361743,
+    "title": "Top Gun: Maverick",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "rating": 8.2,
+    "votes": 22000,
+    "popularity": 70,
+    "language": "en",
+    "overview": "An elite pilot returns to train a new generation for a mission that demands courage, skill and sacrifice.",
+    "tags": [
+      "aviation",
+      "mentor",
+      "military",
+      "legacy",
+      "adrenaline",
+      "team"
+    ],
+    "poster": "/62HCnUTziyWcpDaBO2i1i4R47Cx.jpg",
+    "backdrop": "/AaV1YIdWKUzZks1TIKfW0hwL1Oa.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 447365,
+    "title": "Guardians of the Galaxy Vol. 2",
+    "year": 2017,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
+    "rating": 7.6,
+    "votes": 20000,
+    "popularity": 47,
+    "language": "en",
+    "overview": "The Guardians struggle to keep their newfound family together while unraveling one of their leader's mysterious origins.",
+    "tags": [
+      "space",
+      "team",
+      "family",
+      "comedy",
+      "music",
+      "adventure"
+    ],
+    "poster": "/y4MBh0EjBlMuOzv9axsznkS5M2c.jpg",
+    "backdrop": "/aJn9XeesqsrSLKcHfHP4eIYjE.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 687163,
+    "title": "Project Hail Mary",
+    "year": 2026,
+    "genres": [
+      "Sci-Fi",
+      "Adventure"
+    ],
+    "rating": 8.6,
+    "votes": 8024,
+    "popularity": 107.1,
+    "language": "en",
+    "overview": "A science teacher wakes on a spaceship with no memory and must solve the mystery of a dying sun before time runs out.",
+    "tags": [
+      "space",
+      "science",
+      "survival",
+      "mystery",
+      "friendship",
+      "future"
+    ],
+    "poster": "/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
+    "backdrop": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 1084244,
+    "title": "Toy Story 5",
+    "year": 2026,
+    "genres": [
+      "Animation",
+      "Family",
+      "Comedy",
+      "Adventure"
+    ],
+    "rating": 8.3,
+    "votes": 2436,
+    "popularity": 179.6,
+    "language": "en",
+    "overview": "Buzz, Woody and Jessie face an all-new threat to playtime when Bonnie becomes obsessed with a new piece of technology.",
+    "tags": [
+      "animation",
+      "family",
+      "friendship",
+      "technology",
+      "comedy",
+      "adventure"
+    ],
+    "poster": "/sfQtVlIHljToOwYjhe21KPGzZWK.jpg",
+    "backdrop": "/4D1pdB27uph7J8HQzNf8QvvH9bn.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 1311031,
+    "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+    "year": 2025,
+    "genres": [
+      "Animation",
+      "Action",
+      "Fantasy"
+    ],
+    "rating": 8.8,
+    "votes": 2219,
+    "popularity": 61.6,
+    "language": "ja",
+    "overview": "The Demon Slayer Corps are drawn into the Infinity Castle for a desperate battle against the Upper Rank demons.",
+    "tags": [
+      "anime",
+      "demons",
+      "battle",
+      "fantasy",
+      "sword",
+      "final"
+    ],
+    "poster": "/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
+    "backdrop": "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+    "accent": "red"
+  },
+  {
+    "id": 1083381,
+    "title": "Backrooms",
+    "year": 2026,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "rating": 7,
+    "votes": 3528,
+    "popularity": 99.8,
+    "language": "en",
+    "overview": "A strange doorway appears beneath a furniture showroom, leading into a surreal space with rules no one understands.",
+    "tags": [
+      "horror",
+      "liminal",
+      "mystery",
+      "survival",
+      "weird",
+      "science"
+    ],
+    "poster": "/rhGx6E3qRNMgj3i5su2oukNHwIQ.jpg",
+    "backdrop": "/dqmMWNWfLnExDRpMtIMqI97GQFR.jpg",
+    "accent": "green"
+  },
+  {
+    "id": 10001,
+    "title": "RRR",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "History"
+    ],
+    "rating": 7.8,
+    "votes": 227000,
+    "popularity": 96,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "freedom",
+      "revolution",
+      "brotherhood",
+      "epic",
+      "british-era",
+      "hero"
+    ],
+    "overview": "Two legendary revolutionaries form a powerful friendship while taking on the British Raj.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5Y2E5ZjBmNTMzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10002,
+    "title": "Baahubali: The Beginning",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "rating": 8,
+    "votes": 115000,
+    "popularity": 88,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "kingdom",
+      "war",
+      "royalty",
+      "revenge",
+      "epic",
+      "mythic"
+    ],
+    "overview": "A young man discovers his royal heritage and is drawn into a struggle for a legendary kingdom.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYWVlMjVhZWYtNWViNC00ODFkLTk1MmItYjU1MDY5ZDdhMTU3XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10003,
+    "title": "Baahubali 2: The Conclusion",
+    "year": 2017,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "War"
+    ],
+    "rating": 8.2,
+    "votes": 120000,
+    "popularity": 91,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "kingdom",
+      "legacy",
+      "war",
+      "royalty",
+      "betrayal",
+      "epic"
+    ],
+    "overview": "A son uncovers the truth behind his father's fall and rises to reclaim his kingdom.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjNhM2UxMTEtYTgzNi00YmM0LWI5ZTAtMmZjYjM1NDIwMTgxXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10004,
+    "title": "Eega",
+    "year": 2012,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "rating": 7.7,
+    "votes": 31000,
+    "popularity": 44,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "revenge",
+      "reincarnation",
+      "fly",
+      "love",
+      "fantasy",
+      "invention"
+    ],
+    "overview": "A murdered lover returns as a housefly and engineers an extraordinary revenge.",
+    "accent": "red"
+  },
+  {
+    "id": 10005,
+    "title": "Rangasthalam",
+    "year": 2018,
+    "genres": [
+      "Action",
+      "Drama",
+      "History"
+    ],
+    "rating": 8.2,
+    "votes": 32000,
+    "popularity": 42,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "village",
+      "politics",
+      "brotherhood",
+      "rebellion",
+      "period"
+    ],
+    "overview": "A hearing-impaired villager confronts an entrenched local power structure.",
+    "accent": "red"
+  },
+  {
+    "id": 10006,
+    "title": "Jersey",
+    "year": 2019,
+    "genres": [
+      "Drama",
+      "Sport"
+    ],
+    "rating": 8.5,
+    "votes": 30000,
+    "popularity": 48,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "cricket",
+      "father",
+      "comeback",
+      "dreams",
+      "family"
+    ],
+    "overview": "A failed cricketer attempts a late-career comeback for himself and his son.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjc0MWFiYTMtNmYyOS00ODczLWEyMzItNzI4YjY0YjJjZGVjXkEyXkFqcGdeQXVyNzEwNjg3MjE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10007,
+    "title": "Sita Ramam",
+    "year": 2022,
+    "genres": [
+      "Drama",
+      "Romance",
+      "History",
+      "Mystery",
+      "Musical"
+    ],
+    "rating": 8.5,
+    "votes": 86000,
+    "popularity": 71,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "letters",
+      "love",
+      "war",
+      "kashmir",
+      "mystery",
+      "romance"
+    ],
+    "overview": "A mysterious letter sets a soldier and a woman on a romantic journey shaped by war.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2RjZDJhYzUtOTQ5Yy00OWM3LWE5OTctM2Y0YWVmNzAzODllXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10008,
+    "title": "C/o Kancharapalem",
+    "year": 2018,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Comedy"
+    ],
+    "rating": 8.8,
+    "votes": 12000,
+    "popularity": 27,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "love",
+      "small-town",
+      "relationships",
+      "anthology",
+      "human"
+    ],
+    "overview": "Eight intertwined stories explore love across different ages and lives in a small coastal town.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjg2YWM0YzUtODViNS00OWRkLWI0YmItNDdhODUwMjVhYjQ1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10009,
+    "title": "Agent Sai Srinivasa Athreya",
+    "year": 2019,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "rating": 8.3,
+    "votes": 18000,
+    "popularity": 36,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "detective",
+      "mystery",
+      "investigation",
+      "humor",
+      "crime"
+    ],
+    "overview": "An independent detective takes on an unusual missing-person case that becomes much darker.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM2MmJkZmUtZWQ0Yi00YWZjLWIyNTItNDQ2YzAwNmI4YjlmXkEyXkFqcGdeQXVyODMxNjkyNzQ@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10010,
+    "title": "Goodachari",
+    "year": 2018,
+    "genres": [
+      "Action",
+      "Thriller",
+      "Mystery"
+    ],
+    "rating": 7.8,
+    "votes": 16000,
+    "popularity": 40,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "spy",
+      "espionage",
+      "conspiracy",
+      "agent",
+      "action"
+    ],
+    "overview": "A young intelligence agent is framed and must uncover the conspiracy behind his mission.",
+    "accent": "red"
+  },
+  {
+    "id": 10011,
+    "title": "HIT: The First Case",
+    "year": 2020,
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller",
+      "Drama"
+    ],
+    "rating": 7.7,
+    "votes": 17000,
+    "popularity": 37,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "police",
+      "missing",
+      "investigation",
+      "trauma",
+      "crime"
+    ],
+    "overview": "A troubled police officer investigates a missing woman while battling his own past.",
+    "accent": "red"
+  },
+  {
+    "id": 10012,
+    "title": "Major",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Biography",
+      "Drama",
+      "History",
+      "War"
+    ],
+    "rating": 8.1,
+    "votes": 33000,
+    "popularity": 55,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "hero",
+      "army",
+      "mumbai",
+      "biography",
+      "sacrifice"
+    ],
+    "overview": "The life and bravery of an Indian Army officer are dramatized through his final mission.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjk4YTZjNWQtZWY3OC00NDkzLTlkY2UtZjk0NDkyZWFkMmVkXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10013,
+    "title": "Karthikeya 2",
+    "year": 2022,
+    "genres": [
+      "Adventure",
+      "Mystery",
+      "Fantasy",
+      "Thriller"
+    ],
+    "rating": 7.9,
+    "votes": 28000,
+    "popularity": 62,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "mythology",
+      "treasure",
+      "temple",
+      "adventure",
+      "mystery"
+    ],
+    "overview": "A doctor is pulled into a mythic treasure hunt connected to an ancient legend.",
+    "accent": "green"
+  },
+  {
+    "id": 10014,
+    "title": "Arjun Reddy",
+    "year": 2017,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8,
+    "votes": 62000,
+    "popularity": 58,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "love",
+      "medical",
+      "self-destruction",
+      "passion",
+      "relationships"
+    ],
+    "overview": "A brilliant but impulsive surgeon spirals after a painful breakup and struggles to regain control.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzFhMThiOWItMzRjNC00YzQwLTkyZWItYmJhNzgwYzY1ODI0XkEyXkFqcGdeQXVyNTcyMzkyODg@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10015,
+    "title": "Mahanati",
+    "year": 2018,
+    "genres": [
+      "Biography",
+      "Drama",
+      "History",
+      "Musical"
+    ],
+    "rating": 8.4,
+    "votes": 24000,
+    "popularity": 40,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "actress",
+      "biography",
+      "savitri",
+      "cinema",
+      "classic"
+    ],
+    "overview": "The rise, triumphs and struggles of iconic actress Savitri are told through a cinematic biography.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMmNkN2ZkODgtZTU1Zi00MDg3LWE1MGQtM2ZmY2Y3ODcwZmE5XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10016,
+    "title": "Pushpa: The Rise",
+    "year": 2021,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 7.6,
+    "votes": 95000,
+    "popularity": 84,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "smuggling",
+      "forest",
+      "labour",
+      "ambition",
+      "crime"
+    ],
+    "overview": "A labourer rises through a dangerous red-sandalwood smuggling network.",
+    "accent": "red"
+  },
+  {
+    "id": 10017,
+    "title": "Pushpa 2: The Rule",
+    "year": 2024,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 7,
+    "votes": 95000,
+    "popularity": 98,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "smuggling",
+      "power",
+      "politics",
+      "crime",
+      "mass"
+    ],
+    "overview": "Pushpa faces powerful rivals as his influence and ambitions expand.",
+    "accent": "red"
+  },
+  {
+    "id": 10018,
+    "title": "Ala Vaikunthapurramuloo",
+    "year": 2020,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 7.3,
+    "votes": 38000,
+    "popularity": 66,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "family",
+      "identity",
+      "class",
+      "romance",
+      "music"
+    ],
+    "overview": "A family identity secret changes the life of a young man seeking his father's approval.",
+    "accent": "green"
+  },
+  {
+    "id": 10019,
+    "title": "Athadu",
+    "year": 2005,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8.1,
+    "votes": 19000,
+    "popularity": 33,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "assassin",
+      "identity",
+      "family",
+      "crime",
+      "humor"
+    ],
+    "overview": "A professional killer takes refuge with a rural family after being framed for murder.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDU4MDQ3YWItY2ViMy00NTM5LTg0NjQtMWIxN2ExZmU0ZTE0XkEyXkFqcGdeQXVyMjMyNjkwMTY@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10020,
+    "title": "Pokiri",
+    "year": 2006,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8,
+    "votes": 23000,
+    "popularity": 51,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "undercover",
+      "gangster",
+      "police",
+      "romance",
+      "action"
+    ],
+    "overview": "A mysterious street fighter becomes entangled in a dangerous crime network.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOWNkMWQ3MDEtYjQ3Zi00Y2NhLWE1NzYtZGJkM2NlYWY3OWFmXkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10021,
+    "title": "Oopiri",
+    "year": 2016,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8,
+    "votes": 13000,
+    "popularity": 30,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "friendship",
+      "disability",
+      "travel",
+      "family",
+      "life"
+    ],
+    "overview": "An unlikely friendship changes two men as they travel beyond their comfort zones.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMWVjZDIwN2EtNjVhZC00MmMxLTkzYmEtZTFhNzdkYzg0YmZkXkEyXkFqcGdeQXVyNTUzMTc1NjE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10022,
+    "title": "Pelli Choopulu",
+    "year": 2016,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "rating": 8.2,
+    "votes": 14000,
+    "popularity": 34,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "startup",
+      "food",
+      "entrepreneur",
+      "love",
+      "youth"
+    ],
+    "overview": "Two young people turn an accidental meeting into a shared entrepreneurial journey.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BN2M0ODhlNzAtYTNjMy00MjE0LWI3YjEtYTRmMjAwNmFlOTNlXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10023,
+    "title": "Ee Nagaraniki Emaindi",
+    "year": 2018,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.1,
+    "votes": 12000,
+    "popularity": 35,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "friends",
+      "film",
+      "beach",
+      "youth",
+      "dreams"
+    ],
+    "overview": "Four friends reunite for a filmmaking adventure that tests their friendship.",
+    "accent": "green"
+  },
+  {
+    "id": 10024,
+    "title": "Jathi Ratnalu",
+    "year": 2021,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 7.9,
+    "votes": 22000,
+    "popularity": 72,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "friendship",
+      "politics",
+      "mistake",
+      "chaos",
+      "humor"
+    ],
+    "overview": "Three lovable friends stumble into trouble after moving to the city.",
+    "accent": "green"
+  },
+  {
+    "id": 10025,
+    "title": "Mathu Vadalara",
+    "year": 2019,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Thriller",
+      "Mystery"
+    ],
+    "rating": 8.2,
+    "votes": 13000,
+    "popularity": 38,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "delivery",
+      "crime",
+      "twist",
+      "dark-comedy",
+      "mistake"
+    ],
+    "overview": "A delivery worker and his friend become trapped in a chain of criminal misunderstandings.",
+    "accent": "red"
+  },
+  {
+    "id": 10026,
+    "title": "Brochevarevarura",
+    "year": 2019,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 8,
+    "votes": 8000,
+    "popularity": 29,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "friends",
+      "college",
+      "kidnapping",
+      "mistake",
+      "heist"
+    ],
+    "overview": "Three underachieving friends agree to help with a fake kidnapping and trigger real danger.",
+    "accent": "green"
+  },
+  {
+    "id": 10027,
+    "title": "Kushi",
+    "year": 2001,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "rating": 8,
+    "votes": 9000,
+    "popularity": 28,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "college",
+      "love",
+      "family",
+      "friendship",
+      "romance"
+    ],
+    "overview": "Two young people fall in love while family pride and misunderstandings keep them apart.",
+    "accent": "green"
+  },
+  {
+    "id": 10028,
+    "title": "Bommarillu",
+    "year": 2006,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.2,
+    "votes": 13000,
+    "popularity": 35,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "family",
+      "father",
+      "love",
+      "marriage",
+      "youth"
+    ],
+    "overview": "A young man struggles to balance his own choices with an overprotective father's expectations.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMGE5YzNlMDAtZjMxYS00NDkyLTk3YWMtY2Y3ODJjOTJkM2MyXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10029,
+    "title": "Manam",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Fantasy",
+      "Family"
+    ],
+    "rating": 8,
+    "votes": 12000,
+    "popularity": 31,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "rebirth",
+      "family",
+      "love",
+      "destiny",
+      "generations"
+    ],
+    "overview": "A family discovers a mysterious connection that links their lives across generations.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjlmMDUzMzQtYzY4OC00NGYwLWI1MmItMGIyYTk0NDFlMWZmXkEyXkFqcGdeQXVyOTk3NTc2MzE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10030,
+    "title": "Sye Raa Narasimha Reddy",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "Drama",
+      "History",
+      "War"
+    ],
+    "rating": 7.3,
+    "votes": 27000,
+    "popularity": 58,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "revolt",
+      "freedom",
+      "kingdom",
+      "war",
+      "history"
+    ],
+    "overview": "A regional ruler leads an early resistance against British colonial power.",
+    "accent": "red"
+  },
+  {
+    "id": 10031,
+    "title": "Dasara",
+    "year": 2023,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "rating": 7.6,
+    "votes": 24000,
+    "popularity": 68,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "coal",
+      "friendship",
+      "village",
+      "revenge",
+      "class"
+    ],
+    "overview": "A friendship story turns into a violent conflict in a mining village marked by class divisions.",
+    "accent": "red"
+  },
+  {
+    "id": 10032,
+    "title": "Hi Nanna",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Family"
+    ],
+    "rating": 8.2,
+    "votes": 30000,
+    "popularity": 70,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "father",
+      "daughter",
+      "memory",
+      "love",
+      "family"
+    ],
+    "overview": "A single father and his daughter are drawn into a tender story about love and memory.",
+    "accent": "green"
+  },
+  {
+    "id": 10033,
+    "title": "Virupaksha",
+    "year": 2023,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller",
+      "Drama"
+    ],
+    "rating": 7.2,
+    "votes": 21000,
+    "popularity": 67,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "village",
+      "curse",
+      "occult",
+      "mystery",
+      "supernatural"
+    ],
+    "overview": "A mysterious series of deaths leads a young man into a village haunted by an ancient curse.",
+    "accent": "red"
+  },
+  {
+    "id": 10034,
+    "title": "Masooda",
+    "year": 2022,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "rating": 7.3,
+    "votes": 9000,
+    "popularity": 41,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "possession",
+      "family",
+      "occult",
+      "horror",
+      "investigation"
+    ],
+    "overview": "A family is drawn into a terrifying supernatural mystery after a disturbing possession.",
+    "accent": "red"
+  },
+  {
+    "id": 10035,
+    "title": "Hanu-Man",
+    "year": 2024,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Family"
+    ],
+    "rating": 7.8,
+    "votes": 50000,
+    "popularity": 86,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "superhero",
+      "mythology",
+      "village",
+      "powers",
+      "hero"
+    ],
+    "overview": "A small-town man gains extraordinary powers and discovers a larger mythic destiny.",
+    "accent": "green"
+  },
+  {
+    "id": 10036,
+    "title": "Kalki 2898 AD",
+    "year": 2024,
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Fantasy",
+      "Drama"
+    ],
+    "rating": 7,
+    "votes": 95000,
+    "popularity": 93,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "future",
+      "mythology",
+      "dystopia",
+      "technology",
+      "epic"
+    ],
+    "overview": "In a dystopian future, a group of unlikely heroes becomes part of an ancient prophecy.",
+    "accent": "red"
+  },
+  {
+    "id": 10037,
+    "title": "Salaar: Part 1 – Ceasefire",
+    "year": 2023,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "rating": 6.5,
+    "votes": 61000,
+    "popularity": 88,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "friendship",
+      "kingdom",
+      "violence",
+      "crime",
+      "rebel"
+    ],
+    "overview": "Two friends are pulled into a violent succession struggle within a brutal fictional kingdom.",
+    "accent": "red"
+  },
+  {
+    "id": 10038,
+    "title": "Devara: Part 1",
+    "year": 2024,
+    "genres": [
+      "Action",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 6,
+    "votes": 42000,
+    "popularity": 82,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "coast",
+      "warrior",
+      "smuggling",
+      "family",
+      "sea"
+    ],
+    "overview": "A coastal community is caught in a high-stakes conflict led by a fearless protector.",
+    "accent": "red"
+  },
+  {
+    "id": 10039,
+    "title": "Evaru",
+    "year": 2019,
+    "genres": [
+      "Mystery",
+      "Crime",
+      "Thriller",
+      "Drama"
+    ],
+    "rating": 8.2,
+    "votes": 18000,
+    "popularity": 39,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "murder",
+      "investigation",
+      "twist",
+      "police",
+      "conspiracy"
+    ],
+    "overview": "A police officer reopens a murder case whose hidden layers challenge every assumption.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmNjMTE0ZjctYTc5MS00M2NmLThmNmItYmFlYWY1MmYzZWE4XkEyXkFqcGdeQXVyNDUyMzYyNDc@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10040,
+    "title": "Colour Photo",
+    "year": 2020,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8,
+    "votes": 8000,
+    "popularity": 24,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "love",
+      "caste",
+      "colorism",
+      "youth",
+      "social"
+    ],
+    "overview": "A young couple fights social prejudice and family pressure to stay together.",
+    "accent": "green"
+  },
+  {
+    "id": 10041,
+    "title": "DJ Tillu",
+    "year": 2022,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Romance"
+    ],
+    "rating": 7.1,
+    "votes": 13000,
+    "popularity": 61,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "chaos",
+      "crime",
+      "love",
+      "city",
+      "humor"
+    ],
+    "overview": "A carefree DJ gets caught in a chaotic criminal mess after meeting a mysterious woman.",
+    "accent": "red"
+  },
+  {
+    "id": 10042,
+    "title": "Jalsa",
+    "year": 2008,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 8,
+    "votes": 14000,
+    "popularity": 32,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "politics",
+      "police",
+      "crime",
+      "romance",
+      "action"
+    ],
+    "overview": "A rebellious man gets caught between a political conspiracy and a determined police officer.",
+    "accent": "red"
+  },
+  {
+    "id": 10043,
+    "title": "Khaleja",
+    "year": 2010,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy",
+      "Drama"
+    ],
+    "rating": 7.6,
+    "votes": 13000,
+    "popularity": 34,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "village",
+      "destiny",
+      "humor",
+      "hero",
+      "mystery"
+    ],
+    "overview": "A cab driver becomes the unexpected hero of a village suffering from a mysterious crisis.",
+    "accent": "green"
+  },
+  {
+    "id": 10044,
+    "title": "Magadheera",
+    "year": 2009,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Romance"
+    ],
+    "rating": 7.7,
+    "votes": 35000,
+    "popularity": 54,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "rebirth",
+      "war",
+      "kingdom",
+      "romance",
+      "hero"
+    ],
+    "overview": "A modern man begins recovering memories of a warrior from a previous life.",
+    "accent": "red"
+  },
+  {
+    "id": 10045,
+    "title": "Ye Maaya Chesave",
+    "year": 2010,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Musical"
+    ],
+    "rating": 7.8,
+    "votes": 12000,
+    "popularity": 36,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "love",
+      "filmmaker",
+      "music",
+      "youth",
+      "relationships"
+    ],
+    "overview": "A young aspiring filmmaker falls for a woman whose family and beliefs complicate their relationship.",
+    "accent": "green"
+  },
+  {
+    "id": 10046,
+    "title": "Fidaa",
+    "year": 2017,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Comedy"
+    ],
+    "rating": 7.4,
+    "votes": 10000,
+    "popularity": 42,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "village",
+      "love",
+      "family",
+      "culture",
+      "romance"
+    ],
+    "overview": "A city-raised doctor and a strong-willed village woman fall in love despite cultural differences.",
+    "accent": "green"
+  },
+  {
+    "id": 10047,
+    "title": "Middle Class Melodies",
+    "year": 2020,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Family"
+    ],
+    "rating": 7.4,
+    "votes": 6000,
+    "popularity": 23,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "food",
+      "family",
+      "small-town",
+      "ambition"
+    ],
+    "overview": "A small-town cook dreams of running a tiffin centre while navigating family expectations.",
+    "accent": "green"
+  },
+  {
+    "id": 10048,
+    "title": "Patas",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime"
+    ],
+    "rating": 7.3,
+    "votes": 7000,
+    "popularity": 28,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "police",
+      "corruption",
+      "humor",
+      "crime"
+    ],
+    "overview": "A corrupt police officer gets a chance to transform himself while taking down a criminal network.",
+    "accent": "red"
+  },
+  {
+    "id": 10049,
+    "title": "Hit: The Second Case",
+    "year": 2022,
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "rating": 7.5,
+    "votes": 15000,
+    "popularity": 55,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "detective",
+      "serial-killer",
+      "investigation",
+      "crime"
+    ],
+    "overview": "A police officer faces a disturbing serial-killer case that pushes his investigative skills to the limit.",
+    "accent": "red"
+  },
+  {
+    "id": 10050,
+    "title": "Awe!",
+    "year": 2018,
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Mystery",
+      "Sci-Fi",
+      "Thriller"
+    ],
+    "rating": 7.6,
+    "votes": 6600,
+    "popularity": 39,
+    "language": "te",
+    "industry": "TFI",
+    "country": "IN",
+    "tags": [
+      "psychological",
+      "restaurant",
+      "mystery",
+      "horror",
+      "fantasy",
+      "sci-fi"
+    ],
+    "overview": "Unusual people meet at a restaurant and their lives become connected through a mysterious story.",
+    "accent": "red"
+  },
+  {
+    "id": 10101,
+    "title": "3 Idiots",
+    "year": 2009,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.4,
+    "votes": 430000,
+    "popularity": 92,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "college",
+      "engineering",
+      "friendship",
+      "education"
+    ],
+    "overview": "Three engineering students challenge convention while chasing friendship and purpose.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTkyOGVjMGEtNmQzZi00NzFlLTlhOWQtODYyMDc2ZGJmYzFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10102,
+    "title": "Dangal",
+    "year": 2016,
+    "genres": [
+      "Biography",
+      "Drama",
+      "Sport",
+      "Family"
+    ],
+    "rating": 8.3,
+    "votes": 220000,
+    "popularity": 81,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "wrestling",
+      "father",
+      "daughters",
+      "sport",
+      "family"
+    ],
+    "overview": "A former wrestler trains his daughters to compete at the highest levels of wrestling.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10103,
+    "title": "Lagaan",
+    "year": 2001,
+    "genres": [
+      "Drama",
+      "Musical",
+      "Sport",
+      "History"
+    ],
+    "rating": 8.1,
+    "votes": 120000,
+    "popularity": 57,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "cricket",
+      "colonial",
+      "village",
+      "freedom",
+      "music"
+    ],
+    "overview": "Villagers challenge colonial rule through an impossible cricket match.",
+    "accent": "red"
+  },
+  {
+    "id": 10104,
+    "title": "Andhadhun",
+    "year": 2018,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "rating": 8.2,
+    "votes": 115000,
+    "popularity": 67,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "piano",
+      "murder",
+      "blindness",
+      "twist",
+      "crime"
+    ],
+    "overview": "A pianist becomes entangled in a series of murders after witnessing something he should not have seen.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTkwYTQ2ZWItZjQ0Ny00NmU0LWEzYzktZmNlZTU4ZTE1OWI1XkEyXkFqcGdeQXVyNzU3Nzk4MDQ@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10105,
+    "title": "Queen",
+    "year": 2013,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8.1,
+    "votes": 120000,
+    "popularity": 49,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "self-discovery",
+      "travel",
+      "friendship",
+      "independence"
+    ],
+    "overview": "A young woman travels alone and discovers a new sense of confidence after her wedding falls apart.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWYyOWRlOWItZWM5MS00ZjJkLWI0MTUtYTE3NTI5MDAwYjgyXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10106,
+    "title": "Gully Boy",
+    "year": 2019,
+    "genres": [
+      "Drama",
+      "Musical"
+    ],
+    "rating": 7.9,
+    "votes": 48000,
+    "popularity": 48,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "rap",
+      "music",
+      "class",
+      "ambition",
+      "mumbai"
+    ],
+    "overview": "A young man from Mumbai's streets finds his voice through rap and music.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDkzMTQ1YTMtMWY4Ny00MzExLTkzYzEtNzZhOTczNzU2NTU1XkEyXkFqcGdeQXVyODY3NjMyMDU@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10107,
+    "title": "Tumbbad",
+    "year": 2018,
+    "genres": [
+      "Fantasy",
+      "Horror",
+      "Drama"
+    ],
+    "rating": 8.2,
+    "votes": 42000,
+    "popularity": 45,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "mythology",
+      "greed",
+      "horror",
+      "treasure",
+      "curse"
+    ],
+    "overview": "A family's pursuit of a hidden fortune awakens an ancient supernatural horror.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmQxNmU4ZjgtYzE5Mi00ZDlhLTlhOTctMzJkNjk2ZGUyZGEwXkEyXkFqcGdeQXVyMzgxMDA0Nzk@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10108,
+    "title": "Drishyam",
+    "year": 2015,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "rating": 8.2,
+    "votes": 95000,
+    "popularity": 66,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "family",
+      "police",
+      "cover-up",
+      "crime",
+      "thriller"
+    ],
+    "overview": "A father goes to extraordinary lengths to protect his family after a life-changing incident.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmJhZmJlYTItZmZlNy00MGY0LTg0ZGMtNWFkYWU5NTA1YTNhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10109,
+    "title": "Stree",
+    "year": 2018,
+    "genres": [
+      "Comedy",
+      "Horror"
+    ],
+    "rating": 7.5,
+    "votes": 45000,
+    "popularity": 52,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "small-town",
+      "ghost",
+      "folklore",
+      "comedy"
+    ],
+    "overview": "A town battles a mysterious female spirit through a mix of folklore and dark comedy.",
+    "accent": "green"
+  },
+  {
+    "id": 10110,
+    "title": "Taare Zameen Par",
+    "year": 2007,
+    "genres": [
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.3,
+    "votes": 210000,
+    "popularity": 44,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "school",
+      "teacher",
+      "child",
+      "art",
+      "education"
+    ],
+    "overview": "An art teacher helps a struggling child discover his strengths and confidence.",
+    "accent": "green"
+  },
+  {
+    "id": 10111,
+    "title": "Zindagi Na Milegi Dobara",
+    "year": 2011,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Adventure"
+    ],
+    "rating": 8.2,
+    "votes": 200000,
+    "popularity": 54,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "friends",
+      "road-trip",
+      "spain",
+      "self-discovery",
+      "life"
+    ],
+    "overview": "Three friends take a road trip that changes how they see friendship, love and life.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZGFmMjM5OWMtZTRiNC00ODhlLThlYTItYTcyZDMyYmMyYjFjXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10112,
+    "title": "Rockstar",
+    "year": 2011,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Musical"
+    ],
+    "rating": 7.7,
+    "votes": 90000,
+    "popularity": 47,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "music",
+      "artist",
+      "love",
+      "ambition",
+      "pain"
+    ],
+    "overview": "An aspiring musician discovers that heartbreak and ambition shape his artistic identity.",
+    "accent": "red"
+  },
+  {
+    "id": 10113,
+    "title": "Barfi!",
+    "year": 2012,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8.1,
+    "votes": 90000,
+    "popularity": 42,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "love",
+      "friendship",
+      "joy",
+      "relationships"
+    ],
+    "overview": "A charming young man finds unexpected love and friendship despite social and personal challenges.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQzMTEyODY2Ml5BMl5BanBnXkFtZTgwMjA0MDUyMjE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10114,
+    "title": "Kahaani",
+    "year": 2012,
+    "genres": [
+      "Mystery",
+      "Thriller",
+      "Drama"
+    ],
+    "rating": 8.1,
+    "votes": 80000,
+    "popularity": 43,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "missing",
+      "kolkata",
+      "investigation",
+      "pregnancy",
+      "twist"
+    ],
+    "overview": "A pregnant woman searches Kolkata for her missing husband while uncovering a larger conspiracy.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ1NDI0NzkyOF5BMl5BanBnXkFtZTcwNzAyNzE2Nw@@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10115,
+    "title": "Uri: The Surgical Strike",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "War",
+      "Drama",
+      "History"
+    ],
+    "rating": 8.2,
+    "votes": 80000,
+    "popularity": 63,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "army",
+      "mission",
+      "war",
+      "patriotism",
+      "operation"
+    ],
+    "overview": "Indian special forces prepare and execute a high-risk cross-border military mission.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMWU4ZjNlNTQtOGE2MS00NDI0LWFlYjMtMmY3ZWVkMjJkNGRmXkEyXkFqcGdeQXVyNjE1OTQ0NjA@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10116,
+    "title": "12th Fail",
+    "year": 2023,
+    "genres": [
+      "Biography",
+      "Drama"
+    ],
+    "rating": 8.7,
+    "votes": 110000,
+    "popularity": 74,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "education",
+      "civil-service",
+      "perseverance",
+      "small-town"
+    ],
+    "overview": "A young man from a modest background perseveres through repeated setbacks while pursuing public service.",
+    "accent": "green"
+  },
+  {
+    "id": 10117,
+    "title": "Laapataa Ladies",
+    "year": 2024,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.3,
+    "votes": 90000,
+    "popularity": 76,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "village",
+      "identity",
+      "women",
+      "mistaken-identity",
+      "social"
+    ],
+    "overview": "Two newly married women become separated on a train journey and set off unexpected events.",
+    "accent": "green"
+  },
+  {
+    "id": 10118,
+    "title": "Piku",
+    "year": 2015,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Family"
+    ],
+    "rating": 7.6,
+    "votes": 42000,
+    "popularity": 40,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "father",
+      "daughter",
+      "road-trip",
+      "family"
+    ],
+    "overview": "A stubborn father and his daughter take a road trip that exposes the strengths and frustrations of family.",
+    "accent": "green"
+  },
+  {
+    "id": 10119,
+    "title": "Swades",
+    "year": 2004,
+    "genres": [
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.2,
+    "votes": 110000,
+    "popularity": 43,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "village",
+      "return",
+      "education",
+      "social",
+      "india"
+    ],
+    "overview": "A successful professional returns to India and reconnects with community and purpose.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BODY2NGYxZTEtMzBiOS00Zjg2LWEyZjYtNjQ5Mjg1MzQ5N2FlXkEyXkFqcGdeQXVyNTE0MDc0NTM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10201,
+    "title": "Vikram",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8.3,
+    "votes": 85000,
+    "popularity": 80,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "undercover",
+      "drugs",
+      "police",
+      "assassin",
+      "crime"
+    ],
+    "overview": "A black-ops team uncovers a ruthless drug network while chasing a mysterious killer.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDRiOWNjYjUtMDI0ZC00MDMyLTkwZDItNTU5NWQ1NjEyNGYxXkEyXkFqcGdeQXVyMTIyNzY0NTMx._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10202,
+    "title": "Kaithi",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8.4,
+    "votes": 65000,
+    "popularity": 58,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "night",
+      "prisoner",
+      "police",
+      "drugs",
+      "survival"
+    ],
+    "overview": "An ex-convict helps a police officer transport seized drugs during one dangerous night.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZTVlNGY2YTEtNTlmYy00NzY0LWE1NWUtOGJiNTgxZGM4ZmMzXkEyXkFqcGdeQXVyMTY1MzAyNjU4._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10203,
+    "title": "Super Deluxe",
+    "year": 2019,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 8.3,
+    "votes": 30000,
+    "popularity": 37,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "anthology",
+      "relationships",
+      "identity",
+      "crime",
+      "dark-comedy"
+    ],
+    "overview": "Multiple lives collide through a series of unpredictable events involving love, crime and identity.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjNkNDEzNDctYTk0Mi00NzNlLWEyZGItMmYzMGE4MzcyYzU3XkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10204,
+    "title": "Soorarai Pottru",
+    "year": 2020,
+    "genres": [
+      "Biography",
+      "Drama"
+    ],
+    "rating": 8.6,
+    "votes": 110000,
+    "popularity": 72,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "aviation",
+      "entrepreneur",
+      "dreams",
+      "business",
+      "barriers"
+    ],
+    "overview": "An ambitious man fights entrenched systems to make affordable air travel possible.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGVjYmM0ZWEtNTFjNi00MWZjLTk3OTItMmFjMDAzZWU1ZDVjXkEyXkFqcGdeQXVyMTI2Mzk1ODg0._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10205,
+    "title": "Jai Bhim",
+    "year": 2021,
+    "genres": [
+      "Crime",
+      "Drama",
+      "History"
+    ],
+    "rating": 9,
+    "votes": 220000,
+    "popularity": 69,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "law",
+      "justice",
+      "tribal",
+      "court",
+      "human-rights"
+    ],
+    "overview": "A lawyer fights for justice for a marginalized family after a custodial disappearance.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNzFkM2FhMzQtYjUwZi00N2Y3LWFkZWItMmZmMjQxNGQwZmNhXkEyXkFqcGdeQXVyODEyNjEwMDk@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10206,
+    "title": "96",
+    "year": 2018,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8.5,
+    "votes": 30000,
+    "popularity": 40,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "school",
+      "reunion",
+      "memories",
+      "love",
+      "nostalgia"
+    ],
+    "overview": "Two former classmates reconnect years later and revisit a love that never fully disappeared.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOGM2YzI4ZjItYjA4Mi00ZDhiLTk1OGEtZmEzN2U3ODNkNTEzXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10207,
+    "title": "Ratsasan",
+    "year": 2018,
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller",
+      "Horror"
+    ],
+    "rating": 8.3,
+    "votes": 48000,
+    "popularity": 50,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "serial-killer",
+      "police",
+      "investigation",
+      "psychology"
+    ],
+    "overview": "A police officer hunts a calculated serial killer who leaves behind unsettling clues.",
+    "accent": "red"
+  },
+  {
+    "id": 10208,
+    "title": "Asuran",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "rating": 8.5,
+    "votes": 32000,
+    "popularity": 45,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "land",
+      "family",
+      "revenge",
+      "rural",
+      "caste"
+    ],
+    "overview": "A farmer confronts violence and injustice to protect his family and land.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZTgzNTRkYWEtYWJmOC00NjMzLWFlMWEtMWRiNmFlMjBiOTI1XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10209,
+    "title": "Vada Chennai",
+    "year": 2018,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "rating": 8.4,
+    "votes": 26000,
+    "popularity": 39,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "gangs",
+      "politics",
+      "chennai",
+      "betrayal",
+      "crime"
+    ],
+    "overview": "A talented carrom player becomes entangled in decades of gang rivalries and political conflict.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZjhkYTU2YTgtM2ZkYS00MzJkLWE2ZjAtZjY5MTI4OWE2YmZjXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10210,
+    "title": "Enthiran",
+    "year": 2010,
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Romance"
+    ],
+    "rating": 7.1,
+    "votes": 40000,
+    "popularity": 57,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "robot",
+      "science",
+      "technology",
+      "ai",
+      "romance"
+    ],
+    "overview": "A scientist's humanoid creation develops emotions and becomes a threat to its maker.",
+    "accent": "green"
+  },
+  {
+    "id": 10211,
+    "title": "Ponniyin Selvan: Part I",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "History"
+    ],
+    "rating": 7.6,
+    "votes": 44000,
+    "popularity": 71,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "empire",
+      "royalty",
+      "war",
+      "chola",
+      "politics"
+    ],
+    "overview": "A historical epic follows palace intrigue and rivalries around the Chola succession.",
+    "accent": "red"
+  },
+  {
+    "id": 10212,
+    "title": "Maanaadu",
+    "year": 2021,
+    "genres": [
+      "Action",
+      "Thriller",
+      "Sci-Fi"
+    ],
+    "rating": 8,
+    "votes": 24000,
+    "popularity": 49,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "time-loop",
+      "politics",
+      "action",
+      "thriller"
+    ],
+    "overview": "A man becomes trapped in a repeating day while a political conspiracy unfolds around him.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDczNWU0MmUtYWM5MC00Mjg5LWI2MjEtZDAxMzViNzU5YWI5XkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10213,
+    "title": "Good Night",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "rating": 7.5,
+    "votes": 18000,
+    "popularity": 42,
+    "language": "ta",
+    "industry": "Kollywood",
+    "country": "IN",
+    "tags": [
+      "snoring",
+      "marriage",
+      "humor",
+      "relationships"
+    ],
+    "overview": "A couple's relationship is tested by an unusual sleep problem in this warm romantic comedy.",
+    "accent": "green"
+  },
+  {
+    "id": 10301,
+    "title": "Drishyam",
+    "year": 2013,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "rating": 8.6,
+    "votes": 55000,
+    "popularity": 45,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "family",
+      "police",
+      "cover-up",
+      "crime"
+    ],
+    "overview": "A family man takes extraordinary steps to protect his family from a police investigation.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmJhZmJlYTItZmZlNy00MGY0LTg0ZGMtNWFkYWU5NTA1YTNhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10302,
+    "title": "Kumbalangi Nights",
+    "year": 2019,
+    "genres": [
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.5,
+    "votes": 45000,
+    "popularity": 39,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "brothers",
+      "family",
+      "village",
+      "relationships",
+      "healing"
+    ],
+    "overview": "Four brothers learn to live together while finding unexpected connections with a neighboring family.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYjYyZTNkZGYtZGJjZC00NmM2LThjNjMtMjYxYTI0NTg1NzViXkEyXkFqcGdeQXVyMzQ5Njc3NzU@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10303,
+    "title": "Premam",
+    "year": 2015,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8.3,
+    "votes": 70000,
+    "popularity": 53,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "college",
+      "love",
+      "growing-up",
+      "music"
+    ],
+    "overview": "A young man's romantic life evolves through different stages of adulthood.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMzJhNjMyOGMtYjhiYy00ZTAwLThmZWUtZmE5NzI3OTk4Y2M4XkEyXkFqcGdeQXVyMzQ5Njc3NzU@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10304,
+    "title": "Bangalore Days",
+    "year": 2014,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "rating": 8.3,
+    "votes": 55000,
+    "popularity": 45,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "cousins",
+      "city",
+      "friendship",
+      "dreams"
+    ],
+    "overview": "Three cousins move to Bengaluru and discover new identities, friendships and love.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZmY5NjNjYWMtNmJhNi00YTk0LTg0OWUtNDE4OGQ0YmM4NDAwXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10305,
+    "title": "Minnal Murali",
+    "year": 2021,
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy",
+      "Family"
+    ],
+    "rating": 7.8,
+    "votes": 58000,
+    "popularity": 73,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "superhero",
+      "village",
+      "powers",
+      "hero"
+    ],
+    "overview": "A tailor gains superpowers and faces another empowered man in his hometown.",
+    "accent": "red"
+  },
+  {
+    "id": 10306,
+    "title": "Joji",
+    "year": 2021,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 7.8,
+    "votes": 25000,
+    "popularity": 41,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "family",
+      "greed",
+      "crime",
+      "psychology"
+    ],
+    "overview": "A frustrated young man becomes consumed by greed and a dangerous plan inside his wealthy family.",
+    "accent": "red"
+  },
+  {
+    "id": 10307,
+    "title": "Manjummel Boys",
+    "year": 2024,
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 8.2,
+    "votes": 47000,
+    "popularity": 78,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "friends",
+      "cave",
+      "survival",
+      "rescue"
+    ],
+    "overview": "A group of friends becomes trapped in a cave and must rely on loyalty and courage to survive.",
+    "accent": "green"
+  },
+  {
+    "id": 10308,
+    "title": "Ayyappanum Koshiyum",
+    "year": 2020,
+    "genres": [
+      "Action",
+      "Drama",
+      "Thriller"
+    ],
+    "rating": 8,
+    "votes": 30000,
+    "popularity": 44,
+    "language": "ml",
+    "industry": "Mollywood",
+    "country": "IN",
+    "tags": [
+      "ego",
+      "police",
+      "conflict",
+      "revenge"
+    ],
+    "overview": "Two strong-willed men enter a tense confrontation driven by pride, power and personal history.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYTZmYmI3OWEtNTIwOC00ODcwLWIwMGMtMWYwZWI3YzQ3NDJjXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10401,
+    "title": "KGF: Chapter 1",
+    "year": 2018,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "rating": 8.2,
+    "votes": 110000,
+    "popularity": 76,
+    "language": "kn",
+    "industry": "Sandalwood",
+    "country": "IN",
+    "tags": [
+      "gold",
+      "gangster",
+      "mine",
+      "ambition",
+      "mass"
+    ],
+    "overview": "A ruthless man rises through a violent gold-mining underworld to fulfill a promise.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BZDNlNzBjMGUtYTA0Yy00OTI2LWJmZjMtODliYmUyYTI0OGFmXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10402,
+    "title": "KGF: Chapter 2",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "rating": 8.3,
+    "votes": 105000,
+    "popularity": 86,
+    "language": "kn",
+    "industry": "Sandalwood",
+    "country": "IN",
+    "tags": [
+      "gold",
+      "power",
+      "empire",
+      "revenge",
+      "gangster"
+    ],
+    "overview": "Rocky consolidates his power while facing government forces and rival crime bosses.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjI2Njg2Y2EtZjgwMC00ZGVkLWJmMWYtYjVhYjk2ZTkwNWE1XkEyXkFqcGdeQXVyMTMxMjA5NDU1._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10403,
+    "title": "Kantara",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "History"
+    ],
+    "rating": 8.1,
+    "votes": 75000,
+    "popularity": 82,
+    "language": "kn",
+    "industry": "Sandalwood",
+    "country": "IN",
+    "tags": [
+      "folklore",
+      "land",
+      "forest",
+      "ritual",
+      "village"
+    ],
+    "overview": "A village protector is drawn into an ancient conflict connecting land, ritual and power.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNWY1OGE0YzktMjFjOC00NWVhLTkxZmItOGZhMzk2YzM4MWZmXkEyXkFqcGdeQXVyMTc5NTY1ODA1._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10404,
+    "title": "777 Charlie",
+    "year": 2022,
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.7,
+    "votes": 34000,
+    "popularity": 51,
+    "language": "kn",
+    "industry": "Sandalwood",
+    "country": "IN",
+    "tags": [
+      "dog",
+      "friendship",
+      "travel",
+      "healing",
+      "family"
+    ],
+    "overview": "A lonely man and a stray dog change each other's lives through an unexpected road journey.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMDhhMjBlMWYtMDVlMy00ZjM3LTg3MTUtZDg0NjA0YzcxOGY4XkEyXkFqcGdeQXVyMTE0MzY0NjE1._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10405,
+    "title": "U-Turn",
+    "year": 2016,
+    "genres": [
+      "Mystery",
+      "Thriller",
+      "Horror"
+    ],
+    "rating": 7.4,
+    "votes": 10000,
+    "popularity": 31,
+    "language": "kn",
+    "industry": "Sandalwood",
+    "country": "IN",
+    "tags": [
+      "mystery",
+      "road",
+      "journalist",
+      "supernatural"
+    ],
+    "overview": "A journalist investigates deaths linked to an unusual road ritual.",
+    "accent": "red"
+  },
+  {
+    "id": 10406,
+    "title": "Lucia",
+    "year": 2013,
+    "genres": [
+      "Sci-Fi",
+      "Drama",
+      "Thriller",
+      "Romance"
+    ],
+    "rating": 7.5,
+    "votes": 14000,
+    "popularity": 30,
+    "language": "kn",
+    "industry": "Sandalwood",
+    "country": "IN",
+    "tags": [
+      "dreams",
+      "reality",
+      "identity",
+      "nightlife"
+    ],
+    "overview": "A man with insomnia begins taking pills that blur the line between dreams and reality.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTQyMDA5ODkzN15BMl5BanBnXkFtZTgwMjIzMDkyMDE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10501,
+    "title": "Pather Panchali",
+    "year": 1955,
+    "genres": [
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.5,
+    "votes": 38000,
+    "popularity": 33,
+    "language": "bn",
+    "industry": "Bengali",
+    "country": "IN",
+    "tags": [
+      "family",
+      "village",
+      "childhood",
+      "humanism"
+    ],
+    "overview": "A family living in rural Bengal faces everyday hardship and small moments of wonder.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMmFkNDY5OTktNzY3Yy00OTFlLThhNjktOTRhMmZjZmIxYjAxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10502,
+    "title": "Aparajito",
+    "year": 1956,
+    "genres": [
+      "Drama",
+      "Family"
+    ],
+    "rating": 8.4,
+    "votes": 21000,
+    "popularity": 26,
+    "language": "bn",
+    "industry": "Bengali",
+    "country": "IN",
+    "tags": [
+      "coming-of-age",
+      "family",
+      "education",
+      "loss"
+    ],
+    "overview": "A young boy grows up between rural roots, education and changing expectations of family.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjFjODk1NjUtNzk3NS00MDQ3LTg2ZmMtN2ZlNzdjMWY4YjE5XkEyXkFqcGdeQXVyNzMwODE5MTc@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10503,
+    "title": "Nayak",
+    "year": 1966,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 8,
+    "votes": 12000,
+    "popularity": 22,
+    "language": "bn",
+    "industry": "Bengali",
+    "country": "IN",
+    "tags": [
+      "actor",
+      "journey",
+      "cinema",
+      "identity"
+    ],
+    "overview": "A famous actor reflects on success, fear and identity during a train journey.",
+    "accent": "green"
+  },
+  {
+    "id": 10601,
+    "title": "Sairat",
+    "year": 2016,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Musical"
+    ],
+    "rating": 8.2,
+    "votes": 48000,
+    "popularity": 45,
+    "language": "mr",
+    "industry": "Marathi",
+    "country": "IN",
+    "tags": [
+      "love",
+      "caste",
+      "youth",
+      "rural"
+    ],
+    "overview": "Two young lovers challenge social divisions and family expectations.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMjBjNWYyY2UtOGNjZC00MTg4LWIwYWItYmZiNDI5MGUwNWRkXkEyXkFqcGdeQXVyNjI1NjA5NjE@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10602,
+    "title": "Court",
+    "year": 2014,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 7.6,
+    "votes": 12000,
+    "popularity": 20,
+    "language": "mr",
+    "industry": "Marathi",
+    "country": "IN",
+    "tags": [
+      "justice",
+      "law",
+      "society",
+      "courtroom"
+    ],
+    "overview": "A courtroom case reveals tensions between law, bureaucracy and everyday life.",
+    "accent": "green"
+  },
+  {
+    "id": 10603,
+    "title": "Natrang",
+    "year": 2010,
+    "genres": [
+      "Drama",
+      "Musical"
+    ],
+    "rating": 7.7,
+    "votes": 9000,
+    "popularity": 21,
+    "language": "mr",
+    "industry": "Marathi",
+    "country": "IN",
+    "tags": [
+      "theatre",
+      "dance",
+      "art",
+      "identity"
+    ],
+    "overview": "A village performer pursues his passion for theatre despite social pressure.",
+    "accent": "green"
+  },
+  {
+    "id": 10701,
+    "title": "Punjab 1984",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "rating": 8.4,
+    "votes": 11000,
+    "popularity": 25,
+    "language": "pa",
+    "industry": "Punjabi",
+    "country": "IN",
+    "tags": [
+      "family",
+      "conflict",
+      "mother",
+      "history"
+    ],
+    "overview": "A mother searches for her missing son during a turbulent period in Punjab's history.",
+    "accent": "green"
+  },
+  {
+    "id": 10702,
+    "title": "Carry On Jatta",
+    "year": 2012,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "rating": 8.2,
+    "votes": 16000,
+    "popularity": 34,
+    "language": "pa",
+    "industry": "Punjabi",
+    "country": "IN",
+    "tags": [
+      "marriage",
+      "mistaken-identity",
+      "family",
+      "humor"
+    ],
+    "overview": "A chaotic marriage setup spirals through lies, misunderstandings and family comedy.",
+    "accent": "green"
+  },
+  {
+    "id": 10801,
+    "title": "The Elephant Whisperers",
+    "year": 2022,
+    "genres": [
+      "Documentary",
+      "Family"
+    ],
+    "rating": 8.5,
+    "votes": 36000,
+    "popularity": 46,
+    "language": "ta",
+    "industry": "South India",
+    "country": "IN",
+    "tags": [
+      "elephants",
+      "conservation",
+      "family",
+      "nature"
+    ],
+    "overview": "A documentary follows caretakers who form a deep bond with an orphaned elephant.",
+    "accent": "green"
+  },
+  {
+    "id": 10802,
+    "title": "Ramayana: The Legend of Prince Rama",
+    "year": 1993,
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Fantasy"
+    ],
+    "rating": 8.6,
+    "votes": 11000,
+    "popularity": 29,
+    "language": "hi",
+    "industry": "Indian Animation",
+    "country": "IN",
+    "tags": [
+      "ramayana",
+      "epic",
+      "animation",
+      "mythology"
+    ],
+    "overview": "An animated adaptation of the Ramayana follows Prince Rama through exile and battle.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNTJjZTViZTEtNGVhNy00ODlmLTg2YTEtZDQ4NzBiNGMzMGJkXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10803,
+    "title": "Delhi Safari",
+    "year": 2012,
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "rating": 5.7,
+    "votes": 2500,
+    "popularity": 19,
+    "language": "hi",
+    "industry": "Indian Animation",
+    "country": "IN",
+    "tags": [
+      "animals",
+      "conservation",
+      "journey",
+      "family"
+    ],
+    "overview": "A group of animals travels to Delhi to protest the destruction of their habitat.",
+    "accent": "green"
+  },
+  {
+    "id": 10901,
+    "title": "Sholay",
+    "year": 1975,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Crime",
+      "Drama",
+      "Musical",
+      "Western"
+    ],
+    "rating": 8.1,
+    "votes": 64000,
+    "popularity": 82,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "gabbar",
+      "jai",
+      "veeru",
+      "bandit",
+      "revenge",
+      "friendship",
+      "classic",
+      "curry-western"
+    ],
+    "overview": "A retired police officer recruits two outlaws to help capture a ruthless bandit who terrorizes a rural village.",
+    "accent": "red",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOWQ0YTUzYzItYjI0MC00OTZmLWE1MWQtY2EzMzU2MTlmMmJjXkEyXkFqcGdeQXVyMDkwNTkwNg@@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 10902,
+    "title": "Rock On!!",
+    "year": 2008,
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "rating": 7.7,
+    "votes": 24000,
+    "popularity": 43,
+    "language": "hi",
+    "industry": "Bollywood",
+    "country": "IN",
+    "tags": [
+      "rock-band",
+      "friendship",
+      "music",
+      "reunion",
+      "dreams",
+      "mumbai"
+    ],
+    "overview": "Four friends reunite to relive the music, friendship and unfinished dreams of their former rock band.",
+    "accent": "green",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM2NjIwODc4N15BMl5BanBnXkFtZTcwMDgwMzM4MQ@@._V1_SX300.jpg",
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  }
 ];
