@@ -3,6 +3,9 @@
 
   const API_BASE = "https://api.themoviedb.org/3";
   const IMAGE_BASE = "https://image.tmdb.org/t/p/";
+  const BACKEND_STORE = "cineplay.backend.url";
+  const USER_STORE = "cineplay.user.id";
+  const FALLBACK_IMAGE_PREFIX = "data:image/svg+xml;charset=UTF-8,";
   const STORE = {
     list: "cineplay.mylist",
     history: "cineplay.history",
@@ -71,6 +74,51 @@
     return String(value ?? "")
       .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
       .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+  }
+
+  function getUserId() {
+    let id = localStorage.getItem(USER_STORE);
+    if (!id) {
+      id = "cineplay-" + crypto.randomUUID();
+      localStorage.setItem(USER_STORE, id);
+    }
+    return id;
+  }
+
+  function fallbackImage(title="CINEPLAY") {
+    const safe = String(title).slice(0, 28);
+    return FALLBACK_IMAGE_PREFIX + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop stop-color="#0a1711"/><stop offset="1" stop-color="#18070b"/></linearGradient></defs>' +
+      '<rect width="400" height="600" fill="url(#g)"/>' +
+      '<circle cx="315" cy="100" r="120" fill="#27dc91" opacity=".08"/>' +
+      '<circle cx="70" cy="500" r="150" fill="#ff3e55" opacity=".07"/>' +
+      '<path d="M112 240h46v120h-46zM177 200h46v160h-46zM242 225h46v135h-46z" fill="#27dc91" opacity=".75"/>' +
+      '<text x="30" y="540" fill="#d9e4de" font-family="Arial,sans-serif" font-size="24" font-weight="700">' +
+      safe.replace(/[<>&]/g,"") + '</text></svg>'
+    );
+  }
+
+  function imageMarkup(url, alt, extraClass="") {
+    const src = url || fallbackImage(alt);
+    return '<img class="'+extraClass+'" src="'+esc(src)+'" alt="'+esc(alt)+'" loading="lazy" ' +
+      'onerror="this.onerror=null;this.src=\''+esc(fallbackImage(alt))+'\'">';
+  }
+
+  function backendUrl() {
+    return (localStorage.getItem(BACKEND_STORE) || "").trim().replace(/\\/+$ /,"");
+  }
+
+  async function backendFetch(path, options={}) {
+    const base = backendUrl();
+    if (!base) throw new Error("NO_BACKEND");
+    const response = await fetch(base + path, {
+      ...options,
+      headers: { "Content-Type":"application/json", ...(options.headers||{}) }
+    });
+    if (!response.ok) throw new Error("BACKEND_"+response.status);
+    return response.json();
   }
 
   function uniq(items, keyFn = x => x) {
@@ -277,6 +325,7 @@
     });
     save(STORE.history, uniq(h, x=>x.id).slice(0,30));
     learn(movie, type);
+    sendBackendEvent(movie,type).catch(()=>{});
   }
 
   function toggleList(movie) {
@@ -326,7 +375,7 @@
 
     return '<article class="movie-card '+(compact?"compact":"")+'" data-movie-id="'+esc(movie.id)+'" tabindex="0" aria-label="'+esc(movie.title)+'">'+
       '<div class="poster-frame" style="--card-accent:'+(movie.accent==="green"?"#21d58c":"#ff334d")+'">'+
-        (posterUrl ? '<img src="'+esc(posterUrl)+'" alt="'+esc(movie.title)+'" loading="lazy">' : '<div class="poster-fallback">CINEPLAY</div>')+
+        imageMarkup(posterUrl, movie.title)+
         '<div class="poster-gradient"></div>'+
         rank+live+matchMarkup+
         '<button class="mini-list '+(listed(movie)?"added":"")+'" data-list-id="'+esc(movie.id)+'" type="button" aria-label="'+(listed(movie)?"Remove from My List":"Add to My List")+'">'+add+'</button>'+
@@ -371,7 +420,7 @@
       const h=history().find(x=>String(x.id)===String(m.id)) || {};
       const progress=Math.round((h.progress||0)*100);
       return '<button class="continue-card" data-movie-id="'+esc(m.id)+'" type="button">'+
-        '<div class="continue-poster">'+(poster(m,"w342")?'<img src="'+esc(poster(m,"w342"))+'" alt="">':"")+'<span class="continue-play">▶</span></div>'+
+        '<div class="continue-poster">'+imageMarkup(poster(m,"w342"),m.title)+ '<span class="continue-play">▶</span></div>'+
         '<div class="continue-info"><b>'+esc(m.title)+'</b><span>'+esc(year(m))+' · '+esc(genreLine(m))+'</span><div class="progress"><i style="width:'+progress+'%"></i></div><small>'+progress+'% explored</small></div>'+
       '</button>';
     }).join("");
@@ -396,13 +445,23 @@
     $("liveLabel") && ($("liveLabel").textContent = state.live ? "LIVE" : "OFFLINE");
   }
 
+  function setBackdrop(node, movie) {
+    if (!node || !movie) return;
+    const url = backdrop(movie);
+    if (!url) {
+      node.style.backgroundImage = 'url("'+fallbackImage(movie.title)+'")';
+      return;
+    }
+    const img = new Image();
+    img.onload = () => { node.style.backgroundImage = 'url("'+url+'")'; };
+    img.onerror = () => { node.style.backgroundImage = 'url("'+fallbackImage(movie.title)+'")'; };
+    img.src = url;
+  }
+
   function updateHero(movie) {
     if (!movie) return;
     const media=$("heroMedia");
-    if (media) {
-      media.style.backgroundImage='url("'+backdrop(movie)+'")';
-      media.dataset.movieId=movie.id;
-    }
+    if (media) setBackdrop(media, movie);
     $("heroTitle") && ($("heroTitle").textContent=movie.title);
     $("heroOverview") && ($("heroOverview").textContent=movie.overview || "Explore a new cinematic world.");
     $("heroMeta") && ($("heroMeta").innerHTML='<span class="rating-star">★ '+esc(rating(movie))+'</span><span>'+esc(year(movie))+'</span><span>'+esc(genreLine(movie))+'</span><span>'+esc((movie.language||movie.original_language||"en").toUpperCase())+'</span>');
@@ -557,7 +616,7 @@
     node.innerHTML=list.map((m,i)=>
       '<button class="top10-card" type="button" data-movie-id="'+esc(m.id)+'">'+
         '<span class="top10-number">'+String(i+1).padStart(2,"0")+'</span>'+
-        '<div class="top10-poster">'+(poster(m,"w342")?'<img src="'+esc(poster(m,"w342"))+'" alt="">':"")+'</div>'+
+        '<div class="top10-poster">'+imageMarkup(poster(m,"w342"),m.title)+'</div>'+
         '<div class="top10-copy"><b>'+esc(m.title)+'</b><span>★ '+esc(rating(m))+' · '+esc(year(m))+'</span><small>'+esc(genres(m).slice(0,2).join(" · "))+'</small></div>'+
       '</button>'
     ).join("");
@@ -596,7 +655,7 @@
       if (!m) return "";
       const typeLabel={open:"Opened",play:"Played preview",list:"Saved",similar:"Built from"}[h.type]||"Explored";
       return '<button class="activity-row" type="button" data-movie-id="'+esc(m.id)+'">'+
-        '<div class="activity-thumb">'+(poster(m,"w185")?'<img src="'+esc(poster(m,"w185"))+'" alt="">':"")+'</div>'+
+        '<div class="activity-thumb">'+imageMarkup(poster(m,"w185"),m.title)+'</div>'+
         '<div><b>'+esc(m.title)+'</b><span>'+esc(typeLabel)+' · '+timeAgo(h.time)+'</span></div>'+
         '<em>→</em>'+
       '</button>';
@@ -654,7 +713,7 @@
     const modal=$("movieModal");
     modal.classList.remove("hidden");
     document.body.classList.add("modal-open");
-    $("modalMedia").style.backgroundImage='url("'+backdrop(movie)+'")';
+    setBackdrop($("modalMedia"), movie);
     $("modalKicker").textContent=(movie.live?"LIVE · ":"")+"MOVIE / "+String(movie.language||movie.original_language||"EN").toUpperCase();
     $("modalTitle").textContent=movie.title;
     $("modalMatch").textContent=(movie.match||Math.min(97,Math.round((quality(movie)*90)+20)))+"% AI MATCH";
@@ -679,6 +738,60 @@
   }
 
   function closeMovie() { $("movieModal")?.classList.add("hidden"); document.body.classList.remove("modal-open"); }
+
+  async function loadBackendRecommendations() {
+    const base=backendUrl();
+    if(!base) return false;
+    try{
+      const data=await backendFetch("/api/recommend/"+encodeURIComponent(getUserId())+"?limit=18");
+      if(Array.isArray(data.results) && data.results.length){
+        mergeMovies(data.results);
+        const normalized=data.results.map(m=>({...m,live:false}));
+        renderRail("aiRail",normalized);
+        $("recommendationSubtitle").textContent="Python ML API · TF-IDF + KNN + hybrid collaborative ranking";
+        $("modelPill").textContent="PYTHON ML · ONLINE";
+        return true;
+      }
+    }catch{}
+    return false;
+  }
+
+  async function sendBackendEvent(movie,eventType,value=1) {
+    const base=backendUrl();
+    if(!base || !movie) return;
+    try{
+      await backendFetch("/api/events",{
+        method:"POST",
+        body:JSON.stringify({user_id:getUserId(),movie_id:Number(movie.id),event_type:eventType,value})
+      });
+    }catch{}
+  }
+
+  async function refreshBackendStatus() {
+    const base=backendUrl();
+    const pill=$("modelPill");
+    if(!base){ if(pill) pill.textContent=state.live?"HYBRID · LIVE":"HYBRID · LOCAL"; return; }
+    try{
+      const health=await backendFetch("/api/health");
+      if(health.ml?.ready){
+        if(pill) pill.textContent=health.mongodb?.connected?"PYTHON ML · SQL + MONGO":"PYTHON ML · SQL";
+        $("engineText") && ($("engineText").textContent="Python ML API connected · "+health.ml.algorithm);
+        return true;
+      }
+    }catch{}
+    if(pill) pill.textContent="API OFFLINE · LOCAL";
+    return false;
+  }
+
+  async function saveBackendConfig() {
+    const input=$("backendUrl");
+    const base=(input?.value||"").trim().replace(/\/$/,"");
+    if(base) localStorage.setItem(BACKEND_STORE,base); else localStorage.removeItem(BACKEND_STORE);
+    await refreshBackendStatus();
+    await loadBackendRecommendations();
+    toast(base?"Python ML API configured":"Python ML API disabled");
+    if($("settingsStatus")) showSettingsStatus(base?"Backend URL saved. Testing API…":"Backend URL removed. Local ML remains active.");
+  }
 
   function openSettings() {
     $("settingsModal")?.classList.remove("hidden"); document.body.classList.add("modal-open");
@@ -895,9 +1008,10 @@
     $("clearSearch").onclick=()=>{$("searchInput").value="";state.query="";$("searchPanel")?.classList.add("hidden");applyFilter();};
     $("searchTrigger").onclick=openSearch;
     $("liveBtn").onclick=openSettings;
+    $("saveBackend").onclick=saveBackendConfig;
     $("profileBtn").onclick=()=>{renderLab();$("aiLabModal")?.classList.remove("hidden");document.body.classList.add("modal-open");};
     $("openAiLab").onclick=()=>{$("aiLabModal")?.classList.remove("hidden");document.body.classList.add("modal-open");renderLab();};
-    $("shuffleAi").onclick=()=>{ const recs=recommendFor(null,18).sort(()=>Math.random()-0.5); renderRail("aiRail",recs); toast("AI queue refreshed"); };
+    $("shuffleAi").onclick=async()=>{ await loadBackendRecommendations(); const recs=recommendFor(null,18).sort(()=>Math.random()-0.5); renderRail("aiRail",recs); toast("AI queue refreshed"); };
     $("refreshTrending").onclick=()=>syncLive(true);
     $("refreshFresh").onclick=()=>syncLive(true);
     $("saveKey").onclick=async()=>{
@@ -982,6 +1096,7 @@
 
     const key=localStorage.getItem(STORE.key);
     if (key && Date.now()-state.lastSync>8*60*1000) syncLive(false);
+    refreshBackendStatus();
     setInterval(()=>{
       const liveKey=localStorage.getItem(STORE.key);
       if (liveKey && document.visibilityState==="visible") syncLive(false);
