@@ -81,23 +81,20 @@ async function testDesktop(browser) {
     }
   }
 
-  // Telugu/TFI should expose the complete regional set and Show more must work.
+  // Telugu/TFI: all 50+ titles must be present and the images must actually decode.
   await page.locator('#filterRow .filter-chip[data-filter="telugu"]').click();
-  await sleep(120);
+  await sleep(160);
   const teluguTotal = Number.parseInt((await page.locator("#filterResultsCount").textContent()) || "0", 10);
   if (teluguTotal < 50) throw new Error("Telugu/TFI catalogue count is unexpectedly low");
   const firstBatch = await page.locator("#filterResultsGrid .movie-card").count();
-  const visiblePosters = await page.locator('#filterResultsGrid img').evaluateAll(imgs =>
-    imgs.filter(img => {
-      const src = img.getAttribute("src") || "";
-      return src && !src.startsWith("data:image/svg+xml");
-    }).length
+  if (firstBatch < 24) throw new Error("Telugu filter first page rendered too few movies");
+  const teluguRealImages = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
+    imgs.filter(img => (img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
   );
-  if (visiblePosters < 3) throw new Error("Telugu filter rendered too few real poster URLs");
+  if (teluguRealImages < Math.min(24, firstBatch)) throw new Error("Telugu filter contains broken poster images");
 
   const rrr=page.locator('#filterResultsGrid .movie-card').filter({hasText:"RRR"}).first();
   await rrr.scrollIntoViewIfNeeded();
-  await sleep(900);
   const rrrImage=rrr.locator("img").first();
   const rrrSource=await rrrImage.getAttribute("src");
   const rrrWidth=await rrrImage.evaluate(img => img.naturalWidth || 0);
@@ -110,6 +107,24 @@ async function testDesktop(browser) {
     const secondBatch = await page.locator("#filterResultsGrid .movie-card").count();
     if (secondBatch <= firstBatch) throw new Error("filter Show more did not reveal additional Telugu titles");
   }
+
+  // India filter: load every page and verify every Indian movie has usable artwork.
+  await page.locator('#filterRow .filter-chip[data-filter="india"]').click();
+  await sleep(160);
+  const indiaTotal = Number.parseInt((await page.locator("#filterResultsCount").textContent()) || "0", 10);
+  if (indiaTotal < 109) throw new Error("India catalogue count is unexpectedly low");
+  let safety=0;
+  while(await page.locator("#filterShowMore").isEnabled() && safety<10){
+    await page.locator("#filterShowMore").click();
+    await sleep(100);
+    safety++;
+  }
+  const indiaCards = await page.locator("#filterResultsGrid .movie-card").count();
+  if (indiaCards !== indiaTotal) throw new Error("India filter did not load its complete catalogue");
+  const brokenIndia = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
+    imgs.filter(img => !(img.getAttribute("src") || "") || (img.naturalWidth || 0) < 20).length
+  );
+  if (brokenIndia > 0) throw new Error("India catalogue has "+brokenIndia+" broken poster images");
 
   // Search trigger must actually focus the search field and route to Discover.
   await page.locator("#searchTrigger").click();
