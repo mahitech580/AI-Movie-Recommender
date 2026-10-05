@@ -557,7 +557,7 @@
   function renderContinue() {
     const node=$("continueRail"), empty=$("continueEmpty");
     if (!node) return;
-    const items=history().filter(h => h.type !== "list").slice(0,5).map(h=>findMovie(h.id)).filter(Boolean);
+    const items=history().filter(h => h.type !== "list").slice(0,5).map(h=>findTitle(h.id)).filter(Boolean);
     node.innerHTML=items.map((m,i)=>{
       const h=history().find(x=>String(x.id)===String(m.id)) || {};
       const progress=Math.round((h.progress||0)*100);
@@ -568,7 +568,7 @@
     }).join("");
     empty?.classList.toggle("hidden",items.length>0);
     node.classList.toggle("hidden",!items.length);
-    node.querySelectorAll(".continue-card").forEach(btn=>btn.onclick=()=>openMovie(findMovie(btn.dataset.movieId),true));
+    node.querySelectorAll(".continue-card").forEach(btn=>btn.onclick=()=>openMovie(findTitle(btn.dataset.movieId),true));
   }
 
   function genreLine(movie) { return genres(movie).slice(0,3).join(" · "); }
@@ -579,7 +579,7 @@
     $("signalCount") && ($("signalCount").textContent = Math.floor(signals));
     $("metricSignals") && ($("metricSignals").textContent = Math.floor(signals));
     $("metricGenres") && ($("metricGenres").textContent = Math.min(30,genresSeen));
-    $("heroCount") && ($("heroCount").textContent = state.movies.length+"+");
+    $("heroCount") && ($("heroCount").textContent = (state.movies.length+state.series.length)+"+");
     $("liveCount") && ($("liveCount").textContent = state.live ? String(state.liveCount) : "—");
     $("heroLiveAge") && ($("heroLiveAge").textContent = state.syncing ? "SYNCING NOW" : (state.live ? formatSyncAge(state.lastSync) : "LOCAL CATALOG"));
     $("engineScore") && ($("engineScore").textContent = Math.floor(signals)+" signals");
@@ -1154,12 +1154,13 @@
   }
 
   function normalizeTMDB(m, source="live") {
-    if (!m?.id || !m.title) return null;
+    const title=m?.title || m?.name;
+    if (!m?.id || !title) return null;
     const language=m.original_language||"en";
     const g=(m.genre_ids||[]).map(id=>GENRE_BY_ID[id]).filter(Boolean);
     const industry=INDIAN_INDUSTRIES[language] || "";
     return {
-      id:m.id,title:m.title,year:m.release_date?String(m.release_date).slice(0,4):"—",
+      id:m.id,title,year:m.release_date?String(m.release_date).slice(0,4):"—",
       release_date:m.release_date||"",genres:g.length?g:["Movie"],rating:Number(m.vote_average||0),
       votes:Number(m.vote_count||0),popularity:Number(m.popularity||0),language,
       original_language:language,language_name:INDIAN_LANGUAGES[language] || "",
@@ -1275,8 +1276,13 @@
       clearTimeout(state.searchTimer);
       state.searchTimer=setTimeout(async()=>{
         try {
-          const data=await tmdb("/search/movie",{query:value,page:1});
-          const results=(data.results||[]).map(m=>normalizeTMDB(m)).filter(Boolean);
+          const data=await tmdb("/search/multi",{query:value,page:1,include_adult:false});
+          const results=(data.results||[]).filter(m=>m.media_type!=="person").map(m=>normalizeTMDB({
+            ...m,
+            title:m.title || m.name,
+            release_date:m.release_date || m.first_air_date || "",
+            genre_ids:m.genre_ids || []
+          })).filter(Boolean);
           mergeMovies(results);
           const ranked=results.map(m=>({...m,match:Math.min(99,Math.max(70,Math.round(searchScore(m,value)*100)))}));
           renderSearchPanel(ranked.slice(0,7));
@@ -1300,13 +1306,17 @@
     const panel=$("searchPanel");
     if (!panel) return;
     panel.innerHTML=items.length?items.map(m=>
-      '<button class="search-result" type="button" data-result-id="'+esc(m.id)+'">'+
+      '<button class="search-result" type="button" data-result-id="'+esc(m.id)+'" data-media-type="'+((m.media_type==="tv"||m.type==="series")?"series":"movie")+'">'+
         '<div class="search-thumb">'+(poster(m,"w185")?'<img src="'+esc(poster(m,"w185"))+'" alt="">':"")+'</div>'+
         '<div><b>'+esc(m.title)+'</b><span>'+esc(year(m))+' · '+esc(genreLine(m))+'</span></div>'+
         '<em>'+Math.round((m.match||0))+'%</em>'+
       '</button>').join("") : '<div class="search-empty">No live match found. Try another title.</div>';
     panel.classList.remove("hidden");
-    panel.querySelectorAll(".search-result").forEach(btn=>btn.onclick=()=>{openMovie(findMovie(btn.dataset.resultId));panel.classList.add("hidden");});
+    panel.querySelectorAll(".search-result").forEach(btn=>btn.onclick=()=>{
+      const type=btn.dataset.mediaType || "movie";
+      openMovie(findTitle(btn.dataset.resultId,type));
+      panel.classList.add("hidden");
+    });
   }
 
   function openSearch() {
@@ -1335,6 +1345,7 @@
     const commands=[
       ["Home","Go to the cinematic home","home"],
       ["Discover","Open recommendations and search","discover"],
+      ["Web Series","Browse the 100-series index","web-series"],
       ["My List","Open saved movies","my-list"],
       ["Activity","Open your local profile","activity"]
     ];
