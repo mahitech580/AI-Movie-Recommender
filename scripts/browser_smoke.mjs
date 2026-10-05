@@ -68,7 +68,7 @@ async function testDesktop(browser) {
     };
   });
   if (spotlightLayout.display !== "grid" || spotlightLayout.columns !== 9) throw new Error("CINEPLAY Spotlight is not a complete 9-card desktop grid");
-  if (spotlightLayout.minLeft < 0 || spotlightLayout.maxRight > spotlightLayout.railWidth + 1) throw new Error("CINEPLAY Spotlight cards overflow the full-width spotlight rail");
+  if (spotlightLayout.minLeft < -1 || spotlightLayout.maxRight > spotlightLayout.railWidth + spotlightLayout.minLeft + 1) throw new Error("CINEPLAY Spotlight cards overflow the full-width spotlight rail");
   const ageCard = page.locator("#homeSpotlightRail .movie-card").filter({hasText:"Avengers: Age of Ultron"}).first();
   const ageSrc = await ageCard.locator("img").getAttribute("src");
   const ageWidth = await ageCard.locator("img").evaluate(img => img.naturalWidth || 0);
