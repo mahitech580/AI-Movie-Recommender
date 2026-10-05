@@ -11,6 +11,34 @@ permissions:
 jobs:
   qa:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: cineplay
+          POSTGRES_USER: cineplay
+          POSTGRES_PASSWORD: cineplay
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U cineplay -d cineplay"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+      mongo:
+        image: mongo:8
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.adminCommand({ ping: 1 })'"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      DATABASE_URL: postgresql+psycopg://cineplay:cineplay@127.0.0.1:5432/cineplay
+      MONGODB_URI: mongodb://127.0.0.1:27017
+      MONGODB_DATABASE: cineplay
+      CORS_ORIGINS: http://localhost:8000
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +61,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Backend full-stack smoke test
+        run: python scripts/smoke_test.py
 
       - name: JavaScript syntax
         run: node --check assets/app.js
