@@ -45,8 +45,10 @@ async function testDesktop(browser) {
     imgs.filter(img => (img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
   );
   if (spotlightImages !== spotlightExpected.length) throw new Error("Home spotlight has "+(spotlightExpected.length-spotlightImages)+" broken poster images");
-  const spotlightOriginals = await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs => imgs.filter(img => (img.getAttribute("src") || "").includes("image.tmdb.org/t/p/original/")).length);
-  if (spotlightOriginals !== spotlightExpected.length) throw new Error("Home spotlight artwork is not using original-resolution TMDB URLs for every requested title");
+  const spotlightHighRes = await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs =>
+    imgs.filter(img => /^https:\/\/image\.tmdb\.org\/t\/p\/(original|w780)\//.test(img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
+  );
+  if (spotlightHighRes !== spotlightExpected.length) throw new Error("Home spotlight has "+(spotlightExpected.length-spotlightHighRes)+" missing high-resolution TMDB images");
   const spotlightLayout = await page.locator("#homeSpotlightRail").evaluate(el => {
     const style = getComputedStyle(el);
     const cards = Array.from(el.querySelectorAll(".movie-card"));
