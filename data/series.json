@@ -10,9 +10,9 @@
       "Action",
       "Adventure"
     ],
-    "rating": 9.38328,
+    "rating": 9.4,
     "votes": 51831,
-    "popularity": 101.86,
+    "popularity": 100,
     "language": "en",
     "country": "US",
     "network": "HBO",
@@ -37,9 +37,9 @@
     "genres": [
       "Drama"
     ],
-    "rating": 9.42973,
+    "rating": 9.4,
     "votes": 42334,
-    "popularity": 100.46,
+    "popularity": 100,
     "language": "en",
     "country": "US",
     "network": "AMC",
@@ -64,7 +64,7 @@
       "Adventure",
       "Thriller"
     ],
-    "rating": 9.25027,
+    "rating": 9.3,
     "votes": 24302,
     "popularity": 93.41,
     "language": "en",
@@ -93,7 +93,7 @@
       "Action",
       "Adventure"
     ],
-    "rating": 8.62455,
+    "rating": 8.6,
     "votes": 37297,
     "popularity": 90.79,
     "language": "en",
@@ -118,7 +118,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.48493,
+    "rating": 8.5,
     "votes": 37826,
     "popularity": 89.44,
     "language": "en",
@@ -142,7 +142,7 @@
       "Drama",
       "Mystery"
     ],
-    "rating": 8.73277,
+    "rating": 8.7,
     "votes": 25873,
     "popularity": 88.73,
     "language": "en",
@@ -166,7 +166,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.95142,
+    "rating": 9,
     "votes": 18198,
     "popularity": 87.81,
     "language": "en",
@@ -189,7 +189,7 @@
     "genres": [
       "Drama"
     ],
-    "rating": 8.98292,
+    "rating": 9,
     "votes": 15929,
     "popularity": 86.92,
     "language": "en",
@@ -215,7 +215,7 @@
       "Adventure",
       "Science Fiction"
     ],
-    "rating": 9.06001,
+    "rating": 9.1,
     "votes": 13315,
     "popularity": 86.04,
     "language": "en",
@@ -243,7 +243,7 @@
       "Drama",
       "Mystery"
     ],
-    "rating": 8.78887,
+    "rating": 8.8,
     "votes": 17435,
     "popularity": 85.83,
     "language": "en",
@@ -271,7 +271,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.79802,
+    "rating": 8.8,
     "votes": 17190,
     "popularity": 85.8,
     "language": "en",
@@ -297,7 +297,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.40198,
+    "rating": 8.4,
     "votes": 25693,
     "popularity": 85.31,
     "language": "en",
@@ -321,7 +321,7 @@
       "Drama",
       "War"
     ],
-    "rating": 9.40655,
+    "rating": 9.4,
     "votes": 8122,
     "popularity": 84.68,
     "language": "en",
@@ -345,7 +345,7 @@
     "genres": [
       "Drama"
     ],
-    "rating": 8.72887,
+    "rating": 8.7,
     "votes": 15915,
     "popularity": 84.45,
     "language": "en",
@@ -370,7 +370,7 @@
       "Crime",
       "Mystery"
     ],
-    "rating": 9.41248,
+    "rating": 9.4,
     "votes": 7821,
     "popularity": 84.38,
     "language": "en",
@@ -397,7 +397,7 @@
       "Crime",
       "Mystery"
     ],
-    "rating": 8.83354,
+    "rating": 8.8,
     "votes": 12399,
     "popularity": 83.26,
     "language": "en",
@@ -424,7 +424,7 @@
       "Mystery",
       "Thriller"
     ],
-    "rating": 8.46751,
+    "rating": 8.5,
     "votes": 18237,
     "popularity": 83.08,
     "language": "en",
@@ -452,7 +452,7 @@
       "Adventure",
       "Action"
     ],
-    "rating": 8.43207,
+    "rating": 8.4,
     "votes": 18152,
     "popularity": 82.69,
     "language": "en",
@@ -483,7 +483,7 @@
       "Comedy",
       "Horror"
     ],
-    "rating": 8.52729,
+    "rating": 8.5,
     "votes": 15371,
     "popularity": 82.21,
     "language": "en",
@@ -511,7 +511,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.54264,
+    "rating": 8.5,
     "votes": 14903,
     "popularity": 82.09,
     "language": "en",
@@ -538,7 +538,7 @@
       "Science Fiction",
       "Drama"
     ],
-    "rating": 8.8605,
+    "rating": 8.9,
     "votes": 10380,
     "popularity": 81.94,
     "language": "en",
@@ -567,7 +567,7 @@
       "Comedy",
       "Family"
     ],
-    "rating": 8.58656,
+    "rating": 8.6,
     "votes": 12616,
     "popularity": 81.08,
     "language": "en",
@@ -592,7 +592,7 @@
     "genres": [
       "Drama"
     ],
-    "rating": 9.18584,
+    "rating": 9.2,
     "votes": 6796,
     "popularity": 81.06,
     "language": "en",
@@ -615,7 +615,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.59612,
+    "rating": 8.6,
     "votes": 11897,
     "popularity": 80.67,
     "language": "en",
@@ -639,7 +639,7 @@
       "Animation",
       "Comedy"
     ],
-    "rating": 8.70493,
+    "rating": 8.7,
     "votes": 10533,
     "popularity": 80.63,
     "language": "en",
@@ -665,7 +665,7 @@
       "Crime",
       "Thriller"
     ],
-    "rating": 8.71764,
+    "rating": 8.7,
     "votes": 10253,
     "popularity": 80.51,
     "language": "en",
@@ -692,7 +692,7 @@
       "Action",
       "Adventure"
     ],
-    "rating": 8.61912,
+    "rating": 8.6,
     "votes": 11048,
     "popularity": 80.24,
     "language": "en",
@@ -722,7 +722,7 @@
       "Crime",
       "Science Fiction"
     ],
-    "rating": 7.9996,
+    "rating": 8,
     "votes": 22692,
     "popularity": 80.23,
     "language": "en",
@@ -753,7 +753,7 @@
       "Suspense",
       "Thriller"
     ],
-    "rating": 8.80071,
+    "rating": 8.8,
     "votes": 9062,
     "popularity": 80.19,
     "language": "en",
@@ -783,7 +783,7 @@
       "Action",
       "Adventure"
     ],
-    "rating": 8.47819,
+    "rating": 8.5,
     "votes": 11897,
     "popularity": 79.56,
     "language": "en",
@@ -811,7 +811,7 @@
       "Comedy",
       "Drama"
     ],
-    "rating": 8.87112,
+    "rating": 8.9,
     "votes": 7837,
     "popularity": 79.55,
     "language": "en",
@@ -836,7 +836,7 @@
       "Comedy",
       "Documentary"
     ],
-    "rating": 9.03707,
+    "rating": 9,
     "votes": 6636,
     "popularity": 79.53,
     "language": "en",
@@ -862,7 +862,7 @@
       "Drama",
       "Crime"
     ],
-    "rating": 8.36723,
+    "rating": 8.4,
     "votes": 13286,
     "popularity": 79.44,
     "language": "en",
@@ -888,7 +888,7 @@
       "Action",
       "Crime"
     ],
-    "rating": 8.73529,
+    "rating": 8.7,
     "votes": 8666,
     "popularity": 79.21,
     "language": "en",
@@ -912,7 +912,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.80214,
+    "rating": 8.8,
     "votes": 7753,
     "popularity": 78.83,
     "language": "en",
@@ -935,7 +935,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.73532,
+    "rating": 8.7,
     "votes": 8225,
     "popularity": 78.75,
     "language": "en",
@@ -958,7 +958,7 @@
     "genres": [
       "Drama"
     ],
-    "rating": 8.5701,
+    "rating": 8.6,
     "votes": 9779,
     "popularity": 78.74,
     "language": "en",
@@ -983,7 +983,7 @@
       "Crime",
       "Thriller"
     ],
-    "rating": 8.84498,
+    "rating": 8.8,
     "votes": 7199,
     "popularity": 78.56,
     "language": "en",
@@ -1012,7 +1012,7 @@
       "Action",
       "Adventure"
     ],
-    "rating": 8.90716,
+    "rating": 8.9,
     "votes": 6689,
     "popularity": 78.46,
     "language": "en",
@@ -1040,7 +1040,7 @@
       "Comedy",
       "Drama"
     ],
-    "rating": 8.82381,
+    "rating": 8.8,
     "votes": 7248,
     "popularity": 78.43,
     "language": "en",
@@ -1067,7 +1067,7 @@
       "Science Fiction",
       "Mystery"
     ],
-    "rating": 9.02123,
+    "rating": 9,
     "votes": 5935,
     "popularity": 78.38,
     "language": "en",
@@ -1097,7 +1097,7 @@
       "Action",
       "Adventure"
     ],
-    "rating": 8.32092,
+    "rating": 8.3,
     "votes": 11785,
     "popularity": 78.01,
     "language": "en",
@@ -1125,7 +1125,7 @@
       "Comedy",
       "Drama"
     ],
-    "rating": 8.62481,
+    "rating": 8.6,
     "votes": 7852,
     "popularity": 77.35,
     "language": "en",
@@ -1152,7 +1152,7 @@
       "Science Fiction",
       "Fantasy"
     ],
-    "rating": 8.78965,
+    "rating": 8.8,
     "votes": 6627,
     "popularity": 77.34,
     "language": "en",
@@ -1181,7 +1181,7 @@
       "Mystery",
       "Thriller"
     ],
-    "rating": 8.21123,
+    "rating": 8.2,
     "votes": 12304,
     "popularity": 77.33,
     "language": "en",
@@ -1210,7 +1210,7 @@
       "Action",
       "Adventure"
     ],
-    "rating": 8.45765,
+    "rating": 8.5,
     "votes": 9304,
     "popularity": 77.29,
     "language": "en",
@@ -1240,7 +1240,7 @@
       "Thriller",
       "Action"
     ],
-    "rating": 8.30988,
+    "rating": 8.3,
     "votes": 10943,
     "popularity": 77.29,
     "language": "en",
@@ -1272,7 +1272,7 @@
       "Action",
       "Suspense"
     ],
-    "rating": 8.56693,
+    "rating": 8.6,
     "votes": 8121,
     "popularity": 77.12,
     "language": "en",
@@ -1300,7 +1300,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.59228,
+    "rating": 8.6,
     "votes": 7900,
     "popularity": 77.11,
     "language": "en",
@@ -1326,7 +1326,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.9274,
+    "rating": 8.9,
     "votes": 5565,
     "popularity": 76.99,
     "language": "en",
@@ -1353,7 +1353,7 @@
       "Comedy",
       "Drama"
     ],
-    "rating": 8.45815,
+    "rating": 8.5,
     "votes": 8888,
     "popularity": 76.91,
     "language": "en",
@@ -1378,7 +1378,7 @@
       "Animation",
       "Comedy"
     ],
-    "rating": 8.22115,
+    "rating": 8.2,
     "votes": 11142,
     "popularity": 76.61,
     "language": "en",
@@ -1403,7 +1403,7 @@
       "Crime",
       "Drama"
     ],
-    "rating": 8.61072,
+    "rating": 8.6,
     "votes": 6846,
     "popularity": 76.05,
     "language": "en",
@@ -1427,7 +1427,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.82419,
+    "rating": 8.8,
     "votes": 5506,
     "popularity": 76.01,
     "language": "en",
@@ -1452,7 +1452,7 @@
       "Drama",
       "Mystery"
     ],
-    "rating": 8.25191,
+    "rating": 8.3,
     "votes": 9801,
     "popularity": 75.84,
     "language": "en",
@@ -1480,7 +1480,7 @@
       "Adventure",
       "Science Fiction"
     ],
-    "rating": 9.23837,
+    "rating": 9.2,
     "votes": 3419,
     "popularity": 75.18,
     "language": "en",
@@ -1508,7 +1508,7 @@
       "Drama",
       "Crime"
     ],
-    "rating": 8.54902,
+    "rating": 8.5,
     "votes": 5987,
     "popularity": 74.36,
     "language": "en",
@@ -1537,7 +1537,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 7.85437,
+    "rating": 7.9,
     "votes": 12889,
     "popularity": 74.34,
     "language": "en",
@@ -1564,7 +1564,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.73045,
+    "rating": 8.7,
     "votes": 4897,
     "popularity": 74.18,
     "language": "en",
@@ -1589,7 +1589,7 @@
       "Drama",
       "Mystery"
     ],
-    "rating": 8.07082,
+    "rating": 8.1,
     "votes": 9220,
     "popularity": 73.68,
     "language": "en",
@@ -1614,7 +1614,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.42235,
+    "rating": 8.4,
     "votes": 5860,
     "popularity": 73.07,
     "language": "en",
@@ -1637,7 +1637,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 7.84091,
+    "rating": 7.8,
     "votes": 10950,
     "popularity": 72.93,
     "language": "en",
@@ -1665,7 +1665,7 @@
       "Action",
       "Suspense"
     ],
-    "rating": 8.03415,
+    "rating": 8,
     "votes": 8610,
     "popularity": 72.8,
     "language": "en",
@@ -1695,7 +1695,7 @@
       "Crime",
       "Action"
     ],
-    "rating": 8.26543,
+    "rating": 8.3,
     "votes": 6352,
     "popularity": 72.38,
     "language": "en",
@@ -1720,7 +1720,7 @@
     "genres": [
       "Comedy"
     ],
-    "rating": 8.43328,
+    "rating": 8.4,
     "votes": 5186,
     "popularity": 72.14,
     "language": "en",
@@ -1745,7 +1745,7 @@
       "Comedy",
       "Fantasy"
     ],
-    "rating": 8.83764,
+    "rating": 8.8,
     "votes": 3252,
     "popularity": 71.47,
     "language": "en",
@@ -1772,7 +1772,7 @@
       "Crime",
       "Drama"
     ],
-    "rating": 8.0507,
+    "rating": 8.1,
     "votes": 7021,
     "popularity": 71.3,
     "language": "en",
@@ -1799,7 +1799,7 @@
       "Drama",
       "Mystery"
     ],
-    "rating": 8.68003,
+    "rating": 8.7,
     "votes": 3666,
     "popularity": 71.24,
     "language": "en",
@@ -1828,7 +1828,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.5809,
+    "rating": 8.6,
     "votes": 4011,
     "popularity": 71.2,
     "language": "en",
@@ -1856,7 +1856,7 @@
       "Comedy",
       "Drama"
     ],
-    "rating": 8.44886,
+    "rating": 8.4,
     "votes": 4351,
     "popularity": 70.79,
     "language": "en",
@@ -1883,7 +1883,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.35318,
+    "rating": 8.4,
     "votes": 4703,
     "popularity": 70.64,
     "language": "en",
@@ -1910,7 +1910,7 @@
       "Animation",
       "Comedy"
     ],
-    "rating": 9.09673,
+    "rating": 9.1,
     "votes": 2326,
     "popularity": 70.52,
     "language": "ja",
@@ -1936,7 +1936,7 @@
       "Drama",
       "Mystery"
     ],
-    "rating": 8.26602,
+    "rating": 8.3,
     "votes": 4947,
     "popularity": 70.32,
     "language": "en",
@@ -1962,7 +1962,7 @@
       "Comedy",
       "Drama"
     ],
-    "rating": 8.13228,
+    "rating": 8.1,
     "votes": 5511,
     "popularity": 70.06,
     "language": "en",
@@ -1989,7 +1989,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 7.56465,
+    "rating": 7.6,
     "votes": 7780,
     "popularity": 67.78,
     "language": "en",
@@ -2019,7 +2019,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.25407,
+    "rating": 8.3,
     "votes": 3440,
     "popularity": 67.22,
     "language": "en",
@@ -2051,7 +2051,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.69725,
+    "rating": 8.7,
     "votes": 2256,
     "popularity": 67.16,
     "language": "ja",
@@ -2080,7 +2080,7 @@
       "Animation",
       "Comedy"
     ],
-    "rating": 8.33127,
+    "rating": 8.3,
     "votes": 3070,
     "popularity": 66.9,
     "language": "en",
@@ -2105,7 +2105,7 @@
       "Animation",
       "Comedy"
     ],
-    "rating": 7.90584,
+    "rating": 7.9,
     "votes": 4673,
     "popularity": 66.8,
     "language": "en",
@@ -2133,7 +2133,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 9.035,
+    "rating": 9,
     "votes": 1457,
     "popularity": 65.82,
     "language": "en",
@@ -2165,7 +2165,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.58487,
+    "rating": 8.6,
     "votes": 1732,
     "popularity": 64.02,
     "language": "ja",
@@ -2195,7 +2195,7 @@
       "Science Fiction",
       "Drama"
     ],
-    "rating": 8.79957,
+    "rating": 8.8,
     "votes": 1407,
     "popularity": 63.8,
     "language": "en",
@@ -2222,7 +2222,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.25539,
+    "rating": 8.3,
     "votes": 2228,
     "popularity": 63.64,
     "language": "en",
@@ -2250,7 +2250,7 @@
       "Mystery",
       "Science Fiction"
     ],
-    "rating": 7.53039,
+    "rating": 7.5,
     "votes": 4442,
     "popularity": 63.25,
     "language": "en",
@@ -2284,7 +2284,7 @@
       "Family",
       "Thriller"
     ],
-    "rating": 8.87204,
+    "rating": 8.9,
     "votes": 1141,
     "popularity": 62.46,
     "language": "en",
@@ -2317,7 +2317,7 @@
       "Drama",
       "Science Fiction"
     ],
-    "rating": 7.67781,
+    "rating": 7.7,
     "votes": 3349,
     "popularity": 62.32,
     "language": "en",
@@ -2346,7 +2346,7 @@
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 7.98557,
+    "rating": 8,
     "votes": 2356,
     "popularity": 62.01,
     "language": "en",
@@ -2377,7 +2377,7 @@
       "Drama",
       "Science Fiction"
     ],
-    "rating": 7.61517,
+    "rating": 7.6,
     "votes": 2900,
     "popularity": 60.71,
     "language": "en",
@@ -2399,38 +2399,13 @@
   },
   {
     "id": 9000089,
-    "title": "Making a Murderer",
-    "year": 2015,
-    "genres": [
-      "Documentary",
-      "Crime"
-    ],
-    "rating": 8.44401,
-    "votes": 1286,
-    "popularity": 60.46,
-    "language": "en",
-    "country": "",
-    "network": "Netflix",
-    "status": "returning series",
-    "overview": "Filmed over a 10-year period, Making a Murderer is an unprecedented real-life thriller about Steven Avery, a DNA exoneree who, while in the midst of exposing corruption in local law enforcement, finds himself the prime suspect in a grisly new crime. Set in America's heartland, the series takes viewers inside a high-stakes criminal case where reputation is everything and things are never as they appear.",
-    "poster": "https://assets.fanart.tv/preview/tv/303210/hdtvlogo/making-a-murderer-567715a9343ec.png",
-    "media_type": "tv",
-    "type": "series",
-    "tmdb_id": 64439,
-    "tags": [
-      "documentary",
-      "crime"
-    ]
-  },
-  {
-    "id": 9000090,
     "title": "The Expanse",
     "year": 2015,
     "genres": [
       "Fantasy",
       "Science Fiction"
     ],
-    "rating": 8.23642,
+    "rating": 8.2,
     "votes": 1362,
     "popularity": 59.45,
     "language": "en",
@@ -2448,7 +2423,7 @@
     ]
   },
   {
-    "id": 9000091,
+    "id": 9000090,
     "title": "BoJack Horseman",
     "year": 2014,
     "genres": [
@@ -2456,7 +2431,7 @@
       "Comedy",
       "Drama"
     ],
-    "rating": 8.2455,
+    "rating": 8.2,
     "votes": 1279,
     "popularity": 58.99,
     "language": "en",
@@ -2475,30 +2450,7 @@
     ]
   },
   {
-    "id": 9000092,
-    "title": "Through the Wormhole",
-    "year": 2010,
-    "genres": [
-      "Documentary"
-    ],
-    "rating": 8.69782,
-    "votes": 824,
-    "popularity": 58.41,
-    "language": "en",
-    "country": "US",
-    "network": "Science Channel",
-    "status": "returning series",
-    "overview": "Hosted by Morgan Freeman, Through the Wormhole explores the deepest mysteries of existence - the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? Is there a creator? These questions have been pondered by the most exquisite minds of the human race. Now, science has evolved to the point where hard facts and evidence may be able to provide us with answers instead of philosophical theories. Through the Wormhole brings together the brightest minds and best ideas from the very edges of science - Astrophysics, Astrobiology, Quantum Mechanics, String Theory, and more - to reveal the extraordinary truth of our Universe.",
-    "poster": "https://assets.fanart.tv/preview/tv/168571/clearlogo/throughthewormhole-168571.png",
-    "media_type": "tv",
-    "type": "series",
-    "tmdb_id": 32900,
-    "tags": [
-      "documentary"
-    ]
-  },
-  {
-    "id": 9000093,
+    "id": 9000091,
     "title": "Young Justice",
     "year": 2011,
     "genres": [
@@ -2506,7 +2458,7 @@
       "Action",
       "Adventure"
     ],
-    "rating": 8.64155,
+    "rating": 8.6,
     "votes": 823,
     "popularity": 58.02,
     "language": "en",
@@ -2525,7 +2477,7 @@
     ]
   },
   {
-    "id": 9000094,
+    "id": 9000092,
     "title": "Over The Garden Wall",
     "year": 2014,
     "genres": [
@@ -2536,7 +2488,7 @@
       "Science Fiction",
       "Comedy"
     ],
-    "rating": 9.14362,
+    "rating": 9.1,
     "votes": 564,
     "popularity": 57.94,
     "language": "en",
@@ -2558,32 +2510,7 @@
     ]
   },
   {
-    "id": 9000095,
-    "title": "MacGyver",
-    "year": 1985,
-    "genres": [
-      "Action",
-      "Adventure"
-    ],
-    "rating": 8.23084,
-    "votes": 1070,
-    "popularity": 57.42,
-    "language": "en",
-    "country": "US",
-    "network": "ABC (US)",
-    "status": "ended",
-    "overview": "MacGyver follows the adventures of the laid-back, extremely resourceful secret agent Angus MacGyver. He prefers non-violent conflict resolution whenever possible and refuses to carry or use a gun. MacGyver works as a problem solver for the Phoenix Foundation in Los Angeles. Utilizing his education as a scientist and his experience as an operative in the Department of External Services (DXS), he is able to solve a range of problems usually with the help of his ever-present Swiss Army knife.",
-    "poster": "https://assets.fanart.tv/preview/tv/77847/clearlogo/macgyver-77847.png",
-    "media_type": "tv",
-    "type": "series",
-    "tmdb_id": 2875,
-    "tags": [
-      "action",
-      "adventure"
-    ]
-  },
-  {
-    "id": 9000096,
+    "id": 9000093,
     "title": "Preacher",
     "year": 2016,
     "genres": [
@@ -2593,7 +2520,7 @@
       "Drama",
       "Horror"
     ],
-    "rating": 7.98535,
+    "rating": 8,
     "votes": 1229,
     "popularity": 56.81,
     "language": "en",
@@ -2614,7 +2541,7 @@
     ]
   },
   {
-    "id": 9000097,
+    "id": 9000094,
     "title": "Supergirl",
     "year": 2015,
     "genres": [
@@ -2623,7 +2550,7 @@
       "Science Fiction",
       "Drama"
     ],
-    "rating": 7.22245,
+    "rating": 7.2,
     "votes": 2450,
     "popularity": 56.37,
     "language": "en",
@@ -2643,34 +2570,7 @@
     ]
   },
   {
-    "id": 9000098,
-    "title": "Regular Show",
-    "year": 2010,
-    "genres": [
-      "Adventure",
-      "Animation",
-      "Comedy"
-    ],
-    "rating": 8.47917,
-    "votes": 768,
-    "popularity": 56.34,
-    "language": "en",
-    "country": "US",
-    "network": "Cartoon Network",
-    "status": "returning series",
-    "overview": "The series revolves around the lives of two friends, a blue jay named Mordecai and a raccoon named Rigby—both employed as groundskeepers at a local park. Their regular attempts to slack off usually lead to surreal, extreme, and often supernatural misadventures. During these misadventures, they interact with the show's other main characters: Benson, Pops, Muscle Man, Hi-Five Ghost, Skips, Thomas, Margaret and Eileen.",
-    "poster": "https://assets.fanart.tv/preview/tv/188401/clearlogo/RegularShow-188401.png",
-    "media_type": "tv",
-    "type": "series",
-    "tmdb_id": 31132,
-    "tags": [
-      "adventure",
-      "animation",
-      "comedy"
-    ]
-  },
-  {
-    "id": 9000099,
+    "id": 9000095,
     "title": "The Shannara Chronicles",
     "year": 2016,
     "genres": [
@@ -2679,7 +2579,7 @@
       "Action",
       "Science Fiction"
     ],
-    "rating": 7.62318,
+    "rating": 7.6,
     "votes": 1579,
     "popularity": 56.15,
     "language": "en",
@@ -2699,7 +2599,7 @@
     ]
   },
   {
-    "id": 9000100,
+    "id": 9000096,
     "title": "Dark Matter",
     "year": 2015,
     "genres": [
@@ -2708,7 +2608,7 @@
       "Thriller",
       "Mystery"
     ],
-    "rating": 7.6363,
+    "rating": 7.6,
     "votes": 1548,
     "popularity": 56.09,
     "language": "en",
@@ -2725,6 +2625,112 @@
       "drama",
       "thriller",
       "mystery"
+    ]
+  },
+  {
+    "id": 9000097,
+    "title": "SpongeBob SquarePants",
+    "year": 1999,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Children"
+    ],
+    "rating": 7.9,
+    "votes": 1084,
+    "popularity": 55.17,
+    "language": "en",
+    "country": "US",
+    "network": "Nickelodeon",
+    "status": "returning series",
+    "overview": "Deep down in the Pacific Ocean in the subterranean city of Bikini Bottom lives a square yellow sponge named SpongeBob SquarePants. SpongeBob lives in a pineapple with his pet snail, Gary, loves his job as a fry cook at the Krusty Krab, and has a knack for getting into all kinds of trouble without really trying. When he's not getting on the nerves of his cranky next door neighbor Squidward, SpongeBob can usually be found smack in the middle of all sorts of strange situations with his best buddy, the simple yet lovable starfish, Patrick, or his thrill-seeking surfer-girl squirrel pal, Sandy Cheeks.",
+    "poster": "https://assets.fanart.tv/preview/tv/75886/tvposter/spongebob-squarepants-54da8e5916d78.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 387,
+    "tags": [
+      "animation",
+      "comedy",
+      "children"
+    ]
+  },
+  {
+    "id": 9000098,
+    "title": "Into the Badlands",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.2,
+    "votes": 786,
+    "popularity": 54.45,
+    "language": "en",
+    "country": "US",
+    "network": "AMC",
+    "status": "returning series",
+    "overview": "A mighty warrior and a young boy search for enlightenment in a ruthless territory controlled by feudal barons.",
+    "poster": "https://assets.fanart.tv/preview/tv/289079/tvposter/badlands-5648637873421.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 47450,
+    "tags": [
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000099,
+    "title": "Pokémon",
+    "year": 1997,
+    "genres": [
+      "Animation",
+      "Adventure"
+    ],
+    "rating": 7.8,
+    "votes": 1053,
+    "popularity": 54.05,
+    "language": "ja",
+    "country": "JP",
+    "network": "TV Tokyo",
+    "status": "returning series",
+    "overview": " A young boy named Ash Ketchum embarks on a journey to become a \"Pokemon Master\" with his first Pokemon, Pikachu. Joining him on his travels are Brock, a girl-obsessed Rock Pokemon Trainer, and Misty, a tomboyish Water Pokemon Trainer who may have a crush on him. Ash and Co. end up traveling through various regions, including Kanto, the Orange Islands, and Johto, and then enter the Pokemon League competitions there. Along the way, they run into many confrontations with Jessie, James, and Meowth, a trio of Pokemon thieves who are apart of an evil organization called \"Team Rocket\". But everytime Team Rocket try to do their evil deeds, they fail thanks to Ash and his Pokemon.",
+    "poster": "https://assets.fanart.tv/preview/tv/76703/tvposter/pokmon-566f76fcd1e32.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60572,
+    "tags": [
+      "animation",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000100,
+    "title": "Star Wars Rebels",
+    "year": 2014,
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "rating": 8,
+    "votes": 760,
+    "popularity": 52.9,
+    "language": "en",
+    "country": "US",
+    "network": "Disney XD",
+    "status": "returning series",
+    "overview": "Set between the events of Star Wars: Episodes III and IV, the story unfolds during a dark time when the evil Galactic Empire is tightening its grip of power on the galaxy. Imperial forces have occupied a remote planet and are ruining the lives of its people. The motley but clever crew of the starship Ghost — cowboy Jedi Kanan, ace pilot Hera, street-smart teenager Ezra, the “muscle” Zeb, warrior firebrand Sabine, and cantankerous old astromech droid Chopper — is among a select few who are brave enough to stand against the Empire. Together, they will face threatening new villains, encounter colorful adversaries, embark on thrilling adventures, and become heroes with the power to ignite a rebellion.",
+    "poster": "https://assets.fanart.tv/preview/tv/283468/tvposter/star-wars-rebels-53d14a1e75cb8.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60554,
+    "tags": [
+      "animation",
+      "action",
+      "adventure",
+      "science fiction"
     ]
   }
 ]
