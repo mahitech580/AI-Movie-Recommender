@@ -105,8 +105,9 @@
 
   function mergeMovies(extra) {
     const seen = new Set();
-    state.movies = (extra.concat(window.MOVIES || [])).filter(m => {
-      const key = String(m.id);
+    const pool = extra.concat(state.movies || [], window.MOVIES || []);
+    state.movies = pool.filter(movie => {
+      const key = String(movie.id);
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
