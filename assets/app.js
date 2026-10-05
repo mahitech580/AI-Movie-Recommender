@@ -51,7 +51,8 @@
       popularity: 0.06, freshness: 0.05, exploration: 0.05
     }),
     lastSync: 0,
-    cacheMeta: load(STORE.live, {time:0, pools:{}})
+    cacheMeta: load(STORE.live, {time:0, pools:{}}),
+    detailCache: {}
   };
 
   const $ = id => document.getElementById(id);
@@ -711,6 +712,65 @@
       '<div class="console-footer"><span>'+Math.floor(s)+' local signals</span><span>'+state.movies.length+' indexed titles</span><span>'+(state.model.profile>0.28?"ADAPTIVE":"BASELINE")+"</span></div>";
   }
 
+  async function loadTitleExtras(movie) {
+    if (!movie || !localStorage.getItem(STORE.key)) return;
+    const key=String(movie.id);
+    if (state.detailCache[key]) { renderTitleExtras(movie,state.detailCache[key]); return; }
+
+    const [providersResult,reviewsResult,videosResult]=await Promise.allSettled([
+      tmdb("/movie/"+encodeURIComponent(movie.id)+"/watch/providers"),
+      tmdb("/movie/"+encodeURIComponent(movie.id)+"/reviews",{language:"en-US",page:1}),
+      tmdb("/movie/"+encodeURIComponent(movie.id)+"/videos",{language:"en-US"})
+    ]);
+
+    const providers=providersResult.status==="fulfilled"
+      ? (providersResult.value?.results?.IN || {})
+      : {};
+    const reviews=reviewsResult.status==="fulfilled"
+      ? (reviewsResult.value?.results || [])
+      : [];
+    const videos=videosResult.status==="fulfilled"
+      ? (videosResult.value?.results || [])
+      : [];
+
+    const extra={providers,reviews,videos};
+    state.detailCache[key]=extra;
+    renderTitleExtras(movie,extra);
+  }
+
+  function renderTitleExtras(movie,extra) {
+    const providerItems=[
+      ...(extra.providers?.flatrate||[]),
+      ...(extra.providers?.free||[]),
+      ...(extra.providers?.ads||[])
+    ];
+    $("providerContent").innerHTML=providerItems.length
+      ? '<div class="provider-list">'+uniq(providerItems,x=>x.provider_id).slice(0,6).map(p=>'<span class="provider-pill">'+esc(p.provider_name)+'</span>').join("")+'</div>'
+      : '<span>No current India provider data returned.</span>';
+
+    const reviews=extra.reviews||[];
+    const avg=rating(movie);
+    $("reviewContent").innerHTML=
+      '<span class="review-score">★ '+esc(avg)+'</span>'+
+      '<span class="review-note">'+esc(voteCount(movie))+' TMDB ratings · '+reviews.length+' review'+(reviews.length===1?"":"s")+'</span>'+
+      (reviews[0]?.url ? '<a class="review-link" href="'+esc(reviews[0].url)+'" target="_blank" rel="noopener">Read review</a>' : '');
+
+    const trailer=(extra.videos||[]).find(v=>v.site==="YouTube" && v.type==="Trailer" && v.official)
+      || (extra.videos||[]).find(v=>v.site==="YouTube" && v.type==="Trailer")
+      || (extra.videos||[]).find(v=>v.site==="YouTube");
+    const trailerBtn=$("modalTrailer");
+    if(trailerBtn){
+      trailerBtn.textContent=trailer?"▶ Trailer":"▶ YouTube";
+      trailerBtn.onclick=()=>{
+        const url=trailer ? "https://www.youtube.com/watch?v="+encodeURIComponent(trailer.key)
+          : "https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" official trailer");
+        window.open(url,"_blank","noopener");
+        learn(movie,"play");
+        sendBackendEvent(movie,"play",1.2).catch(()=>{});
+      };
+    }
+  }
+
   function openMovie(movie, autoplay=false) {
     if (!movie) return;
     state.selected=movie;
@@ -726,7 +786,12 @@
     $("modalOverview").textContent=movie.overview || "No overview available.";
     $("modalTags").innerHTML=(movie.tags||genres(movie)).slice(0,9).map(t=>'<span>'+esc(t)+'</span>').join("");
     $("whyBox").innerHTML='<strong>Why this title?</strong><p>'+esc(movie.reason||buildWhy(movie,null))+'</p>';
+    $("providerContent").textContent=localStorage.getItem(STORE.key)?"Loading India providers…":"Connect TMDB to load regional providers.";
+    $("reviewContent").textContent=localStorage.getItem(STORE.key)?"Loading review pulse…":"Connect TMDB to load review context.";
     $("modalList").onclick=()=>toggleList(movie);
+    $("modalCritics").onclick=()=>{
+      window.open("https://www.rottentomatoes.com/search?search="+encodeURIComponent(movie.title),"_blank","noopener");
+    };
     $("modalRecommend").onclick=async()=>{
       const backendUsed=await loadBackendRecommendations(movie.id);
       if(!backendUsed) renderRail("aiRail",recommendFor(movie,14));
@@ -736,10 +801,11 @@
       toast((backendUsed?"Python ML":"Local AI")+" similar titles generated");
     };
     $("modalTrailer").onclick=()=>{
-      window.open("https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" trailer"),"_blank","noopener");
+      window.open("https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" official trailer"),"_blank","noopener");
       learn(movie,"play");
     };
     updateListButtons(movie);
+    loadTitleExtras(movie).catch(()=>{});
   }
 
   function closeMovie() { $("movieModal")?.classList.add("hidden"); document.body.classList.remove("modal-open"); }
