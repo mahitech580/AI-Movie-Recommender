@@ -172,6 +172,11 @@
     or:"Odia", ur:"Urdu"
   };
 
+  const INDIAN_INDUSTRIES = {
+    hi:"Bollywood", te:"TFI", ta:"Kollywood", ml:"Mollywood", kn:"Sandalwood",
+    bn:"Bengali", mr:"Marathi", pa:"Punjabi", gu:"Gujarati", as:"Assamese", or:"Odia", ur:"Urdu"
+  };
+
   function languageName(movie) {
     return movie?.language_name || INDIAN_LANGUAGES[String(movie?.language || movie?.original_language || "").toLowerCase()] ||
       String(movie?.language || movie?.original_language || "en").toUpperCase();
@@ -189,6 +194,18 @@
   }
 
   function movieText(movie) {
+    const lang=String(movie?.language || movie?.original_language || "").toLowerCase();
+    const industry=String(movie?.industry || INDIAN_INDUSTRIES[lang] || "");
+    const regionalAliases=({
+      te:"Telugu Tollywood TFI",
+      hi:"Hindi Bollywood",
+      ta:"Tamil Kollywood",
+      ml:"Malayalam Mollywood",
+      kn:"Kannada Sandalwood",
+      bn:"Bengali",
+      mr:"Marathi",
+      pa:"Punjabi"
+    })[lang] || "";
     return [
       movie.title,
       genres(movie).join(" "),
@@ -197,8 +214,9 @@
       movie.language,
       movie.original_language,
       movie.language_name,
-      movie.industry,
+      industry,
       movie.country,
+      regionalAliases,
       (movie.aliases || []).join(" ")
     ].join(" ");
   }
@@ -828,15 +846,37 @@
       '<div class="console-footer"><span>'+Math.floor(s)+' local signals</span><span>'+state.movies.length+' indexed titles</span><span>'+(state.model.profile>0.28?"ADAPTIVE":"BASELINE")+"</span></div>";
   }
 
+  async function resolveTMDBMovieId(movie) {
+    if (!movie) return null;
+    if (movie.tmdb_id) return Number(movie.tmdb_id);
+    if (movie.live && Number.isFinite(Number(movie.id))) return Number(movie.id);
+    if (!isIndianMovie(movie)) return Number(movie.id);
+    const cacheKey="resolve:"+String(movie.id);
+    if (state.detailCache[cacheKey]?.id) return Number(state.detailCache[cacheKey].id);
+    try {
+      const data=await tmdb("/search/movie",{query:movie.title,year:Number(year(movie)) || undefined,region:"IN",page:1});
+      const candidates=Array.isArray(data.results)?data.results:[];
+      const exact=candidates.find(x=>String(x.title||"").toLowerCase()===String(movie.title||"").toLowerCase());
+      const sameLang=candidates.find(x=>x.original_language===movie.language);
+      const hit=exact || sameLang || candidates[0];
+      if(hit?.id){
+        state.detailCache[cacheKey]={id:hit.id};
+        return Number(hit.id);
+      }
+    } catch {}
+    return Number(movie.id);
+  }
+
   async function loadTitleExtras(movie) {
     if (!movie || !localStorage.getItem(STORE.key)) return;
+    const tmdbId=await resolveTMDBMovieId(movie);
     const key=String(movie.id);
     if (state.detailCache[key]) { renderTitleExtras(movie,state.detailCache[key]); return; }
 
     const [providersResult,reviewsResult,videosResult]=await Promise.allSettled([
-      tmdb("/movie/"+encodeURIComponent(movie.id)+"/watch/providers"),
-      tmdb("/movie/"+encodeURIComponent(movie.id)+"/reviews",{language:"en-US",page:1}),
-      tmdb("/movie/"+encodeURIComponent(movie.id)+"/videos",{language:"en-US"})
+      tmdb("/movie/"+encodeURIComponent(tmdbId)+"/watch/providers"),
+      tmdb("/movie/"+encodeURIComponent(tmdbId)+"/reviews",{language:"en-US",page:1}),
+      tmdb("/movie/"+encodeURIComponent(tmdbId)+"/videos",{language:"en-US"})
     ]);
 
     const providers=providersResult.status==="fulfilled"
@@ -1036,11 +1076,14 @@
     if (!m?.id || !m.title) return null;
     const language=m.original_language||"en";
     const g=(m.genre_ids||[]).map(id=>GENRE_BY_ID[id]).filter(Boolean);
+    const industry=INDIAN_INDUSTRIES[language] || "";
     return {
       id:m.id,title:m.title,year:m.release_date?String(m.release_date).slice(0,4):"—",
       release_date:m.release_date||"",genres:g.length?g:["Movie"],rating:Number(m.vote_average||0),
       votes:Number(m.vote_count||0),popularity:Number(m.popularity||0),language,
-      original_language:language,overview:m.overview||"Live title from TMDB.",
+      original_language:language,language_name:INDIAN_LANGUAGES[language] || "",
+      industry,country:industry?"IN":"",
+      overview:m.overview||"Live title from TMDB.",
       poster:m.poster_path||"",backdrop:m.backdrop_path||"",tags:g.map(x=>x.toLowerCase()),
       live:source==="live",accent:(m.id%2===0?"green":"red")
     };
