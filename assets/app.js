@@ -1431,7 +1431,7 @@
 
   function normalizeRouteHash() {
     const raw=(window.location.hash || "#home").replace(/^#\/?/,"").split(/[?&]/)[0].trim() || "home";
-    return ["home","discover","my-list","activity"].includes(raw) ? raw : "home";
+    return ["home","discover","web-series","my-list","activity"].includes(raw) ? raw : "home";
   }
 
   function syncNavigation(scroll=true) {
