@@ -843,13 +843,33 @@
     }
   }
 
+  function showModal(id) {
+    const modal=$(id);
+    if (!modal) return null;
+    modal.classList.remove("hidden");
+    modal.removeAttribute("aria-hidden");
+    modal.style.removeProperty("display");
+    document.body.classList.add("modal-open");
+    return modal;
+  }
+
+  function hideModal(id) {
+    const modal=$(id);
+    if (!modal) return;
+    modal.classList.add("hidden");
+    modal.setAttribute("aria-hidden","true");
+    modal.style.setProperty("display","none","important");
+    if (!document.querySelector(".modal:not(.hidden), .command:not(.hidden), .mobile-drawer.open")) {
+      document.body.classList.remove("modal-open");
+    }
+  }
+
   function openMovie(movie, autoplay=false) {
     if (!movie) return;
     state.selected=movie;
     recordHistory(movie, autoplay?"play":"open");
-    const modal=$("movieModal");
-    modal.classList.remove("hidden");
-    document.body.classList.add("modal-open");
+    const modal=showModal("movieModal");
+    if (!modal) return;
     setBackdrop($("modalMedia"), movie);
     $("modalKicker").textContent=(movie.live?"LIVE · ":"")+"MOVIE / "+String(movie.language||movie.original_language||"EN").toUpperCase();
     $("modalTitle").textContent=movie.title;
@@ -880,7 +900,10 @@
     loadTitleExtras(movie).catch(()=>{});
   }
 
-  function closeMovie() { $("movieModal")?.classList.add("hidden"); document.body.classList.remove("modal-open"); }
+  function closeMovie() {
+    state.selected=null;
+    hideModal("movieModal");
+  }
 
   async function loadBackendRecommendations(seedMovieId=null) {
     const base=backendUrl();
@@ -938,13 +961,15 @@
   }
 
   function openSettings() {
-    $("settingsModal")?.classList.remove("hidden"); document.body.classList.add("modal-open");
+    showModal("settingsModal");
     const key=localStorage.getItem(STORE.key)||"";
     $("tmdbKey").value=key;
     showSettingsStatus(key ? "A browser-local credential is saved. Test the connection with Sync." : "Live mode is currently off.");
   }
 
-  function closeSettings() { $("settingsModal")?.classList.add("hidden"); document.body.classList.remove("modal-open"); }
+  function closeSettings() {
+    hideModal("settingsModal");
+  }
 
   function showSettingsStatus(message, good=false) {
     const n=$("settingsStatus"); if (!n) return;
@@ -1233,8 +1258,8 @@
     $("searchTrigger").onclick=openSearch;
     $("liveBtn").onclick=openSettings;
     $("saveBackend").onclick=saveBackendConfig;
-    $("profileBtn").onclick=()=>{renderLab();$("aiLabModal")?.classList.remove("hidden");document.body.classList.add("modal-open");};
-    $("openAiLab").onclick=()=>{$("aiLabModal")?.classList.remove("hidden");document.body.classList.add("modal-open");renderLab();};
+    $("profileBtn").onclick=()=>{renderLab();showModal("aiLabModal");};
+    $("openAiLab").onclick=()=>{showModal("aiLabModal");renderLab();};
     $("shuffleAi").onclick=async()=>{ await loadBackendRecommendations(); const recs=recommendFor(null,18).sort(()=>Math.random()-0.5); renderRail("aiRail",recs); toast("AI queue refreshed"); };
     $("refreshTrending").onclick=()=>syncLive(true);
     $("refreshFresh").onclick=()=>syncLive(true);
@@ -1264,14 +1289,14 @@
 
     $$("[data-close-modal]").forEach(x=>x.onclick=closeMovie);
     $$("[data-close-settings]").forEach(x=>x.onclick=closeSettings);
-    $$("[data-close-ai-lab]").forEach(x=>x.onclick=()=>{$("aiLabModal")?.classList.add("hidden");document.body.classList.remove("modal-open");});
+    $("[data-close-ai-lab]").forEach(x=>x.onclick=()=>hideModal("aiLabModal"));
     $$("[data-close-command]").forEach(x=>x.onclick=closeCommand);
 
     $("commandInput").addEventListener("input",e=>renderCommand(e.target.value));
     $("searchInput").addEventListener("keydown",e=>{if(e.key==="Enter"){performSearch(e.target.value,true);$("searchPanel")?.classList.add("hidden");}});
     document.addEventListener("keydown",e=>{
       if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openCommand();}
-      if(e.key==="Escape"){closeMovie();closeSettings();closeCommand();$("aiLabModal")?.classList.add("hidden");document.body.classList.remove("modal-open");}
+      if(e.key==="Escape"){closeMovie();closeSettings();closeCommand();hideModal("aiLabModal");}
     });
 
     $$(".filter-chip").forEach(btn=>btn.onclick=()=>{
