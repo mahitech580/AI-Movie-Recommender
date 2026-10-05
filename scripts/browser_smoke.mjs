@@ -47,6 +47,27 @@ async function testDesktop(browser) {
   if (spotlightImages !== spotlightExpected.length) throw new Error("Home spotlight has "+(spotlightExpected.length-spotlightImages)+" broken poster images");
   const spotlightOriginals = await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs => imgs.filter(img => (img.getAttribute("src") || "").includes("image.tmdb.org/t/p/original/")).length);
   if (spotlightOriginals !== spotlightExpected.length) throw new Error("Home spotlight artwork is not using original-resolution TMDB URLs for every requested title");
+  const spotlightLayout = await page.locator("#homeSpotlightRail").evaluate(el => {
+    const style = getComputedStyle(el);
+    const cards = Array.from(el.querySelectorAll(".movie-card"));
+    const rail = el.getBoundingClientRect();
+    const cardRects = cards.map(c => c.getBoundingClientRect());
+    return {
+      display: style.display,
+      columns: style.gridTemplateColumns.split(" ").filter(Boolean).length,
+      railWidth: rail.width,
+      cardsWidth: cardRects.reduce((sum,r)=>sum+r.width,0),
+      minLeft: Math.min(...cardRects.map(r=>r.left)),
+      maxRight: Math.max(...cardRects.map(r=>r.right))
+    };
+  });
+  if (spotlightLayout.display !== "grid" || spotlightLayout.columns !== 9) throw new Error("CINEPLAY Spotlight is not a complete 9-card desktop grid");
+  if (spotlightLayout.minLeft < 0 || spotlightLayout.maxRight > spotlightLayout.railWidth + 1) throw new Error("CINEPLAY Spotlight cards overflow the full-width spotlight rail");
+  const ageCard = page.locator("#homeSpotlightRail .movie-card").filter({hasText:"Avengers: Age of Ultron"}).first();
+  const ageSrc = await ageCard.locator("img").getAttribute("src");
+  const ageWidth = await ageCard.locator("img").evaluate(img => img.naturalWidth || 0);
+  if (!ageSrc?.includes("4ssDuvEDkSArWEdyBl2X5EHvYKU")) throw new Error("Avengers: Age of Ultron spotlight poster path is incorrect");
+  if (ageWidth < 20) throw new Error("Avengers: Age of Ultron spotlight poster did not decode");
 
 
 
@@ -113,8 +134,20 @@ async function testDesktop(browser) {
   // India filter: load every page and verify every Indian movie has usable artwork.
   await page.locator('#filterRow .filter-chip[data-filter="india"]').click();
   await sleep(160);
+  const expectedIndiaTotal = await page.evaluate(() => {
+    const languages = new Set(["hi","te","ta","ml","kn","bn","mr","pa","gu","as","or","ur"]);
+    return Array.from(window.MOVIES || []).filter(movie => {
+      const lang=String(movie?.language || movie?.original_language || "").toLowerCase();
+      return String(movie?.country || "").toUpperCase()==="IN" ||
+        Boolean(movie?.industry) ||
+        languages.has(lang) ||
+        /india|bollywood|tollywood|tfi|kollywood|mollywood|sandalwood|marathi|punjabi|bengali/i.test(
+          String(movie?.title || "")+" "+String(movie?.industry || "")+" "+String(movie?.overview || "")
+        );
+    }).length;
+  });
   const indiaTotal = Number.parseInt((await page.locator("#filterResultsCount").textContent()) || "0", 10);
-  if (indiaTotal < 109) throw new Error("India catalogue count is unexpectedly low");
+  if (indiaTotal !== expectedIndiaTotal) throw new Error("India catalogue count mismatch: UI "+indiaTotal+" vs catalog "+expectedIndiaTotal);
   let safety=0;
   while(await page.locator("#filterShowMore").isEnabled() && safety<10){
     await page.locator("#filterShowMore").click();
