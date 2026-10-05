@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/cineplay-icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css?v=20261005-07">
+  <link rel="stylesheet" href="assets/styles.css?v=20261005-08">
 </head>
 <body>
 
@@ -132,14 +132,34 @@
           <div class="filter-row" id="filterRow">
             <button class="filter-chip active" data-filter="all">For you</button>
             <button class="filter-chip" data-filter="action">Action</button>
-            <button class="filter-chip" data-filter="sci-fi">Sci-Fi</button>
-            <button class="filter-chip" data-filter="drama">Drama</button>
-            <button class="filter-chip" data-filter="thriller">Thriller</button>
+            <button class="filter-chip" data-filter="adventure">Adventure</button>
             <button class="filter-chip" data-filter="comedy">Comedy</button>
-            <button class="filter-chip" data-filter="animation">Animation</button>
-            <button class="filter-chip" data-filter="romance">Romance</button>
+            <button class="filter-chip" data-filter="crime">Crime</button>
+            <button class="filter-chip" data-filter="drama">Drama</button>
+            <button class="filter-chip" data-filter="fantasy">Fantasy</button>
+            <button class="filter-chip" data-filter="history">History</button>
             <button class="filter-chip" data-filter="horror">Horror</button>
+            <button class="filter-chip" data-filter="mystery">Mystery</button>
+            <button class="filter-chip" data-filter="romance">Romance</button>
+            <button class="filter-chip" data-filter="sci-fi">Sci-Fi</button>
+            <button class="filter-chip" data-filter="sport">Sport</button>
+            <button class="filter-chip" data-filter="thriller">Thriller</button>
+            <button class="filter-chip" data-filter="war">War</button>
+            <button class="filter-chip" data-filter="animation">Animation</button>
+            <button class="filter-chip" data-filter="biography">Biography</button>
+            <button class="filter-chip" data-filter="documentary">Documentary</button>
+            <button class="filter-chip" data-filter="family">Family</button>
+            <button class="filter-chip" data-filter="music">Music</button>
+            <button class="filter-chip" data-filter="musical">Musical</button>
             <button class="filter-chip" data-filter="india">India</button>
+            <button class="filter-chip" data-filter="telugu">Telugu · TFI</button>
+            <button class="filter-chip" data-filter="hindi">Hindi</button>
+            <button class="filter-chip" data-filter="tamil">Tamil</button>
+            <button class="filter-chip" data-filter="malayalam">Malayalam</button>
+            <button class="filter-chip" data-filter="kannada">Kannada</button>
+            <button class="filter-chip" data-filter="bengali">Bengali</button>
+            <button class="filter-chip" data-filter="marathi">Marathi</button>
+            <button class="filter-chip" data-filter="punjabi">Punjabi</button>
           </div>
         </div>
       </section>
@@ -211,8 +231,13 @@
         </div>
 
         <div class="section-block">
-          <div class="section-heading"><div><span class="eyebrow">INDIAN CINEMA</span><h2>Popular in India</h2><p>Live region-aware discovery when TMDB is connected.</p></div></div>
-          <div class="rail" id="indianRail"></div>
+          <div class="section-heading"><div><span class="eyebrow">INDIAN CINEMA</span><h2>Popular in India</h2><p>Hindi, Telugu, Tamil, Malayalam, Kannada and more — local-first, TMDB-ready.</p></div></div>
+          <div class="rail rail-wide" id="indianRail"></div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">TELUGU · TFI</span><h2>Telugu cinema spotlight</h2><p>A dedicated Tollywood shelf covering mass, romance, comedy, crime, mystery, horror, mythology and sci-fi.</p></div><span class="small-note" id="teluguCount">0 titles</span></div>
+          <div class="rail rail-wide" id="teluguRail"></div>
         </div>
 
         <div class="section-block">
@@ -349,7 +374,7 @@
       window.addEventListener("unhandledrejection", () => window.setTimeout(releaseLoader, 280), { once: true });
     })();
   </script>
-  <script src="data/movies.js?v=20261005-07"></script>
-  <script src="assets/app.js?v=20261005-07"></script>
+  <script src="data/movies.js?v=20261005-08"></script>
+  <script src="assets/app.js?v=20261005-08"></script>
 </body>
 </html>
