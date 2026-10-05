@@ -1167,6 +1167,7 @@
       industry,country:industry?"IN":"",
       overview:m.overview||"Live title from TMDB.",
       poster:m.poster_path||"",backdrop:m.backdrop_path||"",tags:g.map(x=>x.toLowerCase()),
+      media_type:m.media_type||"movie",type:m.media_type==="tv"?"series":"movie",tmdb_id:Number(m.id||0),
       live:source==="live",accent:(m.id%2===0?"green":"red")
     };
   }
