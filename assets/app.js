@@ -166,6 +166,28 @@
     return path.startsWith("http") ? path : IMAGE_BASE + "original" + path;
   }
 
+  const INDIAN_LANGUAGES = {
+    hi:"Hindi", te:"Telugu", ta:"Tamil", ml:"Malayalam", kn:"Kannada",
+    bn:"Bengali", mr:"Marathi", pa:"Punjabi", gu:"Gujarati", as:"Assamese",
+    or:"Odia", ur:"Urdu"
+  };
+
+  function languageName(movie) {
+    return movie?.language_name || INDIAN_LANGUAGES[String(movie?.language || movie?.original_language || "").toLowerCase()] ||
+      String(movie?.language || movie?.original_language || "en").toUpperCase();
+  }
+
+  function isIndianMovie(movie) {
+    if (!movie) return false;
+    const lang=String(movie.language || movie.original_language || "").toLowerCase();
+    return String(movie.country || "").toUpperCase()==="IN" ||
+      Boolean(movie.industry) ||
+      Object.prototype.hasOwnProperty.call(INDIAN_LANGUAGES,lang) ||
+      /india|bollywood|tollywood|tfi|kollywood|mollywood|sandalwood|marathi|punjabi|bengali/i.test(
+        String(movie.title || "")+" "+String(movie.industry || "")+" "+String(movie.overview || "")
+      );
+  }
+
   function movieText(movie) {
     return [
       movie.title,
@@ -173,7 +195,11 @@
       (movie.tags || []).join(" "),
       movie.overview,
       movie.language,
-      movie.original_language
+      movie.original_language,
+      movie.language_name,
+      movie.industry,
+      movie.country,
+      (movie.aliases || []).join(" ")
     ].join(" ");
   }
 
@@ -252,7 +278,7 @@
   async function hydrateCatalog() {
     if (state.movies.length) return true;
     try {
-      const response = await fetch("data/movies.json?v=20261005-03", { cache: "no-store" });
+      const response = await fetch("data/movies.json?v=20261005-08", { cache: "no-store" });
       if (!response.ok) throw new Error("CATALOG_"+response.status);
       const data = await response.json();
       if (!Array.isArray(data) || !data.length) throw new Error("CATALOG_EMPTY");
@@ -446,14 +472,15 @@
     const rank = index != null ? '<span class="rank-badge">#'+(index+1)+'</span>' : "";
     const live = movie.live ? '<span class="live-card-badge"><i></i>LIVE</span>' : "";
     const matchMarkup = match ? '<span class="ai-match">'+match+'% match</span>' : "";
+    const regionalBadge = isIndianMovie(movie) ? '<span class="region-badge">'+esc(movie.industry || languageName(movie))+'</span>' : "";
     const posterUrl = poster(movie, compact ? "w342" : "w500");
 
     return '<article class="movie-card '+(compact?"compact":"")+'" data-movie-id="'+esc(movie.id)+'" tabindex="0" aria-label="'+esc(movie.title)+'">'+
       '<div class="poster-frame" style="--card-accent:'+(movie.accent==="green"?"#21d58c":"#ff334d")+'">'+
         imageMarkup(posterUrl, movie.title)+
         '<div class="poster-gradient"></div>'+
-        rank+live+matchMarkup+
-        '<button class="mini-list '+(listed(movie)?"added":"")+'" data-list-id="'+esc(movie.id)+'" type="button" aria-label="'+(listed(movie)?"Remove from My List":"Add to My List")+'">'+add+'</button>'+
+        rank+live+matchMarkup+regionalBadge+
+        '<button class="mini-list '+(listed(movie)?"added":"")+'" data-list-id="'+esc(movie.id)+'" type="button" aria-label="'+(listed(movie)?"Remove from My List":"Add to My List")+'">'+
         '<div class="hover-layer"><button class="play-dot" data-open="'+esc(movie.id)+'" type="button">▶</button><div class="hover-meta"><span>'+esc(badgeLabel(movie))+'</span><span>★ '+esc(rating(movie))+'</span></div></div>'+
       '</div>'+
       '<div class="movie-caption"><h3>'+esc(movie.title)+'</h3><div><span>'+esc(year(movie))+'</span><i>•</i><span>★ '+esc(rating(movie))+'</span></div></div>'+
@@ -511,7 +538,7 @@
     const genresSeen=Object.entries(state.taste).filter(([,v])=>Number(v)>0.6).length;
     $("signalCount") && ($("signalCount").textContent = Math.floor(signals));
     $("metricSignals") && ($("metricSignals").textContent = Math.floor(signals));
-    $("metricGenres") && ($("metricGenres").textContent = Math.min(18,genresSeen));
+    $("metricGenres") && ($("metricGenres").textContent = Math.min(30,genresSeen));
     $("heroCount") && ($("heroCount").textContent = state.movies.length+"+");
     $("liveCount") && ($("liveCount").textContent = state.live ? String(state.liveCount) : "—");
     $("heroLiveAge") && ($("heroLiveAge").textContent = state.syncing ? "SYNCING NOW" : (state.live ? formatSyncAge(state.lastSync) : "LOCAL CATALOG"));
@@ -540,7 +567,7 @@
     if (media) setBackdrop(media, movie);
     $("heroTitle") && ($("heroTitle").textContent=movie.title);
     $("heroOverview") && ($("heroOverview").textContent=movie.overview || "Explore a new cinematic world.");
-    $("heroMeta") && ($("heroMeta").innerHTML='<span class="rating-star">★ '+esc(rating(movie))+'</span><span>'+esc(year(movie))+'</span><span>'+esc(genreLine(movie))+'</span><span>'+esc((movie.language||movie.original_language||"en").toUpperCase())+'</span>');
+    $("heroMeta") && ($("heroMeta").innerHTML='<span class="rating-star">★ '+esc(rating(movie))+'</span><span>'+esc(year(movie))+'</span><span>'+esc(genreLine(movie))+'</span><span>'+esc(languageName(movie))+'</span>');
     $("heroTags") && ($("heroTags").innerHTML=genres(movie).slice(0,3).map(g=>'<span>'+esc(g)+'</span>').join("")+'<span>'+Math.round(popularity(movie))+' popularity</span>');
     $("heroIndex") && ($("heroIndex").textContent=String(state.heroIndex+1).padStart(2,"0"));
     $("heroRecommend").onclick=async()=>{ const backendUsed=await loadBackendRecommendations(movie.id); if(!backendUsed){ const recs=recommendFor(movie,12); renderRail("aiRail",recs); $("recommendationSubtitle").textContent="Local hybrid AI ranking for “"+movie.title+"”."; } $("aiRail")?.scrollIntoView({behavior:"smooth",block:"center"}); recordHistory(movie,"similar"); toast((backendUsed?"Python ML":"Local AI")+" queue built from "+movie.title); };
@@ -666,10 +693,21 @@
   }
 
   function matchesFilter(movie, filter) {
+    const key=String(filter || "").toLowerCase();
     const gs=genres(movie).map(g=>g.toLowerCase());
-    if (filter==="india") return ["hi","ta","te","ml","kn","bn","mr","pa"].includes(String(movie.language||movie.original_language||"").toLowerCase()) ||
-      /india|bollywood|telugu|tamil|hindi|malayalam|kannada/i.test(movie.title+" "+movieText(movie));
-    return gs.some(g=>g===filter.toLowerCase() || g.replace("sci-fi","sci-fi")===filter.toLowerCase());
+    const lang=String(movie.language || movie.original_language || "").toLowerCase();
+    const industry=String(movie.industry || "").toLowerCase();
+
+    if (key==="india" || key==="indian") return isIndianMovie(movie);
+    const languageFilters={telugu:["te"],hindi:["hi"],tamil:["ta"],malayalam:["ml"],kannada:["kn"],bengali:["bn"],marathi:["mr"],punjabi:["pa"]};
+    if (languageFilters[key]) return languageFilters[key].includes(lang) ||
+      industry.includes(key) ||
+      (key==="telugu" && /tfi|tollywood/i.test(industry)) ||
+      (key==="hindi" && /bollywood/i.test(industry)) ||
+      (key==="tamil" && /kollywood/i.test(industry)) ||
+      (key==="malayalam" && /mollywood/i.test(industry)) ||
+      (key==="kannada" && /sandalwood/i.test(industry));
+    return gs.some(g=>g===key);
   }
 
   function applyFilter() {
@@ -680,6 +718,12 @@
     renderRail("ratedRail",topByQuality(available).slice(0,16));
     renderRail("newRail",available.slice().sort((a,b)=>freshness(b)-freshness(a)).slice(0,16));
     renderRail("gemsRail",hiddenGems(available));
+    const indian=isIndianMovie;
+    const indiaMovies=state.movies.filter(indian).sort((a,b)=>(popularity(b)*0.7+quality(b)*0.3)-(popularity(a)*0.7+quality(a)*0.3));
+    const telugu=state.movies.filter(m=>matchesFilter(m,"telugu")).sort((a,b)=>(popularity(b)*0.72+quality(b)*0.28)-(popularity(a)*0.72+quality(a)*0.28));
+    renderRail("indianRail",indiaMovies.slice(0,16));
+    renderRail("teluguRail",telugu.slice(0,18));
+    $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     updateFilterButtons();
   }
 
@@ -1398,7 +1442,11 @@
     renderRail("ratedRail",topByQuality(state.movies).slice(0,16));
     renderRail("newRail",state.movies.slice().sort((a,b)=>freshness(b)-freshness(a)).slice(0,16));
     renderRail("gemsRail",hiddenGems(state.movies));
-    renderRail("indianRail",state.movies.filter(m=>matchesFilter(m,"india")).slice(0,16));
+    const indiaMovies=state.movies.filter(isIndianMovie).sort((a,b)=>(popularity(b)*0.7+quality(b)*0.3)-(popularity(a)*0.7+quality(a)*0.3));
+    const telugu=state.movies.filter(m=>matchesFilter(m,"telugu")).sort((a,b)=>(popularity(b)*0.72+quality(b)*0.28)-(popularity(a)*0.72+quality(a)*0.28));
+    renderRail("indianRail",indiaMovies.slice(0,16));
+    renderRail("teluguRail",telugu.slice(0,18));
+    $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     renderRail("aiRail",recommendFor(null,18));
     renderList();
     renderContinue();
