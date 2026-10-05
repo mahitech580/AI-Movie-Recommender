@@ -834,8 +834,8 @@
     ],
     "overview": "A young man discovers his royal heritage and is drawn into a struggle for a legendary kingdom.",
     "accent": "green",
-    "poster": "https://image.tmdb.org/t/p/original/9BAjt8nSSms62uOV8XbcxjGW2M3.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/5/5f/Baahubali_The_Beginning_poster.jpg",
+    "poster_source": "TMDB poster CDN",
     "featured": true
   },
   {
@@ -865,8 +865,8 @@
     ],
     "overview": "A son uncovers the truth behind his father's fall and rises to reclaim his kingdom.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMjNhM2UxMTEtYTgzNi00YmM0LWI5ZTAtMmZjYjM1NDIwMTgxXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/xQ22LOWSkClP3maYhR9nZH0dnWM.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10004,
@@ -1114,8 +1114,8 @@
     ],
     "overview": "The life and bravery of an Indian Army officer are dramatized through his final mission.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BZjk4YTZjNWQtZWY3OC00NDkzLTlkY2UtZjk0NDkyZWFkMmVkXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/sJOfJuyQVZPwNQ8g21Qv0lojQhC.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10013,
@@ -2190,8 +2190,8 @@
     ],
     "overview": "A former wrestler trains his daughters to compete at the highest levels of wrestling.",
     "accent": "green",
-    "poster": "https://image.tmdb.org/t/p/original/mY7SeH4HFFxW1hiIGV3FpNR2G7h.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset",
+    "poster": "https://image.tmdb.org/t/p/w780/jLiA1WW3kL1K9lYfYmVj57RD74N.jpg",
+    "poster_source": "TMDB poster CDN",
     "featured": true
   },
   {
@@ -2219,7 +2219,8 @@
     ],
     "overview": "Villagers challenge colonial rule through an impossible cricket match.",
     "accent": "red",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Lagaan.jpg/220px-Lagaan.jpg"
+    "poster": "https://image.tmdb.org/t/p/w780/yNX9lFRAFeNLNRIXdqZK9gYrYKa.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10104,
@@ -2272,8 +2273,8 @@
     ],
     "overview": "A young woman travels alone and discovers a new sense of confidence after her wedding falls apart.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BNWYyOWRlOWItZWM5MS00ZjJkLWI0MTUtYTE3NTI5MDAwYjgyXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w500/vKLp0X2RQOuA31R3AdaYtDdKIPK.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10106,
@@ -2378,7 +2379,8 @@
     ],
     "overview": "A town battles a mysterious female spirit through a mix of folklore and dark comedy.",
     "accent": "green",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Stree_-_2018_Movie_Poster.jpg/220px-Stree_-_2018_Movie_Poster.jpg"
+    "poster": "https://image.tmdb.org/t/p/w500/3ZY3PAgcLE7GBNQzCrpITnedgA8.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10110,
@@ -2537,8 +2539,8 @@
     ],
     "overview": "Indian special forces prepare and execute a high-risk cross-border military mission.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMWU4ZjNlNTQtOGE2MS00NDI0LWFlYjMtMmY3ZWVkMjJkNGRmXkEyXkFqcGdeQXVyNjE1OTQ0NjA@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/yNySAgpAnWmPpYinim9E0tUzJWG.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10116,
@@ -3059,8 +3061,8 @@
     ],
     "overview": "A young man's romantic life evolves through different stages of adulthood.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMzJhNjMyOGMtYjhiYy00ZTAwLThmZWUtZmE5NzI3OTk4Y2M4XkEyXkFqcGdeQXVyMzQ5Njc3NzU@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/wfMgsfDrtouYOM6MbrkHtU96Xij.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10304,
@@ -3374,8 +3376,8 @@
     ],
     "overview": "A family living in rural Bengal faces everyday hardship and small moments of wonder.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMmFkNDY5OTktNzY3Yy00OTFlLThhNjktOTRhMmZjZmIxYjAxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/frZj5djlU9hFEjMcL21RJZVuG5O.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10502,
@@ -3399,8 +3401,8 @@
     ],
     "overview": "A young boy grows up between rural roots, education and changing expectations of family.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMjFjODk1NjUtNzk3NS00MDQ3LTg2ZmMtN2ZlNzdjMWY4YjE5XkEyXkFqcGdeQXVyNzMwODE5MTc@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/qvR2Qs42WHwCEcuwhQnterU3gVY.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10503,
@@ -3448,8 +3450,8 @@
     ],
     "overview": "Two young lovers challenge social divisions and family expectations.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMjBjNWYyY2UtOGNjZC00MTg4LWIwYWItYmZiNDI5MGUwNWRkXkEyXkFqcGdeQXVyNjI1NjA5NjE@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/d8K4ZI1RSxMkIIwu5cuvZmzwohq.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10602,
@@ -3472,7 +3474,8 @@
     ],
     "overview": "A courtroom case reveals tensions between law, bureaucracy and everyday life.",
     "accent": "green",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Court_%28film%29_POSTER.jpg/220px-Court_%28film%29_POSTER.jpg"
+    "poster": "https://pics.filmaffinity.com/Court-371324435-large.jpg",
+    "poster_source": "FilmAffinity poster image"
   },
   {
     "id": 10603,
@@ -3593,8 +3596,8 @@
     ],
     "overview": "An animated adaptation of the Ramayana follows Prince Rama through exile and battle.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BNTJjZTViZTEtNGVhNy00ODlmLTg2YTEtZDQ4NzBiNGMzMGJkXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w500/l4MNBj7Zn2iVNfwBdm80Am0Ll7w.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10803,
@@ -3653,8 +3656,8 @@
     ],
     "overview": "A retired police officer recruits two outlaws to help capture a ruthless bandit who terrorizes a rural village.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BOWQ0YTUzYzItYjI0MC00OTZmLWE1MWQtY2EzMzU2MTlmMmJjXkEyXkFqcGdeQXVyMDkwNTkwNg@@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster": "https://image.tmdb.org/t/p/w780/ya9bwgqA4eNl5bQ9QqS0jcmRoBS.jpg",
+    "poster_source": "TMDB poster CDN"
   },
   {
     "id": 10902,
