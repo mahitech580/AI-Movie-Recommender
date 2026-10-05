@@ -114,6 +114,7 @@ class HybridRecommender:
         for idx,m in enumerate(self.movies):
             mid=int(m["id"])
             if seed_movie_id and mid==int(seed_movie_id): continue
+            if mid in seen: continue
             vec=self.matrix[idx]
             p=float(cosine_similarity(vec,profile_vec)[0][0]) if profile_vec is not None else 0
             s=float(cosine_similarity(vec,seed_vec)[0][0]) if seed_vec is not None else 0
