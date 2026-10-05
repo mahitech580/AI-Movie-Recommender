@@ -33,6 +33,49 @@ async function testDesktop(browser) {
   const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("cineplay.mylist") || "[]").length);
   if (saved < 1) throw new Error("My List interaction did not persist");
 
+  // Complete filter regression: every visible discovery chip must return
+  // actual catalogue results, not merely change the active chip.
+  const filterButtons = page.locator("#filterRow .filter-chip");
+  const filterCount = await filterButtons.count();
+  if (filterCount < 25) throw new Error("discovery filter set rendered too few filters");
+
+  for (let i = 0; i < filterCount; i++) {
+    const button = filterButtons.nth(i);
+    const key = await button.getAttribute("data-filter");
+    await button.click();
+    await page.locator("#filterResultsGrid").waitFor({ state: "visible", timeout: 1500 });
+    await sleep(80);
+    const countText = (await page.locator("#filterResultsCount").textContent())?.trim() || "0";
+    const total = Number.parseInt(countText, 10);
+    const resultCards = await page.locator("#filterResultsGrid .movie-card").count();
+    if (!Number.isFinite(total) || total < 1) {
+      throw new Error("filter "+key+" returned zero catalogue results");
+    }
+    if (resultCards < 1) {
+      throw new Error("filter "+key+" rendered no movie cards");
+    }
+  }
+
+  // Telugu/TFI should expose the complete regional set and Show more must work.
+  await page.locator('#filterRow .filter-chip[data-filter="telugu"]').click();
+  await sleep(120);
+  const teluguTotal = Number.parseInt((await page.locator("#filterResultsCount").textContent()) || "0", 10);
+  if (teluguTotal < 50) throw new Error("Telugu/TFI catalogue count is unexpectedly low");
+  const firstBatch = await page.locator("#filterResultsGrid .movie-card").count();
+  const visiblePosters = await page.locator('#filterResultsGrid img').evaluateAll(imgs =>
+    imgs.filter(img => {
+      const src = img.getAttribute("src") || "";
+      return src && !src.startsWith("data:image/svg+xml");
+    }).length
+  );
+  if (visiblePosters < 3) throw new Error("Telugu filter rendered too few real poster URLs");
+  if (teluguTotal > firstBatch) {
+    await page.locator("#filterShowMore").click();
+    await sleep(120);
+    const secondBatch = await page.locator("#filterResultsGrid .movie-card").count();
+    if (secondBatch <= firstBatch) throw new Error("filter Show more did not reveal additional Telugu titles");
+  }
+
   const search = page.locator("#searchInput");
   await search.fill("matrix");
   await sleep(250);
