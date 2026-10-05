@@ -30,11 +30,11 @@ async function testDesktop(browser) {
   if (!heroTitle) throw new Error("hero title did not initialize");
   if (cards < 10) throw new Error("movie rails rendered fewer than 10 cards");
 
-  // Requested Home spotlight: RRR must lead the hero and the curated spotlight
-  // must contain all nine requested titles.
+  // Requested Home spotlight: Spider-Man must lead the hero and the curated spotlight
+  // must contain exactly the nine requested titles.
   const heroFirst = (await page.locator("#heroTitle").textContent()).trim();
-  if (heroFirst !== "RRR") throw new Error("Home hero did not start with RRR");
-  const spotlightExpected = ["RRR","Magadheera","Iron Man","Avengers: Endgame","Baahubali: The Beginning","Project Hail Mary","Spider-Man: No Way Home","Dangal","Interstellar"];
+  if (heroFirst !== "Spider-Man: No Way Home") throw new Error("Home hero did not start with Spider-Man: No Way Home");
+  const spotlightExpected = ["Spider-Man: No Way Home","Iron Man","Avengers: Age of Ultron","Avengers: Endgame","Black Panther","Avengers: Doomsday","Pushpa: The Rise","Interstellar","Project Hail Mary"];
   const spotlightTitles = await page.locator("#homeSpotlightRail .movie-card h3").allTextContents();
   for (const title of spotlightExpected) {
     if (!spotlightTitles.some(t => t.trim() === title)) {
@@ -44,7 +44,9 @@ async function testDesktop(browser) {
   const spotlightImages = await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs =>
     imgs.filter(img => (img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
   );
-  if (spotlightImages < 3) throw new Error("Home spotlight did not load enough real poster images");
+  if (spotlightImages !== spotlightExpected.length) throw new Error("Home spotlight has "+(spotlightExpected.length-spotlightImages)+" broken poster images");
+  const spotlightOriginals = await page.locator("#homeSpotlightRail .movie-card img").evaluateAll(imgs => imgs.filter(img => (img.getAttribute("src") || "").includes("image.tmdb.org/t/p/original/")).length);
+  if (spotlightOriginals !== spotlightExpected.length) throw new Error("Home spotlight artwork is not using original-resolution TMDB URLs for every requested title");
 
 
 
