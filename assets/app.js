@@ -743,6 +743,54 @@
     renderRail("teluguRail",telugu.slice(0,18));
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     updateFilterButtons();
+    renderFilterResults(false);
+  }
+
+  function filteredMovies() {
+    const key=String(state.filter || "all").toLowerCase();
+    let items;
+    if(key==="all"){
+      items=state.movies.slice().sort((a,b)=>
+        (popularity(b)*0.55+quality(b)*0.25+freshness(b)*0.20)-
+        (popularity(a)*0.55+quality(a)*0.25+freshness(a)*0.20)
+      );
+    } else {
+      items=state.movies.filter(m=>matchesFilter(m,key));
+      if(["india","telugu","hindi","tamil","malayalam","kannada","bengali","marathi","punjabi"].includes(key)){
+        items.sort((a,b)=>(popularity(b)*0.65+quality(b)*0.35)-(popularity(a)*0.65+quality(a)*0.35));
+      } else {
+        items.sort((a,b)=>(quality(b)*0.52+popularityScore(b)*0.28+freshness(b)*0.20)-
+          (quality(a)*0.52+popularityScore(a)*0.28+freshness(a)*0.20));
+      }
+    }
+    return items;
+  }
+
+  function renderFilterResults(scroll=false) {
+    const grid=$("filterResultsGrid"), section=$("filterResultsSection");
+    if(!grid || !section) return;
+    const all=filteredMovies();
+    const visible=all.slice(0,Math.max(24,Number(state.filterPage)||24));
+    grid.innerHTML=visible.length ? visible.map(m=>card(m,null,false)).join("") :
+      '<div class="filter-empty">No titles match this filter yet.</div>';
+    bindRail(grid);
+
+    const key=String(state.filter || "all");
+    const languageLabel={telugu:"Telugu · TFI",hindi:"Hindi",tamil:"Tamil",malayalam:"Malayalam",kannada:"Kannada",bengali:"Bengali",marathi:"Marathi",punjabi:"Punjabi"};
+    const label=key==="all" ? "All movies" : (languageLabel[key] || key.replace(/^./,x=>x.toUpperCase()));
+    const title=$("filterResultsTitle"), subtitle=$("filterResultsSubtitle"), count=$("filterResultsCount"), more=$("filterShowMore");
+    if(title) title.textContent=label;
+    if(subtitle) subtitle.textContent=key==="all"
+      ? "Complete local catalogue · every title is searchable and openable."
+      : Math.min(visible.length,all.length)+" of "+all.length+" matching titles · select any card for full details.";
+    if(count) count.textContent=all.length+" titles";
+    if(more){
+      const remaining=Math.max(0,all.length-visible.length);
+      more.disabled=remaining===0;
+      more.textContent=remaining ? "Show "+Math.min(24,remaining)+" more" : "All loaded";
+    }
+    section.classList.toggle("has-results",all.length>0);
+    if(scroll) window.setTimeout(()=>section.scrollIntoView({behavior:"smooth",block:"start"}),0);
   }
 
   function updateFilterButtons() {
@@ -1417,8 +1465,18 @@
 
     $$(".filter-chip").forEach(btn=>btn.onclick=()=>{
       state.filter=btn.dataset.filter||"all";
+      state.filterPage=24;
       applyFilter();
+      renderFilterResults(true);
       if(state.filter!=="all") toast("Showing "+btn.textContent+" titles");
+    });
+
+    $("filterShowMore") && ($("filterShowMore").onclick=()=>{
+      const total=filteredMovies().length;
+      if(state.filterPage<total){
+        state.filterPage=Math.min(total,state.filterPage+24);
+        renderFilterResults(false);
+      }
     });
 
     $$(".main-nav a").forEach(a=>a.addEventListener("click",()=>{
@@ -1493,6 +1551,7 @@
     renderRail("indianRail",indiaMovies.slice(0,16));
     renderRail("teluguRail",telugu.slice(0,18));
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
+    renderFilterResults(false);
     renderRail("aiRail",recommendFor(null,18));
     renderList();
     renderContinue();
