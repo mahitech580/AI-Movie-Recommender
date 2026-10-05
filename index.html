@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#050706">
-  <meta name="description" content="MOTION — AI-powered movie discovery and recommendation experience by Mahi.">
-  <title>MOTION — AI Movie Recommender</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#040605">
+  <meta name="description" content="CINEPLAY — intelligent movie discovery with adaptive recommendations and optional live TMDB data.">
+  <meta name="author" content="Mahi">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="CINEPLAY — AI Movie Discovery">
+  <meta property="og:description" content="A cinematic, adaptive movie discovery experience by Mahi.">
+  <meta property="og:type" content="website">
+  <title>CINEPLAY — AI Movie Discovery</title>
   <link rel="preconnect" href="https://image.tmdb.org">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,146 +18,229 @@
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="smoke smoke-green"></div>
-  <div class="smoke smoke-red"></div>
+  <div class="app-shell">
+    <div class="ambient ambient-green"></div>
+    <div class="ambient ambient-red"></div>
+    <div class="grain"></div>
 
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="MOTION home">
-      <span class="brand-mark"><i></i><i></i><i></i></span>
-      <span>MOTION</span>
-      <small>AI CINEMA</small>
-    </a>
-    <nav class="nav">
-      <a href="#home" data-nav="home">Home</a>
-      <a href="#discover" data-nav="discover">Discover</a>
-      <a href="#genres" data-nav="genres">Genres</a>
-      <a href="#my-list" data-nav="my-list">My List</a>
-      <a href="#history" data-nav="history">History</a>
-    </nav>
-    <div class="top-actions">
-      <button class="icon-btn" id="liveBtn" title="Live catalog settings"><span class="status-dot"></span></button>
-      <button class="avatar" id="profileBtn" title="Profile">M</button>
-    </div>
-  </header>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="CINEPLAY home">
+        <span class="brand-symbol"><b></b><b></b><b></b></span>
+        <span class="brand-copy"><strong>CINEPLAY</strong><small>AI CINEMA</small></span>
+      </a>
 
-  <main id="app">
-    <section id="home" class="hero">
-      <div class="hero-media" id="heroMedia"></div>
-      <div class="hero-vignette"></div>
-      <div class="hero-content">
-        <div class="hero-kicker"><span class="live-pill"><b></b> LIVE DISCOVERY</span><span id="sourceLabel">CURATED CATALOG</span></div>
-        <div class="hero-title-wrap">
-          <div class="hero-number">01</div>
-          <div><h1 id="heroTitle">Interstellar</h1><div class="hero-meta" id="heroMeta"></div></div>
+      <nav class="main-nav" id="mainNav">
+        <a class="active" href="#home">Home</a>
+        <a href="#discover">Discover</a>
+        <a href="#my-list">My List</a>
+        <a href="#activity">Activity</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="live-control" id="liveBtn" type="button" title="Live catalog settings">
+          <span class="pulse-dot"></span><span id="liveLabel">LIVE</span>
+        </button>
+        <button class="search-trigger" id="searchTrigger" type="button" aria-label="Open search"><span>⌕</span><kbd>⌘K</kbd></button>
+        <button class="profile-control" id="profileBtn" type="button" aria-label="Open profile"><span>M</span></button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="hero" id="home">
+        <div class="hero-backdrop" id="heroMedia"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-topline">
+          <span class="live-badge"><i></i> LIVE DISCOVERY</span>
+          <span class="hero-source" id="sourceLabel">CURATED + AI</span>
         </div>
-        <p id="heroOverview"></p>
-        <div class="hero-tags" id="heroTags"></div>
-        <div class="hero-actions">
-          <button class="primary-btn" id="heroRecommend"><span>✦</span> AI Recommend</button>
-          <button class="secondary-btn" id="heroDetails"><span>ⓘ</span> More info</button>
-          <button class="round-btn" id="heroList" title="Add to My List">＋</button>
+
+        <div class="hero-content">
+          <div class="hero-index" id="heroIndex">01</div>
+          <div class="hero-copy">
+            <div class="hero-meta" id="heroMeta"></div>
+            <h1 id="heroTitle">Interstellar</h1>
+            <p id="heroOverview"></p>
+            <div class="hero-chip-row" id="heroTags"></div>
+            <div class="hero-actions">
+              <button class="btn btn-primary" id="heroRecommend"><span>✦</span> Build My Queue</button>
+              <button class="btn btn-ghost" id="heroDetails"><span>ⓘ</span> Details</button>
+              <button class="icon-round" id="heroList" type="button" title="Add to My List">＋</button>
+            </div>
+            <div class="engine-strip">
+              <div class="engine-orbit"><span></span></div>
+              <div>
+                <b>ADAPTIVE RECOMMENDER</b>
+                <small id="engineText">Learns from your clicks, saves and discoveries.</small>
+              </div>
+              <span class="engine-score" id="engineScore">0 signals</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-engine">
-          <div class="engine-ring"><span></span></div>
-          <div><strong>PERSONALIZED ENGINE</strong><small id="engineText">Learns from your local watch activity</small></div>
+
+        <div class="hero-side-stats">
+          <div><span id="heroCount">30+</span><small>Titles indexed</small></div>
+          <div><span id="liveCount">—</span><small>Live titles</small></div>
+          <div><span id="signalCount">0</span><small>Taste signals</small></div>
         </div>
-      </div>
-      <div class="hero-dots" id="heroDots"></div>
-      <div class="scroll-cue"><span></span> Scroll to explore</div>
-    </section>
 
-    <section class="search-dock" id="discover">
-      <div class="search-wrap">
-        <span class="search-icon">⌕</span>
-        <input id="searchInput" autocomplete="off" placeholder="Search movies, genres, moods, or themes..." aria-label="Search movies">
-        <button id="clearSearch" class="clear-search" aria-label="Clear search">×</button>
-        <kbd>⌘ K</kbd>
-      </div>
-      <div class="search-panel hidden" id="searchPanel"></div>
-      <div class="quick-filters">
-        <button class="filter-chip active" data-filter="all">All</button>
-        <button class="filter-chip" data-filter="action">Action</button>
-        <button class="filter-chip" data-filter="sci-fi">Sci-Fi</button>
-        <button class="filter-chip" data-filter="drama">Drama</button>
-        <button class="filter-chip" data-filter="thriller">Thriller</button>
-        <button class="filter-chip" data-filter="comedy">Comedy</button>
-        <button class="filter-chip" data-filter="animation">Animation</button>
-        <button class="filter-chip" data-filter="romance">Romance</button>
-      </div>
-    </section>
+        <div class="hero-dots" id="heroDots"></div>
+        <a class="scroll-cue" href="#discover"><span></span> Explore the catalog</a>
+      </section>
 
-    <section class="content-shell">
-      <div class="section-block" id="recommendationSection">
-        <div class="section-heading">
-          <div><span class="section-kicker">YOUR SIGNALS</span><h2>Picked by the AI</h2><p id="recommendationSubtitle">Choose a movie and MOTION builds a taste-matched queue.</p></div>
-          <button class="text-btn" id="shuffleAi">Shuffle <span>↻</span></button>
+      <section class="search-dock" id="discover">
+        <div class="dock-inner">
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input id="searchInput" autocomplete="off" spellcheck="false" placeholder="Search a movie, actor, genre, mood or theme...">
+            <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search">×</button>
+            <kbd>Ctrl K</kbd>
+          </div>
+          <div class="search-panel hidden" id="searchPanel"></div>
+          <div class="filter-row" id="filterRow">
+            <button class="filter-chip active" data-filter="all">For you</button>
+            <button class="filter-chip" data-filter="action">Action</button>
+            <button class="filter-chip" data-filter="sci-fi">Sci-Fi</button>
+            <button class="filter-chip" data-filter="drama">Drama</button>
+            <button class="filter-chip" data-filter="thriller">Thriller</button>
+            <button class="filter-chip" data-filter="comedy">Comedy</button>
+            <button class="filter-chip" data-filter="animation">Animation</button>
+            <button class="filter-chip" data-filter="romance">Romance</button>
+            <button class="filter-chip" data-filter="horror">Horror</button>
+            <button class="filter-chip" data-filter="india">India</button>
+          </div>
         </div>
-        <div class="rail" id="aiRail"></div>
-      </div>
+      </section>
 
-      <div class="section-block">
-        <div class="section-heading"><div><span class="section-kicker">NOW</span><h2>Trending on MOTION</h2></div><button class="text-btn" id="refreshTrending">Refresh <span>↻</span></button></div>
-        <div class="rail" id="trendingRail"></div>
-      </div>
+      <section class="dashboard">
+        <div class="section-block" id="continueSection">
+          <div class="section-heading">
+            <div><span class="eyebrow">CONTINUE WATCHING</span><h2>Pick up where you left off</h2></div>
+            <button class="text-btn" id="clearContinue" type="button">Clear</button>
+          </div>
+          <div class="continue-grid" id="continueRail"></div>
+          <div class="empty-strip hidden" id="continueEmpty">Open a title to start building your cinematic trail.</div>
+        </div>
 
-      <div class="section-block" id="genres">
-        <div class="section-heading"><div><span class="section-kicker">CURATED MOODS</span><h2>Browse by vibe</h2></div></div>
-        <div class="mood-grid" id="moodGrid"></div>
-      </div>
+        <div class="section-block">
+          <div class="section-heading">
+            <div><span class="eyebrow">YOUR SIGNALS</span><h2>Made for you</h2><p id="recommendationSubtitle">The queue adapts as you explore.</p></div>
+            <div class="heading-actions"><span class="model-pill" id="modelPill">HYBRID MODEL</span><button class="text-btn" id="shuffleAi" type="button">Refresh ✦</button></div>
+          </div>
+          <div class="rail rail-wide" id="aiRail"></div>
+        </div>
 
-      <div class="section-block">
-        <div class="section-heading"><div><span class="section-kicker">EDITOR'S SIGNAL</span><h2>Top rated</h2></div><span class="small-note">Score weighted by rating × popularity</span></div>
-        <div class="rail" id="ratedRail"></div>
-      </div>
+        <div class="section-block">
+          <div class="section-heading">
+            <div><span class="eyebrow">HAPPENING NOW</span><h2>Trending</h2><p>Live TMDB trend signals when connected.</p></div>
+            <button class="text-btn" id="refreshTrending" type="button">Sync ↻</button>
+          </div>
+          <div class="rail" id="trendingRail"></div>
+        </div>
 
-      <div class="section-block">
-        <div class="section-heading"><div><span class="section-kicker">FRESH DROP</span><h2>New & rising</h2></div></div>
-        <div class="rail" id="newRail"></div>
-      </div>
+        <div class="feature-band">
+          <div class="feature-copy">
+            <span class="eyebrow">CINEPLAY INTELLIGENCE</span>
+            <h2>A recommendation system that learns your taste.</h2>
+            <p>Every discovery becomes a signal. The browser builds a local taste profile using content similarity, genre affinity, rating confidence, freshness, popularity and an online preference model.</p>
+            <div class="feature-metrics">
+              <div><strong id="metricSignals">0</strong><span>signals learned</span></div>
+              <div><strong id="metricGenres">0</strong><span>genre affinities</span></div>
+              <div><strong>0</strong><span>servers required</span></div>
+            </div>
+          </div>
+          <div class="feature-visual">
+            <div class="neural-ring r1"></div><div class="neural-ring r2"></div><div class="neural-ring r3"></div>
+            <span class="neural-core">AI</span>
+            <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i>
+          </div>
+        </div>
 
-      <div class="section-block">
-        <div class="section-heading"><div><span class="section-kicker">INDIAN CINEMA</span><h2>From South Asia</h2></div></div>
-        <div class="rail" id="indianRail"></div>
-      </div>
+        <div class="section-block">
+          <div class="section-heading">
+            <div><span class="eyebrow">DAILY PULSE</span><h2>Top 10 right now</h2><p>Popularity-weighted movie signals from the live catalog.</p></div>
+          </div>
+          <div class="top10-grid" id="top10Rail"></div>
+        </div>
 
-      <div class="section-block" id="my-list">
-        <div class="section-heading"><div><span class="section-kicker">YOUR LIBRARY</span><h2>My List</h2></div><button class="text-btn danger" id="clearList">Clear all</button></div>
-        <div class="rail" id="listRail"></div>
-        <div class="empty-state hidden" id="listEmpty"><span>♡</span><h3>Your list is empty</h3><p>Save movies from any card or details screen and they will stay in this browser.</p></div>
-      </div>
+        <div class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">FRESH</span><h2>New & rising</h2></div><button class="text-btn" id="refreshFresh" type="button">Update ↻</button></div>
+          <div class="rail" id="newRail"></div>
+        </div>
 
-      <div class="section-block" id="history">
-        <div class="section-heading"><div><span class="section-kicker">LOCAL MEMORY</span><h2>Recently explored</h2></div><button class="text-btn danger" id="clearHistory">Clear history</button></div>
-        <div class="history-list" id="historyList"></div>
-        <div class="empty-state hidden" id="historyEmpty"><span>◷</span><h3>No viewing signals yet</h3><p>Open a movie, generate recommendations, or add a title to your list.</p></div>
-      </div>
+        <div class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">YOUR MOOD</span><h2>Choose a vibe</h2><p>Turn a feeling into a recommendation query.</p></div></div>
+          <div class="mood-grid" id="moodGrid"></div>
+        </div>
 
-      <footer class="site-footer">
-        <div class="footer-brand"><span class="brand-mark"><i></i><i></i><i></i></span><strong>MOTION</strong><small>AI CINEMA BY MAHI</small></div>
-        <p>A static, GitHub Pages-ready movie experience. Live TMDB mode is optional and runs directly in your browser.</p>
-        <div class="footer-meta"><span>NO SERVER REQUIRED</span><span>LOCAL STORAGE</span><span>TMDB-READY</span></div>
-        <div class="tmdb-credit"><span class="tmdb-badge">TMDB</span><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span></div>
-      </footer>
-    </section>
-  </main>
+        <div class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">QUALITY SIGNAL</span><h2>Top rated</h2></div><span class="small-note">Bayesian-weighted with popularity and votes</span></div>
+          <div class="rail" id="ratedRail"></div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">INDIAN CINEMA</span><h2>Popular in India</h2><p>Live region-aware discovery when TMDB is connected.</p></div></div>
+          <div class="rail" id="indianRail"></div>
+        </div>
+
+        <div class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">DISCOVERY</span><h2>Hidden gems</h2><p>Strong ratings, lower popularity, high recommendation potential.</p></div></div>
+          <div class="rail" id="gemsRail"></div>
+        </div>
+
+        <div class="section-block" id="my-list">
+          <div class="section-heading"><div><span class="eyebrow">YOUR LIBRARY</span><h2>My List</h2><p>Saved locally in this browser.</p></div><button class="text-btn danger" id="clearList" type="button">Clear all</button></div>
+          <div class="rail" id="listRail"></div>
+          <div class="empty-strip hidden" id="listEmpty">Your list is empty. Save anything you want to watch later.</div>
+        </div>
+
+        <div class="section-block" id="activity">
+          <div class="section-heading"><div><span class="eyebrow">LOCAL MEMORY</span><h2>Your activity</h2><p>A private browser-side trail used to improve recommendations.</p></div><button class="text-btn danger" id="clearHistory" type="button">Clear history</button></div>
+          <div class="activity-layout">
+            <div class="activity-list" id="historyList"></div>
+            <aside class="profile-card">
+              <div class="profile-avatar">M</div>
+              <span class="eyebrow">LOCAL PROFILE</span>
+              <h3 id="profileTitle">CINEPLAY Explorer</h3>
+              <p id="profileText">Explore a few titles and the engine will start detecting patterns in your taste.</p>
+              <div class="preference-bars" id="preferenceBars"></div>
+              <button class="btn btn-outline full" id="openAiLab" type="button">Open AI Lab</button>
+            </aside>
+          </div>
+          <div class="empty-strip hidden" id="historyEmpty">No activity yet. Your interactions will appear here.</div>
+        </div>
+
+        <footer class="site-footer">
+          <div class="footer-brand">
+            <span class="brand-symbol"><b></b><b></b><b></b></span>
+            <strong>CINEPLAY</strong>
+            <small>AI CINEMA BY MAHI</small>
+          </div>
+          <div class="footer-copy">
+            <p>Static-first, cinematic, and GitHub Pages compatible. Live catalog data is optional and runs in the browser through TMDB.</p>
+            <div class="footer-tags"><span>STATIC HOSTING</span><span>LOCAL ML</span><span>LIVE API</span><span>NO DATABASE</span></div>
+          </div>
+          <div class="tmdb-credit"><b>TMDB</b><span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span></div>
+        </footer>
+      </section>
+    </main>
+  </div>
 
   <div class="modal hidden" id="movieModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-backdrop" data-close-modal></div>
-    <article class="modal-card movie-modal">
+    <article class="movie-modal">
       <button class="modal-close" data-close-modal aria-label="Close">×</button>
-      <div class="modal-media" id="modalMedia"></div>
-      <div class="modal-body">
-        <div class="modal-kicker" id="modalKicker"></div>
+      <div class="modal-hero" id="modalMedia"></div>
+      <div class="modal-content">
+        <div class="modal-topline"><span class="eyebrow" id="modalKicker"></span><span class="match-badge" id="modalMatch"></span></div>
         <h2 id="modalTitle"></h2>
         <div class="modal-meta" id="modalMeta"></div>
         <p id="modalOverview"></p>
-        <div class="modal-tags" id="modalTags"></div>
         <div class="why-box" id="whyBox"></div>
+        <div class="tag-cloud" id="modalTags"></div>
         <div class="modal-actions">
-          <button class="primary-btn" id="modalRecommend">✦ Find similar</button>
-          <button class="secondary-btn" id="modalTrailer">▶ Trailer search</button>
-          <button class="round-btn" id="modalList">＋</button>
+          <button class="btn btn-primary" id="modalRecommend" type="button">✦ Find similar</button>
+          <button class="btn btn-ghost" id="modalTrailer" type="button">▶ Trailer</button>
+          <button class="icon-round" id="modalList" type="button">＋</button>
         </div>
       </div>
     </article>
@@ -160,27 +248,52 @@
 
   <div class="modal hidden" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
     <div class="modal-backdrop" data-close-settings></div>
-    <article class="modal-card settings-card">
+    <article class="settings-modal">
       <button class="modal-close" data-close-settings aria-label="Close">×</button>
-      <span class="section-kicker">LIVE CATALOG</span>
+      <span class="eyebrow">LIVE CATALOG</span>
       <h2 id="settingsTitle">Connect TMDB</h2>
-      <p>GitHub Pages cannot keep a private server secret, so the live connector runs in the browser. Paste your own TMDB API key below; it stays in this browser and is never committed to the repository.</p>
+      <p>CINEPLAY can run entirely from GitHub Pages. Add your own TMDB credential to turn on live trend, search, regional discovery and fresh releases directly in your browser.</p>
       <label for="tmdbKey">TMDB v3 API key</label>
-      <div class="key-row"><input id="tmdbKey" type="password" placeholder="Paste your TMDB API key"><button class="primary-btn" id="saveKey">Save</button></div>
+      <div class="key-row"><input id="tmdbKey" type="password" autocomplete="off" placeholder="Paste your TMDB API key"><button class="btn btn-primary" id="saveKey" type="button">Connect</button></div>
       <div class="settings-status" id="settingsStatus"></div>
-      <div class="settings-actions"><button class="secondary-btn" id="removeKey">Remove key</button><button class="secondary-btn" data-close-settings>Done</button></div>
-      <small class="settings-footnote">TMDB supplies movie metadata and artwork for live mode. See the TMDB attribution in the project README.</small>
+      <div class="settings-grid">
+        <div><b>Live endpoints</b><span>Trending · popular · top rated · new releases · India discovery · search</span></div>
+        <div><b>Credential storage</b><span>Browser localStorage only. Never committed to GitHub.</span></div>
+        <div><b>Fallback mode</b><span>The curated catalog stays usable when the live API is unavailable.</span></div>
+      </div>
+      <div class="settings-actions"><button class="btn btn-outline" id="removeKey" type="button">Remove</button><button class="btn btn-ghost" data-close-settings type="button">Done</button></div>
+      <small>Use a credential you are authorized to use with TMDB. Public client-side credentials can be viewed by visitors, so do not treat a browser-stored API key as a secret.</small>
     </article>
   </div>
 
-  <div class="toast" id="toast"></div>
+  <div class="modal hidden" id="aiLabModal" role="dialog" aria-modal="true" aria-labelledby="aiLabTitle">
+    <div class="modal-backdrop" data-close-ai-lab></div>
+    <article class="ai-lab-modal">
+      <button class="modal-close" data-close-ai-lab aria-label="Close">×</button>
+      <span class="eyebrow">CINEPLAY MODEL</span>
+      <h2 id="aiLabTitle">AI Recommendation Lab</h2>
+      <p>Everything below runs in your browser. Your behavior updates the local model without a server-side user profile.</p>
+      <div class="lab-grid">
+        <div class="lab-card"><span>01</span><b>Content vector</b><small>Genres, tags, overview, language, year and movie metadata.</small></div>
+        <div class="lab-card"><span>02</span><b>Similarity</b><small>Cosine similarity + genre overlap identifies titles with a matching profile.</small></div>
+        <div class="lab-card"><span>03</span><b>Online learning</b><small>Positive interactions nudge local feature weights toward your choices.</small></div>
+        <div class="lab-card"><span>04</span><b>Ranking</b><small>Combines affinity, quality, freshness, popularity, novelty and exploration.</small></div>
+      </div>
+      <div class="model-console" id="modelConsole"></div>
+      <div class="settings-actions"><button class="btn btn-outline" id="resetModel" type="button">Reset learning</button><button class="btn btn-primary" data-close-ai-lab type="button">Close</button></div>
+    </article>
+  </div>
+
   <div class="command hidden" id="commandPalette" role="dialog" aria-modal="true">
     <div class="command-backdrop" data-close-command></div>
     <div class="command-card">
-      <div class="command-search"><span>⌕</span><input id="commandInput" placeholder="Jump to a section or search a movie..."><kbd>ESC</kbd></div>
-      <div id="commandResults"></div>
+      <div class="command-search"><span>⌕</span><input id="commandInput" placeholder="Search movies or jump to a section…"><kbd>ESC</kbd></div>
+      <div class="command-body" id="commandResults"></div>
     </div>
   </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <script src="data/movies.js"></script>
   <script src="assets/app.js"></script>
