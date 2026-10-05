@@ -123,10 +123,23 @@ async function testDesktop(browser) {
   }
   const indiaCards = await page.locator("#filterResultsGrid .movie-card").count();
   if (indiaCards !== indiaTotal) throw new Error("India filter did not load its complete catalogue");
-  const brokenIndia = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
-    imgs.filter(img => !(img.getAttribute("src") || "") || (img.naturalWidth || 0) < 20).length
+  await page.locator("#filterResultsGrid img").evaluateAll(imgs => {
+    imgs.forEach(img => {
+      img.loading = "eager";
+      img.scrollIntoView({block:"center"});
+    });
+  });
+  await page.waitForFunction(() =>
+    Array.from(document.querySelectorAll("#filterResultsGrid img")).every(img => img.complete),
+    null, {timeout:20000}
   );
-  if (brokenIndia > 0) throw new Error("India catalogue has "+brokenIndia+" broken poster images");
+  const brokenIndia = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
+    imgs.filter(img => {
+      const src=img.getAttribute("src") || "";
+      return !src || src.startsWith("data:image/svg+xml") || (img.naturalWidth || 0) < 20;
+    }).length
+  );
+  if (brokenIndia > 0) throw new Error("India catalogue has "+brokenIndia+" missing/broken poster images after eager load");
 
   // Search trigger must actually focus the search field and route to Discover.
   await page.locator("#searchTrigger").click();
