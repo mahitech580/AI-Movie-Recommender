@@ -785,7 +785,7 @@
     renderRail("indianRail",indiaMovies.slice(0,16));
     renderRail("teluguRail",telugu.slice(0,18));
     renderRail("homeSpotlightRail",HOME_SPOTLIGHT_TITLES.map(title=>state.movies.find(m=>m.title===title)).filter(Boolean),false,true);
-    const spotlightImages=$("#homeSpotlightRail")?.querySelectorAll(".movie-card img");
+    const spotlightImages=document.querySelectorAll("#homeSpotlightRail .movie-card img");
     spotlightImages.forEach(img=>{ img.loading="eager"; img.fetchPriority="high"; img.decoding="async"; });
     renderSeries();
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
@@ -841,7 +841,7 @@
   }
 
   function updateFilterButtons() {
-    $(".filter-chip").forEach(btn=>btn.classList.toggle("active",btn.dataset.filter===state.filter));
+    Array.from(document.querySelectorAll(".filter-chip")).forEach(btn=>btn.classList.toggle("active",btn.dataset.filter===state.filter));
   }
 
   function setFilter(filter, scroll=true) {
@@ -853,7 +853,7 @@
     if(scroll) renderFilterResults(true);
     else renderFilterResults(false);
     if(next!=="all"){
-      const active=$("#filterRow .filter-chip[data-filter=\""+next+"\"]")[0];
+      const active=document.querySelector("#filterRow .filter-chip[data-filter=\"" + next + "\"]");
       active?.classList.add("active");
       const label=active?.textContent?.trim() || next;
       toast("Showing "+label+" titles");
@@ -1550,7 +1550,7 @@
       if(e.key==="Escape"){closeMovie();closeSettings();closeCommand();hideModal("aiLabModal");}
     });
 
-    $(".filter-chip").forEach(btn=>btn.onclick=()=>setFilter(btn.dataset.filter||"all",true));
+    Array.from(document.querySelectorAll(".filter-chip")).forEach(btn=>btn.onclick=()=>setFilter(btn.dataset.filter||"all",true));
 
     $("filterShowMore") && ($("filterShowMore").onclick=()=>{
       const total=filteredMovies().length;
