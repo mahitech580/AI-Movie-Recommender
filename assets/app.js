@@ -475,16 +475,57 @@
 
   async function syncLive() {
     if (!localStorage.getItem(TMDB_KEY)) return false;
-    const data = await tmdb("/trending/movie/week");
-    const live = (data.results || []).map(normalizeLive).filter(movie => movie.poster);
+
+    const results = await Promise.allSettled([
+      tmdb("/trending/movie/week"),
+      tmdb("/movie/popular", {page:1, region:"IN"}),
+      tmdb("/movie/top_rated", {page:1, region:"IN"}),
+      tmdb("/movie/now_playing", {page:1, region:"IN"}),
+      tmdb("/movie/upcoming", {page:1, region:"IN"}),
+      tmdb("/discover/movie", {page:1, region:"IN", sort_by:"popularity.desc", with_origin_country:"IN"})
+    ]);
+
+    const payloads = results
+      .filter(item => item.status === "fulfilled")
+      .map(item => item.value);
+
+    const live = payloads
+      .flatMap(payload => payload.results || [])
+      .map(normalizeLive)
+      .filter(movie => movie.poster);
+
     if (!live.length) return false;
 
-    mergeMovies(live);
+    const deduped = [];
+    const seen = new Set();
+    for (const movie of live) {
+      if (!seen.has(String(movie.id))) {
+        seen.add(String(movie.id));
+        deduped.push(movie);
+      }
+    }
+
+    mergeMovies(deduped);
     state.live = true;
     $("sourceLabel").textContent = "TMDB LIVE + CURATED";
     $("liveBtn").classList.add("live");
-    $("engineText").textContent = "Live TMDB signal synced " + new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
-    renderHome();
+    $("engineText").textContent = "Live TMDB catalog synced " + new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+
+    renderRail("trendingRail", deduped.slice(0,18), false);
+    const top = deduped.slice().sort((a,b) => (b.rating * 1.2 + popularity(b)/100) - (a.rating * 1.2 + popularity(a))).slice(0,18);
+    const fresh = deduped.slice().sort((a,b) => Number(titleYear(b)) - Number(titleYear(a)) || popularity(b) - popularity(a)).slice(0,18);
+    const indian = deduped.filter(movie => movie.language === "hi" || movie.language === "te" || movie.language === "ta" || movie.language === "ml" || movie.language === "kn" || movie.language === "bn").slice(0,18);
+
+    renderRail("ratedRail", top, false);
+    renderRail("newRail", fresh, false);
+    renderRail("indianRail", indian, false);
+    renderMoodGrid();
+
+    state.aiQueue = recommend(state.selected || deduped[0], 12);
+    renderRail("aiRail", state.aiQueue, true);
+    setHero(state.selected || deduped[0]);
+    heroDots();
+
     return true;
   }
 
