@@ -247,6 +247,60 @@
     return load(STORE.history, []);
   }
 
+
+  function finishCinemaBoot(fast=false) {
+    const loader=$("cinemaLoader");
+    if(!loader || loader.classList.contains("is-done")) return;
+    const bar=$("cinemaLoaderBar");
+    const status=$("cinemaLoaderStatus");
+    const messages=["Warming up the title index…","Calibrating your taste model…","Preparing live discovery…","Cinema ready."];
+    let step=0;
+    const advance=()=>{
+      if(loader.classList.contains("is-done")) return;
+      if(status) status.textContent=messages[Math.min(step,messages.length-1)];
+      if(bar) bar.style.width=(step>=messages.length-1?"100%":Math.min(92,24+step*24))+"%";
+      step+=1;
+    };
+    if(fast){
+      if(status) status.textContent="Cinema ready.";
+      if(bar) bar.style.width="100%";
+      loader.classList.add("is-done");
+      loader.setAttribute("aria-hidden","true");
+      document.body.classList.add("cinema-ready");
+      return;
+    }
+    advance();
+    const timer=setInterval(()=>{if(step<messages.length) advance();},125);
+    setTimeout(()=>{
+      clearInterval(timer);
+      if(status) status.textContent="Cinema ready.";
+      if(bar) bar.style.width="100%";
+      setTimeout(()=>{
+        loader.classList.add("is-done");
+        loader.setAttribute("aria-hidden","true");
+        document.body.classList.add("cinema-ready");
+      },120);
+    },650);
+  }
+
+  function refreshPersonalizedRows(reason="Interaction") {
+    const recs=recommendFor(null,18);
+    renderRail("aiRail",recs);
+    if($("recommendationSubtitle")) $("recommendationSubtitle").textContent="Updated just now · "+reason.toLowerCase()+" changed your queue.";
+    renderStats();
+    renderPreferences();
+  }
+
+  function formatSyncAge(timestamp) {
+    if(!timestamp) return "LOCAL CATALOG";
+    const delta=Math.max(0,Date.now()-Number(timestamp));
+    const mins=Math.floor(delta/60000);
+    if(mins<1) return "SYNCED JUST NOW";
+    if(mins<60) return "SYNCED "+mins+"M AGO";
+    const hours=Math.floor(mins/60);
+    return "SYNCED "+hours+"H AGO";
+  }
+
   function signalCount() {
     return Object.values(state.signals).reduce((s,v)=>s+Number(v||0),0);
   }
@@ -330,6 +384,7 @@
     save(STORE.history, uniq(h, x=>x.id).slice(0,30));
     learn(movie, type);
     sendBackendEvent(movie,type).catch(()=>{});
+    if(type!=="search") refreshPersonalizedRows(type==="play"?"Playback":type==="list"?"Library":"Discovery");
   }
 
   function toggleList(movie) {
@@ -443,6 +498,7 @@
     $("metricGenres") && ($("metricGenres").textContent = Math.min(18,genresSeen));
     $("heroCount") && ($("heroCount").textContent = state.movies.length+"+");
     $("liveCount") && ($("liveCount").textContent = state.live ? String(state.liveCount) : "—");
+    $("heroLiveAge") && ($("heroLiveAge").textContent = state.syncing ? "SYNCING NOW" : (state.live ? formatSyncAge(state.lastSync) : "LOCAL CATALOG"));
     $("engineScore") && ($("engineScore").textContent = Math.floor(signals)+" signals");
     $("modelPill") && ($("modelPill").textContent = state.live ? "HYBRID · LIVE" : "HYBRID · LOCAL");
     $("sourceLabel") && ($("sourceLabel").textContent = state.live ? "LIVE + LOCAL AI" : "CURATED + LOCAL AI");
@@ -981,7 +1037,8 @@
 
   function setLiveLoading(on) {
     $("liveBtn")?.classList.toggle("loading",on);
-    $("liveLabel") && ($("liveLabel").textContent=on?"SYNC":"LIVE");
+    $("liveLabel") && ($("liveLabel").textContent=on?"SYNC":(state.live?"LIVE":"OFFLINE"));
+    $("heroLiveAge") && ($("heroLiveAge").textContent=on?"SYNCING NOW":(state.live?formatSyncAge(state.lastSync):"LOCAL CATALOG"));
   }
 
   async function performSearch(query, force=false) {
@@ -1256,12 +1313,26 @@
     setInterval(()=>{
       const liveKey=localStorage.getItem(STORE.key);
       if (liveKey && document.visibilityState==="visible") syncLive(false);
-    },10*60*1000);
+    },5*60*1000);
     document.addEventListener("visibilitychange",()=>{
       const liveKey=localStorage.getItem(STORE.key);
       if (document.visibilityState==="visible" && liveKey && Date.now()-state.lastSync>8*60*1000) syncLive(false);
     });
+    window.addEventListener("online",()=>{
+      if($("heroLiveAge")) $("heroLiveAge").textContent=state.live?"NETWORK RESTORED":"ONLINE";
+      const liveKey=localStorage.getItem(STORE.key);
+      if(liveKey) syncLive(true);
+    });
+    window.addEventListener("offline",()=>{
+      if($("heroLiveAge")) $("heroLiveAge").textContent=state.live?"CACHED · OFFLINE":"OFFLINE MODE";
+    });
   }
 
-  init();
+  try {
+    init();
+  } catch (error) {
+    console.error("CINEPLAY initialization error", error);
+    finishCinemaBoot(true);
+  }
+  finishCinemaBoot();
 })();
