@@ -3821,11 +3821,11 @@ window.MOVIES = [
       "team"
     ],
     "overview": "Tony Stark and the Avengers face Ultron, a peacekeeping artificial intelligence that turns against humanity.",
-    "poster": "https://image.tmdb.org/t/p/original/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg?v=20261005-spotlight",
     "backdrop": "https://image.tmdb.org/t/p/original/570qhjGZmGPrBGnfx70jcwIuBr4.jpg",
     "accent": "green",
     "featured": true,
-    "poster_source": "TMDB original image CDN"
+    "poster_source": "TMDB original image CDN · CINEPLAY spotlight verified"
   },
   {
     "id": 1003596,
