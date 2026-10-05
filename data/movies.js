@@ -1406,7 +1406,8 @@ window.MOVIES = [
       "dreams"
     ],
     "overview": "Four friends reunite for a filmmaking adventure that tests their friendship.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/z18uVrdghSNYCmD7FfdXzdtWSPR.jpg"
   },
   {
     "id": 10024,
@@ -1699,7 +1700,8 @@ window.MOVIES = [
       "investigation"
     ],
     "overview": "A family is drawn into a terrifying supernatural mystery after a disturbing possession.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://raw.githubusercontent.com/thopDB/reels/00e7b472721fd4cd5550aa00af2ec0b11aaa8de9/assets/images/masooda1.jpg"
   },
   {
     "id": 10035,
@@ -1858,7 +1860,8 @@ window.MOVIES = [
       "social"
     ],
     "overview": "A young couple fights social prejudice and family pressure to stay together.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/c6P4zWRUbyoknRSBr1LUR3rzJX9.jpg"
   },
   {
     "id": 10041,
@@ -1883,7 +1886,8 @@ window.MOVIES = [
       "humor"
     ],
     "overview": "A carefree DJ gets caught in a chaotic criminal mess after meeting a mysterious woman.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/2XKg3VhpFDXdAktwKvFMSuIneE3.jpg"
   },
   {
     "id": 10042,
@@ -2046,7 +2050,8 @@ window.MOVIES = [
       "ambition"
     ],
     "overview": "A small-town cook dreams of running a tiffin centre while navigating family expectations.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://assets.gadgets360cdn.com/pricee/assets/product/202209/Middle-Class-Melodies_1663669211.jpg"
   },
   {
     "id": 10048,
@@ -2070,7 +2075,8 @@ window.MOVIES = [
       "crime"
     ],
     "overview": "A corrupt police officer gets a chance to transform himself while taking down a criminal network.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/lo0ALsfiSv5sxNBhCNh35AD1p0x.jpg"
   },
   {
     "id": 10049,
@@ -2207,7 +2213,8 @@ window.MOVIES = [
       "music"
     ],
     "overview": "Villagers challenge colonial rule through an impossible cricket match.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Lagaan.jpg/220px-Lagaan.jpg"
   },
   {
     "id": 10104,
@@ -2365,7 +2372,8 @@ window.MOVIES = [
       "comedy"
     ],
     "overview": "A town battles a mysterious female spirit through a mix of folklore and dark comedy.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Stree_-_2018_Movie_Poster.jpg/220px-Stree_-_2018_Movie_Poster.jpg"
   },
   {
     "id": 10110,
@@ -2889,7 +2897,8 @@ window.MOVIES = [
       "romance"
     ],
     "overview": "A scientist's humanoid creation develops emotions and becomes a threat to its maker.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/hai6CSCLxULO1RThjDP3lWAqOtQ.jpg"
   },
   {
     "id": 10211,
@@ -2915,7 +2924,8 @@ window.MOVIES = [
       "politics"
     ],
     "overview": "A historical epic follows palace intrigue and rivalries around the Chola succession.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/zSNyZUeqDdii0doQ9970E90kCkb.jpg"
   },
   {
     "id": 10212,
@@ -3121,7 +3131,8 @@ window.MOVIES = [
       "psychology"
     ],
     "overview": "A frustrated young man becomes consumed by greed and a dangerous plan inside his wealthy family.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://raw.githubusercontent.com/justzen0/justzen0.github.io/206ffd56dab8fa9402ce939d51592e250078e296/assets/img/mp/joji.jpg"
   },
   {
     "id": 10307,
@@ -3306,7 +3317,8 @@ window.MOVIES = [
       "supernatural"
     ],
     "overview": "A journalist investigates deaths linked to an unusual road ritual.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/fjl9czd3zj0QpeaXAysAGwM9UrD.jpg"
   },
   {
     "id": 10406,
@@ -3405,7 +3417,8 @@ window.MOVIES = [
       "identity"
     ],
     "overview": "A famous actor reflects on success, fear and identity during a train journey.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://raw.githubusercontent.com/justzen0/justzen0.github.io/206ffd56dab8fa9402ce939d51592e250078e296/assets/img/mp/nayak.jpg"
   },
   {
     "id": 10601,
@@ -3453,7 +3466,8 @@ window.MOVIES = [
       "courtroom"
     ],
     "overview": "A courtroom case reveals tensions between law, bureaucracy and everyday life.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Court_%28film%29_POSTER.jpg/220px-Court_%28film%29_POSTER.jpg"
   },
   {
     "id": 10603,
@@ -3476,7 +3490,8 @@ window.MOVIES = [
       "identity"
     ],
     "overview": "A village performer pursues his passion for theatre despite social pressure.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/Aj4FQmnABL5GTl4hHW1tF3uZWjs.jpg"
   },
   {
     "id": 10701,
@@ -3499,7 +3514,8 @@ window.MOVIES = [
       "history"
     ],
     "overview": "A mother searches for her missing son during a turbulent period in Punjab's history.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/yJcg6qaDFok73SC353u4oEYpkvF.jpg"
   },
   {
     "id": 10702,
@@ -3522,7 +3538,8 @@ window.MOVIES = [
       "humor"
     ],
     "overview": "A chaotic marriage setup spirals through lies, misunderstandings and family comedy.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/3KJ8UiNloo0Un2osnQOuyXfqNO2.jpg"
   },
   {
     "id": 10801,
@@ -3545,7 +3562,8 @@ window.MOVIES = [
       "nature"
     ],
     "overview": "A documentary follows caretakers who form a deep bond with an orphaned elephant.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/rRn0Uj2WXal7FkWWyKK0bleQlOy.jpg"
   },
   {
     "id": 10802,
@@ -3596,7 +3614,8 @@ window.MOVIES = [
       "family"
     ],
     "overview": "A group of animals travels to Delhi to protest the destruction of their habitat.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/lOHkT0UMej8KXKqm0VxQMysSvDw.jpg"
   },
   {
     "id": 10901,
