@@ -487,4 +487,34 @@ a{color:inherit;text-decoration:none}
 /* CINEPLAY final visual polish */
 .search-box.is-focused{border-color:rgba(39,220,145,.48);box-shadow:0 0 0 4px rgba(39,220,145,.06),0 18px 55px rgba(0,0,0,.42);transform:translateY(-1px)}
 .home-spotlight{scroll-margin-top:96px}
+#homeSpotlightRail{
+  display:grid;
+  grid-template-columns:repeat(9,minmax(0,1fr));
+  gap:18px;
+  overflow:visible;
+  padding:2px 0 16px;
+  scroll-snap-type:none;
+}
+#homeSpotlightRail .movie-card{
+  min-width:0;
+  width:100%;
+  flex:initial;
+  scroll-snap-align:none;
+}
+#homeSpotlightRail .poster-frame{
+  height:auto;
+  aspect-ratio:2 / 3;
+}
+#homeSpotlightRail .movie-caption h3{font-size:11px}
+#homeSpotlightRail .movie-card:hover .poster-frame{transform:translateY(-6px) scale(1.012)}
+@media(max-width:1180px){
+  #homeSpotlightRail{grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
+}
+@media(max-width:900px){
+  #homeSpotlightRail{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+}
+@media(max-width:640px){
+  #homeSpotlightRail{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  #homeSpotlightRail .movie-caption h3{font-size:12px}
+}
 #web-series{scroll-margin-top:96px}
