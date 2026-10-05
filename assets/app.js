@@ -745,7 +745,7 @@
       ...(extra.providers?.ads||[])
     ];
     $("providerContent").innerHTML=providerItems.length
-      ? '<div class="provider-list">'+uniq(providerItems,x=>x.provider_id).slice(0,6).map(p=>'<span class="provider-pill">'+esc(p.provider_name)+'</span>').join("")+'</div>'
+      ? '<div class="provider-list">'+uniq(providerItems,x=>x.provider_id).slice(0,6).map(p=>'<span class="provider-pill">'+esc(p.provider_name)+'</span>').join("")+'</div><small class="provider-credit">Provider availability by JustWatch via TMDB</small>'
       : '<span>No current India provider data returned.</span>';
 
     const reviews=extra.reviews||[];
