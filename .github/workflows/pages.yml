@@ -76,7 +76,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Start static site
-        run: python -m http.server 4173 --bind 127.0.0.1 >/tmp/cineplay-http.log 2>&1 &
+        run: python -m http.server 4173 --bind 127.0.0.1 >/tmp/cineplay-http.log 2>&1 & sleep 2
 
       - name: Browser UI smoke test
         run: node scripts/browser_smoke.mjs
