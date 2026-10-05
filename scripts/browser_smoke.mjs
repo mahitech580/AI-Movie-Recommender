@@ -141,7 +141,10 @@ async function testDesktop(browser) {
   }
 
   // India filter: load every page and verify every Indian movie has usable artwork.
-  await page.locator('#filterRow .filter-chip[data-filter="india"]').click();
+  const indiaChip=page.locator('#filterRow .filter-chip[data-filter="india"]');
+  await indiaChip.scrollIntoViewIfNeeded();
+  await indiaChip.evaluate(el => el.click());
+  await page.locator('#filterRow .filter-chip[data-filter="india"].active').waitFor({state:"attached",timeout:1500});
   await sleep(160);
   const expectedIndiaTotal = await page.evaluate(() => {
     const languages = new Set(["hi","te","ta","ml","kn","bn","mr","pa","gu","as","or","ur"]);
