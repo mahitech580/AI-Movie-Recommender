@@ -1173,7 +1173,7 @@
   function closeCommand() { $("commandPalette")?.classList.add("hidden"); }
 
   function enhanceRails() {
-    $(".rail").forEach(rail => {
+    $$(".rail").forEach(rail => {
       if (rail.parentElement?.classList.contains("rail-shell")) return;
       const shell=document.createElement("div");
       shell.className="rail-shell";
@@ -1212,7 +1212,7 @@
   }
 
   function revealSections() {
-    const nodes=$(".section-block,.feature-band");
+    const nodes=$$(".section-block,.feature-band");
     if (!("IntersectionObserver" in window)) {
       nodes.forEach(n=>n.classList.add("is-visible"));
       return;
@@ -1238,8 +1238,8 @@
       btn.setAttribute("aria-expanded",String(open));
     };
     btn.onclick=()=>setOpen(!drawer.classList.contains("open"));
-    $(".mobile-drawer [data-close-drawer]").forEach(x=>x.onclick=()=>setOpen(false));
-    $(".mobile-drawer [data-drawer-link]").forEach(x=>x.onclick=()=>setOpen(false));
+    $$(".mobile-drawer [data-close-drawer]").forEach(x=>x.onclick=()=>setOpen(false));
+    $$(".mobile-drawer [data-drawer-link]").forEach(x=>x.onclick=()=>setOpen(false));
     document.addEventListener("keydown",e=>{if(e.key==="Escape")setOpen(false);});
   }
 
@@ -1258,7 +1258,7 @@
 
   function syncNavigation(scroll=true) {
     const route=normalizeRouteHash();
-    const links=$(".main-nav a");
+    const links=$$(".main-nav a");
     links.forEach(link=>{
       const href=link.getAttribute("href") || "";
       const target=href.replace(/^#\/?/,"").split(/[?&]/)[0];
@@ -1311,7 +1311,7 @@
 
     $$("[data-close-modal]").forEach(x=>x.onclick=closeMovie);
     $$("[data-close-settings]").forEach(x=>x.onclick=closeSettings);
-    $("[data-close-ai-lab]").forEach(x=>x.onclick=()=>hideModal("aiLabModal"));
+    $$("[data-close-ai-lab]").forEach(x=>x.onclick=()=>hideModal("aiLabModal"));
     $$("[data-close-command]").forEach(x=>x.onclick=closeCommand);
 
     $("commandInput").addEventListener("input",e=>renderCommand(e.target.value));
@@ -1327,10 +1327,10 @@
       if(state.filter!=="all") toast("Showing "+btn.textContent+" titles");
     });
 
-    $(".main-nav a").forEach(a=>a.addEventListener("click",()=>{
+    $$(".main-nav a").forEach(a=>a.addEventListener("click",()=>{
       const href=a.getAttribute("href") || "#home";
       const route=href.replace(/^#\/?/,"").split(/[?&]/)[0] || "home";
-      $(".main-nav a").forEach(x=>x.classList.toggle("active",x===a));
+      $$(".main-nav a").forEach(x=>x.classList.toggle("active",x===a));
       const target=$(route);
       if(target) window.setTimeout(()=>target.scrollIntoView({behavior:"smooth",block:"start"}),0);
     }));
