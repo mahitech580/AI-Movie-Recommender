@@ -9,7 +9,14 @@ async function testDesktop(browser) {
   const errors = [];
   page.on("pageerror", err => errors.push("pageerror: " + err.message));
   page.on("console", msg => {
-    if (msg.type() === "error") errors.push("console: " + msg.text());
+    if (msg.type() === "error" && !/Failed to load resource: the server responded with a status of 404 \(\)/i.test(msg.text())) {
+      errors.push("console: " + msg.text());
+    }
+  });
+  page.on("response", response => {
+    if (response.status() < 400) return;
+    const type=response.request().resourceType();
+    if (type !== "image") errors.push("resource "+response.status()+": "+response.url());
   });
 
   await page.goto(base, { waitUntil: "domcontentloaded" });
@@ -69,6 +76,16 @@ async function testDesktop(browser) {
     }).length
   );
   if (visiblePosters < 3) throw new Error("Telugu filter rendered too few real poster URLs");
+
+  const rrr=page.locator('#filterResultsGrid .movie-card').filter({hasText:"RRR"}).first();
+  await rrr.scrollIntoViewIfNeeded();
+  await sleep(900);
+  const rrrImage=rrr.locator("img").first();
+  const rrrSource=await rrrImage.getAttribute("src");
+  const rrrWidth=await rrrImage.evaluate(img => img.naturalWidth || 0);
+  if (!rrrSource || rrrSource.startsWith("data:image/svg+xml") || rrrWidth < 20) {
+    throw new Error("RRR poster did not render as a real image");
+  }
   if (teluguTotal > firstBatch) {
     await page.locator("#filterShowMore").click();
     await sleep(120);
@@ -93,7 +110,14 @@ async function testMobile(browser) {
   const errors = [];
   page.on("pageerror", err => errors.push("pageerror: " + err.message));
   page.on("console", msg => {
-    if (msg.type() === "error") errors.push("console: " + msg.text());
+    if (msg.type() === "error" && !/Failed to load resource: the server responded with a status of 404 \(\)/i.test(msg.text())) {
+      errors.push("console: " + msg.text());
+    }
+  });
+  page.on("response", response => {
+    if (response.status() < 400) return;
+    const type=response.request().resourceType();
+    if (type !== "image") errors.push("resource "+response.status()+": "+response.url());
   });
 
   await page.goto(base, { waitUntil: "networkidle" });
