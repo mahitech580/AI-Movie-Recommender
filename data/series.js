@@ -1,0 +1,2730 @@
+window.SERIES = [
+  {
+    "id": 9000001,
+    "title": "Game of Thrones",
+    "year": 2011,
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 9.38328,
+    "votes": 51831,
+    "popularity": 101.86,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "returning series",
+    "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and the icy horrors beyond.",
+    "poster": "https://assets.fanart.tv/preview/tv/121361/tvposter/game-of-thrones-521441fd9b45b.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1399,
+    "tags": [
+      "drama",
+      "fantasy",
+      "science fiction",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000002,
+    "title": "Breaking Bad",
+    "year": 2008,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 9.42973,
+    "votes": 42334,
+    "popularity": 100.46,
+    "language": "en",
+    "country": "US",
+    "network": "AMC",
+    "status": "ended",
+    "overview": "Walter White, a struggling high school chemistry teacher, is diagnosed with advanced lung cancer. He turns to a life of crime, producing and selling methamphetamine accompanied by a former student, Jesse Pinkman, with the aim of securing his family's financial future before he dies.",
+    "poster": "https://assets.fanart.tv/preview/tv/81189/tvposter/breaking-bad-5427fc5ebded7.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1396,
+    "tags": [
+      "drama"
+    ]
+  },
+  {
+    "id": 9000003,
+    "title": "Sherlock",
+    "year": 2010,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Mystery",
+      "Adventure",
+      "Thriller"
+    ],
+    "rating": 9.25027,
+    "votes": 24302,
+    "popularity": 93.41,
+    "language": "en",
+    "country": "GB",
+    "network": "BBC One",
+    "status": "returning series",
+    "overview": "Sherlock is a British television crime drama that presents a contemporary adaptation of Sir Arthur Conan Doyle's Sherlock Holmes detective stories. Created by Steven Moffat and Mark Gatiss, it stars Benedict Cumberbatch as Sherlock Holmes and Martin Freeman as Doctor John Watson.",
+    "poster": "https://assets.fanart.tv/preview/tv/176941/tvposter/sherlock-52b60767a30c9.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 19885,
+    "tags": [
+      "drama",
+      "crime",
+      "mystery",
+      "adventure",
+      "thriller"
+    ]
+  },
+  {
+    "id": 9000004,
+    "title": "The Walking Dead",
+    "year": 2010,
+    "genres": [
+      "Drama",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.62455,
+    "votes": 37297,
+    "popularity": 90.79,
+    "language": "en",
+    "country": "US",
+    "network": "AMC",
+    "status": "returning series",
+    "overview": "The world we knew is gone. An epidemic of apocalyptic proportions has swept the globe causing the dead to rise and feed on the living. In a matter of months society has crumbled. In a world ruled by the dead, we are forced to finally start living. Based on a comic book series of the same name by Robert Kirkman, this AMC project focuses on the world after a zombie apocalypse. The series follows a police officer, Rick Grimes, who wakes up from a coma to find the world ravaged with zombies. Looking for his family, he and a group of survivors attempt to battle against the zombies in order to stay alive.",
+    "poster": "https://assets.fanart.tv/preview/tv/153021/tvposter/the-walking-dead-5212771f42d2f.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1402,
+    "tags": [
+      "drama",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000005,
+    "title": "The Big Bang Theory",
+    "year": 2007,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.48493,
+    "votes": 37826,
+    "popularity": 89.44,
+    "language": "en",
+    "country": "US",
+    "network": "CBS",
+    "status": "returning series",
+    "overview": "What happens when hyperintelligent roommates Sheldon and Leonard meet Penny, a free-spirited beauty moving in next door, and realize they know next to nothing about life outside of the lab. Rounding out the crew are the smarmy Wolowitz, who thinks he's as sexy as he is brainy, and Koothrappali, who suffers from an inability to speak in the presence of a woman.",
+    "poster": "https://assets.fanart.tv/preview/tv/80379/tvposter/the-big-bang-theory-5214251a59ba0.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1418,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000006,
+    "title": "Dexter",
+    "year": 2006,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "rating": 8.73277,
+    "votes": 25873,
+    "popularity": 88.73,
+    "language": "en",
+    "country": "US",
+    "network": "Showtime",
+    "status": "ended",
+    "overview": "He's smart, he's good looking, and he's got a great sense of humor. He's Dexter Morgan, everyone's favorite serial killer. As a Miami forensics expert, he spends his days solving crimes, & nights committing them. But Dexter lives by a strict code of honor that is both his saving grace and lifelong burden. Torn between his deadly compulsion and his desire for true happiness, Dexter is a man in profound conflict with the world and himself.",
+    "poster": "https://assets.fanart.tv/preview/tv/79349/tvposter/dexter-5251f81d6a966.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1405,
+    "tags": [
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000007,
+    "title": "Friends",
+    "year": 1994,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.95142,
+    "votes": 18198,
+    "popularity": 87.81,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "ended",
+    "overview": "Six young people, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
+    "poster": "https://assets.fanart.tv/preview/tv/79168/tvposter/friends-522501392b273.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1668,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000008,
+    "title": "House of Cards",
+    "year": 2013,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 8.98292,
+    "votes": 15929,
+    "popularity": 86.92,
+    "language": "en",
+    "country": "US",
+    "network": "Netflix",
+    "status": "returning series",
+    "overview": "Ruthless and cunning, Congressman Francis Underwood and his wife Claire stop at nothing to conquer everything. This wicked political drama penetrates the shadowy world of greed, sex and corruption in modern D.C.",
+    "poster": "https://assets.fanart.tv/preview/tv/262980/tvposter/house-of-cards-2013-52cf036e44ebc.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1425,
+    "tags": [
+      "drama"
+    ]
+  },
+  {
+    "id": 9000009,
+    "title": "Doctor Who",
+    "year": 2005,
+    "genres": [
+      "Drama",
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "rating": 9.06001,
+    "votes": 13315,
+    "popularity": 86.04,
+    "language": "en",
+    "country": "GB",
+    "network": "BBC One",
+    "status": "returning series",
+    "overview": "The Doctor is an alien Time Lord from the planet Gallifrey who travels through all of time and space in his TARDIS. He has a long list of friends and companions who have shared journeys with him. Instead of dying, the Doctor is able to “regenerate” into a new body, taking on a new personality with each regeneration. Twelve actors, plus John Hurt, have played The Doctor thus far.",
+    "poster": "https://assets.fanart.tv/preview/tv/78804/tvposter/doctor-who-2005-52ea4e9dc8827.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 57243,
+    "tags": [
+      "drama",
+      "action",
+      "adventure",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000010,
+    "title": "House",
+    "year": 2004,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Mystery"
+    ],
+    "rating": 8.78887,
+    "votes": 17435,
+    "popularity": 85.83,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "ended",
+    "overview": "Go deeper into the medical mysteries of House, TV's most compelling drama. Hugh Laurie stars as the brilliant but sarcastic Dr. Gregory House, a maverick physician who is devoid of bedside manner. While his behavior can border on antisocial, Dr. House thrives on the challenge of solving the medical puzzles that other doctors give up on. Together with his hand-picked team of young medical experts, he'll do whatever it takes in the race against the clock to solve the case.",
+    "poster": "https://assets.fanart.tv/preview/tv/73255/tvposter/house-52ea77190d76c.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1408,
+    "tags": [
+      "comedy",
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000011,
+    "title": "Fringe",
+    "year": 2008,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.79802,
+    "votes": 17190,
+    "popularity": 85.8,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "ended",
+    "overview": "The series follows a Federal Bureau of Investigation \"Fringe Division\" team based in Boston. The team uses unorthodox \"fringe\" science and FBI investigative techniques to investigate a series of unexplained, often ghastly occurrences, some of which are related to mysteries surrounding a parallel universe.",
+    "poster": "https://assets.fanart.tv/preview/tv/82066/tvposter/fringe-521275f45d70d.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1705,
+    "tags": [
+      "drama",
+      "mystery",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000012,
+    "title": "How I Met Your Mother",
+    "year": 2005,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.40198,
+    "votes": 25693,
+    "popularity": 85.31,
+    "language": "en",
+    "country": "US",
+    "network": "CBS",
+    "status": "ended",
+    "overview": "The year is 2030. Ted Mosby is relaying the story of how he met his wife to his daughter and son. The story starts in the year 2005, when then twenty-seven year old architect Ted was spurred on to want to get married after his best friends from his college days at Wesleyan, lawyer Marshall Eriksen, who was his roommate at the time and kindergarten teacher Lily Aldrin, got engaged after nine years of dating each other. Ted's new quest in life was much to the dismay of his womanizing friend, Barney Stinson. But soon after Marshall and Lily's engagement, Ted believed that his life mate was going to be news reporter and aspiring news anchor Robin Scherbatsky, who, despite having had a romantic relationship with her after this time, ended up being who the kids know as their \"Aunt\" Robin. As Ted relays the story to his kids, the constants are that their Uncle Marshall, Aunt Lily, Uncle Barney and Aunt Robin are always in the picture and thus have something to do with how he got together with their mother.",
+    "poster": "https://assets.fanart.tv/preview/tv/75760/tvposter/how-i-met-your-mother-521bcbf47976e.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1100,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000013,
+    "title": "Band of Brothers",
+    "year": 2001,
+    "genres": [
+      "Drama",
+      "War"
+    ],
+    "rating": 9.40655,
+    "votes": 8122,
+    "popularity": 84.68,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "ended",
+    "overview": "The miniseries follows Easy Company, an army unit during World War II, from their initial training at Camp Toccoa to the conclusion of the war. The series is based on the book written by the late Stephen E. Ambrose. Band of Brothers is executive produced by Steven Spielberg and Tom Hanks, the series won 6 Emmy Awards. ",
+    "poster": "https://assets.fanart.tv/preview/tv/74205/tvposter/band-of-brothers-5433176d56c9e.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4613,
+    "tags": [
+      "drama",
+      "war"
+    ]
+  },
+  {
+    "id": 9000014,
+    "title": "Suits",
+    "year": 2011,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 8.72887,
+    "votes": 15915,
+    "popularity": 84.45,
+    "language": "en",
+    "country": "US",
+    "network": "USA Network",
+    "status": "returning series",
+    "overview": "Suits follows college drop-out Mike Ross, who accidentally lands a job with one of New York's best legal closers, Harvey Specter. They soon become a winning team with Mike's raw talent and photographic memory, and Mike soon reminds Harvey of why he went into the field of law in the first place.",
+    "poster": "https://assets.fanart.tv/preview/tv/247808/tvposter/suits-52b60286a3ee1.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 37680,
+    "tags": [
+      "drama"
+    ]
+  },
+  {
+    "id": 9000015,
+    "title": "The Wire",
+    "year": 2002,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Mystery"
+    ],
+    "rating": 9.41248,
+    "votes": 7821,
+    "popularity": 84.38,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "ended",
+    "overview": "Unlike most television crime dramas, which neatly introduce and then solve a case all in the space of one hour, HBO's THE WIRE follows one single drug and homicide investigation throughout the length of an entire season. Centered on the drug culture of inner-city Baltimore, the series' storyline unfolds from the points of view of both the criminals lording the streets and the police officers determined to bring them down.",
+    "poster": "https://assets.fanart.tv/preview/tv/79126/tvposter/the-wire-53f7e5b69a150.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1438,
+    "tags": [
+      "drama",
+      "crime",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000016,
+    "title": "True Detective",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Mystery"
+    ],
+    "rating": 8.83354,
+    "votes": 12399,
+    "popularity": 83.26,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "returning series",
+    "overview": "An anthology series in which police investigations unearth the personal and professional secrets of those involved, both within and outside the law.",
+    "poster": "https://assets.fanart.tv/preview/tv/270633/tvposter/true-detective-52c3ace03064c.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 46648,
+    "tags": [
+      "drama",
+      "crime",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000017,
+    "title": "Homeland",
+    "year": 2011,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ],
+    "rating": 8.46751,
+    "votes": 18237,
+    "popularity": 83.08,
+    "language": "en",
+    "country": "US",
+    "network": "Showtime",
+    "status": "returning series",
+    "overview": "When Marine Nicolas Brody is hailed as a hero after he returns home from eight years of captivity in Iraq, intelligence officer Carrie Mathison is the only one who suspects that he may have been turned.",
+    "poster": "https://assets.fanart.tv/preview/tv/247897/tvposter/homeland-52d53abdee218.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1407,
+    "tags": [
+      "drama",
+      "mystery",
+      "thriller"
+    ]
+  },
+  {
+    "id": 9000018,
+    "title": "Lost",
+    "year": 2004,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Adventure",
+      "Action"
+    ],
+    "rating": 8.43207,
+    "votes": 18152,
+    "popularity": 82.69,
+    "language": "en",
+    "country": "US",
+    "network": "ABC (US)",
+    "status": "ended",
+    "overview": "After their plane, Oceanic Air flight 815, tore apart whilst thousands of miles off course, the survivors find themselves on a mysterious deserted island where they soon find out they are not alone.",
+    "poster": "https://assets.fanart.tv/preview/tv/73739/tvposter/lost-5224fbe21f91f.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4607,
+    "tags": [
+      "drama",
+      "mystery",
+      "adventure",
+      "action"
+    ]
+  },
+  {
+    "id": 9000019,
+    "title": "Supernatural",
+    "year": 2005,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Fantasy",
+      "Science Fiction",
+      "Comedy",
+      "Horror"
+    ],
+    "rating": 8.52729,
+    "votes": 15371,
+    "popularity": 82.21,
+    "language": "en",
+    "country": "US",
+    "network": "The CW",
+    "status": "returning series",
+    "overview": "Two brothers follow their father's footsteps as \"hunters\" fighting evil supernatural beings of many kinds including monsters, demons, and gods that roam the earth.",
+    "poster": "https://assets.fanart.tv/preview/tv/78901/tvposter/supernatural-529331966cdf0.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1622,
+    "tags": [
+      "drama",
+      "mystery",
+      "fantasy",
+      "science fiction",
+      "comedy",
+      "horror"
+    ]
+  },
+  {
+    "id": 9000020,
+    "title": "Modern Family",
+    "year": 2009,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.54264,
+    "votes": 14903,
+    "popularity": 82.09,
+    "language": "en",
+    "country": "US",
+    "network": "ABC (US)",
+    "status": "returning series",
+    "overview": "This mockumentary explores the many different types of a modern family through the stories of a gay couple, comprised of Mitchell and Cameron, and their daughter Lily, a straight couple, comprised of Phil and Claire, and their three kids, Haley, Alex, and Luke, and a multi-ethnic couple, which is comprised of Jay and Gloria, and her son Manny.",
+    "poster": "https://assets.fanart.tv/preview/tv/95011/tvposter/modern-family-52da194760e77.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1421,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000021,
+    "title": "Futurama",
+    "year": 1999,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Fantasy",
+      "Science Fiction",
+      "Drama"
+    ],
+    "rating": 8.8605,
+    "votes": 10380,
+    "popularity": 81.94,
+    "language": "en",
+    "country": "US",
+    "network": "Comedy Central (US)",
+    "status": "ended",
+    "overview": "A late 20th-century New York City pizza delivery boy, Philip J. Fry, after being unwittingly cryogenically frozen for one thousand years, finds employment at Planet Express, an interplanetary delivery company in the 31st century.",
+    "poster": "https://assets.fanart.tv/preview/tv/73871/tvposter/futurama-535ea4cf5195d.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 615,
+    "tags": [
+      "animation",
+      "comedy",
+      "fantasy",
+      "science fiction",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000022,
+    "title": "The Simpsons",
+    "year": 1989,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "rating": 8.58656,
+    "votes": 12616,
+    "popularity": 81.08,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+    "poster": "https://assets.fanart.tv/preview/tv/71663/tvposter/the-simpsons-536fc64117634.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 456,
+    "tags": [
+      "animation",
+      "comedy",
+      "family"
+    ]
+  },
+  {
+    "id": 9000023,
+    "title": "The Sopranos",
+    "year": 1999,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 9.18584,
+    "votes": 6796,
+    "popularity": 81.06,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "ended",
+    "overview": "Modern day morality tale about New Jersey mob boss Tony Soprano, as he deals with personal and professional issues in his home and business life.",
+    "poster": "https://assets.fanart.tv/preview/tv/75299/tvposter/the-sopranos-5343c7cc0a525.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1398,
+    "tags": [
+      "drama"
+    ]
+  },
+  {
+    "id": 9000024,
+    "title": "Community",
+    "year": 2009,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.59612,
+    "votes": 11897,
+    "popularity": 80.67,
+    "language": "en",
+    "country": "US",
+    "network": "Yahoo! Screen",
+    "status": "ended",
+    "overview": "From Emmy Award-winner Dan Harmon comes \"Community\", a smart comedy series about higher education – and lower expectations. The student body at Greendale Community College is made up of high-school losers, newly divorced housewives, and old people who want to keep their minds active. Within these not-so-hallowed halls, Community focuses on a band of misfits, at the center of which is a fast-talking lawyer whose degree was found to be fake, who form a study group and end up learning a lot more about themselves than they do about their course work.",
+    "poster": "https://assets.fanart.tv/preview/tv/94571/tvposter/community-5452940ea5103.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 18347,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000025,
+    "title": "South Park",
+    "year": 1997,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "rating": 8.70493,
+    "votes": 10533,
+    "popularity": 80.63,
+    "language": "en",
+    "country": "US",
+    "network": "Comedy Central (US)",
+    "status": "returning series",
+    "overview": "South Park is an animated series featuring four boys who live in the Colorado town of South Park, which is beset by frequent odd occurrences. The show grew out of a short film that Trey Parker and Matt Stone created called The Spirit of Christmas, and has become an award-winning show that is a unique blend of humor and satire.",
+    "poster": "https://assets.fanart.tv/preview/tv/75897/tvposter/south-park-5534988991a36.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 2190,
+    "tags": [
+      "animation",
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000026,
+    "title": "Sons of Anarchy",
+    "year": 2008,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8.71764,
+    "votes": 10253,
+    "popularity": 80.51,
+    "language": "en",
+    "country": "US",
+    "network": "FX (US)",
+    "status": "ended",
+    "overview": "Sons of Anarchy is an adrenalized drama with darkly comedic undertones that explores a notorious outlaw motorcycle club’s (MC) desire to protect its livelihood while ensuring that their simple, sheltered town of Charming, California remains exactly that, charming. The MC must confront threats from drug dealers, corporate developers, and overzealous law officers. Behind the MC’s familial lifestyle and legally thriving automotive shop is a ruthless and illegal arms business driven by the seduction of money, power, and blood.",
+    "poster": "https://assets.fanart.tv/preview/tv/82696/tvposter/sons-of-anarchy-5384991b14946.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1409,
+    "tags": [
+      "drama",
+      "crime",
+      "thriller"
+    ]
+  },
+  {
+    "id": 9000027,
+    "title": "Vikings",
+    "year": 2013,
+    "genres": [
+      "Drama",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.61912,
+    "votes": 11048,
+    "popularity": 80.24,
+    "language": "en",
+    "country": "CA",
+    "network": "History",
+    "status": "returning series",
+    "overview": "Vikings follows the adventures of Ragnar Lothbrok the greatest hero of his age. The series tells the sagas of Ragnar's band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods, legend has it that he was a direct descendant of Odin, the god of war and warriors.",
+    "poster": "https://assets.fanart.tv/preview/tv/260449/tvposter/vikings-551f63e8bcc0d.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 44217,
+    "tags": [
+      "drama",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000028,
+    "title": "Arrow",
+    "year": 2012,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Action",
+      "Adventure",
+      "Crime",
+      "Science Fiction"
+    ],
+    "rating": 7.9996,
+    "votes": 22692,
+    "popularity": 80.23,
+    "language": "en",
+    "country": "US",
+    "network": "The CW",
+    "status": "returning series",
+    "overview": "Oliver Queen and his father are lost at sea when their luxury yacht sinks. His father doesn't survive. Oliver survives on an uncharted island for five years learning to fight, but also learning about his father's corruption and unscrupulous business dealings. He returns to civilization a changed man, determined to put things right. He disguises himself with the hood of one of his mysterious island mentors, arms himself with a bow and sets about hunting down the men and women who have corrupted his city.",
+    "poster": "https://assets.fanart.tv/preview/tv/257655/tvposter/arrow-54b187dc9a69c.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1412,
+    "tags": [
+      "drama",
+      "mystery",
+      "action",
+      "adventure",
+      "crime",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000029,
+    "title": "Mr. Robot",
+    "year": 2015,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Suspense",
+      "Thriller"
+    ],
+    "rating": 8.80071,
+    "votes": 9062,
+    "popularity": 80.19,
+    "language": "en",
+    "country": "US",
+    "network": "USA Network",
+    "status": "returning series",
+    "overview": "Mr. Robot follows Elliot, a young programmer who works as a cyber-security engineer by day and a vigilante hacker by night. Elliot finds himself at a crossroad when the mysterious leader of an underground hacker group recruits him to destroy the corporation he is paid to protect.",
+    "poster": "https://assets.fanart.tv/preview/tv/289590/tvposter/mr-robot-55b241f08ba92.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 62560,
+    "tags": [
+      "drama",
+      "crime",
+      "suspense",
+      "thriller"
+    ]
+  },
+  {
+    "id": 9000030,
+    "title": "Person of Interest",
+    "year": 2011,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.47819,
+    "votes": 11897,
+    "popularity": 79.56,
+    "language": "en",
+    "country": "US",
+    "network": "CBS",
+    "status": "ended",
+    "overview": "John Reese, a presumed dead former CIA agent who is approached by a mysterious billionaire named Harold Finch to prevent violent crimes before they happen by using an advanced surveillance system dubbed \"The Machine\". Their unique brand of vigilante justice attracts the attention of two NYPD officers, Joss Carter and Lionel Fusco, whom Reese uses to his advantage as he investigates persons of interest. Reese and Finch are later aided by Samantha \"Root\" Groves , a highly intelligent computer hacker and contract killer who the Machine later identifies as its \"analog interface\" and Sameen Shaw, a former ISA assassin who unknowingly dealt with the \"relevant\" numbers found by the Machine.",
+    "poster": "https://assets.fanart.tv/preview/tv/248742/tvposter/person-of-interest-533c28d0e6200.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1411,
+    "tags": [
+      "drama",
+      "mystery",
+      "thriller",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000031,
+    "title": "The IT Crowd",
+    "year": 2006,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.87112,
+    "votes": 7837,
+    "popularity": 79.55,
+    "language": "en",
+    "country": "GB",
+    "network": "Channel 4",
+    "status": "ended",
+    "overview": "At the UK company Reynholm Industries, their corporate high-rise towers are full of beautiful happy people with one success story after another. Well, except for the employees that work in the basement - the IT department. While their colleagues work in fantastic surroundings, Jen, Roy and Moss must work below ground in the dark and horrible basement, struggling to make it into normal society.The IT Crowd is a playful and somewhat surreal look at what it's really like to be the underclass of every company - the IT Department.",
+    "poster": "https://assets.fanart.tv/preview/tv/79216/tvposter/the-it-crowd-535fbcfa00926.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 2490,
+    "tags": [
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000032,
+    "title": "Top Gear",
+    "year": 2002,
+    "genres": [
+      "Comedy",
+      "Documentary"
+    ],
+    "rating": 9.03707,
+    "votes": 6636,
+    "popularity": 79.53,
+    "language": "en",
+    "country": "GB",
+    "network": "BBC Two",
+    "status": "returning series",
+    "overview": "This fast-paced and stunt-filled motor show tests whether cars, both mundane and extraordinary, live up to their manufacturers' claims. The long-running show travels to locations around the world, performing extreme stunts and challenges to see what the featured cars are capable of doing. Celebrity guests appear on some episodes to help test the vehicles. Things don't always go as planned, though, with broken bones and mechanical mishaps sometimes part of the experiments. Jeremy Clarkson, Richard Hammond and James May hosted the show for more than a decade before giving way to a new crew in 2016, including actor Matt LeBlanc, TV personality Chris Evans and Formula One veteran Eddie Jordan.",
+    "poster": "https://assets.fanart.tv/preview/tv/74608/tvposter/top-gear-54a3d56d75bf8.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 45,
+    "tags": [
+      "comedy",
+      "documentary"
+    ]
+  },
+  {
+    "id": 9000033,
+    "title": "Orange Is the New Black",
+    "year": 2013,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.36723,
+    "votes": 13286,
+    "popularity": 79.44,
+    "language": "en",
+    "country": "US",
+    "network": "Netflix",
+    "status": "returning series",
+    "overview": "Piper Chapman is a public relations executive with a career and a fiance when her past suddenly catches up to her. In her mid-30s she is sentenced to spend time in a minimum-security women's prison in Connecticut for her association with a drug runner 10 years earlier. This Netflix original series is based on the book of the same title. Forced to trade power suits for prison orange, Chapman makes her way through the corrections system and adjusts to life behind bars, making friends with the many eccentric, unusual and unexpected people she meets.",
+    "poster": "https://assets.fanart.tv/preview/tv/264586/tvposter/orange-is-the-new-black-5352b8c73eac7.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1424,
+    "tags": [
+      "comedy",
+      "drama",
+      "crime"
+    ]
+  },
+  {
+    "id": 9000034,
+    "title": "Marvel's Daredevil",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "rating": 8.73529,
+    "votes": 8666,
+    "popularity": 79.21,
+    "language": "en",
+    "country": "US",
+    "network": "Netflix",
+    "status": "returning series",
+    "overview": "Matt Murdock, with his other senses superhumanly enhanced, fights crime as a blind lawyer by day, and vigilante by night.",
+    "poster": "https://assets.fanart.tv/preview/tv/281662/tvposter/daredevil-54efa1d6837fb.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 61889,
+    "tags": [
+      "action",
+      "crime"
+    ]
+  },
+  {
+    "id": 9000035,
+    "title": "Arrested Development",
+    "year": 2003,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.80214,
+    "votes": 7753,
+    "popularity": 78.83,
+    "language": "en",
+    "country": "US",
+    "network": "Netflix",
+    "status": "ended",
+    "overview": "Level-headed son Michael Bluth takes over family affairs after his father is imprisoned. But the rest of his spoiled, dysfunctional family are making his job unbearable.",
+    "poster": "https://assets.fanart.tv/preview/tv/72173/tvposter/arrested-development-54c730efe2508.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4589,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000036,
+    "title": "Parks and Recreation",
+    "year": 2009,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.73532,
+    "votes": 8225,
+    "popularity": 78.75,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "ended",
+    "overview": "The series follows Leslie Knope, the deputy head of the Parks and Recreation department in the fictional town of Pawnee, Indiana. Knope takes on a project with a nurse named Ann to turn a construction pit into a park, while trying to mentor a bored college-aged intern. However, Leslie must fight through the bureaucrats, problem neighbors, and developers in order to make her dream a reality, all while with a camera crew recording her every gaff and mishap.",
+    "poster": "https://assets.fanart.tv/preview/tv/84912/tvposter/parks-and-recreation-53ecf93dc6674.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 8592,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000037,
+    "title": "Hannibal",
+    "year": 2013,
+    "genres": [
+      "Drama"
+    ],
+    "rating": 8.5701,
+    "votes": 9779,
+    "popularity": 78.74,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "ended",
+    "overview": "Both a gift and a curse, Will Graham has the extraordinary ability to think like his prey—he sees what they see, feels what they feel. But while Graham is pursuing an especially troubling, cannibalistic murderer, Special Agent Jack Crawford teams him with a highly respected psychiatrist – a man with a taste for the criminal minded – Dr. Hannibal Lecter.",
+    "poster": "https://assets.fanart.tv/preview/tv/259063/tvposter/hannibal-5243e95975149.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 40008,
+    "tags": [
+      "drama"
+    ]
+  },
+  {
+    "id": 9000038,
+    "title": "Fargo",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Thriller"
+    ],
+    "rating": 8.84498,
+    "votes": 7199,
+    "popularity": 78.56,
+    "language": "en",
+    "country": "US",
+    "network": "FX (US)",
+    "status": "returning series",
+    "overview": "An American black comedy–crime drama anthology television series created and primarily written by Noah Hawley. The show is inspired by the 1996 film of the same name written and directed by the Coen brothers, who serve as executive producers on the series. Each season follows an anthology format, being set in a different era along with a different story, cast and set of characters.",
+    "poster": "https://assets.fanart.tv/preview/tv/269613/tvposter/fargo-536cab7aa72da.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60622,
+    "tags": [
+      "drama",
+      "crime",
+      "thriller"
+    ]
+  },
+  {
+    "id": 9000039,
+    "title": "Archer",
+    "year": 2009,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Drama",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.90716,
+    "votes": 6689,
+    "popularity": 78.46,
+    "language": "en",
+    "country": "US",
+    "network": "FX (US)",
+    "status": "returning series",
+    "overview": "There's not a whole lot of intelligence in the office of the ISIS, an international spy agency where the employees' best efforts are geared toward undermining and betraying one another. Master spy Sterling Archer is a suave, confident secret-keeper at work but a mess when it comes to his personal affairs. He has a tenuous relationship with his ex, fellow agent Lana Kane, and he doesn't get along with his mother, who happens to be his boss. ISIS comptroller Cyril Figgis is jealous of Sterling's lifestyle despite the fact he's now dating Lana. Later, after ISIS is disbanded and the agents temporarily run a drug cartel to help fund their retirements, they return to their espionage roots as agents of the CIA. After arriving in Los Angeles, they organize a detective agency.",
+    "poster": "https://assets.fanart.tv/preview/tv/110381/tvposter/archer-2009-52de8346222c5.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 10283,
+    "tags": [
+      "animation",
+      "comedy",
+      "drama",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000040,
+    "title": "Shameless",
+    "year": 2011,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.82381,
+    "votes": 7248,
+    "popularity": 78.43,
+    "language": "en",
+    "country": "US",
+    "network": "Showtime",
+    "status": "returning series",
+    "overview": "Chicagoan Frank Gallagher is the proud single dad of six smart, industrious, independent kids, who without him would be... perhaps better off. When Frank's not at the bar spending what little money they have, he's passed out on the floor. But the kids have found ways to grow up in spite of him. They may not be like any family you know, but they make no apologies for being exactly who they are.",
+    "poster": "https://assets.fanart.tv/preview/tv/161511/tvposter/shameless-us-553d2e14f3dfb.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 34307,
+    "tags": [
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000041,
+    "title": "Stranger Things",
+    "year": 2016,
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Science Fiction",
+      "Mystery"
+    ],
+    "rating": 9.02123,
+    "votes": 5935,
+    "popularity": 78.38,
+    "language": "en",
+    "country": "US",
+    "network": "Netflix",
+    "status": "returning series",
+    "overview": "When a young boy disappears, his mother, his friends, and the local sheriff must confront terrifying forces in order to find him. ",
+    "poster": "https://assets.fanart.tv/preview/tv/305288/tvposter/stranger-things-578c9b2cb3497.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 66732,
+    "tags": [
+      "drama",
+      "fantasy",
+      "science fiction",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000042,
+    "title": "The Flash",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.32092,
+    "votes": 11785,
+    "popularity": 78.01,
+    "language": "en",
+    "country": "US",
+    "network": "The CW",
+    "status": "returning series",
+    "overview": "Barry Allen wakes up nine months after he was struck by lightning and discovers that the bolt gave him the power of super speed. With his new team and powers, Barry becomes \"The Flash\" and fights crime in Central City.",
+    "poster": "https://assets.fanart.tv/preview/tv/279121/tvposter/the-flash-2014-54830aed88b75.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60735,
+    "tags": [
+      "drama",
+      "fantasy",
+      "science fiction",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000043,
+    "title": "Scrubs",
+    "year": 2001,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.62481,
+    "votes": 7852,
+    "popularity": 77.35,
+    "language": "en",
+    "country": "US",
+    "network": "ABC (US)",
+    "status": "ended",
+    "overview": "Scrubs focuses on the lives of several people working at Sacred Heart, a teaching hospital. It features fast-paced dialogue, slapstick, and surreal vignettes presented mostly as the daydreams of the central character, Dr. John Michael \"J.D.\" Dorian.",
+    "poster": "https://assets.fanart.tv/preview/tv/76156/tvposter/scrubs-553cfdb6733f2.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4556,
+    "tags": [
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000044,
+    "title": "The X-Files",
+    "year": 1993,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Science Fiction",
+      "Fantasy"
+    ],
+    "rating": 8.78965,
+    "votes": 6627,
+    "popularity": 77.34,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "The X-Files focused on the exploits of FBI Agents Fox Mulder, Dana Scully, John Doggett and Monica Reyes and their investigations into the paranormal. From genetic mutants and killer insects to a global conspiracy concerning the colonization of Earth by an alien species, this mind-boggling, humorous and occasionally frightening series created by Chris Carter has been one of the world's most popular sci-fi/drama shows since its humble beginnings in 1993.",
+    "poster": "https://assets.fanart.tv/preview/tv/77398/tvposter/the-x-files-5374a10906eb3.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4087,
+    "tags": [
+      "drama",
+      "mystery",
+      "science fiction",
+      "fantasy"
+    ]
+  },
+  {
+    "id": 9000045,
+    "title": "American Horror Story",
+    "year": 2011,
+    "genres": [
+      "Drama",
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "rating": 8.21123,
+    "votes": 12304,
+    "popularity": 77.33,
+    "language": "en",
+    "country": "US",
+    "network": "FX (US)",
+    "status": "returning series",
+    "overview": "An anthology series that centers on different characters and locations, including a house with a murderous past, an insane asylum, a witch coven, a freak show, an enigmatic hotel and a sinister farmhouse in Roanoke, North Carolina.",
+    "poster": "https://assets.fanart.tv/preview/tv/250487/tvposter/american-horror-story-5224f6b73226a.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1413,
+    "tags": [
+      "drama",
+      "horror",
+      "mystery",
+      "thriller"
+    ]
+  },
+  {
+    "id": 9000046,
+    "title": "Chuck",
+    "year": 2007,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.45765,
+    "votes": 9304,
+    "popularity": 77.29,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "ended",
+    "overview": "This high-concept action comedy follows Chuck Bartowski as the Buy More computer geek turned secret agent. When Chuck unwittingly downloads a database of government information and deadly fighting skills into his head, he becomes the CIA's most vital secret. This sets Chuck on a path to become a full-fledged spy, assisted by the stoic Colonel John Casey; Chuck's best friend, Morgan Grimes; and the CIA's top agent Sarah Walker. With the help of this unlikely team and his unorthodox techniques, Chuck is ready to take Operation Bartowski freelance.",
+    "poster": "https://assets.fanart.tv/preview/tv/80348/tvposter/chuck-5212a973babef.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1404,
+    "tags": [
+      "comedy",
+      "drama",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000047,
+    "title": "Prison Break",
+    "year": 2005,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Crime",
+      "Thriller",
+      "Action"
+    ],
+    "rating": 8.30988,
+    "votes": 10943,
+    "popularity": 77.29,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "After getting himself incarcerated in Fox River State Penitentiary to free his wrongly accused brother, Lincoln Burrows, Michael Scofield is now on the loose along with his brother and six other convicts. ",
+    "poster": "https://assets.fanart.tv/preview/tv/75340/tvposter/prison-break-5270201661eab.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 2288,
+    "tags": [
+      "drama",
+      "mystery",
+      "crime",
+      "thriller",
+      "action"
+    ]
+  },
+  {
+    "id": 9000048,
+    "title": "Orphan Black",
+    "year": 2013,
+    "genres": [
+      "Thriller",
+      "Drama",
+      "Fantasy",
+      "Science Fiction",
+      "Action",
+      "Suspense"
+    ],
+    "rating": 8.56693,
+    "votes": 8121,
+    "popularity": 77.12,
+    "language": "en",
+    "country": "US",
+    "network": "BBC America",
+    "status": "returning series",
+    "overview": "A streetwise hustler is pulled into a compelling conspiracy after witnessing the suicide of a girl who looks just like her.",
+    "poster": "https://assets.fanart.tv/preview/tv/260315/tvposter/orphan-black-534289f0df8bf.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 56296,
+    "tags": [
+      "thriller",
+      "drama",
+      "fantasy",
+      "science fiction",
+      "action",
+      "suspense"
+    ]
+  },
+  {
+    "id": 9000049,
+    "title": "The Office",
+    "year": 2005,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.59228,
+    "votes": 7900,
+    "popularity": 77.11,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "ended",
+    "overview": "A fresh and funny mockumentary-style glimpse into the daily interactions of the eccentric workers at the Dunder Mifflin paper supply company. This fast-paced comedy parodies contemporary American water-cooler culture.",
+    "poster": "https://assets.fanart.tv/preview/tv/73244/tvposter/the-office-us-544ab61666cc6.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 2316,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000050,
+    "title": "Stargate SG-1",
+    "year": 1997,
+    "genres": [
+      "Adventure",
+      "Action",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.9274,
+    "votes": 5565,
+    "popularity": 76.99,
+    "language": "en",
+    "country": "US",
+    "network": "Syfy",
+    "status": "ended",
+    "overview": "This sequel to the 1994 movie Stargate chronicles the further adventures of SGC (Stargate Command). It turned out that the Goa'uld Ra was only one of many alien System Lords who used the Stargates to conquer much of the universe. When Earth uncovers a working cartouche to decipher the coding system of their own Stargate, they find they can now travel anywhere. Earth's military sends out SG teams to explore new planets, find technology, and oppose the Goa'uld. Jack O'Neill and Daniel Jackson from the original movie are part of SG-1. They are joined by Sam Carter, a scientist, and Teal'c, a Jaffa who is convinced the Goa'uld are not gods.",
+    "poster": "https://assets.fanart.tv/preview/tv/72449/tvposter/stargate-sg-1-521a1e8b1df84.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4629,
+    "tags": [
+      "adventure",
+      "action",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000051,
+    "title": "Californication",
+    "year": 2007,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.45815,
+    "votes": 8888,
+    "popularity": 76.91,
+    "language": "en",
+    "country": "US",
+    "network": "Showtime",
+    "status": "ended",
+    "overview": "David Duchovny returns to TV with his Golden Globe-winning portrayal of author Hank Moody in the critically-acclaimed Showtime hit Californication. Author Hank Moody's life is spinning gloriously out of control as he juggles his sex and drug addictions while raising a daughter and trying to win back the love of his life in this edgy new series. ",
+    "poster": "https://assets.fanart.tv/preview/tv/80349/tvposter/californication-5212cbbc67287.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1215,
+    "tags": [
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000052,
+    "title": "Family Guy",
+    "year": 1999,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "rating": 8.22115,
+    "votes": 11142,
+    "popularity": 76.61,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+    "poster": "https://assets.fanart.tv/preview/tv/75978/tvposter/family-guy-537965cf0b619.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1434,
+    "tags": [
+      "animation",
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000053,
+    "title": "Boardwalk Empire",
+    "year": 2010,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "rating": 8.61072,
+    "votes": 6846,
+    "popularity": 76.05,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "ended",
+    "overview": "Boardwalk Empire is a period drama focusing on Enoch \"Nucky\" Thompson (based on the historical Enoch L. Johnson), a political figure who rose to prominence and controlled Atlantic City, New Jersey, during the Prohibition period of the 1920s and 1930s. Nucky acts with historical characters in both his personal and political life, including mobsters, politicians, government agents, and the common folk who look up to him. The federal government also takes an interest in the bootlegging and other illegal activities in the area, sending agents to investigate possible mob connections but also looking at Nucky's lifestyle—expensive and lavish for a county political figure. The final season jumps ahead seven years, to 1931, as Prohibition nears its end.",
+    "poster": "https://assets.fanart.tv/preview/tv/84947/tvposter/boardwalk-empire-5213478cc1172.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1621,
+    "tags": [
+      "crime",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000054,
+    "title": "Seinfeld",
+    "year": 1989,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.82419,
+    "votes": 5506,
+    "popularity": 76.01,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "ended",
+    "overview": "Jerry Seinfeld is a very successful stand-up comedian, mainly because the people around him offer an endless supply of great material. His best friend is George Costanza, a bald, whiny loser who craves the kind of success Jerry has but is never willing to do what it takes to get it. Jerry's neighbor Kramer often barges into his apartment and imposes onto his life. In the second episode Jerry's former girlfriend Elaine Benes comes back into his life, and the four of them are able to form a friendship together. The episodes were rarely very plot-heavy, focusing more on mundane conversations and situations that could be found during everyday life in New York.",
+    "poster": "https://assets.fanart.tv/preview/tv/79169/tvposter/seinfeld-538883f9d58ca.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1400,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000055,
+    "title": "The Blacklist",
+    "year": 2013,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "rating": 8.25191,
+    "votes": 9801,
+    "popularity": 75.84,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "returning series",
+    "overview": "Raymond \"Red\" Reddington, one of the FBI's most wanted fugitives, surrenders in person at FBI Headquarters in Washington, D.C. He claims that he and the FBI have the same interests: bringing down dangerous criminals and terrorists. In the last two decades, he's made a list of criminals and terrorists that matter the most but the FBI cannot find because it does not know they exist. Reddington calls this \"The Blacklist\".Reddington will co-operate, but insists that he will speak only to Elizabeth Keen, a rookie FBI profiler.",
+    "poster": "https://assets.fanart.tv/preview/tv/266189/tvposter/the-blacklist-5240753025ce0.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 46952,
+    "tags": [
+      "crime",
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000056,
+    "title": "Rick and Morty",
+    "year": 2013,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "rating": 9.23837,
+    "votes": 3419,
+    "popularity": 75.18,
+    "language": "en",
+    "country": "US",
+    "network": "Adult Swim",
+    "status": "returning series",
+    "overview": "A sociopathic scientist drags his unintelligent grandson on insanely dangerous adventures across the universe.",
+    "poster": "https://assets.fanart.tv/preview/tv/275274/tvposter/rick-and-morty-55baa7c0d4674.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60625,
+    "tags": [
+      "animation",
+      "comedy",
+      "adventure",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000057,
+    "title": "Better Call Saul",
+    "year": 2015,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Crime"
+    ],
+    "rating": 8.54902,
+    "votes": 5987,
+    "popularity": 74.36,
+    "language": "en",
+    "country": "US",
+    "network": "AMC",
+    "status": "returning series",
+    "overview": "We meet him when the man who will become Saul Goodman is known as Jimmy McGill, a small-time lawyer searching for his destiny and, more immediately, hustling to make ends meet. Working alongside, and, often, against Jimmy, is ‘fixer’ Mike Erhmantraut. The series tracks Jimmy's transformation into the man who puts ‘criminal’ in ‘criminal lawyer’.",
+    "poster": "https://assets.fanart.tv/preview/tv/273181/tvposter/better-call-saul-54d91da86c07d.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60059,
+    "tags": [
+      "comedy",
+      "drama",
+      "crime"
+    ]
+  },
+  {
+    "id": 9000058,
+    "title": "Marvel's Agents of S.H.I.E.L.D.",
+    "year": 2013,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 7.85437,
+    "votes": 12889,
+    "popularity": 74.34,
+    "language": "en",
+    "country": "US",
+    "network": "ABC (US)",
+    "status": "returning series",
+    "overview": "The missions of the Strategic Homeland Intervention Enforcement and Logistics Division.",
+    "poster": "https://assets.fanart.tv/preview/tv/263365/tvposter/marvels-agents-of-shield-523d1c0904f83.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1403,
+    "tags": [
+      "action",
+      "adventure",
+      "drama",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000059,
+    "title": "It's Always Sunny in Philadelphia",
+    "year": 2005,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.73045,
+    "votes": 4897,
+    "popularity": 74.18,
+    "language": "en",
+    "country": "US",
+    "network": "FXX",
+    "status": "returning series",
+    "overview": "Four egocentric friends who run a neighborhood Irish pub in Philadelphia try to find their way through the adult world of work and relationships. Unfortunately, their warped views and precarious judgments often lead them to trouble, creating a myriad of uncomfortable situations that usually only get worse before they get better.",
+    "poster": "https://assets.fanart.tv/preview/tv/75805/tvposter/its-always-sunny-in-philadelphia-5267e5ece5faa.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 2710,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000060,
+    "title": "Elementary",
+    "year": 2012,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "rating": 8.07082,
+    "votes": 9220,
+    "popularity": 73.68,
+    "language": "en",
+    "country": "US",
+    "network": "CBS",
+    "status": "returning series",
+    "overview": "Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare – a sober companion, Dr. Watson. A successful surgeon until she lost a patient and her license three years ago, Watson views her current job as another opportunity to help people, as well as paying a penance. Holmes resumes his work as a police consultant in New York City and Watson has no choice but to accompany her irascible new charge on his jobs. But Sherlock finds her medical background helpful, and Watson realizes she has a knack for playing investigator.With the mischievous Sherlock Holmes now running free in New York solving crimes, it’s simple deduction that he’s going to need someone to keep him grounded, and it’s elementary that it’s a job for Watson.",
+    "poster": "https://assets.fanart.tv/preview/tv/255316/tvposter/elementary-536c0b4d1d140.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1415,
+    "tags": [
+      "crime",
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000061,
+    "title": "Silicon Valley",
+    "year": 2014,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.42235,
+    "votes": 5860,
+    "popularity": 73.07,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "returning series",
+    "overview": "In the high-tech gold rush of modern Silicon Valley, the people most qualified to succeed are the least capable of handling success. A comedy partially inspired by Mike Judge's own experiences as a Silicon Valley engineer in the late 1980s.",
+    "poster": "https://assets.fanart.tv/preview/tv/277165/tvposter/silicon-valley-5509b213926fb.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60573,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000062,
+    "title": "New Girl",
+    "year": 2011,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 7.84091,
+    "votes": 10950,
+    "popularity": 72.93,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "Jessica Day is an offbeat and adorable girl in her late 20s who, after a bad breakup, moves in with three single guys. Goofy, positive, vulnerable and honest to a fault, Jess has faith in people, even when she shouldn't. Although she's dorky and awkward, she's comfortable in her own skin. More prone to friendships with women, she's not used to hanging with the boys--especially at home.",
+    "poster": "https://assets.fanart.tv/preview/tv/248682/tvposter/the-new-girl-54d45095af0d8.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1420,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000063,
+    "title": "Gotham",
+    "year": 2014,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller",
+      "Fantasy",
+      "Action",
+      "Suspense"
+    ],
+    "rating": 8.03415,
+    "votes": 8610,
+    "popularity": 72.8,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "The story behind Detective James Gordon's rise to prominence in Gotham City in the years before Batman's arrival.",
+    "poster": "https://assets.fanart.tv/preview/tv/274431/tvposter/gotham-54195d7246b3e.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60708,
+    "tags": [
+      "crime",
+      "drama",
+      "thriller",
+      "fantasy",
+      "action",
+      "suspense"
+    ]
+  },
+  {
+    "id": 9000064,
+    "title": "Brooklyn Nine-Nine",
+    "year": 2013,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Action"
+    ],
+    "rating": 8.26543,
+    "votes": 6352,
+    "popularity": 72.38,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "A single-camera ensemble comedy following the lives of an eclectic group of detectives in a New York precinct, including one slacker who is forced to shape up when he gets a new boss.",
+    "poster": "https://assets.fanart.tv/preview/tv/269586/tvposter/brooklyn-nine-nine-52ec223b30ac3.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 48891,
+    "tags": [
+      "comedy",
+      "crime",
+      "action"
+    ]
+  },
+  {
+    "id": 9000065,
+    "title": "30 Rock",
+    "year": 2006,
+    "genres": [
+      "Comedy"
+    ],
+    "rating": 8.43328,
+    "votes": 5186,
+    "popularity": 72.14,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "ended",
+    "overview": "Emmy Award Winner Tina Fey writes, executive produces and stars as Liz Lemon, the head writer of a live variety programme in New York City. Liz's life is turned upside down when brash new network executive Jack Donaghy (Alec Baldwin in his Golden Globe winning role) interferes with her show, bringing the wildly unpredictable Tracy Jordan (Tracy Morgan) into the cast. Now its up to Liz to manage the mayhem and still try to have a life.",
+    "poster": "https://assets.fanart.tv/preview/tv/79488/tvposter/30-rock-52deafe71d0c3.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4608,
+    "tags": [
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000066,
+    "title": "Adventure Time",
+    "year": 2010,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Fantasy"
+    ],
+    "rating": 8.83764,
+    "votes": 3252,
+    "popularity": 71.47,
+    "language": "en",
+    "country": "US",
+    "network": "Cartoon Network",
+    "status": "returning series",
+    "overview": "Adventure Time (originally titled 'Adventure Time with Finn & Jake') follows two best friends: Finn (a 12-year old boy) and Jake (a wise 28-year-old dog with magical powers), and the surreal adventures undertaken by the duo as they traverse the mystical Land of Ooo. A world built for adventure, Ooo is filled to the brim with various landscapes for the two buddies to explore and bizarre characters to assist.",
+    "poster": "https://assets.fanart.tv/preview/tv/152831/tvposter/adventure-time-with-finn-and-jake-55cec42f6070d.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 15260,
+    "tags": [
+      "animation",
+      "comedy",
+      "fantasy"
+    ]
+  },
+  {
+    "id": 9000067,
+    "title": "Bones",
+    "year": 2005,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama"
+    ],
+    "rating": 8.0507,
+    "votes": 7021,
+    "popularity": 71.3,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "F.B.I. Agent Seeley Booth is teamed up with forensic anthropologist Dr. Temperance \"Bones\" Brennan to solve some of the most baffling and bizarre crimes ever. Booth depends on clues from the living, witnesses and suspects, while Brennan gathers evidence from the dead, relying on her uncanny ability to read clues left behind in the bones of the victims.",
+    "poster": "https://assets.fanart.tv/preview/tv/75682/tvposter/bones-52deb10f82d0f.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1911,
+    "tags": [
+      "comedy",
+      "crime",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000068,
+    "title": "Veronica Mars",
+    "year": 2004,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Mystery"
+    ],
+    "rating": 8.68003,
+    "votes": 3666,
+    "popularity": 71.24,
+    "language": "en",
+    "country": "US",
+    "network": "The CW",
+    "status": "ended",
+    "overview": "In the wealthy, seaside community of Neptune, California, the rich and powerful make the rules. Unfortunately for them, there's Veronica Mars, a smart, fearless 17-year-old apprentice private investigator. During the day, Veronica must negotiate high school like any average teenage girl. But at night, she helps with her father's struggling private investigator business.",
+    "poster": "https://assets.fanart.tv/preview/tv/73730/tvposter/veronica-mars-524ef5580a743.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1432,
+    "tags": [
+      "comedy",
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000069,
+    "title": "The Legend of Korra",
+    "year": 2012,
+    "genres": [
+      "Animation",
+      "Drama",
+      "Family",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.5809,
+    "votes": 4011,
+    "popularity": 71.2,
+    "language": "en",
+    "country": "US",
+    "network": "Nickelodeon",
+    "status": "ended",
+    "overview": "The Legend of Korra is set in the Avatar universe as a spin-off of Avatar: The Last Airbender. The new series takes place seventy years after the end of the Avatar: The Last Airbender story arc with new characters and settings. The protagonist of the new series, Korra, the Avatar after Aang, is a hot-headed and rebellious young woman from the Southern Water Tribe who is ready to take on the world. The series follows Korra as she faces an Anti-bending Revolution while mastering the art of airbending from Aang and Katara's son, Tenzin.",
+    "poster": "https://assets.fanart.tv/preview/tv/251085/tvposter/the-legend-of-korra-53d2d6774a9e6.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 33880,
+    "tags": [
+      "animation",
+      "drama",
+      "family",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000070,
+    "title": "Entourage",
+    "year": 2004,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.44886,
+    "votes": 4351,
+    "popularity": 70.79,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "ended",
+    "overview": "Vincent Chase is a young actor whose career is on the rise. Joining him on his journey to stardom are his childhood buddies Eric, Turtle, his brother Johnny Drama and his hot-tempered agent Ari Gold. Together, they'll navigate the highs and lows of Hollywood's fast lane, where the stakes are higher -- and the money and temptations greater -- than ever before. ",
+    "poster": "https://assets.fanart.tv/preview/tv/74543/tvposter/entourage-55230aaa9724c.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1940,
+    "tags": [
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000071,
+    "title": "Eureka",
+    "year": 2006,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.35318,
+    "votes": 4703,
+    "popularity": 70.64,
+    "language": "en",
+    "country": "US",
+    "network": "SciFi",
+    "status": "ended",
+    "overview": "The sleepy Pacific Northwest town of Eureka is hiding a mysterious secret. The government has been relocating the world’s geniuses and their families to this rustic town for years where innovation and chaos have lived hand in hand. U.S. Marshal Jack Carter (Colin Ferguson) stumbles upon this odd town after wrecking his car and becoming stranded there. When the denizens of the town unleash an unknown scientific creation, Carter jumps in to try to restore order and consequently learns of one of the country’s best kept secrets.",
+    "poster": "https://assets.fanart.tv/preview/tv/79334/tvposter/eureka-52230b90ddd12.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 4620,
+    "tags": [
+      "comedy",
+      "drama",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000072,
+    "title": "One Piece",
+    "year": 1999,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "rating": 9.09673,
+    "votes": 2326,
+    "popularity": 70.52,
+    "language": "ja",
+    "country": "JP",
+    "network": "Fuji TV",
+    "status": "returning series",
+    "overview": "It was a time when pirates ruled the seas. Several bands of pirates were battling over the great hidden treasure, One Piece, which was left by the now legendary pirate captain, Gold Roger. There was a young boy who admired the pirates, his name was Monkey D. Luffy. One day, he mistakenly eats the devil's fruit and turns himself into a rubber human being.Ten years have passed since that incident. Luffy sets out to sail all alone. He sets out to become a great pirate captain and that's when his great adventure begins. \"I'm going to be the Pirate King! I'm going to get One Piece!\".",
+    "poster": "https://assets.fanart.tv/preview/tv/81797/tvposter/one-piece-54a2454c62dbb.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 37854,
+    "tags": [
+      "animation",
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000073,
+    "title": "Lie to Me",
+    "year": 2009,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "rating": 8.26602,
+    "votes": 4947,
+    "popularity": 70.32,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "ended",
+    "overview": "The service offered by The Lightman Group is truly unique. Simply stated, they can tell if you're lying. It's not the words you speak that give you away, it's what your body and face have to say.Dr. Cal Lightman and his team are experts at reading micro-expressions, the fleeting tics that express, non-verbally, what we are really feeling. With their finely honed interviewing and investigating skills, they have an uncanny ability to dig up the truth.",
+    "poster": "https://assets.fanart.tv/preview/tv/83602/tvposter/lie-to-me-53624b1cc10a5.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 8358,
+    "tags": [
+      "crime",
+      "drama",
+      "mystery"
+    ]
+  },
+  {
+    "id": 9000074,
+    "title": "Weeds",
+    "year": 2005,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.13228,
+    "votes": 5511,
+    "popularity": 70.06,
+    "language": "en",
+    "country": "US",
+    "network": "Showtime",
+    "status": "ended",
+    "overview": "Is the grass really greener on the other side? Yes, and it smells better, too! So when Nancy Botwin (Golden Globe winner Mary-Louise Parker) faces both sudden widowhood and poverty, she's determined to do anything to keep her kids in suburbia, including taking a job as the neighborhood pot dealer. Subversive, satirical and hilarious, the first season of this groundbreaking Showtime hit is guaranteed to spark laughter!",
+    "poster": "https://assets.fanart.tv/preview/tv/74845/tvposter/weeds-522504ee68e7d.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 186,
+    "tags": [
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000075,
+    "title": "Falling Skies",
+    "year": 2011,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 7.56465,
+    "votes": 7780,
+    "popularity": 67.78,
+    "language": "en",
+    "country": "US",
+    "network": "TNT (US)",
+    "status": "ended",
+    "overview": "The series tells the story of the aftermath of a global invasion by several races of extraterrestrials that neutralizes the world's power grid and technology, quickly destroys the combined militaries of all the world's countries, and apparently kills over 90% of the human population within a few days.",
+    "poster": "https://assets.fanart.tv/preview/tv/205281/tvposter/falling-skies-521279ce648a3.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 34967,
+    "tags": [
+      "action",
+      "adventure",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000076,
+    "title": "Stargate Universe",
+    "year": 2009,
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Action",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.25407,
+    "votes": 3440,
+    "popularity": 67.22,
+    "language": "en",
+    "country": "US",
+    "network": "Syfy",
+    "status": "ended",
+    "overview": "The previously unknown purpose of the ninth chevron is revealed and takes a group of refugees on a one-way trip to a millions of years old Ancient-built ship. Led by Dr. Nicolas Rush and Colonel Everett Young, the refugees are trapped on the ship, unable to change its programmed mission.",
+    "poster": "https://assets.fanart.tv/preview/tv/83237/tvposter/stargate-universe-521b38c9353df.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 5148,
+    "tags": [
+      "adventure",
+      "drama",
+      "action",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000077,
+    "title": "Dragon Ball Z",
+    "year": 1989,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.69725,
+    "votes": 2256,
+    "popularity": 67.16,
+    "language": "ja",
+    "country": "JP",
+    "network": "Fuji TV",
+    "status": "ended",
+    "overview": "Many years have passed since Goku first searched for the Dragon Balls. He is a grown man, with a wife and son. He and his friends have settled into their own lives and, for the most part, things are rather peaceful. Then one day, Goku learns he is really a Saiyan and comes from another planet. Now begins new adventures for Goku and his friends as they defend their home against new, more powerful threats.",
+    "poster": "https://assets.fanart.tv/preview/tv/81472/tvposter/dragon-ball-z-53e7a654aece3.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 12971,
+    "tags": [
+      "animation",
+      "comedy",
+      "action",
+      "adventure",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000078,
+    "title": "Bob's Burgers",
+    "year": 2011,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "rating": 8.33127,
+    "votes": 3070,
+    "popularity": 66.9,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "Bob's Burgers follows a third-generation restaurateur, Bob, as he runs Bob's Burgers with the help of his wife and their three kids. Bob and his quirky family have big ideas about burgers, but fall short on service and sophistication. Despite the greasy counters, lousy location and a dearth of customers, Bob and his family are determined to make Bob's Burgers \"grand re-re-re-opening\" a success.",
+    "poster": "https://assets.fanart.tv/preview/tv/194031/tvposter/bobs-burgers-521fdf91f28e1.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 32726,
+    "tags": [
+      "animation",
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000079,
+    "title": "American Dad!",
+    "year": 2005,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "rating": 7.90584,
+    "votes": 4673,
+    "popularity": 66.8,
+    "language": "en",
+    "country": "US",
+    "network": "TBS",
+    "status": "returning series",
+    "overview": "C.I.A. Agent Stan Smith is constantly fighting off terrorists who threaten the safety of the USA (sometimes causing more harm than good). His wife Francine is an average house wife with two kids, Hayley, Stan's only daughter, an average rebellious teenager and Steve, Stan's only son, a geek who enjoys Dungeons and Dragons, gaming and comic book conventions. Then there's Roger, the home's illegal (space) alien who the Smith's are keeping protected. Last but not least, there's Klaus, the Smith's wisecracking talking fish (swapped from  his human body years ago by the CIA).",
+    "poster": "https://assets.fanart.tv/preview/tv/73141/tvposter/american-dad-5434598713fa6.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 1433,
+    "tags": [
+      "animation",
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000080,
+    "title": "Gravity Falls",
+    "year": 2012,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Mystery",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 9.035,
+    "votes": 1457,
+    "popularity": 65.82,
+    "language": "en",
+    "country": "US",
+    "network": "Disney XD",
+    "status": "ended",
+    "overview": "Twin brother and sister Dipper and Mabel Pines are in for an unexpected adventure when they spend the summer helping their Great Uncle Stan run a tourist trap in the mysterious town of Gravity Falls, Oregon.",
+    "poster": "https://assets.fanart.tv/preview/tv/259972/tvposter/gravity-falls-54dbcc014c26a.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 40075,
+    "tags": [
+      "animation",
+      "comedy",
+      "mystery",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000081,
+    "title": "Dragon Ball",
+    "year": 1986,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.58487,
+    "votes": 1732,
+    "popularity": 64.02,
+    "language": "ja",
+    "country": "JP",
+    "network": "Fuji TV",
+    "status": "ended",
+    "overview": "Long ago in the mountains, a fighting master known as Gohan discovered a strange boy whom he named Goku. Gohan raised him and trained Goku in martial arts until he died. The young and very strong boy was on his own, but easily managed. Then one day, Goku met a teenage girl named Bulma, whose search for the dragon balls brought her to Goku's home. Together, they set off to find all seven dragon balls in an adventure that would change Goku's life forever. See how Goku met his life long friends Bulma, Yamcha, Krillin, Master Roshi and more. And see his adventures as a boy, all leading up to  Dragonball Z and later  Dragonball GT.",
+    "poster": "https://assets.fanart.tv/preview/tv/76666/tvposter/dragon-ball-53e79dcae1c55.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 12609,
+    "tags": [
+      "animation",
+      "comedy",
+      "action",
+      "adventure",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000082,
+    "title": "Westworld",
+    "year": 2016,
+    "genres": [
+      "Western",
+      "Science Fiction",
+      "Drama"
+    ],
+    "rating": 8.79957,
+    "votes": 1407,
+    "popularity": 63.8,
+    "language": "en",
+    "country": "US",
+    "network": "HBO",
+    "status": "returning series",
+    "overview": "Westworld is a dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+    "poster": "https://assets.fanart.tv/preview/tv/296762/tvposter/westworld-57c8a1e9a32ea.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 63247,
+    "tags": [
+      "western",
+      "science fiction",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000083,
+    "title": "Lucifer",
+    "year": 2016,
+    "genres": [
+      "Crime",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.25539,
+    "votes": 2228,
+    "popularity": 63.64,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "Lucifer is the charming, charismatic and handsome-as-hell original fallen angel, who, bored and unhappy in Hell, takes refuge in Los Angeles, where he uses his gift of persuasion to punish bad guys. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+    "poster": "https://assets.fanart.tv/preview/tv/295685/tvposter/lucifer-56626e4ad0d37.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 63174,
+    "tags": [
+      "crime",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000084,
+    "title": "Sleepy Hollow",
+    "year": 2013,
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "Mystery",
+      "Science Fiction"
+    ],
+    "rating": 7.53039,
+    "votes": 4442,
+    "popularity": 63.25,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "returning series",
+    "overview": "Ichabod Crane awakes from the throes of death 250 years in the future where he must solve a mystery dating back to the founding fathers. Due to a blood spell cast on a battlefield during the Revolution, the infamous headless horseman is revived along with Crane, and the murderous rider embarks on a bloody rampage in present-day Sleepy Hollow. Ichabod realizes that he must act quickly, for the headless horseman is only the first of the Four Horsemen of the Apocalypse. Detective Abbie Mills, a woman familiar with supernatural experiences, forms a bond with Crane as they try to stop an increasingly vicious cycle of evil.",
+    "poster": "https://assets.fanart.tv/preview/tv/269578/tvposter/sleepy-hollow-52403d03f07b6.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 50825,
+    "tags": [
+      "fantasy",
+      "drama",
+      "mystery",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000085,
+    "title": "Batman: The Animated Series",
+    "year": 1992,
+    "genres": [
+      "Animation",
+      "Drama",
+      "Mystery",
+      "Action",
+      "Adventure",
+      "Children",
+      "Crime",
+      "Family",
+      "Thriller"
+    ],
+    "rating": 8.87204,
+    "votes": 1141,
+    "popularity": 62.46,
+    "language": "en",
+    "country": "US",
+    "network": "FOX (US)",
+    "status": "ended",
+    "overview": "Batman The Animated Series was a cartoon that premiered on September 5, 1992, based on the comic series created by Bob Kane, as well as the Burton movie adaptations. The series focused on the adventures of the alter ego of millionaire Bruce Wayne, Batman, a dark vigilante hero who defends Gotham City from a variety of creative and psychotic villains. The highly successful series merged stylish animation and fantastic storytelling more in the style of radio plays than typical cartoons.",
+    "poster": "https://assets.fanart.tv/preview/tv/76168/tvposter/batman-the-animated-series-535f63442dd4a.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 2098,
+    "tags": [
+      "animation",
+      "drama",
+      "mystery",
+      "action",
+      "adventure",
+      "children",
+      "crime",
+      "family",
+      "thriller"
+    ]
+  },
+  {
+    "id": 9000086,
+    "title": "The Last Ship",
+    "year": 2014,
+    "genres": [
+      "Action",
+      "Drama",
+      "Science Fiction"
+    ],
+    "rating": 7.67781,
+    "votes": 3349,
+    "popularity": 62.32,
+    "language": "en",
+    "country": "US",
+    "network": "TNT (US)",
+    "status": "returning series",
+    "overview": "Their mission is simple: Find a cure. Stop the virus. Save the world. When a global pandemic wipes out eighty percent of the planet's population, the crew of a lone naval destroyer must find a way to pull humanity from the brink of extinction. Executive Producer Michael Bay presents The Last Ship, starring Eric Dane, Rhona Mitra and Adam Baldwin.",
+    "poster": "https://assets.fanart.tv/preview/tv/269533/tvposter/the-last-ship-55841df9b6127.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60802,
+    "tags": [
+      "action",
+      "drama",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000087,
+    "title": "iZombie",
+    "year": 2015,
+    "genres": [
+      "Crime",
+      "Horror",
+      "Drama",
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 7.98557,
+    "votes": 2356,
+    "popularity": 62.01,
+    "language": "en",
+    "country": "US",
+    "network": "The CW",
+    "status": "returning series",
+    "overview": "Liv Moore, a medical student, gets invited in a party which turns into a macabre zombie arena. Liv wakes up from dead and becomes a zombie. For maintaining her humanity she must eat human brains so she began working in coroner's office to access brains. Eating a brain gives her memories and traits of that person. So she helps detective Clive Babineaux to solve the murder as a psychic.",
+    "poster": "https://assets.fanart.tv/preview/tv/281470/tvposter/izombie-54fb64a935da7.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60866,
+    "tags": [
+      "crime",
+      "horror",
+      "drama",
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000088,
+    "title": "Constantine",
+    "year": 2014,
+    "genres": [
+      "Fantasy",
+      "Action",
+      "Adventure",
+      "Drama",
+      "Science Fiction"
+    ],
+    "rating": 7.61517,
+    "votes": 2900,
+    "popularity": 60.71,
+    "language": "en",
+    "country": "US",
+    "network": "NBC",
+    "status": "canceled",
+    "overview": "A man struggling with his faith is haunted by the sins of his past but is suddenly thrust into the role of defending humanity from the gathering forces of darkness.",
+    "poster": "https://assets.fanart.tv/preview/tv/273690/tvposter/constantine-542041ff679fa.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 60743,
+    "tags": [
+      "fantasy",
+      "action",
+      "adventure",
+      "drama",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000089,
+    "title": "Making a Murderer",
+    "year": 2015,
+    "genres": [
+      "Documentary",
+      "Crime"
+    ],
+    "rating": 8.44401,
+    "votes": 1286,
+    "popularity": 60.46,
+    "language": "en",
+    "country": "",
+    "network": "Netflix",
+    "status": "returning series",
+    "overview": "Filmed over a 10-year period, Making a Murderer is an unprecedented real-life thriller about Steven Avery, a DNA exoneree who, while in the midst of exposing corruption in local law enforcement, finds himself the prime suspect in a grisly new crime. Set in America's heartland, the series takes viewers inside a high-stakes criminal case where reputation is everything and things are never as they appear.",
+    "poster": "https://assets.fanart.tv/preview/tv/303210/hdtvlogo/making-a-murderer-567715a9343ec.png",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 64439,
+    "tags": [
+      "documentary",
+      "crime"
+    ]
+  },
+  {
+    "id": 9000090,
+    "title": "The Expanse",
+    "year": 2015,
+    "genres": [
+      "Fantasy",
+      "Science Fiction"
+    ],
+    "rating": 8.23642,
+    "votes": 1362,
+    "popularity": 59.45,
+    "language": "en",
+    "country": "",
+    "network": "Syfy",
+    "status": "returning series",
+    "overview": "Two hundred years in the future, in a fully colonized solar system, police detective Josephus Miller is given the assignment to find a missing young woman, Julie Mao. Joining his task is James Holden, former first officer of an ice freighter who is involved in an incident caused by the tense relationship between Earth, Mars and the Belt. Far from their struggles in space, United Nations executive Chrisjen Avasarala works to prevent war between Earth and Mars. Soon the three find out that the missing woman is connected to a vast conspiracy that threatens all humanity.",
+    "poster": "https://assets.fanart.tv/preview/tv/280619/tvposter/the-expanse-562b446ef0361.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 63639,
+    "tags": [
+      "fantasy",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000091,
+    "title": "BoJack Horseman",
+    "year": 2014,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Drama"
+    ],
+    "rating": 8.2455,
+    "votes": 1279,
+    "popularity": 58.99,
+    "language": "en",
+    "country": "US",
+    "network": "Netflix",
+    "status": "returning series",
+    "overview": "Legendary star of the 1990s family favorite sitcom \"Horsin' Around,\" BoJack has been trying to find his way through a muddle of self-loathing, whisky and failed relationships. Now, in the presence of his human sidekick Todd and his feline agent and ex-paramour Princess Caroline, BoJack is primed for his comeback",
+    "poster": "https://assets.fanart.tv/preview/tv/282254/tvposter/bojack-horseman-55afa4093ebbf.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 61222,
+    "tags": [
+      "animation",
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000092,
+    "title": "Through the Wormhole",
+    "year": 2010,
+    "genres": [
+      "Documentary"
+    ],
+    "rating": 8.69782,
+    "votes": 824,
+    "popularity": 58.41,
+    "language": "en",
+    "country": "US",
+    "network": "Science Channel",
+    "status": "returning series",
+    "overview": "Hosted by Morgan Freeman, Through the Wormhole explores the deepest mysteries of existence - the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? Is there a creator? These questions have been pondered by the most exquisite minds of the human race. Now, science has evolved to the point where hard facts and evidence may be able to provide us with answers instead of philosophical theories. Through the Wormhole brings together the brightest minds and best ideas from the very edges of science - Astrophysics, Astrobiology, Quantum Mechanics, String Theory, and more - to reveal the extraordinary truth of our Universe.",
+    "poster": "https://assets.fanart.tv/preview/tv/168571/clearlogo/throughthewormhole-168571.png",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 32900,
+    "tags": [
+      "documentary"
+    ]
+  },
+  {
+    "id": 9000093,
+    "title": "Young Justice",
+    "year": 2011,
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.64155,
+    "votes": 823,
+    "popularity": 58.02,
+    "language": "en",
+    "country": "US",
+    "network": "Cartoon Network",
+    "status": "returning series",
+    "overview": "Young Justice focuses on the lives of a group of teenaged sidekicks and protégés attempting to establish themselves as proven superheroes as they deal with normal adolescent issues in their personal lives.",
+    "poster": "https://assets.fanart.tv/preview/tv/192061/tvposter/young-justice-54912f56a00e3.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 33217,
+    "tags": [
+      "animation",
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000094,
+    "title": "Over The Garden Wall",
+    "year": 2014,
+    "genres": [
+      "Animation",
+      "Fantasy",
+      "Family",
+      "Mystery",
+      "Science Fiction",
+      "Comedy"
+    ],
+    "rating": 9.14362,
+    "votes": 564,
+    "popularity": 57.94,
+    "language": "en",
+    "country": "US",
+    "network": "Cartoon Network",
+    "status": "ended",
+    "overview": "Two brothers, Wirt and Greg, find themselves lost in the Unknown; a strange forest adrift in time. With the help of a wise old Woodsman and a foul-tempered bluebird named Beatrice, Wirt and Greg must travel across this strange land, in hope of finding their way home. Join them as they encounter surprises and obstacles on their journey through the wood.",
+    "poster": "https://assets.fanart.tv/preview/tv/281643/tvposter/over-the-garden-wall-55eea3e07147e.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 61617,
+    "tags": [
+      "animation",
+      "fantasy",
+      "family",
+      "mystery",
+      "science fiction",
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000095,
+    "title": "MacGyver",
+    "year": 1985,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "rating": 8.23084,
+    "votes": 1070,
+    "popularity": 57.42,
+    "language": "en",
+    "country": "US",
+    "network": "ABC (US)",
+    "status": "ended",
+    "overview": "MacGyver follows the adventures of the laid-back, extremely resourceful secret agent Angus MacGyver. He prefers non-violent conflict resolution whenever possible and refuses to carry or use a gun. MacGyver works as a problem solver for the Phoenix Foundation in Los Angeles. Utilizing his education as a scientist and his experience as an operative in the Department of External Services (DXS), he is able to solve a range of problems usually with the help of his ever-present Swiss Army knife.",
+    "poster": "https://assets.fanart.tv/preview/tv/77847/clearlogo/macgyver-77847.png",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 2875,
+    "tags": [
+      "action",
+      "adventure"
+    ]
+  },
+  {
+    "id": 9000096,
+    "title": "Preacher",
+    "year": 2016,
+    "genres": [
+      "Fantasy",
+      "Science Fiction",
+      "Adventure",
+      "Drama",
+      "Horror"
+    ],
+    "rating": 7.98535,
+    "votes": 1229,
+    "popularity": 56.81,
+    "language": "en",
+    "country": "US",
+    "network": "AMC",
+    "status": "returning series",
+    "overview": "What if an angel and a demon procreate? What would that offspring be? Would it be holy or demonic or both? Preacher is that tale. The offspring has no body, just a soul. That soul needs a body and chose Jesse Custer. A preacher from Texas with a loss of faith and a drinking problem. The offspring called Genesis bonds with Jesse, giving him the word of God. What he says is done.",
+    "poster": "https://assets.fanart.tv/preview/tv/300472/tvposter/preacher-56e85d2bbd9a1.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 64230,
+    "tags": [
+      "fantasy",
+      "science fiction",
+      "adventure",
+      "drama",
+      "horror"
+    ]
+  },
+  {
+    "id": 9000097,
+    "title": "Supergirl",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction",
+      "Drama"
+    ],
+    "rating": 7.22245,
+    "votes": 2450,
+    "popularity": 56.37,
+    "language": "en",
+    "country": "US",
+    "network": "The CW",
+    "status": "returning series",
+    "overview": "Twenty-four-year-old Kara Zor-El, who was taken in by the Danvers family when she was 13 after being sent away from Krypton, must learn to embrace her powers after previously hiding them. The Danvers teach her to be careful with her powers, until she has to reveal them during an unexpected disaster, setting her on her journey of heroism.",
+    "poster": "https://assets.fanart.tv/preview/tv/295759/tvposter/supergirl-2015-555f3d1091247.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 62688,
+    "tags": [
+      "action",
+      "adventure",
+      "science fiction",
+      "drama"
+    ]
+  },
+  {
+    "id": 9000098,
+    "title": "Regular Show",
+    "year": 2010,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Comedy"
+    ],
+    "rating": 8.47917,
+    "votes": 768,
+    "popularity": 56.34,
+    "language": "en",
+    "country": "US",
+    "network": "Cartoon Network",
+    "status": "returning series",
+    "overview": "The series revolves around the lives of two friends, a blue jay named Mordecai and a raccoon named Rigby—both employed as groundskeepers at a local park. Their regular attempts to slack off usually lead to surreal, extreme, and often supernatural misadventures. During these misadventures, they interact with the show's other main characters: Benson, Pops, Muscle Man, Hi-Five Ghost, Skips, Thomas, Margaret and Eileen.",
+    "poster": "https://assets.fanart.tv/preview/tv/188401/clearlogo/RegularShow-188401.png",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 31132,
+    "tags": [
+      "adventure",
+      "animation",
+      "comedy"
+    ]
+  },
+  {
+    "id": 9000099,
+    "title": "The Shannara Chronicles",
+    "year": 2016,
+    "genres": [
+      "Fantasy",
+      "Adventure",
+      "Action",
+      "Science Fiction"
+    ],
+    "rating": 7.62318,
+    "votes": 1579,
+    "popularity": 56.15,
+    "language": "en",
+    "country": "US",
+    "network": "MTV (US)",
+    "status": "returning series",
+    "overview": "The Shannara Chronicles roughly follows the storylines set out in The Elfstones of Shannara, set about 300 years after the War of the Races—which ceased magic and confined the demons on the Forbidding, locked by an ancient tree called the Ellcrys. The series chronicles the journey of Wil, Amberle and Eretria, who must fight, with the guidance of the last druid, Allanon, to protect the Ellcrys from dying and unleashing all the demons to the Four Lands",
+    "poster": "https://assets.fanart.tv/preview/tv/289096/tvposter/shannara-568f786a27d80.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 64122,
+    "tags": [
+      "fantasy",
+      "adventure",
+      "action",
+      "science fiction"
+    ]
+  },
+  {
+    "id": 9000100,
+    "title": "Dark Matter",
+    "year": 2015,
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "rating": 7.6363,
+    "votes": 1548,
+    "popularity": 56.09,
+    "language": "en",
+    "country": "CA",
+    "network": "Space",
+    "status": "returning series",
+    "overview": "The six-person crew of a derelict spaceship awakens from stasis in the farthest reaches of space. Their memories wiped clean, they have no recollection of who they are or how they got on board. The only clue to their identities is a cargo bay full of weaponry and a destination: a remote mining colony that is about to become a war zone. With no idea whose side they are on, they face a deadly decision. Will these amnesiacs turn their backs on history, or will their pasts catch up with them?",
+    "poster": "https://assets.fanart.tv/preview/tv/292174/tvposter/dark-matter-558be0bfbc3d0.jpg",
+    "media_type": "tv",
+    "type": "series",
+    "tmdb_id": 62425,
+    "tags": [
+      "science fiction",
+      "drama",
+      "thriller",
+      "mystery"
+    ]
+  }
+];
