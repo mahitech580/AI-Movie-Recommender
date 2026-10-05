@@ -841,7 +841,12 @@
   }
 
   function updateFilterButtons() {
-    Array.from(document.querySelectorAll(".filter-chip")).forEach(btn=>btn.classList.toggle("active",btn.dataset.filter===state.filter));
+    const chips=document.querySelectorAll("#filterRow .filter-chip");
+    chips.forEach(btn=>{
+      const active=String(btn.dataset.filter || "all").toLowerCase()===String(state.filter || "all").toLowerCase();
+      btn.classList.toggle("active",active);
+      btn.setAttribute("aria-pressed",active ? "true" : "false");
+    });
   }
 
   function setFilter(filter, scroll=true) {
@@ -852,9 +857,21 @@
     applyFilter();
     if(scroll) renderFilterResults(true);
     else renderFilterResults(false);
+
+    const syncActiveChip=()=>{
+      updateFilterButtons();
+      const active=document.querySelector("#filterRow .filter-chip[data-filter=\"" + next + "\"]");
+      if(active){
+        active.classList.add("active");
+        active.setAttribute("aria-pressed","true");
+        active.scrollIntoView({block:"nearest",inline:"nearest"});
+      }
+    };
+    window.requestAnimationFrame(syncActiveChip);
+    window.setTimeout(syncActiveChip,40);
+
     if(next!=="all"){
       const active=document.querySelector("#filterRow .filter-chip[data-filter=\"" + next + "\"]");
-      active?.classList.add("active");
       const label=active?.textContent?.trim() || next;
       toast("Showing "+label+" titles");
     }
@@ -1550,7 +1567,16 @@
       if(e.key==="Escape"){closeMovie();closeSettings();closeCommand();hideModal("aiLabModal");}
     });
 
-    Array.from(document.querySelectorAll(".filter-chip")).forEach(btn=>btn.onclick=()=>setFilter(btn.dataset.filter||"all",true));
+    const filterRow=$("filterRow");
+    if(filterRow && filterRow.dataset.bound!=="1"){
+      filterRow.dataset.bound="1";
+      filterRow.addEventListener("click",e=>{
+        const btn=e.target.closest(".filter-chip");
+        if(!btn || !filterRow.contains(btn)) return;
+        e.preventDefault();
+        setFilter(btn.dataset.filter || "all",true);
+      });
+    }
 
     $("filterShowMore") && ($("filterShowMore").onclick=()=>{
       const total=filteredMovies().length;
