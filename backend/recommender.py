@@ -22,7 +22,7 @@ class HybridRecommender:
         self.matrix = self.vectorizer.fit_transform([self._text(m) for m in movies])
         self.neighbors = NearestNeighbors(
             metric="cosine", algorithm="brute",
-            n_neighbors=min(20, max(2, len(movies)))
+            n_neighbors=min(20, max(1, len(movies)))
         ).fit(self.matrix)
 
     @staticmethod
