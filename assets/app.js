@@ -106,10 +106,24 @@
     ).replaceAll("'","%27").replaceAll('"',"%22");
   }
 
+  function repairImage(img) {
+    if (!img || !img.src) return;
+    const source=img.src;
+    if (!img.dataset.cineplayFallback && source.includes("/original/")) {
+      img.dataset.cineplayFallback="1";
+      img.src=source.replace("/original/","/w780/");
+      return;
+    }
+    if (!img.dataset.cineplayFinal) {
+      img.dataset.cineplayFinal="1";
+      img.src=fallbackImage(img.alt || "CINEPLAY");
+    }
+  }
+
   function imageMarkup(url, alt, extraClass="") {
     const src = url || fallbackImage(alt);
     return '<img class="'+extraClass+'" src="'+esc(src)+'" alt="'+esc(alt)+'" loading="lazy" ' +
-      'onerror="this.onerror=null;this.src=\''+esc(fallbackImage(alt))+'\'">';
+      'onerror="repairImage(this)">';
   }
 
   function backendUrl() {
