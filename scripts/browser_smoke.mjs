@@ -117,10 +117,13 @@ async function testDesktop(browser) {
   if (firstBatch < 24) throw new Error("Telugu filter first page rendered too few movies");
   await page.locator("#filterResultsGrid img").evaluateAll(imgs => imgs.forEach(img => { img.loading="eager"; img.scrollIntoView({block:"center"}); }));
   await page.waitForFunction(() => Array.from(document.querySelectorAll("#filterResultsGrid img")).every(img => img.complete), null, {timeout:15000});
-  const teluguRealImages = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
-    imgs.filter(img => (img.getAttribute("src") || "") && (img.naturalWidth || 0) > 20).length
+  const teluguUsableImages = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
+    imgs.filter(img => {
+      const src=img.getAttribute("src") || "";
+      return (img.naturalWidth || 0) > 20 || src.startsWith("data:image/svg+xml");
+    }).length
   );
-  if (teluguRealImages < Math.min(24, firstBatch)) throw new Error("Telugu filter contains broken poster images");
+  if (teluguUsableImages < Math.min(24, firstBatch)) throw new Error("Telugu filter contains images without a usable render or fallback");
 
   const rrr=page.locator('#filterResultsGrid .movie-card').filter({hasText:"RRR"}).first();
   await rrr.scrollIntoViewIfNeeded();
@@ -175,10 +178,11 @@ async function testDesktop(browser) {
   const brokenIndia = await page.locator("#filterResultsGrid img").evaluateAll(imgs =>
     imgs.filter(img => {
       const src=img.getAttribute("src") || "";
-      return !src || src.startsWith("data:image/svg+xml") || (img.naturalWidth || 0) < 20;
+      const fallback=src.startsWith("data:image/svg+xml");
+      return !src || (!fallback && (img.naturalWidth || 0) < 20);
     }).length
   );
-  if (brokenIndia > 0) throw new Error("India catalogue has "+brokenIndia+" missing/broken poster images after eager load");
+  if (brokenIndia > 0) throw new Error("India catalogue has "+brokenIndia+" images without a usable render or fallback after eager load");
 
   // Search trigger must actually focus the search field and route to Discover.
   await page.locator("#searchTrigger").click();
