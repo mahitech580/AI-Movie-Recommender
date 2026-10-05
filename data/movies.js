@@ -3474,8 +3474,8 @@ window.MOVIES = [
     ],
     "overview": "A courtroom case reveals tensions between law, bureaucracy and everyday life.",
     "accent": "green",
-    "poster": "https://pics.filmaffinity.com/Court-371324435-large.jpg",
-    "poster_source": "FilmAffinity poster image"
+    "poster": "https://images.squarespace-cdn.com/content/v1/5470bf44e4b06c2d7fa627fe/1599253533227-YLXITW3E7B7GO2BJLZ3E/Court_poster_540x800.jpg",
+    "poster_source": "Films We Like / official Court poster image"
   },
   {
     "id": 10603,
