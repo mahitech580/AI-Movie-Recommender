@@ -785,7 +785,7 @@
     renderRail("indianRail",indiaMovies.slice(0,16));
     renderRail("teluguRail",telugu.slice(0,18));
     renderRail("homeSpotlightRail",HOME_SPOTLIGHT_TITLES.map(title=>state.movies.find(m=>m.title===title)).filter(Boolean),false,true);
-    const spotlightImages=$("#homeSpotlightRail .movie-card img");
+    const spotlightImages=$("#homeSpotlightRail")?.querySelectorAll(".movie-card img");
     spotlightImages.forEach(img=>{ img.loading="eager"; img.fetchPriority="high"; img.decoding="async"; });
     renderSeries();
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
@@ -853,7 +853,7 @@
     if(scroll) renderFilterResults(true);
     else renderFilterResults(false);
     if(next!=="all"){
-      const active=$('#filterRow .filter-chip[data-filter="'+next+'"]');
+      const active=$("#filterRow .filter-chip[data-filter=\""+next+"\"]")[0];
       active?.classList.add("active");
       const label=active?.textContent?.trim() || next;
       toast("Showing "+label+" titles");
