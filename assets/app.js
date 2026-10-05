@@ -1607,7 +1607,6 @@
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     renderFilterResults(false);
     renderRail("aiRail",recommendFor(null,18));
-    renderSeries();
     renderList();
     renderContinue();
     renderActivity();
