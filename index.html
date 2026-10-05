@@ -39,6 +39,7 @@
       </nav>
 
       <div class="topbar-actions">
+        <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
         <button class="live-control" id="liveBtn" type="button" title="Live catalog settings">
           <span class="pulse-dot"></span><span id="liveLabel">LIVE</span>
         </button>
@@ -46,6 +47,20 @@
         <button class="profile-control" id="profileBtn" type="button" aria-label="Open profile"><span>M</span></button>
       </div>
     </header>
+
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop" data-close-drawer></div>
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-head"><strong>CINEPLAY</strong><button class="drawer-close" data-close-drawer aria-label="Close navigation">×</button></div>
+      <nav>
+        <a href="#home" data-drawer-link>Home</a>
+        <a href="#discover" data-drawer-link>Discover</a>
+        <a href="#my-list" data-drawer-link>My List</a>
+        <a href="#activity" data-drawer-link>Activity</a>
+      </nav>
+      <div class="drawer-note"><span class="pulse-dot"></span><span>Adaptive movie intelligence</span></div>
+    </div>
+  </aside>
 
     <main id="app">
       <section class="hero" id="home">
