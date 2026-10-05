@@ -79,7 +79,10 @@
   function getUserId() {
     let id = localStorage.getItem(USER_STORE);
     if (!id) {
-      id = "cineplay-" + crypto.randomUUID();
+      const randomPart = (globalThis.crypto && typeof globalThis.crypto.randomUUID === "function")
+        ? globalThis.crypto.randomUUID()
+        : Math.random().toString(36).slice(2) + Date.now().toString(36);
+      id = "cineplay-" + randomPart;
       localStorage.setItem(USER_STORE, id);
     }
     return id;
@@ -107,7 +110,7 @@
   }
 
   function backendUrl() {
-    return (localStorage.getItem(BACKEND_STORE) || "").trim().replace(/\\/+$ /,"");
+    return (localStorage.getItem(BACKEND_STORE) || "").trim().replace(/\\/$/,"");
   }
 
   async function backendFetch(path, options={}) {
