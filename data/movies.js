@@ -697,7 +697,7 @@ window.MOVIES = [
     "backdrop": "https://image.tmdb.org/t/p/original/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
     "accent": "green",
     "featured": true,
-    "poster_source": "TMDB original image CDN · CINEPLAY spotlight verified"
+    "poster_source": "TMDB original image CDN · high-resolution spotlight"
   },
   {
     "id": 1084244,
@@ -3821,7 +3821,7 @@ window.MOVIES = [
       "team"
     ],
     "overview": "Tony Stark and the Avengers face Ultron, a peacekeeping artificial intelligence that turns against humanity.",
-    "poster": "https://image.tmdb.org/t/p/original/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg?v=20261005-spotlight",
+    "poster": "https://image.tmdb.org/t/p/original/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
     "backdrop": "https://image.tmdb.org/t/p/original/570qhjGZmGPrBGnfx70jcwIuBr4.jpg",
     "accent": "green",
     "featured": true,
