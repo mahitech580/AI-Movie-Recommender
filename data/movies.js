@@ -798,7 +798,7 @@ window.MOVIES = [
     ],
     "overview": "Two legendary revolutionaries form a powerful friendship while taking on the British Raj.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5Y2E5ZjBmNTMzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/u0XUBNQWlOvrh0Gd97ARGpIkL0.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -886,7 +886,8 @@ window.MOVIES = [
       "invention"
     ],
     "overview": "A murdered lover returns as a housefly and engineers an extraordinary revenge.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/pX7fn4EZrg2YFlV4GNMIfHDOQZ6.jpg"
   },
   {
     "id": 10005,
@@ -911,7 +912,8 @@ window.MOVIES = [
       "period"
     ],
     "overview": "A hearing-impaired villager confronts an entrenched local power structure.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/yiEzDgBBFC25Zd6z0r7sMngn5vr.jpg"
   },
   {
     "id": 10006,
@@ -936,7 +938,7 @@ window.MOVIES = [
     ],
     "overview": "A failed cricketer attempts a late-career comeback for himself and his son.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYjc0MWFiYTMtNmYyOS00ODczLWEyMzItNzI4YjY0YjJjZGVjXkEyXkFqcGdeQXVyNzEwNjg3MjE@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/bU9q9yVtxeBiC0Do27CekHXNE6D.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -966,7 +968,7 @@ window.MOVIES = [
     ],
     "overview": "A mysterious letter sets a soldier and a woman on a romantic journey shaped by war.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BN2RjZDJhYzUtOTQ5Yy00OWM3LWE5OTctM2Y0YWVmNzAzODllXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/t1O94ZBzsQXJihtVkrsStRLyUDR.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -993,7 +995,7 @@ window.MOVIES = [
     ],
     "overview": "Eight intertwined stories explore love across different ages and lives in a small coastal town.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYjg2YWM0YzUtODViNS00OWRkLWI0YmItNDdhODUwMjVhYjQ1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/8bgyfPih4bORxtnFCwinqVElkYg.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1021,7 +1023,7 @@ window.MOVIES = [
     ],
     "overview": "An independent detective takes on an unusual missing-person case that becomes much darker.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTM2MmJkZmUtZWQ0Yi00YWZjLWIyNTItNDQ2YzAwNmI4YjlmXkEyXkFqcGdeQXVyODMxNjkyNzQ@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/jMVfhhWfHLawVp3kd55KBy3VBsW.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1047,7 +1049,8 @@ window.MOVIES = [
       "action"
     ],
     "overview": "A young intelligence agent is framed and must uncover the conspiracy behind his mission.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/gBhekVgADDk1ZgsQhrJ8CesdW3k.jpg"
   },
   {
     "id": 10011,
@@ -1128,7 +1131,8 @@ window.MOVIES = [
       "mystery"
     ],
     "overview": "A doctor is pulled into a mythic treasure hunt connected to an ancient legend.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/fKKoQndNfbDOLfYM1Zogt7miGF1.jpg"
   },
   {
     "id": 10014,
@@ -1153,7 +1157,7 @@ window.MOVIES = [
     ],
     "overview": "A brilliant but impulsive surgeon spirals after a painful breakup and struggles to regain control.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMzFhMThiOWItMzRjNC00YzQwLTkyZWItYmJhNzgwYzY1ODI0XkEyXkFqcGdeQXVyNTcyMzkyODg@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/kHubDgL59I5hCn7ccBYvU7bKY1r.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1181,7 +1185,7 @@ window.MOVIES = [
     ],
     "overview": "The rise, triumphs and struggles of iconic actress Savitri are told through a cinematic biography.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMmNkN2ZkODgtZTU1Zi00MDg3LWE1MGQtM2ZmY2Y3ODcwZmE5XkEyXkFqcGdeQXVyNTgxODY5ODI@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/5hwtlwoLdSpkoeusT0sf8qW5VFB.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1208,7 +1212,8 @@ window.MOVIES = [
       "crime"
     ],
     "overview": "A labourer rises through a dangerous red-sandalwood smuggling network.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/oaRk2HgOirEeNuDCwwScmq7rKvS.jpg"
   },
   {
     "id": 10017,
@@ -1259,7 +1264,8 @@ window.MOVIES = [
       "music"
     ],
     "overview": "A family identity secret changes the life of a young man seeking his father's approval.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/2rzORJaegE2bbKNVkQXbZCeV0BP.jpg"
   },
   {
     "id": 10019,
@@ -1286,7 +1292,7 @@ window.MOVIES = [
     ],
     "overview": "A professional killer takes refuge with a rural family after being framed for murder.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMDU4MDQ3YWItY2ViMy00NTM5LTg0NjQtMWIxN2ExZmU0ZTE0XkEyXkFqcGdeQXVyMjMyNjkwMTY@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/AlopJ5sUgsf0pFn8FfXqdhyfL2Z.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1313,7 +1319,7 @@ window.MOVIES = [
     ],
     "overview": "A mysterious street fighter becomes entangled in a dangerous crime network.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BOWNkMWQ3MDEtYjQ3Zi00Y2NhLWE1NzYtZGJkM2NlYWY3OWFmXkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/rQ8NH5f3CxRrmqZWMZNYPwLmjDS.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1339,7 +1345,7 @@ window.MOVIES = [
     ],
     "overview": "An unlikely friendship changes two men as they travel beyond their comfort zones.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMWVjZDIwN2EtNjVhZC00MmMxLTkzYmEtZTFhNzdkYzg0YmZkXkEyXkFqcGdeQXVyNTUzMTc1NjE@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/iXsJEdk1P3V2cm2TSRBuG8ZS1pz.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1366,7 +1372,7 @@ window.MOVIES = [
     ],
     "overview": "Two young people turn an accidental meeting into a shared entrepreneurial journey.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BN2M0ODhlNzAtYTNjMy00MjE0LWI3YjEtYTRmMjAwNmFlOTNlXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/um5GCXgYAVwP46yzt9vD83MAXKd.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1415,7 +1421,8 @@ window.MOVIES = [
       "humor"
     ],
     "overview": "Three lovable friends stumble into trouble after moving to the city.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/7MzvmgHRmhbJH1UZJhRCkAtxvEy.jpg"
   },
   {
     "id": 10025,
@@ -1441,7 +1448,8 @@ window.MOVIES = [
       "mistake"
     ],
     "overview": "A delivery worker and his friend become trapped in a chain of criminal misunderstandings.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/lo0ALsfiSv5sxNBhCNh35AD1p0x.jpg"
   },
   {
     "id": 10026,
@@ -1467,7 +1475,8 @@ window.MOVIES = [
       "heist"
     ],
     "overview": "Three underachieving friends agree to help with a fake kidnapping and trigger real danger.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/3DecGcOCBoFQ8dPyGbYOPoS4I4r.jpg"
   },
   {
     "id": 10027,
@@ -1519,7 +1528,7 @@ window.MOVIES = [
     ],
     "overview": "A young man struggles to balance his own choices with an overprotective father's expectations.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMGE5YzNlMDAtZjMxYS00NDkyLTk3YWMtY2Y3ODJjOTJkM2MyXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/oYN5XJzV9dYGwzq4fmp41xcIaDS.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1547,7 +1556,7 @@ window.MOVIES = [
     ],
     "overview": "A family discovers a mysterious connection that links their lives across generations.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYjlmMDUzMzQtYzY4OC00NGYwLWI1MmItMGIyYTk0NDFlMWZmXkEyXkFqcGdeQXVyOTk3NTc2MzE@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/pas4iupGgxk0UuhiILiWHDSkMBC.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1598,7 +1607,8 @@ window.MOVIES = [
       "class"
     ],
     "overview": "A friendship story turns into a violent conflict in a mining village marked by class divisions.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/4OTVoCVXa5aHDZl8opKoIV9Ezr5.jpg"
   },
   {
     "id": 10032,
@@ -1623,7 +1633,8 @@ window.MOVIES = [
       "family"
     ],
     "overview": "A single father and his daughter are drawn into a tender story about love and memory.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/hhMLtq9m1aK0dpY9Wcq26XeDH2z.jpg"
   },
   {
     "id": 10033,
@@ -1649,7 +1660,8 @@ window.MOVIES = [
       "supernatural"
     ],
     "overview": "A mysterious series of deaths leads a young man into a village haunted by an ancient curse.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/fqMn4h9ctOyumII2nXDnm5mRTxQ.jpg"
   },
   {
     "id": 10034,
@@ -1700,7 +1712,8 @@ window.MOVIES = [
       "hero"
     ],
     "overview": "A small-town man gains extraordinary powers and discovers a larger mythic destiny.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/bKhXZyGkJB94JuO0ygA60NinRYQ.jpg"
   },
   {
     "id": 10036,
@@ -1726,7 +1739,8 @@ window.MOVIES = [
       "epic"
     ],
     "overview": "In a dystopian future, a group of unlikely heroes becomes part of an ancient prophecy.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/rstcAnBeCkxNQjNp3YXrF6IP1tW.jpg"
   },
   {
     "id": 10037,
@@ -1751,7 +1765,8 @@ window.MOVIES = [
       "rebel"
     ],
     "overview": "Two friends are pulled into a violent succession struggle within a brutal fictional kingdom.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/nlu9WbcetNFRGXXPWITr30ob7W6.jpg"
   },
   {
     "id": 10038,
@@ -1803,7 +1818,7 @@ window.MOVIES = [
     ],
     "overview": "A police officer reopens a murder case whose hidden layers challenge every assumption.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYmNjMTE0ZjctYTc5MS00M2NmLThmNmItYmFlYWY1MmYzZWE4XkEyXkFqcGdeQXVyNDUyMzYyNDc@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/k0E0jJ4yhouFPf9XCBR50C3TOuc.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -1879,7 +1894,8 @@ window.MOVIES = [
       "action"
     ],
     "overview": "A rebellious man gets caught between a political conspiracy and a determined police officer.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/sAc0AX16f0jBlVfU85XbaU9ZKI2.jpg"
   },
   {
     "id": 10043,
@@ -1905,7 +1921,8 @@ window.MOVIES = [
       "mystery"
     ],
     "overview": "A cab driver becomes the unexpected hero of a village suffering from a mysterious crisis.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/rsQbJT4vjyQe6Mpry1i8Tnf86wp.jpg"
   },
   {
     "id": 10044,
@@ -2083,7 +2100,8 @@ window.MOVIES = [
       "sci-fi"
     ],
     "overview": "Unusual people meet at a restaurant and their lives become connected through a mysterious story.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/98Dn1D22PWmgwkEx7UEVLtpAPmk.jpg"
   },
   {
     "id": 10101,
@@ -2108,7 +2126,7 @@ window.MOVIES = [
     ],
     "overview": "Three engineering students challenge convention while chasing friendship and purpose.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BNTkyOGVjMGEtNmQzZi00NzFlLTlhOWQtODYyMDc2ZGJmYzFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/66A9MqXOyVFCssoloscw79z8Tew.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2190,7 +2208,7 @@ window.MOVIES = [
     ],
     "overview": "A pianist becomes entangled in a series of murders after witnessing something he should not have seen.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BOTkwYTQ2ZWItZjQ0Ny00NmU0LWEzYzktZmNlZTU4ZTE1OWI1XkEyXkFqcGdeQXVyNzU3Nzk4MDQ@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/dy3K6hNvwE05siGgiLJcEiwgpdO.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2269,7 +2287,7 @@ window.MOVIES = [
     ],
     "overview": "A family's pursuit of a hidden fortune awakens an ancient supernatural horror.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYmQxNmU4ZjgtYzE5Mi00ZDlhLTlhOTctMzJkNjk2ZGUyZGEwXkEyXkFqcGdeQXVyMzgxMDA0Nzk@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/tk1h0lXd0WkrVo4BC36sOO3gi9P.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2345,7 +2363,8 @@ window.MOVIES = [
       "education"
     ],
     "overview": "An art teacher helps a struggling child discover his strengths and confidence.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/puHRt6Raovm5ujGCdwLWvRv4NHU.jpg"
   },
   {
     "id": 10111,
@@ -2398,7 +2417,8 @@ window.MOVIES = [
       "pain"
     ],
     "overview": "An aspiring musician discovers that heartbreak and ambition shape his artistic identity.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/km0cGsCwx8K9wxEPntQfM341oOs.jpg"
   },
   {
     "id": 10113,
@@ -2423,7 +2443,7 @@ window.MOVIES = [
     ],
     "overview": "A charming young man finds unexpected love and friendship despite social and personal challenges.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTQzMTEyODY2Ml5BMl5BanBnXkFtZTgwMjA0MDUyMjE@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/5cJIx2zKjDoUtPSliou23xsReb1.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2450,7 +2470,7 @@ window.MOVIES = [
     ],
     "overview": "A pregnant woman searches Kolkata for her missing husband while uncovering a larger conspiracy.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ1NDI0NzkyOF5BMl5BanBnXkFtZTcwNzAyNzE2Nw@@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/e2eQVOrdQ8k7yYjjHKHP2nlwbTu.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2502,7 +2522,8 @@ window.MOVIES = [
       "small-town"
     ],
     "overview": "A young man from a modest background perseveres through repeated setbacks while pursuing public service.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/eebUPRI4Z5e1Z7Hev4JZAwMIFkX.jpg"
   },
   {
     "id": 10117,
@@ -2526,7 +2547,8 @@ window.MOVIES = [
       "social"
     ],
     "overview": "Two newly married women become separated on a train journey and set off unexpected events.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/cGG5hCwPnMvuKzvUBnxo5y3DcVM.jpg"
   },
   {
     "id": 10118,
@@ -2550,7 +2572,8 @@ window.MOVIES = [
       "family"
     ],
     "overview": "A stubborn father and his daughter take a road trip that exposes the strengths and frustrations of family.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/yo7EZWiLpLGhqs3YnlDGDBPjfTb.jpg"
   },
   {
     "id": 10119,
@@ -2575,7 +2598,7 @@ window.MOVIES = [
     ],
     "overview": "A successful professional returns to India and reconnects with community and purpose.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BODY2NGYxZTEtMzBiOS00Zjg2LWEyZjYtNjQ5Mjg1MzQ5N2FlXkEyXkFqcGdeQXVyNTE0MDc0NTM@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/yUSL24kpHc9Nls4Pohia4shgcIM.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2602,7 +2625,7 @@ window.MOVIES = [
     ],
     "overview": "A black-ops team uncovers a ruthless drug network while chasing a mysterious killer.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMDRiOWNjYjUtMDI0ZC00MDMyLTkwZDItNTU5NWQ1NjEyNGYxXkEyXkFqcGdeQXVyMTIyNzY0NTMx._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/774UV1aCURb4s4JfEFg3IEMu5Zj.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2629,7 +2652,7 @@ window.MOVIES = [
     ],
     "overview": "An ex-convict helps a police officer transport seized drugs during one dangerous night.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BZTVlNGY2YTEtNTlmYy00NzY0LWE1NWUtOGJiNTgxZGM4ZmMzXkEyXkFqcGdeQXVyMTY1MzAyNjU4._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/mxvOvom5zKRp4WPURKrhjoatt4P.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2657,7 +2680,7 @@ window.MOVIES = [
     ],
     "overview": "Multiple lives collide through a series of unpredictable events involving love, crime and identity.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYjNkNDEzNDctYTk0Mi00NzNlLWEyZGItMmYzMGE4MzcyYzU3XkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/rTsYDdFWyw87CTk4YgJO6nYmVcJ.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2683,7 +2706,7 @@ window.MOVIES = [
     ],
     "overview": "An ambitious man fights entrenched systems to make affordable air travel possible.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BOGVjYmM0ZWEtNTFjNi00MWZjLTk3OTItMmFjMDAzZWU1ZDVjXkEyXkFqcGdeQXVyMTI2Mzk1ODg0._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/5uimlxPCgAei8JfQUDFEUQLoyyh.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2710,7 +2733,7 @@ window.MOVIES = [
     ],
     "overview": "A lawyer fights for justice for a marginalized family after a custodial disappearance.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BNzFkM2FhMzQtYjUwZi00N2Y3LWFkZWItMmZmMjQxNGQwZmNhXkEyXkFqcGdeQXVyODEyNjEwMDk@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/ehybiOtBUtrMkmtB39zQEtq1Jie.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2736,7 +2759,7 @@ window.MOVIES = [
     ],
     "overview": "Two former classmates reconnect years later and revisit a love that never fully disappeared.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BOGM2YzI4ZjItYjA4Mi00ZDhiLTk1OGEtZmEzN2U3ODNkNTEzXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/nrVloCa2hCFOztRF1DZU2jnWIiQ.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2762,7 +2785,8 @@ window.MOVIES = [
       "psychology"
     ],
     "overview": "A police officer hunts a calculated serial killer who leaves behind unsettling clues.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/mruUFlrVKiL994y3vvQBT8R2Vnf.jpg"
   },
   {
     "id": 10208,
@@ -2787,7 +2811,7 @@ window.MOVIES = [
     ],
     "overview": "A farmer confronts violence and injustice to protect his family and land.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BZTgzNTRkYWEtYWJmOC00NjMzLWFlMWEtMWRiNmFlMjBiOTI1XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/Elnp3XrAlMM30dil8rbL7D9XeP.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2813,7 +2837,7 @@ window.MOVIES = [
     ],
     "overview": "A talented carrom player becomes entangled in decades of gang rivalries and political conflict.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BZjhkYTU2YTgtM2ZkYS00MzJkLWE2ZjAtZjY5MTI4OWE2YmZjXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/4Pa7SriYtq4BdoS2BAPm6w66vLi.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -2915,7 +2939,8 @@ window.MOVIES = [
       "relationships"
     ],
     "overview": "A couple's relationship is tested by an unusual sleep problem in this warm romantic comedy.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/aFTO0tCTxXazstWfhOQHPb3kcMT.jpg"
   },
   {
     "id": 10301,
@@ -2967,7 +2992,7 @@ window.MOVIES = [
     ],
     "overview": "Four brothers learn to live together while finding unexpected connections with a neighboring family.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYjYyZTNkZGYtZGJjZC00NmM2LThjNjMtMjYxYTI0NTg1NzViXkEyXkFqcGdeQXVyMzQ5Njc3NzU@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/lJ3RvIirE2C7gdBKvPRaoQ3iCo2.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -3019,7 +3044,7 @@ window.MOVIES = [
     ],
     "overview": "Three cousins move to Bengaluru and discover new identities, friendships and love.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BZmY5NjNjYWMtNmJhNi00YTk0LTg0OWUtNDE4OGQ0YmM4NDAwXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/iFMyZw1DTGvZ8hPa0eTseSFiRT1.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -3045,7 +3070,8 @@ window.MOVIES = [
       "hero"
     ],
     "overview": "A tailor gains superpowers and faces another empowered man in his hometown.",
-    "accent": "red"
+    "accent": "red",
+    "poster": "https://image.tmdb.org/t/p/w500/efetKFDyptrRpoHBb103Tg3Auw5.jpg"
   },
   {
     "id": 10306,
@@ -3093,7 +3119,8 @@ window.MOVIES = [
       "rescue"
     ],
     "overview": "A group of friends becomes trapped in a cave and must rely on loyalty and courage to survive.",
-    "accent": "green"
+    "accent": "green",
+    "poster": "https://image.tmdb.org/t/p/w500/bswrtewwthpsh6nABiqKevU4UBI.jpg"
   },
   {
     "id": 10308,
@@ -3118,7 +3145,7 @@ window.MOVIES = [
     ],
     "overview": "Two strong-willed men enter a tense confrontation driven by pride, power and personal history.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYTZmYmI3OWEtNTIwOC00ODcwLWIwMGMtMWYwZWI3YzQ3NDJjXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/iwmh53N9oPUiCQBZdBWdiB1kur2.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -3172,7 +3199,7 @@ window.MOVIES = [
     ],
     "overview": "Rocky consolidates his power while facing government forces and rival crime bosses.",
     "accent": "red",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMjI2Njg2Y2EtZjgwMC00ZGVkLWJmMWYtYjVhYjk2ZTkwNWE1XkEyXkFqcGdeQXVyMTMxMjA5NDU1._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/khNVygolU0TxLIDWff5tQlAhZ23.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -3200,7 +3227,7 @@ window.MOVIES = [
     ],
     "overview": "A village protector is drawn into an ancient conflict connecting land, ritual and power.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BNWY1OGE0YzktMjFjOC00NWVhLTkxZmItOGZhMzk2YzM4MWZmXkEyXkFqcGdeQXVyMTc5NTY1ODA1._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/jIsKmkxMzdCZ0Ux1GVSnu8m6Na6.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -3228,7 +3255,7 @@ window.MOVIES = [
     ],
     "overview": "A lonely man and a stray dog change each other's lives through an unexpected road journey.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMDhhMjBlMWYtMDVlMy00ZjM3LTg3MTUtZDg0NjA0YzcxOGY4XkEyXkFqcGdeQXVyMTE0MzY0NjE1._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/qArPmXH0aWsT3SEtYl8XrU2Oz48.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -3279,7 +3306,7 @@ window.MOVIES = [
     ],
     "overview": "A man with insomnia begins taking pills that blur the line between dreams and reality.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTQyMDA5ODkzN15BMl5BanBnXkFtZTgwMjIzMDkyMDE@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/aL0R8E6pIehFCuVpo3Wj8ewAWi9.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   },
   {
@@ -3603,7 +3630,7 @@ window.MOVIES = [
     ],
     "overview": "Four friends reunite to relive the music, friendship and unfinished dreams of their former rock band.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTM2NjIwODc4N15BMl5BanBnXkFtZTcwMDgwMzM4MQ@@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/w500/cckTZXVpchMrljPouFf7u2wqUTX.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
   }
 ];
