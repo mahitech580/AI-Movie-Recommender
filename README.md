@@ -11,7 +11,7 @@ https://mahitech580.github.io/AI-Movie-Recommender/
 
 ## Indian cinema coverage
 
-The offline CINEPLAY catalog now includes **137 titles**, including **107 Indian titles** and **50 Telugu/TFI titles**. Telugu cinema has its own dedicated **Telugu · TFI** shelf and filter, while Indian discovery also supports Hindi, Tamil, Malayalam, Kannada, Bengali, Marathi and Punjabi.
+The offline CINEPLAY catalog now includes **139 titles**, including **109 Indian titles** and **50 Telugu/TFI titles**. Telugu cinema has its own dedicated **Telugu · TFI** shelf and filter, while Indian discovery also supports Hindi, Tamil, Malayalam, Kannada, Bengali, Marathi and Punjabi.
 
 The discovery filters cover common genres including Action, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Musical, Mystery, Romance, Sci-Fi, Sport, Thriller, War and Western. Regional and industry metadata are part of the local recommendation/search text, so filters, search and the local recommender can use them.
 
