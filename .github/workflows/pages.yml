@@ -1,4 +1,4 @@
-name: CINEPLAY QA and GitHub Pages
+name: CINEPLAY QA
 
 on:
   push:
@@ -7,12 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   qa:
@@ -26,13 +20,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install backend dependencies
+      - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Python syntax check
+      - name: Python syntax
         run: python -m compileall -q backend scripts
 
-      - name: Train model artifact
+      - name: Train ML artifact
         run: python scripts/train_model.py
 
       - name: Setup Node
@@ -40,10 +34,10 @@ jobs:
         with:
           node-version: "22"
 
-      - name: JavaScript syntax check
+      - name: JavaScript syntax
         run: node --check assets/app.js
 
-      - name: Static asset contract check
+      - name: Static contract
         run: |
           test -f index.html
           test -f assets/styles.css
@@ -53,25 +47,5 @@ jobs:
           test -f manifest.webmanifest
           test -f assets/cineplay-icon.svg
           test -f .nojekyll
-
-  deploy:
-    needs: qa
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "."
-
-      - name: Deploy to Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          grep -q "CINEPLAY" index.html
+          grep -q "scikit" requirements.txt || true
