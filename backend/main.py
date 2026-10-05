@@ -167,6 +167,12 @@ def create_bulk_events(payload: BulkEventIn, db: Session = Depends(get_db)):
             log_event(interaction_dict(row))
     return {"ok": True, "stored": len(rows)}
 
+@app.get("/api/similar/{movie_id}")
+def similar(movie_id: int, limit: int = Query(12, ge=1, le=30)):
+    if MODEL is None:
+        raise HTTPException(status_code=503, detail="ML model is not ready")
+    return {"movie_id": movie_id, "results": MODEL.nearest(movie_id, limit)}
+
 @app.get("/api/profile/{user_id}")
 def profile(user_id: str, db: Session = Depends(get_db)):
     rows = db.query(Interaction).filter(Interaction.user_id == user_id).all()
