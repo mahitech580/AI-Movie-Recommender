@@ -106,7 +106,7 @@
     ).replaceAll("'","%27").replaceAll('"',"%22");
   }
 
-  function repairImage(img) {
+  window.repairCineplayImage = function(img) {
     if (!img || !img.src) return;
     const source=img.src;
     if (!img.dataset.cineplayFallback && source.includes("/original/")) {
@@ -123,7 +123,7 @@
   function imageMarkup(url, alt, extraClass="") {
     const src = url || fallbackImage(alt);
     return '<img class="'+extraClass+'" src="'+esc(src)+'" alt="'+esc(alt)+'" loading="lazy" ' +
-      'onerror="repairImage(this)">';
+      'onerror="window.repairCineplayImage(this)">';
   }
 
   function backendUrl() {
