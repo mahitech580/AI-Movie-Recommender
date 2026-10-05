@@ -307,3 +307,56 @@ This product uses the TMDB API but is not endorsed or certified by TMDB.
 Mahi / Mahendra Sai Kondaveeti
 
 GitHub: https://github.com/mahitech580
+
+
+## Cinematic UX + realtime behavior
+
+CINEPLAY is intentionally designed as a movie-discovery experience rather than a static poster gallery.
+
+- Cinematic opening sequence on first paint with a rotating film-reel mark, ambient glow, moving grid, drifting particles, scan sweep, progress bar, and reduced-motion fallback.
+- Responsive OTT-style navigation with fixed top navigation, mobile drawer, search/command navigation, hero actions, horizontal rails, Top 10, Continue Watching, My List, activity, and detailed title modals.
+- Dynamic card motion with hover lift, layered glow, focus states, image shimmer, live badges, and adaptive recommendation labels.
+- Instant local recommendation refresh after meaningful interactions. Opening a title, saving it, or playing it changes local signals and immediately re-ranks the Made for You shelf.
+- Live TMDB refresh for trending, popular, top-rated, now-playing, upcoming, India discovery, and search when an authorized browser credential is configured.
+- Five-minute visibility-aware refresh checks while connected, immediate refresh after network recovery, and a visible freshness label such as SYNCED JUST NOW, SYNCED 12M AGO, or CACHED · OFFLINE.
+- Cached live pools so temporary API/network failures fall back to the most recent usable snapshot plus the curated catalog.
+
+These behaviors follow general modern OTT interaction patterns such as personalized rows, Continue Watching, Top 10, contextual title information, and recommendations that react to recent engagement. The implementation is original and does not copy Netflix, JioHotstar, YouTube, Rotten Tomatoes, or other brands' logos, proprietary assets, or visual identity.
+
+## Architecture reality
+
+GitHub Pages serves only the static frontend. Browser JavaScript can call TMDB directly when the visitor supplies an authorized credential. The Python/FastAPI + SQL + optional MongoDB stack is a companion backend and does not execute inside GitHub Pages.
+
+The companion stack provides:
+
+- FastAPI endpoints for health, movies, search, recommendations, similar titles, events, and profile data.
+- SQLAlchemy with SQLite by default and PostgreSQL support through DATABASE_URL.
+- Optional MongoDB event analytics through MONGODB_URI.
+- scikit-learn TF-IDF, cosine similarity, KNN retrieval, hybrid ranking, popularity/quality/freshness signals, and genre diversification.
+- Docker Compose for the API + PostgreSQL + MongoDB development stack.
+- GitHub Actions smoke tests covering Python imports, model training, API endpoints, JavaScript syntax, and the static frontend contract.
+
+TMDB's API is rate-limited, so realtime in this project means live-on-demand data plus short refresh intervals, visibility/network awareness, caching, and immediate client-side personalization rather than an unlimited streaming feed.
+
+## Final QA contract
+
+Before release, the project should pass:
+
+1. The cinematic black opening overlay appears and exits automatically.
+2. Home, Discover, My List, and Activity work on desktop and mobile.
+3. Movie cards open details; My List toggles; trailer/critic actions hand off safely; recommendations re-rank after interactions.
+4. Search works locally and can use live TMDB results when connected.
+5. Live sync refreshes shelves and updates the visible sync-age label; offline mode preserves cached/local content.
+6. Reduced-motion users are not forced into decorative animation.
+7. GitHub Pages remains static-first and browser-visible API keys are treated as public credentials, not backend secrets.
+8. The FastAPI/SQL/MongoDB companion stack remains covered by CI.
+
+## External API notes
+
+TMDB v3 provides the live movie and image APIs used by the frontend, including search, discover, trending, and title-related methods. TMDB also documents rate limiting and the use of application credentials.
+
+Watch-provider information is surfaced through TMDB's provider integration and attributed in the UI to TMDB/JustWatch. Trailer links use YouTube as the destination.
+
+## Latest frontend focus
+
+The current presentation pass specifically targets the “black screen” opening state, premium motion, movie-card depth, live freshness visibility, instant adaptive shelves, and network recovery. The goal is a cinematic streaming-style experience while preserving CINEPLAY's static-first GitHub Pages constraint and real Python ML companion architecture.
