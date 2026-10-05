@@ -34,6 +34,7 @@
 
   const state = {
     movies: (window.MOVIES || []).slice(),
+    series: (window.SERIES || []).slice(),
     hero: [],
     heroIndex: 0,
     selected: null,
@@ -387,6 +388,15 @@
     return state.movies.find(m => String(m.id) === String(id));
   }
 
+  function findSeries(id) {
+    return state.series.find(s => String(s.id) === String(id));
+  }
+
+  function findTitle(id, type="") {
+    if(type==="series") return findSeries(id);
+    return findMovie(id) || findSeries(id);
+  }
+
   function mergeMovies(incoming) {
     const map = new Map();
     [...(state.movies || []), ...(window.MOVIES || []), ...(incoming || [])].forEach(movie => {
@@ -494,13 +504,15 @@
     const regionalBadge = isIndianMovie(movie) ? '<span class="region-badge">'+esc(movie.industry || languageName(movie))+'</span>' : "";
     const posterUrl = poster(movie, compact ? "w342" : "w500");
 
-    return '<article class="movie-card '+(compact?"compact":"")+'" data-movie-id="'+esc(movie.id)+'" tabindex="0" aria-label="'+esc(movie.title)+'">'+
+    const mediaType=(movie.media_type==="tv" || movie.type==="series") ? "series" : "movie";
+    const ratingLabel=mediaType==="series" ? "★ "+esc(rating(movie))+" · series" : "★ "+esc(rating(movie));
+    return '<article class="movie-card '+(compact?"compact":"")+'" data-movie-id="'+esc(movie.id)+'" data-media-type="'+mediaType+'" tabindex="0" aria-label="'+esc(movie.title)+'">'+
       '<div class="poster-frame" style="--card-accent:'+(movie.accent==="green"?"#21d58c":"#ff334d")+'">'+
         imageMarkup(posterUrl, movie.title)+
         '<div class="poster-gradient"></div>'+
         rank+live+matchMarkup+regionalBadge+
-        '<button class="mini-list '+(listed(movie)?"added":"")+'" data-list-id="'+esc(movie.id)+'" type="button" aria-label="'+(listed(movie)?"Remove from My List":"Add to My List")+'">'+
-        '<div class="hover-layer"><button class="play-dot" data-open="'+esc(movie.id)+'" type="button">▶</button><div class="hover-meta"><span>'+esc(badgeLabel(movie))+'</span><span>★ '+esc(rating(movie))+'</span></div></div>'+
+        '<button class="mini-list '+(listed(movie)?"added":"")+'" data-list-id="'+esc(movie.id)+'" type="button" aria-label="'+(listed(movie)?"Remove from My List":"Add to My List")+'">'+add+'</button>'+
+        '<div class="hover-layer"><button class="play-dot" data-open="'+esc(movie.id)+'" type="button">▶</button><div class="hover-meta"><span>'+esc(badgeLabel(movie))+'</span><span>'+ratingLabel+'</span></div></div>'+
       '</div>'+
       '<div class="movie-caption"><h3>'+esc(movie.title)+'</h3><div><span>'+esc(year(movie))+'</span><i>•</i><span>★ '+esc(rating(movie))+'</span></div></div>'+
       '</article>';
@@ -509,7 +521,7 @@
   function bindRail(node) {
     if (!node) return;
     node.querySelectorAll(".movie-card").forEach(article => {
-      const open = () => openMovie(findMovie(article.dataset.movieId));
+      const open = () => openMovie(findTitle(article.dataset.movieId,article.dataset.mediaType));
       article.onclick = e => { if (!e.target.closest(".mini-list") && !e.target.closest(".play-dot")) open(); };
       article.onkeydown = e => {
         if ((e.key === "Enter" || e.key === " ") && !e.target.closest("button")) {
@@ -518,10 +530,10 @@
       };
     });
     node.querySelectorAll(".play-dot").forEach(btn => {
-      btn.onclick = e => { e.stopPropagation(); const m=findMovie(btn.dataset.open); if(m){ recordHistory(m,"play"); openMovie(m,true); } };
+      btn.onclick = e => { e.stopPropagation(); const item=findTitle(btn.dataset.open,btn.closest(".movie-card")?.dataset.mediaType); if(item){ recordHistory(item,"play"); openMovie(item,true); } };
     });
     node.querySelectorAll(".mini-list").forEach(btn => {
-      btn.onclick = e => { e.stopPropagation(); const m=findMovie(btn.dataset.listId); if(m) toggleList(m); };
+      btn.onclick = e => { e.stopPropagation(); const item=findTitle(btn.dataset.listId,btn.closest(".movie-card")?.dataset.mediaType); if(item) toggleList(item); };
     });
   }
 
@@ -531,6 +543,15 @@
     node.innerHTML = movies?.length ? movies.map((m,i)=>card(m, numbered?i:null, compact)).join("") :
       '<div class="rail-empty">No matching titles in this shelf.</div>';
     bindRail(node);
+  }
+
+  function renderSeries() {
+    const items=state.series.slice().sort((a,b)=>
+      (Number(b.rating||0)*0.62 + Math.log1p(Number(b.votes||0))*0.12 + Number(b.popularity||0)*0.26)-
+      (Number(a.rating||0)*0.62 + Math.log1p(Number(a.votes||0))*0.12 + Number(a.popularity||0)*0.26)
+    ).slice(0,100);
+    renderRail("seriesRail",items,false,false);
+    return items;
   }
 
   function renderContinue() {
@@ -595,9 +616,13 @@
     updateListButtons(movie);
   }
 
+  const HOME_SPOTLIGHT_TITLES=["RRR","Magadheera","Iron Man","Avengers: Endgame","Baahubali: The Beginning","Project Hail Mary","Spider-Man: No Way Home","Dangal","Interstellar"];
+
   function buildHero() {
-    const pool=topByQuality(state.movies).slice(0,8);
-    state.hero=pool.length?pool:state.movies.slice(0,8);
+    const wanted=HOME_SPOTLIGHT_TITLES.map(title=>state.movies.find(m=>m.title===title)).filter(Boolean);
+    const fallback=topByQuality(state.movies).filter(m=>!wanted.some(w=>String(w.id)===String(m.id)));
+    state.hero=[...wanted,...fallback].slice(0,9);
+    if(!state.hero.length) state.hero=state.movies.slice(0,8);
     if (!state.hero.length) return;
     state.heroIndex=Math.min(state.heroIndex,state.hero.length-1);
     updateHero(state.hero[state.heroIndex]);
@@ -742,6 +767,8 @@
     const telugu=state.movies.filter(m=>matchesFilter(m,"telugu")).sort((a,b)=>(popularity(b)*0.72+quality(b)*0.28)-(popularity(a)*0.72+quality(a)*0.28));
     renderRail("indianRail",indiaMovies.slice(0,16));
     renderRail("teluguRail",telugu.slice(0,18));
+    renderRail("homeSpotlightRail",HOME_SPOTLIGHT_TITLES.map(title=>state.movies.find(m=>m.title===title)).filter(Boolean),false,true);
+    renderSeries();
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     updateFilterButtons();
     renderFilterResults(false);
@@ -925,10 +952,11 @@
     const key=String(movie.id);
     if (state.detailCache[key]) { renderTitleExtras(movie,state.detailCache[key]); return; }
 
+    const mediaPath=(movie.media_type==="tv" || movie.type==="series") ? "/tv/" : "/movie/";
     const [providersResult,reviewsResult,videosResult]=await Promise.allSettled([
-      tmdb("/movie/"+encodeURIComponent(tmdbId)+"/watch/providers"),
-      tmdb("/movie/"+encodeURIComponent(tmdbId)+"/reviews",{language:"en-US",page:1}),
-      tmdb("/movie/"+encodeURIComponent(tmdbId)+"/videos",{language:"en-US"})
+      tmdb(mediaPath+encodeURIComponent(tmdbId)+"/watch/providers"),
+      tmdb(mediaPath+encodeURIComponent(tmdbId)+"/reviews",{language:"en-US",page:1}),
+      tmdb(mediaPath+encodeURIComponent(tmdbId)+"/videos",{language:"en-US"})
     ]);
 
     const providers=providersResult.status==="fulfilled"
@@ -1007,7 +1035,8 @@
     const modal=showModal("movieModal");
     if (!modal) return;
     setBackdrop($("modalMedia"), movie);
-    $("modalKicker").textContent=(movie.live?"LIVE · ":"")+"MOVIE / "+String(movie.language||movie.original_language||"EN").toUpperCase();
+    const isSeries=movie.media_type==="tv" || movie.type==="series";
+    $("modalKicker").textContent=(movie.live?"LIVE · ":"")+(isSeries?"WEB SERIES / ":"MOVIE / ")+String(movie.language||movie.original_language||"EN").toUpperCase();
     $("modalTitle").textContent=movie.title;
     $("modalMatch").textContent=(movie.match||Math.min(97,Math.round((quality(movie)*90)+20)))+"% AI MATCH";
     $("modalMeta").innerHTML='<span>★ '+esc(rating(movie))+'</span><span>'+esc(year(movie))+'</span><span>'+esc(genreLine(movie))+'</span><span>'+esc(movie.votes||movie.vote_count||0)+' votes</span>';
@@ -1227,13 +1256,14 @@
     if (!value) { applyFilter(); $("searchPanel")?.classList.add("hidden"); return; }
 
     const moodTerms=value.split(/\s+/);
-    const local=state.movies.filter(m=>
-      movieText(m).toLowerCase().includes(value) ||
-      moodTerms.some(t=>movieText(m).toLowerCase().includes(t))
-    ).slice(0,20).map(m=>({...m,match:Math.round((genreAffinity(m)+quality(m))*50)}));
+    const allTitles=[...state.movies,...state.series];
+    const local=allTitles.filter(m=>{
+      const text=movieText(m).toLowerCase();
+      return text.includes(value) || moodTerms.some(t=>text.includes(t));
+    }).slice(0,20).map(m=>({...m,match:Math.round((genreAffinity(m)+quality(m))*50)}));
 
     if (force) {
-      const semantic=state.movies.map(m=>({...m,score:searchScore(m,value)})).sort((a,b)=>b.score-a.score).slice(0,20);
+      const semantic=[...state.movies,...state.series].map(m=>({...m,score:searchScore(m,value)})).sort((a,b)=>b.score-a.score).slice(0,20);
       renderRail("aiRail",semantic);
       $("recommendationSubtitle").textContent="AI semantic search for “"+query+"”.";
     } else {
@@ -1280,9 +1310,16 @@
   }
 
   function openSearch() {
+    const section=$("discover");
     const input=$("searchInput");
-    if (input) { input.focus(); input.select(); }
     $("commandPalette")?.classList.add("hidden");
+    if(section) section.scrollIntoView({behavior:"smooth",block:"start"});
+    window.setTimeout(()=>{
+      if(input){ input.focus(); input.select(); }
+      const box=document.querySelector(".search-box");
+      box?.classList.add("is-focused");
+      window.setTimeout(()=>box?.classList.remove("is-focused"),1200);
+    },260);
   }
 
   function openCommand() {
@@ -1302,11 +1339,13 @@
       ["Activity","Open your local profile","activity"]
     ];
     const q=String(value||"").toLowerCase();
-    const movies=state.movies.filter(m=>m.title.toLowerCase().includes(q)).slice(0,6);
+    const movies=state.movies.filter(m=>m.title.toLowerCase().includes(q)).slice(0,4);
+    const series=state.series.filter(m=>m.title.toLowerCase().includes(q)).slice(0,4);
     node.innerHTML='<div class="command-group"><span>QUICK NAV</span>'+commands.filter(c=>!q||c[0].toLowerCase().includes(q)).map(c=>'<button type="button" data-section="'+c[2]+'"><b>'+esc(c[0])+'</b><em>'+esc(c[1])+'</em></button>').join("")+'</div>'+
-      (movies.length?'<div class="command-group"><span>MOVIES</span>'+movies.map(m=>'<button type="button" data-command-movie="'+esc(m.id)+'"><b>'+esc(m.title)+'</b><em>'+esc(year(m))+'</em></button>').join("")+'</div>':"");
+      (movies.length?'<div class="command-group"><span>MOVIES</span>'+movies.map(m=>'<button type="button" data-command-movie="'+esc(m.id)+'" data-command-type="movie"><b>'+esc(m.title)+'</b><em>'+esc(year(m))+'</em></button>').join("")+'</div>':"")+
+      (series.length?'<div class="command-group"><span>WEB SERIES</span>'+series.map(m=>'<button type="button" data-command-movie="'+esc(m.id)+'" data-command-type="series"><b>'+esc(m.title)+'</b><em>'+esc(year(m))+'</em></button>').join("")+'</div>':"");
     node.querySelectorAll("[data-section]").forEach(btn=>btn.onclick=()=>{closeCommand();document.getElementById(btn.dataset.section)?.scrollIntoView({behavior:"smooth"});});
-    node.querySelectorAll("[data-command-movie]").forEach(btn=>btn.onclick=()=>{closeCommand();openMovie(findMovie(btn.dataset.commandMovie));});
+    node.querySelectorAll("[data-command-movie]").forEach(btn=>btn.onclick=()=>{closeCommand();openMovie(findTitle(btn.dataset.commandMovie,btn.dataset.commandType));});
   }
 
   function closeCommand() { $("commandPalette")?.classList.add("hidden"); }
@@ -1551,9 +1590,12 @@
     const telugu=state.movies.filter(m=>matchesFilter(m,"telugu")).sort((a,b)=>(popularity(b)*0.72+quality(b)*0.28)-(popularity(a)*0.72+quality(a)*0.28));
     renderRail("indianRail",indiaMovies.slice(0,16));
     renderRail("teluguRail",telugu.slice(0,18));
+    renderRail("homeSpotlightRail",HOME_SPOTLIGHT_TITLES.map(title=>state.movies.find(m=>m.title===title)).filter(Boolean),false,true);
+    renderSeries();
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     renderFilterResults(false);
     renderRail("aiRail",recommendFor(null,18));
+    renderSeries();
     renderList();
     renderContinue();
     renderActivity();
