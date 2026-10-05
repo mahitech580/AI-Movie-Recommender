@@ -25,7 +25,7 @@ async function testDesktop(browser) {
 
   await page.locator(".movie-card").first().click();
   await page.locator("#movieModal:not(.hidden)").waitFor({ state: "visible", timeout: 1500 });
-  await page.locator("[data-close-modal]").first().click();
+  await page.locator("#movieModal .modal-close").click();
 
   const firstListButton = page.locator(".movie-card .mini-list").first();
   await firstListButton.click();
@@ -57,7 +57,7 @@ async function testMobile(browser) {
   await page.locator("#mobileMenu").click();
   const open = await page.locator("#mobileDrawer").evaluate(el => el.classList.contains("open"));
   if (!open) throw new Error("mobile navigation drawer did not open");
-  await page.locator("[data-close-drawer]").first().click();
+  await page.locator("#mobileDrawer .drawer-close").click();
   if (await page.locator("#mobileDrawer").evaluate(el => el.classList.contains("open"))) {
     throw new Error("mobile navigation drawer did not close");
   }
