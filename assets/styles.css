@@ -488,9 +488,11 @@ a{color:inherit;text-decoration:none}
 .search-box.is-focused{border-color:rgba(39,220,145,.48);box-shadow:0 0 0 4px rgba(39,220,145,.06),0 18px 55px rgba(0,0,0,.42);transform:translateY(-1px)}
 .home-spotlight{
   position:relative;
-  width:100%;
+  width:100vw;
   margin-top:34px;
-  padding:34px 3vw 38px;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  padding:34px clamp(24px,4vw,62px) 38px;
   scroll-margin-top:96px;
   overflow:visible;
   background:
@@ -534,11 +536,11 @@ a{color:inherit;text-decoration:none}
 #homeSpotlightRail .movie-caption>div{font-size:8px}
 #homeSpotlightRail .movie-card:hover .poster-frame{transform:translateY(-6px) scale(1.012)}
 @media(max-width:1180px){
-  .home-spotlight{padding-left:2.5vw;padding-right:2.5vw}
+  .home-spotlight{padding-left:3vw;padding-right:3vw}
   #homeSpotlightRail{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 }
 @media(max-width:900px){
-  .home-spotlight{padding:28px 20px 30px}
+  .home-spotlight{padding:28px 24px 30px}
   #homeSpotlightRail{grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
 }
 @media(max-width:640px){
