@@ -1,0 +1,10 @@
+{
+  "name":"CINEPLAY — AI Movie Discovery",
+  "short_name":"CINEPLAY",
+  "description":"Adaptive movie discovery with optional live TMDB data.",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#040605",
+  "theme_color":"#040605",
+  "icons":[{"src":"assets/cineplay-icon.svg","sizes":"64x64","type":"image/svg+xml"}]
+}
