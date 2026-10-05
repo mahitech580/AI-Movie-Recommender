@@ -1,14 +1,17 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python development leftovers
 __pycache__/
 *.pyc
 .venv/
-venv/
+
+# Environment secrets
 .env
-instance/
+*.local
+
+# Local databases
 *.db
-data/*.zip
-data/movies.csv
-data/ratings.csv
-data/tags.csv
-.vscode/
-.idea/
-.pytest_cache/
