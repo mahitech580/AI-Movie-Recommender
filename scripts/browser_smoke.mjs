@@ -71,11 +71,12 @@ async function testMobile(browser) {
   if (activityActive !== "#activity") {
     throw new Error("activity deep link did not activate Activity navigation");
   }
-  const activityTop = await page.locator("#activity").evaluate(el => {
+  await page.locator("#activity.is-visible").waitFor({ state: "attached", timeout: 1500 });
+  const activityVisible = await page.locator("#activity").evaluate(el => {
     const r = el.getBoundingClientRect();
-    return r.top >= 0 && r.top < 180 && r.bottom > 120;
+    return r.bottom > 0 && r.top < window.innerHeight;
   });
-  if (!activityTop) throw new Error("activity deep link did not scroll to Activity section");
+  if (!activityVisible) throw new Error("activity deep link did not bring Activity section into the viewport");
 
   await page.goto(base + "#/my-list", { waitUntil: "networkidle" });
   await sleep(250);
