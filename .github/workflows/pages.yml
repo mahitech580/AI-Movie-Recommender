@@ -68,6 +68,19 @@ jobs:
       - name: JavaScript syntax
         run: node --check assets/app.js
 
+
+      - name: Install browser test dependency
+        run: npm install --no-save playwright
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Start static site
+        run: python -m http.server 4173 --bind 127.0.0.1 >/tmp/cineplay-http.log 2>&1 &
+
+      - name: Browser UI smoke test
+        run: node scripts/browser_smoke.mjs
+
       - name: Static contract
         run: |
           test -f index.html
