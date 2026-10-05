@@ -1550,13 +1550,7 @@
       if(e.key==="Escape"){closeMovie();closeSettings();closeCommand();hideModal("aiLabModal");}
     });
 
-    const filterRow=$("filterRow");
-    filterRow && filterRow.addEventListener("click",event=>{
-      const btn=event.target.closest(".filter-chip");
-      if(!btn || !filterRow.contains(btn)) return;
-      event.preventDefault();
-      setFilter(btn.dataset.filter||"all",true);
-    });
+    $(".filter-chip").forEach(btn=>btn.onclick=()=>setFilter(btn.dataset.filter||"all",true));
 
     $("filterShowMore") && ($("filterShowMore").onclick=()=>{
       const total=filteredMovies().length;
