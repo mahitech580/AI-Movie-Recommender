@@ -204,7 +204,8 @@ a{color:inherit;text-decoration:none}
 .mini-list{z-index:8}
 .mini-list:hover{border-color:rgba(39,220,145,.4);color:var(--green);background:rgba(39,220,145,.11)}
 .mini-list.added{color:var(--green);border-color:rgba(39,220,145,.35)}
-.rank-badge,.live-card-badge,.ai-match{position:absolute;z-index:4;left:9px;top:9px;height:24px;padding:0 7px;display:flex;align-items:center;border-radius:999px;font-size:8px;font-weight:900}
+.rank-badge,.live-card-badge,.ai-match,.region-badge{position:absolute;z-index:4;left:9px;top:9px;height:24px;padding:0 7px;display:flex;align-items:center;border-radius:999px;font-size:8px;font-weight:900}
+.region-badge{left:auto;right:9px;background:rgba(5,12,8,.78);border:1px solid rgba(39,220,145,.18);color:#d9ffe9;letter-spacing:.07em;max-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rank-badge{background:#f3f7f5;color:#08100c}
 .live-card-badge{left:auto;right:9px;background:rgba(5,12,8,.72);border:1px solid rgba(39,220,145,.19);color:#c9ffe4;gap:5px}
 .live-card-badge i{width:5px;height:5px;border-radius:50%;background:var(--green)}
