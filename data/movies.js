@@ -24,7 +24,8 @@ window.MOVIES = [
     ],
     "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
     "backdrop": "/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
-    "accent": "green"
+    "accent": "green",
+    "featured": true
   },
   {
     "id": 27205,
@@ -512,7 +513,8 @@ window.MOVIES = [
     ],
     "poster": "/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
     "backdrop": "/7RyHsO4yDXtBv1zUU38J2a5L0hP.jpg",
-    "accent": "red"
+    "accent": "red",
+    "featured": true
   },
   {
     "id": 137113,
@@ -691,7 +693,8 @@ window.MOVIES = [
     ],
     "poster": "/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
     "backdrop": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
-    "accent": "green"
+    "accent": "green",
+    "featured": true
   },
   {
     "id": 1084244,
@@ -799,7 +802,8 @@ window.MOVIES = [
     "overview": "Two legendary revolutionaries form a powerful friendship while taking on the British Raj.",
     "accent": "red",
     "poster": "https://image.tmdb.org/t/p/w500/u0XUBNQWlOvrh0Gd97ARGpIkL0.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset",
+    "featured": true
   },
   {
     "id": 10002,
@@ -828,7 +832,8 @@ window.MOVIES = [
     "overview": "A young man discovers his royal heritage and is drawn into a struggle for a legendary kingdom.",
     "accent": "green",
     "poster": "https://m.media-amazon.com/images/M/MV5BYWVlMjVhZWYtNWViNC00ODFkLTk1MmItYjU1MDY5ZDdhMTU3XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset",
+    "featured": true
   },
   {
     "id": 10003,
@@ -1925,7 +1930,7 @@ window.MOVIES = [
     "poster": "https://image.tmdb.org/t/p/w500/rsQbJT4vjyQe6Mpry1i8Tnf86wp.jpg"
   },
   {
-    "id": 10044,
+    "id": 11005,
     "title": "Magadheera",
     "year": 2009,
     "genres": [
@@ -1935,20 +1940,24 @@ window.MOVIES = [
       "Romance"
     ],
     "rating": 7.7,
-    "votes": 35000,
-    "popularity": 54,
+    "votes": 31000,
+    "popularity": 88,
     "language": "te",
     "industry": "TFI",
     "country": "IN",
     "tags": [
+      "tollywood",
+      "tfi",
       "rebirth",
-      "war",
+      "warrior",
       "kingdom",
       "romance",
-      "hero"
+      "ss rajamouli"
     ],
-    "overview": "A modern man begins recovering memories of a warrior from a previous life.",
-    "accent": "red"
+    "overview": "A bike stuntman discovers memories of a warrior from a previous life and a love story tied to a war-torn kingdom.",
+    "accent": "red",
+    "poster": "https://www.cinejosh.com/newsimg/newsmainimg/14-years-of-timeless-classic-magadheera_b_3107231029.jpg",
+    "featured": true
   },
   {
     "id": 10045,
@@ -2155,7 +2164,8 @@ window.MOVIES = [
     "overview": "A former wrestler trains his daughters to compete at the highest levels of wrestling.",
     "accent": "green",
     "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_SX300.jpg",
-    "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+    "poster_source": "IMDb image URL via public Indian movie-poster dataset",
+    "featured": true
   },
   {
     "id": 10103,
@@ -3632,5 +3642,111 @@ window.MOVIES = [
     "accent": "green",
     "poster": "https://image.tmdb.org/t/p/w500/cckTZXVpchMrljPouFf7u2wqUTX.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset"
+  },
+  {
+    "id": 11001,
+    "title": "Iron Man",
+    "year": 2008,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 7.9,
+    "votes": 24000,
+    "popularity": 93,
+    "language": "en",
+    "country": "US",
+    "tags": [
+      "mcu",
+      "marvel",
+      "superhero",
+      "technology",
+      "armor"
+    ],
+    "overview": "After being held captive, brilliant inventor Tony Stark builds a high-tech suit of armor and becomes Iron Man.",
+    "poster": "https://image.tmdb.org/t/p/original/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/original/cyecB7godJ6kNHGONFjUyVN9OX5.jpg",
+    "accent": "red",
+    "featured": true
+  },
+  {
+    "id": 11002,
+    "title": "Spider-Man: No Way Home",
+    "year": 2021,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi",
+      "Fantasy"
+    ],
+    "rating": 8.2,
+    "votes": 21000,
+    "popularity": 94,
+    "language": "en",
+    "country": "US",
+    "tags": [
+      "marvel",
+      "mcu",
+      "spider-man",
+      "multiverse",
+      "superhero"
+    ],
+    "overview": "Peter Parker's secret identity is revealed, pushing him into a multiverse adventure with unexpected allies and enemies.",
+    "poster": "https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+    "accent": "red",
+    "featured": true
+  },
+  {
+    "id": 11003,
+    "title": "The Avengers",
+    "year": 2012,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 8,
+    "votes": 19000,
+    "popularity": 84,
+    "language": "en",
+    "country": "US",
+    "tags": [
+      "mcu",
+      "marvel",
+      "avengers",
+      "superhero",
+      "team"
+    ],
+    "overview": "Earth's mightiest heroes unite when a global threat forces Iron Man, Captain America, Thor, Hulk and their allies into one team.",
+    "poster": "https://image.tmdb.org/t/p/original/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+    "accent": "green",
+    "featured": true
+  },
+  {
+    "id": 11004,
+    "title": "Black Panther",
+    "year": 2018,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "rating": 7.3,
+    "votes": 16000,
+    "popularity": 78,
+    "language": "en",
+    "country": "US",
+    "tags": [
+      "mcu",
+      "marvel",
+      "wakanda",
+      "superhero",
+      "africa"
+    ],
+    "overview": "T'Challa returns home to the advanced African nation of Wakanda and must confront a challenger to the throne.",
+    "poster": "https://image.tmdb.org/t/p/original/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+    "accent": "green",
+    "featured": true
   }
 ];
