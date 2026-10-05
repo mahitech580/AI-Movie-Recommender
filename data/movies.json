@@ -2024,26 +2024,31 @@
   },
   {
     "id": 10050,
-    "title": "Kaithi Telugu Fan Cut",
-    "year": 2019,
+    "title": "Awe!",
+    "year": 2018,
     "genres": [
-      "Action",
-      "Crime",
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Mystery",
+      "Sci-Fi",
       "Thriller"
     ],
-    "rating": 7.9,
-    "votes": 1200,
-    "popularity": 18,
+    "rating": 7.6,
+    "votes": 6600,
+    "popularity": 39,
     "language": "te",
     "industry": "TFI",
     "country": "IN",
     "tags": [
-      "action",
-      "crime",
-      "night",
-      "survival"
+      "psychological",
+      "restaurant",
+      "mystery",
+      "horror",
+      "fantasy",
+      "sci-fi"
     ],
-    "overview": "A regional watchlist bridge entry for Telugu viewers exploring South Indian crime cinema.",
+    "overview": "Unusual people meet at a restaurant and their lives become connected through a mysterious story.",
     "accent": "red"
   },
   {
