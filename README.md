@@ -8,7 +8,7 @@ A Netflix-inspired, GitHub Pages-ready movie discovery experience with real movi
 
 MOTION is now a **pure static HTML/CSS/JavaScript application** designed to run on GitHub Pages. The previous Flask/Python runtime is no longer required for the deployed experience.
 
-GitHub Pages publishes static files and does not support running server-side Python on the Pages host, so the recommendation engine, search, My List, history and personalization are all handled in the browser. citeturn618842search2turn618842search5
+GitHub Pages publishes static files and does not support running server-side Python on the Pages host, so the recommendation engine, search, My List, history and personalization are all handled in the browser. See the official [GitHub Pages documentation](https://docs.github.com/en/pages) for static hosting details.
 
 ## Product experience
 
@@ -59,7 +59,7 @@ The system is a content-based recommender rather than a production collaborative
 
 MOTION supports optional real-time TMDB integration.
 
-TMDB provides API endpoints for movie/search/trending data and an image CDN for poster and backdrop assets. citeturn618842search0turn618842search1turn618842search9turn618842search10
+TMDB provides API endpoints for movie/search/trending data and an image CDN for poster and backdrop assets. See the official [TMDB API documentation](https://developer.themoviedb.org/docs) and [image documentation](https://developer.themoviedb.org/docs/image-basics).
 
 ### Enable it
 
@@ -78,13 +78,13 @@ Because this is GitHub Pages only, there is deliberately no private backend prox
 
 The bundled catalog uses TMDB image paths and the documented TMDB image URL pattern.
 
-TMDB documents that a working image URL is assembled from its secure base URL, image size, and the returned poster/backdrop path. citeturn618842search1
+TMDB documents that a working image URL is assembled from its secure base URL, image size, and the returned poster/backdrop path. See the official [TMDB image basics](https://developer.themoviedb.org/docs/image-basics).
 
 ### TMDB attribution
 
 **This product uses the TMDB API but is not endorsed or certified by TMDB.**
 
-TMDB remains the source of the live catalog metadata and artwork used by the optional live mode. See the official TMDB API documentation and applicable terms before deploying your own live credentials. citeturn975072search12turn975072search13
+TMDB remains the source of the live catalog metadata and artwork used by the optional live mode. See the official TMDB API documentation and applicable terms before deploying your own live credentials. See the official [TMDB API getting started](https://developer.themoviedb.org/reference/intro/getting-started) and [TMDB FAQ/requirements](https://developer.themoviedb.org/docs/faq).
 
 ## GitHub Pages
 
@@ -96,7 +96,7 @@ Expected project site:
 
 https://mahitech580.github.io/AI-Movie-Recommender/
 
-GitHub Pages supports project sites at the owner.github.io/repository-name path. citeturn618842search5
+GitHub Pages supports project sites at the owner.github.io/repository-name path. See the official [GitHub Pages documentation](https://docs.github.com/en/pages).
 
 ### Pages configuration
 
