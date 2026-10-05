@@ -63,7 +63,7 @@ jobs:
           node-version: "22"
 
       - name: Backend full-stack smoke test
-        run: python scripts/smoke_test.py
+        run: PYTHONPATH=. python scripts/smoke_test.py
 
       - name: JavaScript syntax
         run: node --check assets/app.js
