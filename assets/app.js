@@ -1554,8 +1554,9 @@
 
     $("filterShowMore") && ($("filterShowMore").onclick=()=>{
       const total=filteredMovies().length;
-      if(state.filterPage<total){
-        state.filterPage=Math.min(total,state.filterPage+24);
+      const current=$("filterResultsGrid")?.querySelectorAll(".movie-card").length || 0;
+      if(current<total){
+        state.filterPage=Math.min(total,Math.max(24,current+24));
         renderFilterResults(false);
       }
     });
