@@ -1074,6 +1074,85 @@
 
   function closeCommand() { $("commandPalette")?.classList.add("hidden"); }
 
+  function enhanceRails() {
+    $(".rail").forEach(rail => {
+      if (rail.parentElement?.classList.contains("rail-shell")) return;
+      const shell=document.createElement("div");
+      shell.className="rail-shell";
+      rail.parentNode.insertBefore(shell,rail);
+      shell.appendChild(rail);
+
+      const prev=document.createElement("button");
+      prev.className="rail-arrow rail-prev";
+      prev.type="button";
+      prev.setAttribute("aria-label","Scroll left");
+      prev.textContent="‹";
+
+      const next=document.createElement("button");
+      next.className="rail-arrow rail-next";
+      next.type="button";
+      next.setAttribute("aria-label","Scroll right");
+      next.textContent="›";
+
+      shell.append(prev,next);
+      const step=()=>Math.max(280,Math.floor(rail.clientWidth*.72));
+      prev.onclick=()=>rail.scrollBy({left:-step(),behavior:"smooth"});
+      next.onclick=()=>rail.scrollBy({left:step(),behavior:"smooth"});
+
+      const refresh=()=>{
+        const max=rail.scrollWidth-rail.clientWidth;
+        const left=rail.scrollLeft;
+        shell.classList.toggle("has-left",left>8);
+        shell.classList.toggle("has-right",max-left>8);
+        prev.disabled=left<=8;
+        next.disabled=max-left<=8;
+      };
+      rail.addEventListener("scroll",refresh,{passive:true});
+      new ResizeObserver(refresh).observe(rail);
+      requestAnimationFrame(refresh);
+    });
+  }
+
+  function revealSections() {
+    const nodes=$(".section-block,.feature-band");
+    if (!("IntersectionObserver" in window)) {
+      nodes.forEach(n=>n.classList.add("is-visible"));
+      return;
+    }
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },{rootMargin:"0px 0px -10% 0px",threshold:.08});
+    nodes.forEach(n=>observer.observe(n));
+  }
+
+  function setupMobileDrawer() {
+    const drawer=$("mobileDrawer"), btn=$("mobileMenu");
+    if(!drawer || !btn) return;
+    const setOpen=open=>{
+      drawer.classList.toggle("open",open);
+      drawer.setAttribute("aria-hidden",String(!open));
+      btn.classList.toggle("active",open);
+      btn.setAttribute("aria-expanded",String(open));
+    };
+    btn.onclick=()=>setOpen(!drawer.classList.contains("open"));
+    $("[data-close-drawer]").forEach(x=>x.onclick=()=>setOpen(false));
+    $("[data-drawer-link]").forEach(x=>x.onclick=()=>setOpen(false));
+    document.addEventListener("keydown",e=>{if(e.key==="Escape")setOpen(false);});
+  }
+
+  function setupPremiumScrollState() {
+    const topbar=$(".topbar");
+    if(!topbar) return;
+    const update=()=>topbar.classList.toggle("scrolled",window.scrollY>24);
+    window.addEventListener("scroll",update,{passive:true});
+    update();
+  }
+
   function initEvents() {
     $("searchInput").addEventListener("input",e=>performSearch(e.target.value,false));
     $("searchInput").addEventListener("focus",()=>{if(state.query)performSearch(state.query,false);});
@@ -1163,6 +1242,10 @@
     renderActivity();
     renderPreferences();
     restartHeroTimer();
+    enhanceRails();
+    revealSections();
+    setupMobileDrawer();
+    setupPremiumScrollState();
     initEvents();
     restoreCachedLive();
     if (backendUrl()) loadBackendRecommendations();
