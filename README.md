@@ -290,7 +290,9 @@ Local frontend parsing and repository asset contract checks were also performed 
 
 ## Third-party services
 
-TMDB is used for optional live movie metadata, artwork and regional discovery.
+TMDB is used for optional live movie metadata, artwork, regional discovery, title videos, reviews and watch-provider data.
+
+Watch-provider availability is supplied through TMDB's JustWatch-powered provider data and the UI includes the required JustWatch attribution.
 
 YouTube is used for trailer/video discovery.
 
