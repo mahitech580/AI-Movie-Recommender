@@ -22,7 +22,7 @@
       "survival",
       "epic"
     ],
-    "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
     "backdrop": "/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
     "accent": "green",
     "featured": true
@@ -511,7 +511,7 @@
       "space",
       "final battle"
     ],
-    "poster": "/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
     "backdrop": "/7RyHsO4yDXtBv1zUU38J2a5L0hP.jpg",
     "accent": "red",
     "featured": true
@@ -691,7 +691,7 @@
       "friendship",
       "future"
     ],
-    "poster": "/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
     "backdrop": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
     "accent": "green",
     "featured": true
@@ -801,7 +801,7 @@
     ],
     "overview": "Two legendary revolutionaries form a powerful friendship while taking on the British Raj.",
     "accent": "red",
-    "poster": "https://image.tmdb.org/t/p/w500/u0XUBNQWlOvrh0Gd97ARGpIkL0.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/u0XUBNQWlOvrh0Gd97ARGpIkL0.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset",
     "featured": true
   },
@@ -831,7 +831,7 @@
     ],
     "overview": "A young man discovers his royal heritage and is drawn into a struggle for a legendary kingdom.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BYWVlMjVhZWYtNWViNC00ODFkLTk1MmItYjU1MDY5ZDdhMTU3XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/9BAjt8nSSms62uOV8XbcxjGW2M3.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset",
     "featured": true
   },
@@ -2163,7 +2163,7 @@
     ],
     "overview": "A former wrestler trains his daughters to compete at the highest levels of wrestling.",
     "accent": "green",
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_SX300.jpg",
+    "poster": "https://image.tmdb.org/t/p/original/mY7SeH4HFFxW1hiIGV3FpNR2G7h.jpg",
     "poster_source": "IMDb image URL via public Indian movie-poster dataset",
     "featured": true
   },
