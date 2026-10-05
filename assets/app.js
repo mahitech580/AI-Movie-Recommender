@@ -1238,17 +1238,39 @@
       btn.setAttribute("aria-expanded",String(open));
     };
     btn.onclick=()=>setOpen(!drawer.classList.contains("open"));
-    $("[data-close-drawer]").forEach(x=>x.onclick=()=>setOpen(false));
-    $("[data-drawer-link]").forEach(x=>x.onclick=()=>setOpen(false));
+    $(".mobile-drawer [data-close-drawer]").forEach(x=>x.onclick=()=>setOpen(false));
+    $(".mobile-drawer [data-drawer-link]").forEach(x=>x.onclick=()=>setOpen(false));
     document.addEventListener("keydown",e=>{if(e.key==="Escape")setOpen(false);});
   }
 
   function setupPremiumScrollState() {
-    const topbar=$(".topbar");
+    const topbar=document.querySelector(".topbar");
     if(!topbar) return;
     const update=()=>topbar.classList.toggle("scrolled",window.scrollY>24);
     window.addEventListener("scroll",update,{passive:true});
     update();
+  }
+
+  function normalizeRouteHash() {
+    const raw=(window.location.hash || "#home").replace(/^#\/?/,"").split(/[?&]/)[0].trim() || "home";
+    return ["home","discover","my-list","activity"].includes(raw) ? raw : "home";
+  }
+
+  function syncNavigation(scroll=true) {
+    const route=normalizeRouteHash();
+    const links=$(".main-nav a");
+    links.forEach(link=>{
+      const href=link.getAttribute("href") || "";
+      const target=href.replace(/^#\/?/,"").split(/[?&]/)[0];
+      link.classList.toggle("active",target===route);
+    });
+    if(!scroll) return;
+    const target=$(route);
+    if(target) {
+      requestAnimationFrame(()=>{
+        target.scrollIntoView({behavior:"auto",block:"start"});
+      });
+    }
   }
 
   function initEvents() {
@@ -1305,9 +1327,15 @@
       if(state.filter!=="all") toast("Showing "+btn.textContent+" titles");
     });
 
-    $$(".main-nav a").forEach(a=>a.onclick=()=>{
-      $$(".main-nav a").forEach(x=>x.classList.remove("active"));a.classList.add("active");
-    });
+    $(".main-nav a").forEach(a=>a.addEventListener("click",()=>{
+      const href=a.getAttribute("href") || "#home";
+      const route=href.replace(/^#\/?/,"").split(/[?&]/)[0] || "home";
+      $(".main-nav a").forEach(x=>x.classList.toggle("active",x===a));
+      const target=$(route);
+      if(target) window.setTimeout(()=>target.scrollIntoView({behavior:"smooth",block:"start"}),0);
+    }));
+
+    window.addEventListener("hashchange",()=>syncNavigation(true));
 
     window.addEventListener("scroll",()=>{
       const h=document.documentElement.scrollHeight-window.innerHeight;
@@ -1315,7 +1343,7 @@
       $("scrollProgress").style.width=pct+"%";
     },{passive:true});
 
-    const hero=$(".hero");
+    const hero=document.querySelector(".hero");
     hero?.addEventListener("mousemove",e=>{
       const rect=hero.getBoundingClientRect();
       const x=(e.clientX-rect.left)/rect.width-.5, y=(e.clientY-rect.top)/rect.height-.5;
@@ -1378,6 +1406,8 @@
     setupMobileDrawer();
     setupPremiumScrollState();
     initEvents();
+    syncNavigation(false);
+    window.setTimeout(()=>syncNavigation(true),0);
     restoreCachedLive();
     if (backendUrl()) loadBackendRecommendations();
 
@@ -1403,6 +1433,7 @@
   }
 
   installGlobalInteractionGuard();
+  try { syncNavigation(false); } catch {}
   init().catch(error => {
     console.error("CINEPLAY initialization error", error);
     finishCinemaBoot(true);
