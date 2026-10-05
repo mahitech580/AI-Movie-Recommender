@@ -26,6 +26,7 @@ async function testDesktop(browser) {
   await page.locator(".movie-card").first().click();
   await page.locator("#movieModal:not(.hidden)").waitFor({ state: "visible", timeout: 1500 });
   await page.locator("#movieModal .modal-close").click();
+  await page.locator("#movieModal.hidden").waitFor({ state: "attached", timeout: 1000 });
 
   const firstListButton = page.locator(".movie-card .mini-list").first();
   await firstListButton.click();
@@ -60,6 +61,27 @@ async function testMobile(browser) {
   await page.locator("#mobileDrawer .drawer-close").click();
   if (await page.locator("#mobileDrawer").evaluate(el => el.classList.contains("open"))) {
     throw new Error("mobile navigation drawer did not close");
+  }
+
+  // Deep-link regression checks: both modern "#route" and legacy "#/route" forms
+  // must activate the correct navigation item and land on the intended section.
+  await page.goto(base + "#/activity", { waitUntil: "networkidle" });
+  await sleep(250);
+  const activityActive = await page.locator('.main-nav a.active').getAttribute("href");
+  if (activityActive !== "#activity") {
+    throw new Error("activity deep link did not activate Activity navigation");
+  }
+  const activityTop = await page.locator("#activity").evaluate(el => {
+    const r = el.getBoundingClientRect();
+    return Math.abs(r.top) < 8;
+  });
+  if (!activityTop) throw new Error("activity deep link did not scroll to Activity section");
+
+  await page.goto(base + "#/my-list", { waitUntil: "networkidle" });
+  await sleep(250);
+  const listActive = await page.locator('.main-nav a.active').getAttribute("href");
+  if (listActive !== "#my-list") {
+    throw new Error("my-list deep link did not activate My List navigation");
   }
 
   await page.close();
