@@ -545,8 +545,10 @@
     const profile=profileVector();
     const sourceVector=source?vectorFor(source,idf):null;
 
+    const seenIds = new Set(history().map(h=>String(h.id)));
     return state.movies
       .filter(m=>!source || String(m.id)!==String(source.id))
+      .filter(m=>!seenIds.has(String(m.id)))
       .filter(m=>state.filter==="all" || matchesFilter(m,state.filter))
       .map(movie=>{
         const vector=vectorFor(movie,idf);
