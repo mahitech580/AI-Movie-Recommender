@@ -1324,6 +1324,38 @@
     hero?.addEventListener("mouseleave",()=>{$("heroMedia").style.transform="scale(1.02) translate3d(0,0,0)";});
   }
 
+
+  function installGlobalInteractionGuard() {
+    document.addEventListener("click", event => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      if (target.closest("[data-close-modal]")) {
+        event.preventDefault();
+        event.stopPropagation();
+        closeMovie();
+        return;
+      }
+      if (target.closest("[data-close-settings]")) {
+        event.preventDefault();
+        event.stopPropagation();
+        closeSettings();
+        return;
+      }
+      if (target.closest("[data-close-ai-lab]")) {
+        event.preventDefault();
+        event.stopPropagation();
+        hideModal("aiLabModal");
+        return;
+      }
+      if (target.closest("[data-close-command]")) {
+        event.preventDefault();
+        event.stopPropagation();
+        closeCommand();
+      }
+    }, true);
+  }
+
   async function init() {
     await hydrateCatalog();
     renderStats();
@@ -1370,6 +1402,7 @@
     });
   }
 
+  installGlobalInteractionGuard();
   init().catch(error => {
     console.error("CINEPLAY initialization error", error);
     finishCinemaBoot(true);
