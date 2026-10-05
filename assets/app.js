@@ -100,7 +100,7 @@
       '<path d="M112 240h46v120h-46zM177 200h46v160h-46zM242 225h46v135h-46z" fill="#27dc91" opacity=".75"/>' +
       '<text x="30" y="540" fill="#d9e4de" font-family="Arial,sans-serif" font-size="24" font-weight="700">' +
       safe.replace(/[<>&]/g,"") + '</text></svg>'
-    );
+    ).replaceAll("'","%27").replaceAll('"',"%22");
   }
 
   function imageMarkup(url, alt, extraClass="") {
@@ -470,7 +470,7 @@
     $("heroMeta") && ($("heroMeta").innerHTML='<span class="rating-star">★ '+esc(rating(movie))+'</span><span>'+esc(year(movie))+'</span><span>'+esc(genreLine(movie))+'</span><span>'+esc((movie.language||movie.original_language||"en").toUpperCase())+'</span>');
     $("heroTags") && ($("heroTags").innerHTML=genres(movie).slice(0,3).map(g=>'<span>'+esc(g)+'</span>').join("")+'<span>'+Math.round(popularity(movie))+' popularity</span>');
     $("heroIndex") && ($("heroIndex").textContent=String(state.heroIndex+1).padStart(2,"0"));
-    $("heroRecommend").onclick=()=>{ const recs=recommendFor(movie,12); renderRail("aiRail",recs); $("aiRail")?.scrollIntoView({behavior:"smooth",block:"center"}); recordHistory(movie,"similar"); toast("Personal queue rebuilt from "+movie.title); };
+    $("heroRecommend").onclick=async()=>{ const backendUsed=await loadBackendRecommendations(movie.id); if(!backendUsed){ const recs=recommendFor(movie,12); renderRail("aiRail",recs); $("recommendationSubtitle").textContent="Local hybrid AI ranking for “"+movie.title+"”."; } $("aiRail")?.scrollIntoView({behavior:"smooth",block:"center"}); recordHistory(movie,"similar"); toast((backendUsed?"Python ML":"Local AI")+" queue built from "+movie.title); };
     $("heroDetails").onclick=()=>openMovie(movie);
     $("heroList").onclick=()=>toggleList(movie);
     updateListButtons(movie);
@@ -725,13 +725,13 @@
     $("modalTags").innerHTML=(movie.tags||genres(movie)).slice(0,9).map(t=>'<span>'+esc(t)+'</span>').join("");
     $("whyBox").innerHTML='<strong>Why this title?</strong><p>'+esc(movie.reason||buildWhy(movie,null))+'</p>';
     $("modalList").onclick=()=>toggleList(movie);
-    $("modalRecommend").onclick=()=>{
-      const recs=recommendFor(movie,14);
-      renderRail("aiRail",recs);
+    $("modalRecommend").onclick=async()=>{
+      const backendUsed=await loadBackendRecommendations(movie.id);
+      if(!backendUsed) renderRail("aiRail",recommendFor(movie,14));
       recordHistory(movie,"similar");
       closeMovie();
       $("aiRail")?.scrollIntoView({behavior:"smooth",block:"center"});
-      toast("Similar titles generated from "+movie.title);
+      toast((backendUsed?"Python ML":"Local AI")+" similar titles generated");
     };
     $("modalTrailer").onclick=()=>{
       window.open("https://www.youtube.com/results?search_query="+encodeURIComponent(movie.title+" trailer"),"_blank","noopener");
@@ -742,11 +742,12 @@
 
   function closeMovie() { $("movieModal")?.classList.add("hidden"); document.body.classList.remove("modal-open"); }
 
-  async function loadBackendRecommendations() {
+  async function loadBackendRecommendations(seedMovieId=null) {
     const base=backendUrl();
     if(!base) return false;
     try{
-      const data=await backendFetch("/api/recommend/"+encodeURIComponent(getUserId())+"?limit=18");
+      const query = seedMovieId ? "?seed_movie_id="+encodeURIComponent(seedMovieId)+"&limit=18" : "?limit=18";
+      const data=await backendFetch("/api/recommend/"+encodeURIComponent(getUserId())+query);
       if(Array.isArray(data.results) && data.results.length){
         mergeMovies(data.results);
         const normalized=data.results.map(m=>({...m,live:false}));
@@ -1096,6 +1097,7 @@
     restartHeroTimer();
     initEvents();
     restoreCachedLive();
+    if (backendUrl()) loadBackendRecommendations();
 
     const key=localStorage.getItem(STORE.key);
     if (key && Date.now()-state.lastSync>8*60*1000) syncLive(false);
