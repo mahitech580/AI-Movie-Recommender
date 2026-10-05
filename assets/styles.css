@@ -162,6 +162,34 @@ a{color:inherit;text-decoration:none}
 .filter-chip:hover{border-color:rgba(39,220,145,.24);color:#dff8eb}
 .filter-chip.active{border-color:rgba(39,220,145,.23);background:rgba(39,220,145,.09);color:#caffdf;box-shadow:inset 0 0 0 1px rgba(39,220,145,.05)}
 
+/* complete filter results */
+.filter-results-wrap{margin:18px 6vw 24px;padding:26px 0 8px;scroll-margin-top:96px}
+.filter-results-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}
+.filter-results-head h2{margin:4px 0 0;font:800 26px/1.05 "Manrope",sans-serif;letter-spacing:-.04em}
+.filter-results-head p{margin:7px 0 0;color:#6f7c75;font-size:11px}
+.filter-results-actions{display:flex;align-items:center;gap:14px}
+.filter-results-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px 12px}
+.filter-results-grid .movie-card{min-width:0}
+.filter-results-grid .movie-caption h3{font-size:12px}
+.filter-results-wrap:not(.has-results){display:none}
+.filter-empty{grid-column:1/-1;min-height:120px;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.08);border-radius:16px;color:#68746e;font-size:11px;background:rgba(255,255,255,.02)}
+.text-btn:disabled{opacity:.38;cursor:default}
+@media (max-width:1200px){
+  .filter-results-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media (max-width:980px){
+  .filter-results-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:700px){
+  .filter-results-wrap{margin:14px 4vw 18px}
+  .filter-results-head{align-items:start;flex-direction:column;gap:10px}
+  .filter-results-actions{width:100%;justify-content:space-between}
+  .filter-results-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .filter-results-wrap{scroll-margin-top:76px}
+}
+
 /* content / sections */
 .dashboard{padding:36px 6vw 80px}
 .section-block{margin-top:48px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .7s var(--ease)}
