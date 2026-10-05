@@ -1,0 +1,77 @@
+name: CINEPLAY QA and GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install backend dependencies
+        run: pip install -r requirements.txt
+
+      - name: Python syntax check
+        run: python -m compileall -q backend scripts
+
+      - name: Train model artifact
+        run: python scripts/train_model.py
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: JavaScript syntax check
+        run: node --check assets/app.js
+
+      - name: Static asset contract check
+        run: |
+          test -f index.html
+          test -f assets/styles.css
+          test -f assets/app.js
+          test -f data/movies.js
+          test -f data/movies.json
+          test -f manifest.webmanifest
+          test -f assets/cineplay-icon.svg
+          test -f .nojekyll
+
+  deploy:
+    needs: qa
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
