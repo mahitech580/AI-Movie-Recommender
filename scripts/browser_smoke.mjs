@@ -139,7 +139,13 @@ async function testDesktop(browser) {
       return !src || src.startsWith("data:image/svg+xml") || (img.naturalWidth || 0) < 20;
     }).length
   );
-  if (brokenIndia > 0) throw new Error("India catalogue has "+brokenIndia+" missing/broken poster images after eager load");
+  if (brokenIndia > 0) {
+    const brokenDetails = await page.locator("#filterResultsGrid .movie-card").evaluateAll(cards => cards
+      .map(card => ({title:card.getAttribute("aria-label") || card.querySelector("h3")?.textContent?.trim() || "", src:card.querySelector("img")?.getAttribute("src") || ""}))
+      .filter(x => !x.src || x.src.startsWith("data:image/svg+xml") || !x.src.startsWith("http")));
+    console.log("BROKEN INDIA POSTERS", JSON.stringify(brokenDetails, null, 2));
+    throw new Error("India catalogue has "+brokenIndia+" missing/broken poster images after eager load");
+  }
 
   // Search trigger must actually focus the search field and route to Discover.
   await page.locator("#searchTrigger").click();
