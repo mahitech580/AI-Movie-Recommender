@@ -1383,7 +1383,14 @@
       const topbar=document.querySelector(".topbar");
       const offset=(topbar?.getBoundingClientRect().height || 72) + 12;
       const top=Math.max(0,window.scrollY + section.getBoundingClientRect().top - offset);
-      window.scrollTo({top,behavior:"auto"});
+
+      // Force an instant jump here. The document normally uses smooth scrolling,
+      // but the search control must land on Discover immediately and reliably.
+      const root=document.documentElement;
+      const previousScrollBehavior=root.style.scrollBehavior;
+      root.style.scrollBehavior="auto";
+      window.scrollTo({top,left:0,behavior:"auto"});
+      requestAnimationFrame(()=>{ root.style.scrollBehavior=previousScrollBehavior; });
     }
 
     window.setTimeout(()=>{
