@@ -1358,3 +1358,269 @@ kbd{
     transition:none!important;
   }
 }
+
+
+/* =========================================================
+   DEEP CINEMA BACKDROP LAYER — MORE VISUAL BACKGROUND DEPTH
+   ========================================================= */
+
+body{
+  min-height:100vh;
+  position:relative;
+  background-color:var(--jet-black);
+}
+
+/* Moving theater-light beams behind every section. */
+body::before{
+  content:"";
+  position:fixed;
+  z-index:-10;
+  inset:-20%;
+  pointer-events:none;
+  background:
+    conic-gradient(
+      from 188deg at 50% 14%,
+      transparent 0deg,
+      rgba(98,200,255,.08) 12deg,
+      transparent 25deg,
+      rgba(148,135,255,.07) 39deg,
+      transparent 52deg,
+      rgba(255,43,199,.065) 67deg,
+      transparent 80deg,
+      rgba(255,207,104,.055) 94deg,
+      transparent 108deg,
+      rgba(185,255,63,.055) 122deg,
+      transparent 138deg,
+      rgba(255,39,94,.06) 154deg,
+      transparent 176deg,
+      transparent 360deg
+    );
+  filter:blur(34px);
+  transform-origin:50% 12%;
+  animation:cinemaBeams 22s ease-in-out infinite alternate;
+  opacity:.72;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  z-index:-11;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% -6%,rgba(255,255,255,.075),transparent 12%),
+    radial-gradient(circle at 18% 28%,rgba(148,135,255,.07),transparent 18%),
+    radial-gradient(circle at 82% 38%,rgba(98,200,255,.065),transparent 20%),
+    radial-gradient(circle at 8% 74%,rgba(255,90,54,.055),transparent 18%),
+    radial-gradient(circle at 92% 77%,rgba(255,43,199,.055),transparent 18%),
+    linear-gradient(180deg,transparent 0 74%,rgba(2,2,3,.48));
+  background-blend-mode:screen,screen,screen,screen,screen,normal;
+}
+
+@keyframes cinemaBeams{
+  0%{
+    transform:rotate(-7deg) scale(1.04);
+    opacity:.55;
+  }
+  50%{
+    transform:rotate(4deg) scale(1.11);
+    opacity:.85;
+  }
+  100%{
+    transform:rotate(-2deg) scale(1.08);
+    opacity:.62;
+  }
+}
+
+/* A subtle projection-room grid, visible mostly in empty space. */
+.dashboard{
+  position:relative;
+  isolation:isolate;
+}
+
+.dashboard::before{
+  content:"";
+  position:absolute;
+  z-index:-3;
+  left:-8vw;
+  right:-8vw;
+  top:-5%;
+  height:112%;
+  pointer-events:none;
+  opacity:.17;
+  background-image:
+    linear-gradient(rgba(98,200,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(148,135,255,.035) 1px,transparent 1px),
+    radial-gradient(circle at 50% 0%,rgba(255,207,104,.08),transparent 35%);
+  background-size:64px 64px,64px 64px,100% 100%;
+  mask-image:linear-gradient(180deg,transparent 0%,#000 8%,#000 85%,transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 8%,#000 85%,transparent 100%);
+}
+
+.dashboard::after{
+  content:"";
+  position:absolute;
+  z-index:-4;
+  left:-15vw;
+  right:-15vw;
+  top:13%;
+  height:76%;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 26% 20%,rgba(148,135,255,.09),transparent 23%),
+    radial-gradient(ellipse at 76% 31%,rgba(70,107,255,.09),transparent 25%),
+    radial-gradient(ellipse at 44% 57%,rgba(255,22,179,.055),transparent 22%),
+    radial-gradient(ellipse at 66% 78%,rgba(185,255,63,.045),transparent 21%);
+  filter:blur(42px);
+  animation:auroraRooms 30s ease-in-out infinite alternate;
+}
+
+@keyframes auroraRooms{
+  0%{transform:translate3d(-2%,0,0) scale(1)}
+  50%{transform:translate3d(2%,-1%,0) scale(1.05)}
+  100%{transform:translate3d(-1%,2%,0) scale(1.02)}
+}
+
+/* Background “panels” give long pages more visual rhythm. */
+.section-block{
+  position:relative;
+}
+
+.section-block::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:-2.2vw;
+  right:-2.2vw;
+  top:-18px;
+  bottom:-18px;
+  border-radius:24px;
+  pointer-events:none;
+  opacity:0;
+  background:
+    radial-gradient(circle at 8% 30%,var(--section-color,rgba(148,135,255,.07)),transparent 25%),
+    linear-gradient(135deg,rgba(255,255,255,.018),transparent 28%,rgba(255,255,255,.008));
+  transition:opacity .55s ease;
+}
+
+.section-block:nth-child(3n+1)::before{--section-color:rgba(148,135,255,.075)}
+.section-block:nth-child(3n+2)::before{--section-color:rgba(98,200,255,.065)}
+.section-block:nth-child(3n)::before{--section-color:rgba(255,43,199,.06)}
+.section-block:hover::before{opacity:.78}
+
+/* Spotlight receives a stronger “projector wall” effect. */
+.home-spotlight{
+  position:relative;
+  overflow:visible;
+}
+.home-spotlight::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:-2;
+  left:7%;
+  top:-80px;
+  width:58%;
+  height:210px;
+  background:
+    conic-gradient(
+      from 270deg at 50% 0%,
+      transparent 0 18deg,
+      rgba(199,165,255,.11) 31deg,
+      rgba(98,200,255,.07) 44deg,
+      transparent 61deg,
+      rgba(255,43,199,.07) 78deg,
+      transparent 100deg
+    );
+  filter:blur(24px);
+  transform-origin:50% 0%;
+  animation:spotlightSweep 15s ease-in-out infinite alternate;
+}
+
+@keyframes spotlightSweep{
+  from{transform:rotate(-5deg) scale(.96);opacity:.42}
+  to{transform:rotate(8deg) scale(1.08);opacity:.75}
+}
+
+/* Add a film-sprocket texture to wide empty zones. */
+.site-footer{
+  background:
+    linear-gradient(180deg,transparent,rgba(2,2,3,.4)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 54px,
+      rgba(199,165,255,.018) 54px 55px
+    );
+}
+
+/* Stronger edge lighting around catalog surfaces. */
+.search-dock,
+.filter-results-wrap,
+.dashboard{
+  background-image:
+    radial-gradient(circle at 50% 0%,rgba(199,165,255,.035),transparent 26%);
+}
+
+.filter-results-wrap{
+  position:relative;
+}
+
+.filter-results-wrap::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(148,135,255,.35),
+    rgba(98,200,255,.28),
+    rgba(255,43,199,.24),
+    rgba(255,207,104,.25),
+    rgba(185,255,63,.22),
+    transparent
+  );
+  opacity:.6;
+}
+
+/* Turn poster rails into floating “screens” against the backdrop. */
+.rail-shell{
+  padding:3px 2px 2px;
+  border-radius:20px;
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.008),
+    transparent 46%,
+    rgba(148,135,255,.012)
+  );
+}
+
+/* Mobile: keep the atmosphere but reduce fixed-layer intensity. */
+@media (max-width:700px){
+  body::before{
+    opacity:.42;
+    filter:blur(46px);
+  }
+  .dashboard::before{
+    opacity:.1;
+    background-size:48px 48px,48px 48px,100% 100%;
+  }
+  .dashboard::after{
+    opacity:.65;
+  }
+  .section-block::before{
+    left:-3vw;
+    right:-3vw;
+    border-radius:18px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  body::before,
+  .dashboard::after,
+  .home-spotlight::after{
+    animation:none!important;
+  }
+}
