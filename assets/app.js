@@ -1376,13 +1376,25 @@
     const section=$("discover");
     const input=$("searchInput");
     $("commandPalette")?.classList.add("hidden");
-    if(section) section.scrollIntoView({behavior:"smooth",block:"start"});
+
+    // QA + accessibility: the search trigger must complete navigation
+    // deterministically instead of waiting on a long smooth-scroll animation.
+    if(section){
+      const topbar=document.querySelector(".topbar");
+      const offset=(topbar?.getBoundingClientRect().height || 72) + 12;
+      const top=Math.max(0,window.scrollY + section.getBoundingClientRect().top - offset);
+      window.scrollTo({top,behavior:"auto"});
+    }
+
     window.setTimeout(()=>{
-      if(input){ input.focus(); input.select(); }
+      if(input){
+        input.focus({preventScroll:true});
+        input.select();
+      }
       const box=document.querySelector(".search-box");
       box?.classList.add("is-focused");
       window.setTimeout(()=>box?.classList.remove("is-focused"),1200);
-    },260);
+    },80);
   }
 
   function openCommand() {
