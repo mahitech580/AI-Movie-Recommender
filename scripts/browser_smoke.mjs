@@ -196,15 +196,16 @@ async function testDesktop(browser) {
 
   // Search trigger must actually focus the search field and route to Discover.
   await page.locator("#searchTrigger").click();
-  await sleep(350);
+  await page.waitForFunction(() => {
+    const input=document.querySelector("#searchInput");
+    const section=document.querySelector("#discover");
+    if(!input || !section || document.activeElement!==input) return false;
+    const rect=section.getBoundingClientRect();
+    return rect.bottom>0 && rect.top<window.innerHeight;
+  }, null, {timeout:3000});
   if (await page.locator("#searchInput").evaluate(el => document.activeElement !== el)) {
     throw new Error("Search button did not focus search input");
   }
-  const discoverVisible = await page.locator("#discover").evaluate(el => {
-    const r=el.getBoundingClientRect();
-    return r.bottom>0 && r.top<window.innerHeight;
-  });
-  if(!discoverVisible){ const state=await page.locator("#discover").evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,height:el.getBoundingClientRect().height,scrollY:window.scrollY,viewport:window.innerHeight,behavior:getComputedStyle(document.documentElement).scrollBehavior})); throw new Error("Search button did not bring Discover into view: "+JSON.stringify(state)); }
 
   const search = page.locator("#searchInput");
   await search.fill("matrix");
@@ -214,6 +215,18 @@ async function testDesktop(browser) {
     throw new Error("local movie search did not surface Matrix");
   }
 
+
+  // Catalog Pulse renders actual aggregates derived from the movie catalog.
+  await page.waitForFunction(() => {
+    const count=document.querySelector("#insightMovieCount");
+    const genres=document.querySelectorAll("#genreChart .catalog-genre-row").length;
+    const decades=document.querySelectorAll("#decadeChart .catalog-decade-column").length;
+    const artwork=document.querySelectorAll("#artworkChart .catalog-artwork-row").length;
+    return Boolean(count && Number.parseInt(count.textContent.replace(/,/g,""),10)>0 &&
+      genres>0 && decades>0 && artwork===3);
+  }, null, {timeout:6000});
+  const pulseCards=await page.locator("#catalogPulse .catalog-chart-card").count();
+  if(pulseCards!==3) throw new Error("Catalog Pulse did not render all three charts");
 
   // AI Studio stays useful without an external API and exposes working controls.
   await page.locator("#studioQuery").fill("space exploration time");

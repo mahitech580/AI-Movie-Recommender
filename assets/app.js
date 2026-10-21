@@ -621,7 +621,8 @@
         const genre=String(rawGenre||"").trim();
         if(genre) genreCounts.set(genre,(genreCounts.get(genre)||0)+1);
       }
-      const releaseYear=Number(movie.year || String(movie.release_date||"").slice(0,4));
+      const directYear=Number(movie.year);
+      const releaseYear=Number.isFinite(directYear)&&directYear>=1870?directYear:Number(String(movie.release_date||"").slice(0,4));
       if(Number.isFinite(releaseYear)&&releaseYear>=1870&&releaseYear<=2100) {
         const decade=Math.floor(releaseYear/10)*10;
         decadeCounts.set(decade,(decadeCounts.get(decade)||0)+1);
@@ -1585,7 +1586,7 @@
 
   function normalizeRouteHash() {
     const raw=(window.location.hash || "#home").replace(/^#\/?/,"").split(/[?&]/)[0].trim() || "home";
-    return ["home","discover","web-series","my-list","activity"].includes(raw) ? raw : "home";
+    return ["home","discover","intelligenceStudio","catalogPulse","web-series","my-list","activity"].includes(raw) ? raw : "home";
   }
 
   function syncNavigation(scroll=true) {

@@ -495,3 +495,10 @@ References: Render Blueprint specification https://render.com/docs/blueprint-spe
 ### PyTorch and Hugging Face transformer classifier
 
 An additional optional multi-label genre experiment fine-tunes a pretrained DistilBERT sequence-classification head with PyTorch BCE loss. It uses title + synopsis text only, removes rare/empty targets, fixes a random train/test split, and reports micro/macro precision, recall and F1 against a prevalence baseline. Install requirements-transformers.txt, then run python scripts/train_transformer_genre_model.py --epochs 2 --max-rows 1000. The pretrained model and saved weights stay under the ignored .cache/ directory; only reports/transformer_genre_metrics.json is suitable for version control. The classifier is an experiment, not an auto-deployed endpoint.
+
+
+## Catalog Pulse visualization
+
+The homepage includes a responsive, client-rendered Catalog Pulse. It computes the active movie count, median valid rating, poster coverage, language diversity, top-genre counts, release-decade profile, and poster/backdrop/overview coverage from the current local movie catalog. The source pill changes when TMDB live mode is active, and a successful live synchronization refreshes the metrics. The charts are based on actual records—not sample values.
+
+The frontend uses remote TMDB poster/backdrop URLs when available, with the existing failed-image fallback and visible TMDB attribution. Official application authentication guidance: https://developer.themoviedb.org/docs/authentication-application.
