@@ -191,3 +191,34 @@ def profile(user_id: str, db: Session = Depends(get_db)):
 
     top = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:8]
     return {"user_id": user_id, "events": len(rows), "top_genres": [{"genre": k, "weight": round(v, 2)} for k, v in top]}
+
+@app.get("/api/analytics/catalog")
+def catalog_analytics():
+    """Aggregated catalog EDA and data-quality indicators for dashboards."""
+    from backend.analytics import build_catalog_analytics
+    return build_catalog_analytics(MOVIES)
+
+
+@app.get("/api/analytics/engagement")
+def engagement_analytics(db: Session = Depends(get_db)):
+    """Summarize anonymous engagement without exposing raw profile histories."""
+    event_rows = db.query(
+        Interaction.event_type, func.count(Interaction.id)
+    ).group_by(Interaction.event_type).all()
+    top_rows = db.query(
+        Interaction.movie_id, func.count(Interaction.id).label("events")
+    ).group_by(Interaction.movie_id).order_by(func.count(Interaction.id).desc()).limit(10).all()
+    by_id = {int(movie["id"]): movie for movie in MOVIES}
+    return {
+        "total_events": sum(int(count) for _, count in event_rows),
+        "by_event_type": [
+            {"event_type": str(event_type), "count": int(count)}
+            for event_type, count in event_rows
+        ],
+        "top_titles": [
+            {"movie_id": int(movie_id),
+             "title": by_id.get(int(movie_id), {}).get("title", "Unknown title"),
+             "events": int(count)}
+            for movie_id, count in top_rows
+        ],
+    }

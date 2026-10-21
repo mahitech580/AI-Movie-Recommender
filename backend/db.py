@@ -50,20 +50,26 @@ def get_db():
         db.close()
 
 def seed_movies(db: Session, movies: list[dict]) -> None:
-    existing = {int(row[0]) for row in db.query(MovieRecord.id).all()}
-    rows = []
-    for m in movies:
-        mid = int(m["id"])
-        if mid in existing:
-            continue
-        rows.append(MovieRecord(
-            id=mid, title=m["title"], year=str(m.get("year","—")),
-            genres=m.get("genres",[]), tags=m.get("tags",[]),
-            overview=m.get("overview",""), rating=float(m.get("rating",0) or 0),
-            votes=int(m.get("votes",0) or 0), popularity=float(m.get("popularity",0) or 0),
-            language=m.get("language","en"), poster=m.get("poster",""),
-            backdrop=m.get("backdrop",""), release_date=m.get("release_date","")
-        ))
-    if rows:
-        db.add_all(rows)
-        db.commit()
+    """Upsert catalog rows so live metadata refreshes update the SQL source of truth."""
+    existing = {int(row.id): row for row in db.query(MovieRecord).all()}
+    for movie in movies:
+        movie_id = int(movie["id"])
+        row = existing.get(movie_id)
+        if row is None:
+            row = MovieRecord(id=movie_id, title=str(movie.get("title", "")))
+            db.add(row)
+            existing[movie_id] = row
+
+        row.title = str(movie.get("title", ""))
+        row.year = str(movie.get("year", "—"))
+        row.genres = movie.get("genres", []) or []
+        row.tags = movie.get("tags", []) or []
+        row.overview = str(movie.get("overview", "") or "")
+        row.rating = float(movie.get("rating", 0) or 0)
+        row.votes = int(movie.get("votes", 0) or 0)
+        row.popularity = float(movie.get("popularity", 0) or 0)
+        row.language = str(movie.get("language", "und") or "und")
+        row.poster = str(movie.get("poster", "") or "")
+        row.backdrop = str(movie.get("backdrop", "") or "")
+        row.release_date = str(movie.get("release_date", "") or "")
+    db.commit()

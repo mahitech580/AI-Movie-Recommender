@@ -1,0 +1,35 @@
+name: CINEPLAY model and data-pipeline tests
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "backend/**"
+      - "scripts/**"
+      - "tests/**"
+      - "data/movies.json"
+      - "requirements.txt"
+      - "requirements-eda.txt"
+      - ".github/workflows/model-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install backend and test dependencies
+        run: pip install -r requirements.txt
+      - name: Compile Python modules
+        run: python -m compileall -q backend scripts tests
+      - name: Test data ETL, analytics, and ranking metrics
+        run: PYTHONPATH=. pytest -q tests
+      - name: Train catalog feature artifact
+        run: python scripts/train_model.py

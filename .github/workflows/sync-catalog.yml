@@ -1,0 +1,61 @@
+name: Sync live TMDB movie catalog
+
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: Pages per TMDB feed (1-10)
+        required: true
+        default: "3"
+        type: string
+      max_movies:
+        description: Target maximum size (curated titles are preserved)
+        required: true
+        default: "1200"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-validate:
+    runs-on: ubuntu-latest
+    env:
+      TMDB_BEARER_TOKEN: ${{ secrets.TMDB_BEARER_TOKEN }}
+      TMDB_SYNC_PAGES: ${{ inputs.pages }}
+      TMDB_MAX_MOVIES: ${{ inputs.max_movies }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install project and EDA dependencies
+        run: pip install -r requirements.txt -r requirements-eda.txt
+      - name: Import live metadata and poster URLs
+        run: python scripts/sync_tmdb_catalog.py
+      - name: Build EDA tables and figures
+        run: python scripts/analyze_catalog.py
+      - name: Validate data pipeline and model
+        run: |
+          python -m compileall -q backend scripts tests
+          PYTHONPATH=. pytest -q tests
+          python scripts/train_model.py
+      - name: Validate generated JavaScript catalog
+        run: node --check data/movies.js
+      - name: Commit catalog and reports directly to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/movies.json data/movies.js reports/
+          if git diff --cached --quiet; then
+            echo "Catalog and reports are already current."
+          else
+            git commit -m "data: sync TMDB catalog and EDA reports"
+            git push origin HEAD:main
+          fi

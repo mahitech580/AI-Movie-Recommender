@@ -375,3 +375,49 @@ The current presentation pass specifically targets the “black screen” openin
 CINEPLAY now includes an automated Playwright smoke test in GitHub Actions. The test starts the static site locally and verifies the real browser runtime on desktop and mobile: the cinematic loader releases, the hero initializes, movie cards render, title details open and close, My List persists to localStorage, local search surfaces a known title, and the mobile navigation drawer opens and closes. Browser console/page errors fail the test.
 
 The frontend also uses versioned asset URLs and an emergency loader-release guard so stale browser caches or a JavaScript loading/runtime failure cannot leave visitors permanently trapped behind the black cinematic opening screen.
+
+## Live catalog ETL, poster imagery, and reproducible evaluation
+
+The checked-in dataset remains the offline seed. The new sync pipeline can refresh it from TMDB movie feeds for trending, popular, top-rated, current releases, upcoming releases, and Indian-origin discovery. It retains hand-curated order/tags and adds titles with live poster/backdrop CDN URLs. Authentication is read only from an environment variable; the token is never written into JSON, JavaScript, reports, or logs.
+
+### Set up the live data import
+
+1. Create a TMDB API Read Access Token from the TMDB account API settings.
+2. Configure TMDB_BEARER_TOKEN as an environment variable locally or as a repository Actions secret with that exact name.
+3. Run from the repository root:
+
+    python -m pip install -r requirements.txt -r requirements-eda.txt
+    python scripts/sync_tmdb_catalog.py --pages 3 --max-movies 1200
+    python scripts/analyze_catalog.py
+    PYTHONPATH=. pytest -q tests
+
+The importer generates both data/movies.json (Python/API data source) and data/movies.js (static GitHub Pages source) from a consistent normalized catalog. Poster/backdrop images are hotlinked from TMDB's image CDN rather than checking large remote assets into Git. The existing frontend image-failure fallback remains in place.
+
+For a managed sync, use GitHub Actions → Sync live TMDB movie catalog → Run workflow. It commits validated catalog/report changes directly to main. The workflow requires the TMDB_BEARER_TOKEN secret and is manual by design, so API consumption and changes remain controlled. See the official TMDB application authentication documentation: https://developer.themoviedb.org/docs/authentication-application.
+
+### EDA and API analytics
+
+Run python scripts/analyze_catalog.py to create reports/catalog_summary.json, reports/catalog_features.csv, and charts for genre counts, rating distributions, release-year coverage, and rating versus popularity.
+
+New backend endpoints:
+
+- GET /api/analytics/catalog — numeric statistics, genre/language/rating distributions, poster/overview coverage, duplicate checks, and rating/popularity correlation.
+- GET /api/analytics/engagement — aggregate event counts and most-engaged titles without exposing raw user interaction histories.
+
+### Ranking evaluation
+
+scripts/evaluate_recommender.py measures Precision@K, Recall@K, NDCG@K, Hit Rate@K, and catalog coverage using a temporal per-user holdout. It requires real, consented interaction events; it deliberately does not manufacture a quality score from catalog metadata alone.
+
+Export an authorized local interaction table to a CSV with user_id, movie_id, event_type, value, and created_at columns, then run:
+
+    python scripts/evaluate_recommender.py --interactions path/to/interactions.csv --k 10
+
+Only play/list events count as positive relevance labels. Review the output report and document the evaluation size/method before putting metrics on a resume. Do not commit real user event exports.
+
+### SQL analytics and skills actually demonstrated
+
+sql/analytics.sql provides catalog-quality summaries, event-funnel aggregations, top titles, a SQL window-function query, and a Bayesian weighted-rating example. Startup now upserts changed catalog metadata into SQL, so refreshed online data does not leave the SQL catalog stale.
+
+The code concretely demonstrates Python, SQL/SQLAlchemy, NumPy, Pandas, descriptive statistics, data cleaning, feature engineering, EDA, TF-IDF/NLP, cosine similarity, KNN, hybrid recommendation, collaborative interaction signals, ranking metrics, FastAPI/REST, SQLite/PostgreSQL, optional MongoDB events, Docker, GitHub Actions, automated tests, and data visualization.
+
+CNN/RNN/LSTM training, computer-vision model training, transformer fine-tuning, LLM prompting, RAG, and vector databases are not claimed as implemented by this metadata-based recommender. They should only be added if a separate feature with real data, tests, and evaluation is built.
