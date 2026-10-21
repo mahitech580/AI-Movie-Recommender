@@ -391,7 +391,7 @@ The checked-in dataset remains the offline seed. The new sync pipeline can refre
     python scripts/analyze_catalog.py
     PYTHONPATH=. pytest -q tests
 
-The importer generates both data/movies.json (Python/API data source) and data/movies.js (static GitHub Pages source) from a consistent normalized catalog. Poster/backdrop images are hotlinked from TMDB's image CDN rather than checking large remote assets into Git. The existing frontend image-failure fallback remains in place.
+The importer generates both data/movies.json (Python/API data source) and data/movies.js (static GitHub Pages source) from a consistent normalized catalog, then updates the catalog script's cache-busting query in index.html so visitors do not remain on a stale poster/title index. Poster/backdrop images are hotlinked from TMDB's image CDN rather than checking large remote assets into Git. The existing frontend image-failure fallback remains in place.
 
 For a managed sync, use GitHub Actions → Sync live TMDB movie catalog → Run workflow. It commits validated catalog/report changes directly to main. The workflow requires the TMDB_BEARER_TOKEN secret and is manual by design, so API consumption and changes remain controlled. See the official TMDB application authentication documentation: https://developer.themoviedb.org/docs/authentication-application.
 

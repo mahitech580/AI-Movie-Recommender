@@ -246,6 +246,20 @@ def write_catalog(movies: list[dict[str, Any]]) -> None:
     atomic_write(JSON_PATH, serialized)
     atomic_write(JS_PATH, js)
 
+    # Ensure browsers fetch the refreshed catalog instead of a cached movies.js.
+    # The app bundle itself is unchanged by a catalog-only refresh.
+    if INDEX_PATH.exists():
+        html = INDEX_PATH.read_text(encoding="utf-8")
+        cache_version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+        updated_html, replacements = re.subn(
+            r'data/movies\\.js\\?v=[^"\\']+',
+            f'data/movies.js?v=catalog-{cache_version}',
+            html,
+            count=1,
+        )
+        if replacements:
+            atomic_write(INDEX_PATH, updated_html)
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
