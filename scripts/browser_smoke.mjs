@@ -33,8 +33,12 @@ async function testDesktop(browser) {
   const soundtrack = page.locator("#musicDock");
   if (await soundtrack.count() !== 1) throw new Error("Night Changes music dock was not rendered");
   const musicSource = await page.locator("#nightChangesFrame").getAttribute("src");
-  if (!musicSource?.includes("youtube-nocookie.com/embed/syFZfO_wfMQ") || !musicSource.includes("autoplay=1")) {
-    throw new Error("Night Changes did not initialize with the official autoplay-enabled embed");
+  if (!musicSource?.includes("youtube.com/embed/syFZfO_wfMQ") || !musicSource.includes("autoplay=1") || !musicSource.includes("enablejsapi=1")) {
+    throw new Error("Night Changes did not initialize with the official autoplay-enabled player API");
+  }
+  const musicViewport = await page.locator("#nightChangesFrame").evaluate(frame => ({ width: frame.getBoundingClientRect().width, height: frame.getBoundingClientRect().height }));
+  if (musicViewport.width < 200 || musicViewport.height < 200) {
+    throw new Error(`Night Changes player viewport is too small (${musicViewport.width}x${musicViewport.height}); YouTube requires at least 200x200`);
   }
   if (await page.locator("#musicRetry").count() !== 1 || await page.locator("#musicMinimize").count() !== 1) {
     throw new Error("Night Changes playback controls are missing");
