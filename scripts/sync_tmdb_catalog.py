@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 JSON_PATH = DATA_DIR / "movies.json"
 JS_PATH = DATA_DIR / "movies.js"
+INDEX_PATH = ROOT / "index.html"
 API_BASE = "https://api.themoviedb.org/3"
 IMAGE_BASE = "https://image.tmdb.org/t/p"
 GENRES = {
@@ -252,7 +253,7 @@ def write_catalog(movies: list[dict[str, Any]]) -> None:
         html = INDEX_PATH.read_text(encoding="utf-8")
         cache_version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
         updated_html, replacements = re.subn(
-            r'data/movies\\.js\\?v=[^"\\']+',
+            r"""data/movies\.js\?v=[^"']+""",
             f'data/movies.js?v=catalog-{cache_version}',
             html,
             count=1,
