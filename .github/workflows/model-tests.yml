@@ -10,6 +10,13 @@ on:
       - "data/movies.json"
       - "requirements.txt"
       - "requirements-eda.txt"
+      - "requirements-ai.txt"
+      - "requirements-mlops.txt"
+      - "requirements-vision.txt"
+      - "requirements-deep-learning.txt"
+      - ".github/workflows/advanced-models.yml"
+      - ".github/workflows/poster-vision.yml"
+      - ".github/workflows/deep-learning.yml"
       - ".github/workflows/model-tests.yml"
   workflow_dispatch:
 
