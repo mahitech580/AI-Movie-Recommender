@@ -465,3 +465,17 @@ This optional TensorFlow/Keras experiment trains a multi-label genre classifier 
 Python, SQL, NumPy, Pandas, statistics, probability-informed ranking, EDA, feature engineering, scikit-learn, regression, classification, clustering, GridSearchCV, XGBoost (optional), Keras/TensorFlow (optional genre classifier), CNN/BiLSTM, NLP, TF-IDF, transformer embeddings (optional), vector search with Chroma (optional), retrieval-augmented generation with grounded sources, FastAPI/REST APIs, SQLite/PostgreSQL, optional MongoDB, Docker, Git/GitHub Actions, Pytest, model evaluation, MLflow (optional), OpenCV poster feature extraction, and visualization.
 
 These are intentionally separated into core and optional environments to keep the static GitHub Pages product usable and the backend install light. Do not list a metric in a resume until a run produces a real report; include the dataset, split, metric, and sample count. PyTorch-based model training, generic RNN/LSTM/CNN architectures, cloud-specific deployment, Flask, MySQL, and every item in a broad skills list are not automatically claimed just because a package could be installed.
+
+
+## AI Studio — live interface
+
+The home experience now includes an interactive AI Studio that keeps the existing cinematic shelves and regional filters intact. It provides prompt starters for moods/themes, a dynamic poster wall populated from the current catalog, semantic-search results when a FastAPI URL is configured, a local discovery fallback when the API is offline, and a source-listed Ask CINEPLAY response when the RAG endpoint is available. The UI also exposes the current catalog count and backend health state instead of silently depending on remote services.
+
+New optional workflows:
+- Frontend browser smoke test: .github/workflows/frontend-smoke.yml
+- Live TMDB refresh: .github/workflows/sync-catalog.yml
+- Predictive ML/MLflow: .github/workflows/advanced-models.yml
+- Poster vision: .github/workflows/poster-vision.yml
+- CNN/BiLSTM genre experiment: .github/workflows/deep-learning.yml
+
+See docs/RESEARCH_AND_ARCHITECTURE.md for technical-source links and architecture boundaries, and docs/RESUME_PLAYBOOK.md for accurate project bullets and model-metric guidance.

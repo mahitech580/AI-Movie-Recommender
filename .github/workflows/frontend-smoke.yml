@@ -1,0 +1,39 @@
+name: CINEPLAY frontend and browser smoke tests
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "index.html"
+      - "assets/**"
+      - "data/movies.js"
+      - "data/series.js"
+      - "scripts/browser_smoke.mjs"
+      - ".github/workflows/frontend-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/app.js
+          node --check scripts/browser_smoke.mjs
+          node --check data/movies.js
+          node --check data/series.js
+      - name: Install Playwright
+        run: npm install --no-save playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Serve static frontend
+        run: python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/cineplay-http.log 2>&1 & sleep 2
+      - name: Browser smoke tests
+        run: node scripts/browser_smoke.mjs

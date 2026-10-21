@@ -11,7 +11,11 @@ from sklearn.metrics import f1_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MultiLabelBinarizer
 
-from scripts.train_predictive_models import DEFAULT_SOURCE, load_dataset
+try:
+    from scripts.train_predictive_models import DEFAULT_SOURCE, load_dataset
+except ModuleNotFoundError:
+    # Also support direct execution where Python puts scripts/ at sys.path[0].
+    from train_predictive_models import DEFAULT_SOURCE, load_dataset
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "reports" / "deep_genre_metrics.json"
