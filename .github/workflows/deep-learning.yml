@@ -1,0 +1,45 @@
+name: CINEPLAY deep genre classifier
+
+on:
+  workflow_dispatch:
+    inputs:
+      epochs:
+        description: Maximum training epochs (early stopping is enabled)
+        required: true
+        default: "6"
+        type: string
+      max_rows:
+        description: Development row cap (0 uses all available rows)
+        required: true
+        default: "0"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  deep-genre:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install TensorFlow and ML dependencies
+        run: pip install -r requirements-deep-learning.txt
+      - name: Train CNN and BiLSTM synopsis genre classifier
+        run: python scripts/train_deep_genre_model.py --epochs ${{ inputs.epochs }} --max-rows ${{ inputs.max_rows }}
+      - name: Commit evaluation report to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/deep_genre_metrics.json
+          if git diff --cached --quiet; then
+            echo "Deep-learning metrics have not changed."
+          else
+            git commit -m "ml: update CNN-BiLSTM genre classification metrics"
+            git push origin HEAD:main
+          fi

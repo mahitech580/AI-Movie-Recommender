@@ -1,0 +1,48 @@
+name: CINEPLAY predictive ML and MLOps
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/train_predictive_models.py"
+      - "backend/analytics.py"
+      - "requirements-mlops.txt"
+      - ".github/workflows/advanced-models.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  train-models:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install EDA, XGBoost and MLflow
+        run: pip install -r requirements-mlops.txt
+      - name: Run catalog EDA
+        run: python scripts/analyze_catalog.py
+      - name: Train and evaluate regression, classification and clustering
+        env:
+          CINEPLAY_LOG_MLFLOW: "true"
+          MLFLOW_TRACKING_URI: file:./.cache/mlruns
+        run: python scripts/train_predictive_models.py
+      - name: Test repository modules
+        run: PYTHONPATH=. pytest -q tests
+      - name: Commit reports to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "ml: refresh predictive model and EDA reports"
+            git push origin HEAD:main
+          fi

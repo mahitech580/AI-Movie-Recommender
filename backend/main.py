@@ -222,3 +222,23 @@ def engagement_analytics(db: Session = Depends(get_db)):
             for movie_id, count in top_rows
         ],
     }
+
+class AskQuestionIn(BaseModel):
+    question: str = Field(min_length=3, max_length=1200)
+    top_k: int = Field(default=5, ge=1, le=10)
+
+
+@app.get("/api/semantic/search")
+def semantic_search(q: str = Query(min_length=2, max_length=250),
+                    limit: int = Query(5, ge=1, le=20)):
+    """Find films from natural-language plot, theme, language, and genre descriptions."""
+    from backend.semantic import search_catalog
+    response = search_catalog(q, MOVIES, limit)
+    return {"query": q, **response}
+
+
+@app.post("/api/ai/ask")
+def movie_question(payload: AskQuestionIn):
+    """Ground answers in catalog retrieval; optional LLM generation cites retrieved titles."""
+    from backend.rag import answer_question
+    return answer_question(payload.question, MOVIES, payload.top_k)

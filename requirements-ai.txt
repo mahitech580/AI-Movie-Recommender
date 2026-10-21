@@ -1,0 +1,1 @@
+-r requirements.txt\nsentence-transformers>=3.4,<6\nchromadb>=0.6,<2\nlangchain-core>=0.3,<2\n

@@ -421,3 +421,47 @@ sql/analytics.sql provides catalog-quality summaries, event-funnel aggregations,
 The code concretely demonstrates Python, SQL/SQLAlchemy, NumPy, Pandas, descriptive statistics, data cleaning, feature engineering, EDA, TF-IDF/NLP, cosine similarity, KNN, hybrid recommendation, collaborative interaction signals, ranking metrics, FastAPI/REST, SQLite/PostgreSQL, optional MongoDB events, Docker, GitHub Actions, automated tests, and data visualization.
 
 CNN/RNN/LSTM training, computer-vision model training, transformer fine-tuning, LLM prompting, RAG, and vector databases are not claimed as implemented by this metadata-based recommender. They should only be added if a separate feature with real data, tests, and evaluation is built.
+
+## Advanced model suite: predictive ML, grounded RAG, and poster vision
+
+CINEPLAY now has optional experiments around the movie catalog instead of a technology list with no implementation. The lightweight recommender API still works without the optional packages.
+
+### Revenue regression, rating classification, and clustering
+
+Install the experiment stack and run:
+
+    python -m pip install -r requirements-mlops.txt
+    python scripts/train_predictive_models.py
+
+The script downloads a public TMDB 5000 metadata snapshot into the ignored .cache folder, applies JSON/number/date cleaning and genre/language feature engineering, tunes Random Forest hyperparameters with GridSearchCV, and reports held-out MAE/RMSE/R² for revenue regression plus precision/recall/F1/ROC-AUC for a high-rating classification task. KMeans clustering reports cluster sizes, average ratings/popularity, genre profiles, and a silhouette score. XGBoost is used as an additional regressor when installed. MLflow tracking is optional via CINEPLAY_LOG_MLFLOW=true and MLFLOW_TRACKING_URI. The downloaded source file and local tracking directory are not committed.
+
+The fixed classification label is vote_average >= 7.0. vote_average itself is never included as a predictor. Revenue is modeled using log1p during training and evaluated in the original revenue scale; this is a dataset exercise, not a guarantee of future box-office results.
+
+### Semantic search and RAG-style movie Q&A
+
+- GET /api/semantic/search?q=ghosts%20and%20supernatural%20mystery
+- POST /api/ai/ask with {"question":"Recommend atmospheric space movies","top_k":5}
+
+The default search uses local TF-IDF features. Install requirements-ai.txt to opt into Hugging Face SentenceTransformer embeddings and a persistent Chroma vector store. With OPENAI_API_KEY and OPENAI_MODEL configured, the Q&A endpoint uses retrieved title/synopsis evidence as context for an OpenAI-compatible chat-completions endpoint; without credentials it returns a transparent retrieval-only answer. Returned sources link to catalog titles/TMDB pages. Credentials are read from the environment and must not be committed. RAG prompts instruct the model not to follow instructions embedded in retrieved descriptions and not to invent catalog facts.
+
+### Online poster computer vision
+
+Run python -m pip install -r requirements-vision.txt and then:
+
+    python scripts/analyze_poster_art.py --limit 150
+
+The script fetches remote TMDB poster URLs, extracts HSV color histograms, brightness, contrast, saturation, aspect ratio, and edge density with OpenCV, then uses KMeans to cluster poster styles. Only compact numeric features and cluster summaries are written; remote poster image files are not stored. A manually triggered GitHub Actions workflow can refresh these reports on main.
+
+### Deep-learning synopsis genre classification
+
+Install requirements-deep-learning.txt and run:
+
+    python scripts/train_deep_genre_model.py --epochs 6
+
+This optional TensorFlow/Keras experiment trains a multi-label genre classifier from title/overview text using an embedding layer, Conv1D, and bidirectional LSTM, with early stopping, dropout, a deterministic split, and micro/macro F1 evaluation. The model/tokenizer artifacts remain in the ignored .cache folder; only the evaluation report is suitable for version control. This is a catalog genre-classification task, not a movie-rating or recommendation-accuracy claim.
+
+### Relevant resume skills supported by this repository
+
+Python, SQL, NumPy, Pandas, statistics, probability-informed ranking, EDA, feature engineering, scikit-learn, regression, classification, clustering, GridSearchCV, XGBoost (optional), Keras/TensorFlow (optional genre classifier), CNN/BiLSTM, NLP, TF-IDF, transformer embeddings (optional), vector search with Chroma (optional), retrieval-augmented generation with grounded sources, FastAPI/REST APIs, SQLite/PostgreSQL, optional MongoDB, Docker, Git/GitHub Actions, Pytest, model evaluation, MLflow (optional), OpenCV poster feature extraction, and visualization.
+
+These are intentionally separated into core and optional environments to keep the static GitHub Pages product usable and the backend install light. Do not list a metric in a resume until a run produces a real report; include the dataset, split, metric, and sample count. PyTorch-based model training, generic RNN/LSTM/CNN architectures, cloud-specific deployment, Flask, MySQL, and every item in a broad skills list are not automatically claimed just because a package could be installed.

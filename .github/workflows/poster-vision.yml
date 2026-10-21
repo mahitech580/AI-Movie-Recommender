@@ -1,0 +1,40 @@
+name: CINEPLAY poster computer vision
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Maximum remote poster images to analyze
+        required: true
+        default: "120"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  poster-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install poster CV dependencies
+        run: pip install -r requirements-vision.txt
+      - name: Download and analyze online poster images
+        run: python scripts/analyze_poster_art.py --limit ${{ inputs.limit }}
+      - name: Commit compact feature report to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/poster_visual_features.csv reports/poster_cluster_summary.json
+          if git diff --cached --quiet; then
+            echo "Poster feature report is unchanged."
+          else
+            git commit -m "vision: refresh poster style clustering report"
+            git push origin HEAD:main
+          fi
