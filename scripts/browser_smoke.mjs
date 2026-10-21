@@ -30,6 +30,17 @@ async function testDesktop(browser) {
   if (!heroTitle) throw new Error("hero title did not initialize");
   if (cards < 10) throw new Error("movie rails rendered fewer than 10 cards");
 
+  const startupBindings = await page.evaluate(() => ({
+    filterRowBound: document.querySelector("#filterRow")?.dataset.bound || "missing",
+    paginationBound: document.querySelector("#filterShowMore")?.dataset.paginationBound || "missing",
+    activeFilter: document.querySelector("#filterRow .filter-chip.active")?.dataset.filter || "missing",
+    appScripts: Array.from(document.scripts).map(script => script.getAttribute("src")).filter(Boolean)
+  }));
+  if (startupBindings.filterRowBound !== "1" || startupBindings.paginationBound !== "1") {
+    throw new Error("CINEPLAY event setup did not finish: " + JSON.stringify(startupBindings) +
+      " | page errors: " + errors.join(" | "));
+  }
+
   // Requested Home spotlight: Spider-Man must lead the hero and the curated spotlight
   // must contain exactly the nine requested titles.
   const heroFirst = (await page.locator("#heroTitle").textContent()).trim();
