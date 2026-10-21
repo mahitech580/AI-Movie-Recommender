@@ -14,7 +14,7 @@ async function testDesktop(browser) {
     }
   });
   page.on("response", response => {
-    if (/youtube-nocookie\\.com|youtube\\.com|googlevideo\\.com|ytimg\\.com/i.test(response.url())) return;
+    if (/youtube-nocookie\.com|youtube\.com|googlevideo\.com|ytimg\.com/i.test(response.url())) return;
     if (response.status() < 400) return;
     const type=response.request().resourceType();
     if (type !== "image") errors.push("resource "+response.status()+": "+response.url());
