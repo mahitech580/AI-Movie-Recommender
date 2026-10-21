@@ -1,8 +1,18 @@
 name: CINEPLAY QA
 
 on:
+  # This integration job starts PostgreSQL and MongoDB. Keep it scoped to backend,
+  # SQL, dependency, and API smoke-test changes; static UI checks run separately.
   push:
     branches: ["main"]
+    paths:
+      - "backend/**"
+      - "sql/**"
+      - "Dockerfile"
+      - "docker-compose.yml"
+      - "requirements.txt"
+      - "scripts/smoke_test.py"
+      - "data/movies.json"
   workflow_dispatch:
 
 permissions:
