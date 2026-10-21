@@ -1858,19 +1858,43 @@
       });
     }
 
-    $("filterShowMore") && ($("filterShowMore").onclick=event=>{
-      event.preventDefault();
-      const total=filteredMovies().length;
-      const grid=$("filterResultsGrid");
-      const current=grid?.querySelectorAll(".movie-card").length || 0;
-      if(current<total){
-        // The DOM is authoritative: recover even if a prior filter change left
-        // a stale page limit, then render the next batch synchronously.
-        const base=Math.max(24,current,Number(state.filterPage)||24);
-        state.filterPage=Math.min(total,base+24);
-        renderFilterResults(false);
-      }
-    });
+    const moreButton=$("filterShowMore");
+    if(moreButton && moreButton.dataset.paginationBound!=="1"){
+      moreButton.dataset.paginationBound="1";
+      moreButton.addEventListener("click",event=>{
+        event.preventDefault();
+        const grid=$("filterResultsGrid");
+        if(!grid) return;
+        const all=filteredMovies();
+        const current=grid.querySelectorAll(".movie-card").length;
+        const next=Math.min(all.length,current+24);
+        const clicks=(Number(moreButton.dataset.paginationClicks)||0)+1;
+        moreButton.dataset.paginationClicks=String(clicks);
+        moreButton.dataset.paginationBefore=String(current);
+        moreButton.dataset.paginationTotal=String(all.length);
+        moreButton.dataset.paginationAfter=String(current);
+
+        if(current>=all.length) return;
+        const batch=all.slice(current,next);
+        if(!batch.length) return;
+        grid.insertAdjacentHTML("beforeend",batch.map(movie=>card(movie,null,false)).join(""));
+        bindRail(grid);
+        const updated=grid.querySelectorAll(".movie-card").length;
+        state.filterPage=updated;
+        moreButton.dataset.paginationAfter=String(updated);
+
+        const subtitle=$("filterResultsSubtitle");
+        if(subtitle){
+          const key=String(state.filter||"all");
+          subtitle.textContent=key==="all"
+            ?"Complete local catalogue · "+updated+" of "+all.length+" titles rendered."
+            :updated+" of "+all.length+" matching titles · select any card for full details.";
+        }
+        const remaining=Math.max(0,all.length-updated);
+        moreButton.disabled=remaining===0;
+        moreButton.textContent=remaining?"Show "+Math.min(24,remaining)+" more":"All loaded";
+      });
+    }
 
     $$(".main-nav a").forEach(a=>a.addEventListener("click",()=>{
       const href=a.getAttribute("href") || "#home";

@@ -136,11 +136,33 @@ async function testDesktop(browser) {
     throw new Error("RRR poster did not render as a real image");
   }
   if (teluguTotal > firstBatch) {
-    await page.locator("#filterShowMore").scrollIntoViewIfNeeded();
-    await page.locator("#filterShowMore").click();
+    const moreButton=page.locator("#filterShowMore");
+    await moreButton.scrollIntoViewIfNeeded();
+    const priorClicks=Number(await moreButton.getAttribute("data-pagination-clicks")||"0");
+    await moreButton.click();
+    await page.waitForFunction(previous => {
+      const button=document.querySelector("#filterShowMore");
+      return Number(button?.dataset.paginationClicks||"0")>previous;
+    }, priorClicks, {timeout:3000}).catch(async error=>{
+      const state=await moreButton.evaluate(button=>({
+        disabled:button.disabled,text:button.textContent,clicks:button.dataset.paginationClicks||"0",
+        onclick:typeof button.onclick,bound:button.dataset.paginationBound||"missing",
+        activeFilter:document.querySelector("#filterRow .filter-chip.active")?.dataset.filter,
+        total:document.querySelector("#filterResultsCount")?.textContent,
+        cards:document.querySelectorAll("#filterResultsGrid .movie-card").length
+      }));
+      throw new Error("Show more click handler did not fire: "+JSON.stringify(state)+"; "+error.message);
+    });
     await page.waitForFunction(previous => {
       return document.querySelectorAll("#filterResultsGrid .movie-card").length > previous;
-    }, firstBatch, {timeout:3000});
+    }, firstBatch, {timeout:3000}).catch(async error=>{
+      const state=await moreButton.evaluate(button=>({
+        before:button.dataset.paginationBefore,total:button.dataset.paginationTotal,
+        after:button.dataset.paginationAfter,clicks:button.dataset.paginationClicks,
+        cards:document.querySelectorAll("#filterResultsGrid .movie-card").length
+      }));
+      throw new Error("Show more handler fired but failed to append cards: "+JSON.stringify(state)+"; "+error.message);
+    });
     const secondBatch = await page.locator("#filterResultsGrid .movie-card").count();
     if (secondBatch <= firstBatch) throw new Error("filter Show more did not reveal additional Telugu titles");
   }
