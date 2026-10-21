@@ -1801,7 +1801,7 @@
     $("studioQuery")?.addEventListener("keydown",event=>{
       if(event.key==="Enter" && (event.ctrlKey||event.metaKey)){event.preventDefault();runStudioAsk();}
     });
-    $("#intelligenceStudio [data-studio-prompt]").forEach(button=>button.addEventListener("click",()=>{
+    $$("#intelligenceStudio [data-studio-prompt]").forEach(button=>button.addEventListener("click",()=>{
       const input=$("studioQuery");
       if(input){input.value=button.dataset.studioPrompt||"";input.focus();}
       $("studioAnswer")?.classList.add("hidden");
