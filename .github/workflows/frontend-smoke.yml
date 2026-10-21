@@ -1,4 +1,5 @@
 name: CINEPLAY frontend and browser smoke tests
+# Runs independently of SQL/MongoDB container services.
 
 on:
   push:
