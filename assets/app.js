@@ -1955,34 +1955,136 @@
 
 
   function setupNightChangesMusic() {
-    const dock=$("musicDock");
-    const frame=$("nightChangesFrame");
-    const retry=$("musicRetry");
-    const minimize=$("musicMinimize");
-    const status=$("musicStatus");
-    if(!dock || !frame || !retry || !minimize || dock.dataset.bound==="1") return;
-    dock.dataset.bound="1";
-    const embedUrl="https://www.youtube-nocookie.com/embed/syFZfO_wfMQ?autoplay=1&playsinline=1&rel=0&controls=1";
+    const dock = $("musicDock");
+    const frame = $("nightChangesFrame");
+    const retry = $("musicRetry");
+    const minimize = $("musicMinimize");
+    const status = $("musicStatus");
+    if (!dock || !frame || !retry || !minimize || dock.dataset.bound === "1") return;
+    dock.dataset.bound = "1";
 
-    retry.addEventListener("click",()=>{
+    const videoId = "syFZfO_wfMQ";
+    const embedUrl = "https://www.youtube.com/embed/" + videoId +
+      "?autoplay=1&playsinline=1&rel=0&controls=1&enablejsapi=1";
+    let player = null;
+    let apiAttached = false;
+    let stoppedByVisitor = false;
+
+    const setStatus = message => {
+      if (status) status.textContent = message;
+    };
+
+    const postCommand = (command, args = []) => {
+      try {
+        if (player && typeof player[command] === "function") {
+          player[command](...args);
+          return;
+        }
+        frame.contentWindow?.postMessage(
+          JSON.stringify({ event: "command", func: command, args }),
+          "https://www.youtube.com"
+        );
+      } catch {}
+    };
+
+    const startPlayback = (fromGesture = false, restart = false) => {
+      if (stoppedByVisitor && !fromGesture) return;
+      if (fromGesture) stoppedByVisitor = false;
       dock.classList.remove("is-minimized");
-      frame.src=embedUrl;
-      retry.setAttribute("aria-label","Restart Night Changes");
-      if(status) status.textContent="Playback requested · use the YouTube controls to pause";
+      setStatus(fromGesture ? "Starting Night Changes…" : "Requesting automatic playback…");
+      if (player) {
+        try {
+          if (restart) player.seekTo(0, true);
+          player.playVideo();
+        } catch {}
+      } else {
+        postCommand("playVideo");
+      }
+    };
+
+    const onPageGesture = () => {
+      // If the browser rejects audible autoplay, the visitor's first normal
+      // page interaction becomes a playback request—no hunt for a tiny button.
+      if (stoppedByVisitor || dock.classList.contains("is-minimized")) return;
+      startPlayback(true);
+    };
+    document.addEventListener("pointerdown", onPageGesture, true);
+    document.addEventListener("keydown", onPageGesture, true);
+
+    retry.addEventListener("click", () => {
+      stoppedByVisitor = false;
+      startPlayback(true, true);
+      if (!player) {
+        // Re-issue the autoplay-enabled URL while the click provides user activation.
+        frame.src = embedUrl;
+      }
     });
 
-    minimize.addEventListener("click",()=>{
-      // Unload the embed so minimizing also stops the soundtrack.
-      frame.src="about:blank";
+    minimize.addEventListener("click", () => {
+      stoppedByVisitor = true;
+      postCommand("stopVideo");
       dock.classList.add("is-minimized");
-      retry.setAttribute("aria-label","Play Night Changes");
-      if(status) status.textContent="Player stopped · press ▶ to play Night Changes";
+      retry.setAttribute("aria-label", "Play Night Changes");
+      if (status) status.textContent = "Music stopped · press ▶ to play Night Changes";
     });
-  }
 
+    const attachPlayerApi = () => {
+      if (apiAttached || !window.YT || typeof window.YT.Player !== "function") return;
+      apiAttached = true;
+      try {
+        player = new window.YT.Player("nightChangesFrame", {
+          events: {
+            onReady(event) {
+              player = event.target;
+              if (!stoppedByVisitor) {
+                try { player.playVideo(); } catch {}
+              }
+            },
+            onStateChange(event) {
+              const states = window.YT && window.YT.PlayerState;
+              if (!states) return;
+              if (event.data === states.PLAYING) {
+                setStatus("♪ Now playing · Night Changes");
+                retry.setAttribute("aria-label", "Restart Night Changes");
+              } else if (event.data === states.PAUSED && !stoppedByVisitor) {
+                setStatus("Paused · press ▶ to resume");
+              } else if (event.data === states.ENDED) {
+                setStatus("Track ended · press ▶ to replay");
+              }
+            },
+            onAutoplayBlocked() {
+              setStatus("Browser blocked sound autoplay · click anywhere to start");
+            },
+            onError() {
+              setStatus("The track could not load · open YouTube ↗");
+            }
+          }
+        });
+      } catch {
+        apiAttached = false;
+        setStatus("Automatic playback requested · use ▶ if your browser blocks sound");
+      }
+    };
+
+    const priorApiReady = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function (...args) {
+      if (typeof priorApiReady === "function") {
+        try { priorApiReady.apply(this, args); } catch {}
+      }
+      attachPlayerApi();
+    };
+
+    if (window.YT && typeof window.YT.Player === "function") {
+      attachPlayerApi();
+    } else if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+      const api = document.createElement("script");
+      api.src = "https://www.youtube.com/iframe_api";
+      api.async = true;
+      document.head.appendChild(api);
+    }
+  }
   async function init() {
     await hydrateCatalog();
-    setupNightChangesMusic();
     renderStats();
     renderCatalogInsights();
     renderMoods();
@@ -2040,6 +2142,7 @@
 
   installGlobalInteractionGuard();
   try { syncNavigation(false); } catch {}
+  setupNightChangesMusic();
   init().catch(error => {
     console.error("CINEPLAY initialization error", error);
     finishCinemaBoot(true);
