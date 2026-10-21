@@ -502,3 +502,19 @@ An additional optional multi-label genre experiment fine-tunes a pretrained Dist
 The homepage includes a responsive, client-rendered Catalog Pulse. It computes the active movie count, median valid rating, poster coverage, language diversity, top-genre counts, release-decade profile, and poster/backdrop/overview coverage from the current local movie catalog. The source pill changes when TMDB live mode is active, and a successful live synchronization refreshes the metrics. The charts are based on actual records—not sample values.
 
 The frontend uses remote TMDB poster/backdrop URLs when available, with the existing failed-image fallback and visible TMDB attribution. Official application authentication guidance: https://developer.themoviedb.org/docs/authentication-application.
+
+
+## Resume-ready project summary
+
+**CINEPLAY — Live Movie Intelligence & Recommendation Platform**
+
+- Built a movie discovery platform with a responsive cinematic UI, online TMDB poster/backdrop artwork, optional live catalogue synchronization, and graceful offline/local-catalog fallback.
+- Implemented a Python/FastAPI service with REST endpoints, SQLAlchemy persistence (SQLite by default, PostgreSQL configuration supported), optional MongoDB interaction events, and unit/integration tests with Pytest.
+- Developed catalog ETL, feature preprocessing, EDA, charts, SQL analytics, and offline recommender evaluation scripts (Precision@K, Recall@K, NDCG@K, Hit Rate@K, and catalog coverage from actual interaction logs).
+- Added optional machine-learning experiments for revenue regression, rating classification, K-Means clustering, XGBoost/MLflow, synopsis-to-genre deep learning (TensorFlow/Keras CNN + BiLSTM), and Hugging Face/PyTorch transformer fine-tuning.
+- Added grounded movie Q&A/RAG, semantic retrieval with an optional embedding/vector-store path, plus OpenCV poster-art feature analysis; optional integrations degrade to lightweight local retrieval if extra dependencies or API credentials are absent.
+- Added Docker/Compose, GitHub Actions workflows for frontend smoke tests and model/data tests, and reproducible reports. Heavy models must be run and their held-out metrics recorded before claiming measured model performance in a resume.
+
+**Technology mapping:** Python, SQL, NumPy, Pandas, Matplotlib, Seaborn, statistics, data preprocessing, EDA, feature engineering, scikit-learn, regression, classification, clustering, model evaluation, hyperparameter tuning, XGBoost, TensorFlow/Keras, PyTorch, CNN/BiLSTM, Hugging Face Transformers, NLP, OpenCV, embeddings, RAG, vector store integration, FastAPI, REST, PostgreSQL/SQLite, MongoDB integration, Docker, Git/GitHub, Pytest, MLflow integration, data visualization, and MLOps/CI.
+
+**Cloud and credentials note:** AWS/Azure/GCP, public TMDB refreshes, remote LLM generation, vector database persistence, MLflow tracking, XGBoost, and deep learning are optional paths that require the matching service, secrets, installed dependencies, or explicit training commands. Do not list a cloud deployment or a measured model score unless you have configured, executed, and verified it.
