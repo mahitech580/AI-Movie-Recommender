@@ -17,6 +17,13 @@ on:
       - ".github/workflows/advanced-models.yml"
       - ".github/workflows/poster-vision.yml"
       - ".github/workflows/deep-learning.yml"
+      - "index.html"
+      - "assets/app.js"
+      - "assets/styles.css"
+      - "scripts/browser_smoke.mjs"
+      - "render.yaml"
+      - "Dockerfile"
+      - ".dockerignore"
       - ".github/workflows/model-tests.yml"
   workflow_dispatch:
 
@@ -40,3 +47,9 @@ jobs:
         run: PYTHONPATH=. pytest -q tests
       - name: Train catalog feature artifact
         run: python scripts/train_model.py
+      - name: Check frontend JavaScript syntax
+        run: |
+          node --check assets/app.js
+          node --check scripts/browser_smoke.mjs
+          node --check data/movies.js
+          node --check data/series.js
