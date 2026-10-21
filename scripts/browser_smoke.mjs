@@ -9,7 +9,7 @@ async function testDesktop(browser) {
   const errors = [];
   page.on("pageerror", err => errors.push("pageerror: " + err.message));
   page.on("console", msg => {
-    if (msg.type() === "error" && !/Failed to load resource: the server responded with a status of 404 \(\)/i.test(msg.text())) {
+    if (msg.type() === "error" && !/youtube-nocookie\.com|youtube\.com|googlevideo\.com|ytimg\.com/i.test(msg.text()) && !/Failed to load resource: the server responded with a status of 404 \(\)/i.test(msg.text())) {
       errors.push("console: " + msg.text());
     }
   });
