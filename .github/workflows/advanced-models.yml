@@ -5,6 +5,8 @@ on:
   push:
     branches: ["main"]
     paths:
+      - "scripts/analyze_catalog.py"
+      - "requirements-eda.txt"
       - "scripts/train_predictive_models.py"
       - "backend/analytics.py"
       - "requirements-mlops.txt"
@@ -27,7 +29,7 @@ jobs:
       - name: Install EDA, XGBoost and MLflow
         run: pip install -r requirements-mlops.txt
       - name: Run catalog EDA
-        run: python scripts/analyze_catalog.py
+        run: PYTHONPATH=. python scripts/analyze_catalog.py
       - name: Train and evaluate regression, classification and clustering
         env:
           CINEPLAY_LOG_MLFLOW: "true"
