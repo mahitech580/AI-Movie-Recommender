@@ -490,3 +490,8 @@ Deploy using Render's dashboard: create a new Blueprint from this repository and
 For a local PostgreSQL/MongoDB stack, use docker compose up --build. For MySQL, install requirements-mysql.txt and set DATABASE_URL to a mysql:// URL; the backend normalizes it to the PyMySQL SQLAlchemy dialect. Keep credentials out of Git and configure them in the hosting provider's environment settings.
 
 References: Render Blueprint specification https://render.com/docs/blueprint-spec; health checks https://render.com/docs/health-checks; FastAPI container deployment https://fastapi.tiangolo.com/deployment/docker/.
+
+
+### PyTorch and Hugging Face transformer classifier
+
+An additional optional multi-label genre experiment fine-tunes a pretrained DistilBERT sequence-classification head with PyTorch BCE loss. It uses title + synopsis text only, removes rare/empty targets, fixes a random train/test split, and reports micro/macro precision, recall and F1 against a prevalence baseline. Install requirements-transformers.txt, then run python scripts/train_transformer_genre_model.py --epochs 2 --max-rows 1000. The pretrained model and saved weights stay under the ignored .cache/ directory; only reports/transformer_genre_metrics.json is suitable for version control. The classifier is an experiment, not an auto-deployed endpoint.

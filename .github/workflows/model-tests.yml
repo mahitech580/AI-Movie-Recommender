@@ -14,6 +14,7 @@ on:
       - "requirements-mlops.txt"
       - "requirements-vision.txt"
       - "requirements-deep-learning.txt"
+      - "requirements-transformers.txt"
       - ".github/workflows/advanced-models.yml"
       - ".github/workflows/poster-vision.yml"
       - ".github/workflows/deep-learning.yml"

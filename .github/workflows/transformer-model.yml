@@ -1,0 +1,51 @@
+name: CINEPLAY PyTorch transformer genre model
+
+on:
+  workflow_dispatch:
+    inputs:
+      epochs:
+        description: Number of fine-tuning epochs (1-10)
+        required: true
+        default: "2"
+        type: string
+      max_rows:
+        description: Development row cap (0 uses all available rows)
+        required: true
+        default: "1000"
+        type: string
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/train_transformer_genre_model.py"
+      - "requirements-transformers.txt"
+      - ".github/workflows/transformer-model.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  transformer-genre:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install PyTorch and Hugging Face dependencies
+        run: pip install -r requirements-transformers.txt
+      - name: Fine-tune and evaluate title/synopsis genre classifier
+        run: python scripts/train_transformer_genre_model.py --epochs 2 --max-rows 1000
+      - name: Commit metrics only to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/transformer_genre_metrics.json
+          if git diff --cached --quiet; then
+            echo "Transformer metrics are unchanged."
+          else
+            git commit -m "ml: update PyTorch transformer genre metrics"
+            git push origin HEAD:main
+          fi

@@ -135,7 +135,7 @@ def search_catalog(query: str, movies: list[dict[str, Any]], limit: int = 5) -> 
     if os.getenv("CINEPLAY_EMBEDDING_PROVIDER", "tfidf").lower() in {"hf", "huggingface", "transformers"}:
         try:
             return _search_transformer(query, movies, documents, limit)
-        except (ImportError, OSError, RuntimeError, ValueError):
-            # The application remains usable when the model package/model cache is missing.
+        except Exception:
+            # Keep discovery available if optional model loading, networking, or vector storage fails.
             pass
     return _search_tfidf(query, movies, documents, limit)

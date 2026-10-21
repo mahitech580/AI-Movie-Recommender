@@ -1660,7 +1660,7 @@
     finally { if(button) button.disabled=false; }
     if(!results.length) {
       results=localStudioMatches(query,12);
-      if(!backendUrl()) method="LOCAL TF-IDF / HYBRID";
+      if(!backendUrl()) method="LOCAL TEXT / HYBRID";
       else method="LOCAL FALLBACK";
     }
     const rendered=renderStudioResults(results,"Matches for “"+query+"”");

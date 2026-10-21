@@ -51,10 +51,11 @@ def main() -> int:
     labels = [genres for genres in labels if genres]
     mlb = MultiLabelBinarizer()
     y = mlb.fit_transform(labels).astype("float32")
+    # Target leakage prevention: features contain only title and synopsis text.
+    # The genres below are target labels; never duplicate labels into model inputs.
     text = (
         frame["title"].fillna("").astype(str) + " " +
-        frame["overview"].fillna("").astype(str) + " " +
-        frame["genre_names"].apply(lambda values: " ".join(values))
+        frame["overview"].fillna("").astype(str)
     ).tolist()
     tokenizer = Tokenizer(num_words=30000, oov_token="<OOV>")
     tokenizer.fit_on_texts(text)
