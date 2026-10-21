@@ -1953,8 +1953,36 @@
     }, true);
   }
 
+
+  function setupNightChangesMusic() {
+    const dock=$("musicDock");
+    const frame=$("nightChangesFrame");
+    const retry=$("musicRetry");
+    const minimize=$("musicMinimize");
+    const status=$("musicStatus");
+    if(!dock || !frame || !retry || !minimize || dock.dataset.bound==="1") return;
+    dock.dataset.bound="1";
+    const embedUrl="https://www.youtube-nocookie.com/embed/syFZfO_wfMQ?autoplay=1&playsinline=1&rel=0&controls=1";
+
+    retry.addEventListener("click",()=>{
+      dock.classList.remove("is-minimized");
+      frame.src=embedUrl;
+      retry.setAttribute("aria-label","Restart Night Changes");
+      if(status) status.textContent="Playback requested · use the YouTube controls to pause";
+    });
+
+    minimize.addEventListener("click",()=>{
+      // Unload the embed so minimizing also stops the soundtrack.
+      frame.src="about:blank";
+      dock.classList.add("is-minimized");
+      retry.setAttribute("aria-label","Play Night Changes");
+      if(status) status.textContent="Player stopped · press ▶ to play Night Changes";
+    });
+  }
+
   async function init() {
     await hydrateCatalog();
+    setupNightChangesMusic();
     renderStats();
     renderCatalogInsights();
     renderMoods();

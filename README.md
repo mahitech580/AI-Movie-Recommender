@@ -518,3 +518,8 @@ The frontend uses remote TMDB poster/backdrop URLs when available, with the exis
 **Technology mapping:** Python, SQL, NumPy, Pandas, Matplotlib, Seaborn, statistics, data preprocessing, EDA, feature engineering, scikit-learn, regression, classification, clustering, model evaluation, hyperparameter tuning, XGBoost, TensorFlow/Keras, PyTorch, CNN/BiLSTM, Hugging Face Transformers, NLP, OpenCV, embeddings, RAG, vector store integration, FastAPI, REST, PostgreSQL/SQLite, MongoDB integration, Docker, Git/GitHub, Pytest, MLflow integration, data visualization, and MLOps/CI.
 
 **Cloud and credentials note:** AWS/Azure/GCP, public TMDB refreshes, remote LLM generation, vector database persistence, MLflow tracking, XGBoost, and deep learning are optional paths that require the matching service, secrets, installed dependencies, or explicit training commands. Do not list a cloud deployment or a measured model score unless you have configured, executed, and verified it.
+
+
+## Night Changes soundtrack
+
+The static frontend includes a floating player for the official One Direction "Night Changes" music video hosted by YouTube. The embed attempts autoplay when CINEPLAY opens and provides an in-page restart/play control and a stop/minimize control. Browsers may block autoplay with sound until a user gesture; when that happens, press the in-page play button or the YouTube player controls. The video is embedded from the official artist-channel upload rather than copied into this repository.

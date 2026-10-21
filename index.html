@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/cineplay-icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css?v=20261021-catalog-pulse06">
+  <link rel="stylesheet" href="assets/styles.css?v=20261021-night-changes01">
 </head>
 <body>
 
@@ -414,6 +414,37 @@
     </main>
   </div>
 
+
+  <aside class="music-dock" id="musicDock" aria-label="Night Changes music player">
+    <div class="music-dock-header">
+      <div class="music-art" aria-hidden="true">
+        <img src="https://img.youtube.com/vi/syFZfO_wfMQ/hqdefault.jpg" alt="" loading="eager" referrerpolicy="strict-origin-when-cross-origin">
+        <span>♫</span>
+      </div>
+      <div class="music-track-copy">
+        <span class="music-eyebrow">CINEPLAY SOUNDTRACK</span>
+        <strong>Night Changes</strong>
+        <small>One Direction · FOUR</small>
+      </div>
+      <button class="music-icon-button music-retry" id="musicRetry" type="button" aria-label="Play or restart Night Changes" title="Play / restart">▶</button>
+      <button class="music-icon-button music-minimize" id="musicMinimize" type="button" aria-label="Stop music and minimize player" title="Stop and minimize">−</button>
+    </div>
+    <div class="music-player-panel" id="musicPlayerPanel">
+      <iframe
+        id="nightChangesFrame"
+        title="One Direction — Night Changes official music video"
+        src="https://www.youtube-nocookie.com/embed/syFZfO_wfMQ?autoplay=1&amp;playsinline=1&amp;rel=0&amp;controls=1"
+        allow="autoplay; encrypted-media; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="music-dock-foot">
+      <span id="musicStatus" role="status" aria-live="polite">Autoplay requested · press ▶ if your browser blocks sound</span>
+      <a href="https://www.youtube.com/watch?v=syFZfO_wfMQ" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+    </div>
+  </aside>
+
   <div class="modal hidden" id="movieModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-backdrop" data-close-modal></div>
     <article class="movie-modal">
@@ -507,6 +538,6 @@
   </script>
   <script src="data/movies.js?v=20261005-21"></script>
   <script src="data/series.js?v=20261005-21"></script>
-  <script src="assets/app.js?v=20261021-catalog-pulse09"></script>
+  <script src="assets/app.js?v=20261021-night-changes01"></script>
 </body>
 </html>

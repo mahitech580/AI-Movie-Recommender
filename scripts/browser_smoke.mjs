@@ -14,6 +14,7 @@ async function testDesktop(browser) {
     }
   });
   page.on("response", response => {
+    if (/youtube-nocookie\\.com|youtube\\.com|googlevideo\\.com|ytimg\\.com/i.test(response.url())) return;
     if (response.status() < 400) return;
     const type=response.request().resourceType();
     if (type !== "image") errors.push("resource "+response.status()+": "+response.url());
@@ -29,6 +30,15 @@ async function testDesktop(browser) {
   if (!loaderDone) throw new Error("cinematic loader did not release");
   if (!heroTitle) throw new Error("hero title did not initialize");
   if (cards < 10) throw new Error("movie rails rendered fewer than 10 cards");
+  const soundtrack = page.locator("#musicDock");
+  if (await soundtrack.count() !== 1) throw new Error("Night Changes music dock was not rendered");
+  const musicSource = await page.locator("#nightChangesFrame").getAttribute("src");
+  if (!musicSource?.includes("youtube-nocookie.com/embed/syFZfO_wfMQ") || !musicSource.includes("autoplay=1")) {
+    throw new Error("Night Changes did not initialize with the official autoplay-enabled embed");
+  }
+  if (await page.locator("#musicRetry").count() !== 1 || await page.locator("#musicMinimize").count() !== 1) {
+    throw new Error("Night Changes playback controls are missing");
+  }
 
   const startupBindings = await page.evaluate(() => ({
     filterRowBound: document.querySelector("#filterRow")?.dataset.bound || "missing",
