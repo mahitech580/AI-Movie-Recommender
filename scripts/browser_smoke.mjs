@@ -136,8 +136,11 @@ async function testDesktop(browser) {
     throw new Error("RRR poster did not render as a real image");
   }
   if (teluguTotal > firstBatch) {
+    await page.locator("#filterShowMore").scrollIntoViewIfNeeded();
     await page.locator("#filterShowMore").click();
-    await sleep(120);
+    await page.waitForFunction(previous => {
+      return document.querySelectorAll("#filterResultsGrid .movie-card").length > previous;
+    }, firstBatch, {timeout:3000});
     const secondBatch = await page.locator("#filterResultsGrid .movie-card").count();
     if (secondBatch <= firstBatch) throw new Error("filter Show more did not reveal additional Telugu titles");
   }

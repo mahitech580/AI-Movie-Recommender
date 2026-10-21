@@ -1858,11 +1858,13 @@
       });
     }
 
-    $("filterShowMore") && ($("filterShowMore").onclick=()=>{
+    $("filterShowMore") && ($("filterShowMore").onclick=event=>{
+      event.preventDefault();
       const total=filteredMovies().length;
-      const current=$("filterResultsGrid")?.querySelectorAll(".movie-card").length || 0;
-      if(current<total){
-        state.filterPage=Math.min(total,Math.max(24,current+24));
+      const currentLimit=Math.max(24,Number(state.filterPage)||24);
+      const nextLimit=Math.min(total,currentLimit+24);
+      if(nextLimit>currentLimit){
+        state.filterPage=nextLimit;
         renderFilterResults(false);
       }
     });
