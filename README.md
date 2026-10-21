@@ -479,3 +479,14 @@ New optional workflows:
 - CNN/BiLSTM genre experiment: .github/workflows/deep-learning.yml
 
 See docs/RESEARCH_AND_ARCHITECTURE.md for technical-source links and architecture boundaries, and docs/RESUME_PLAYBOOK.md for accurate project bullets and model-metric guidance.
+
+
+## Companion API deployment with Render Blueprint
+
+The repository now includes render.yaml as an infrastructure-as-code option for provisioning the FastAPI service and a managed PostgreSQL database on Render. It is separate from GitHub Pages: Pages hosts the static client, while Render hosts the Python API and SQL process. The Docker start command listens on the platform-provided PORT and falls back to 8000 for Docker Compose/local use. The service health-check path is /api/health.
+
+Deploy using Render's dashboard: create a new Blueprint from this repository and inspect the resources/environment before confirming. The Blueprint uses the DATABASE_URL provided by Render; the backend normalizes common PostgreSQL connection strings to the installed psycopg v3 driver. Set CORS_ORIGINS to the exact frontend origin if you use a different Pages/custom domain. MongoDB is optional and remains disabled unless MONGODB_URI is configured.
+
+For a local PostgreSQL/MongoDB stack, use docker compose up --build. For MySQL, install requirements-mysql.txt and set DATABASE_URL to a mysql:// URL; the backend normalizes it to the PyMySQL SQLAlchemy dialect. Keep credentials out of Git and configure them in the hosting provider's environment settings.
+
+References: Render Blueprint specification https://render.com/docs/blueprint-spec; health checks https://render.com/docs/health-checks; FastAPI container deployment https://fastapi.tiangolo.com/deployment/docker/.
