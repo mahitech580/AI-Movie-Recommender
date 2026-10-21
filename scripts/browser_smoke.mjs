@@ -204,7 +204,7 @@ async function testDesktop(browser) {
     const r=el.getBoundingClientRect();
     return r.bottom>0 && r.top<window.innerHeight;
   });
-  if(!discoverVisible) throw new Error("Search button did not bring Discover into view");
+  if(!discoverVisible){ const state=await page.locator("#discover").evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,height:el.getBoundingClientRect().height,scrollY:window.scrollY,viewport:window.innerHeight,behavior:getComputedStyle(document.documentElement).scrollBehavior})); throw new Error("Search button did not bring Discover into view: "+JSON.stringify(state)); }
 
   const search = page.locator("#searchInput");
   await search.fill("matrix");
