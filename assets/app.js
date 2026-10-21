@@ -1377,23 +1377,24 @@
     const input=$("searchInput");
     $("commandPalette")?.classList.add("hidden");
 
-    // QA + accessibility: the search trigger must complete navigation
-    // deterministically instead of waiting on a long smooth-scroll animation.
+    // Navigate through the target element itself; this works when the document
+    // uses smooth scrolling or a browser chooses a nested scrolling root.
     if(section){
-      const topbar=document.querySelector(".topbar");
-      const offset=(topbar?.getBoundingClientRect().height || 72) + 12;
-      const top=Math.max(0,window.scrollY + section.getBoundingClientRect().top - offset);
-
-      // Force an instant jump here. The document normally uses smooth scrolling,
-      // but the search control must land on Discover immediately and reliably.
       const root=document.documentElement;
-      const previousScrollBehavior=root.style.scrollBehavior;
+      const body=document.body;
+      const previousRootBehavior=root.style.scrollBehavior;
+      const previousBodyBehavior=body?.style.scrollBehavior || "";
       root.style.scrollBehavior="auto";
-      window.scrollTo({top,left:0,behavior:"auto"});
-      requestAnimationFrame(()=>{ root.style.scrollBehavior=previousScrollBehavior; });
+      if(body) body.style.scrollBehavior="auto";
+      section.scrollIntoView({block:"start",inline:"nearest",behavior:"auto"});
+      // Keep instant scrolling through the next layout/paint.
+      window.setTimeout(()=>{
+        root.style.scrollBehavior=previousRootBehavior;
+        if(body) body.style.scrollBehavior=previousBodyBehavior;
+      },240);
     }
 
-    window.setTimeout(()=>{
+    window.requestAnimationFrame(()=>{
       if(input){
         input.focus({preventScroll:true});
         input.select();
@@ -1401,9 +1402,8 @@
       const box=document.querySelector(".search-box");
       box?.classList.add("is-focused");
       window.setTimeout(()=>box?.classList.remove("is-focused"),1200);
-    },80);
+    });
   }
-
   function openCommand() {
     const modal=$("commandPalette");
     if (!modal) return;
