@@ -1861,10 +1861,13 @@
     $("filterShowMore") && ($("filterShowMore").onclick=event=>{
       event.preventDefault();
       const total=filteredMovies().length;
-      const currentLimit=Math.max(24,Number(state.filterPage)||24);
-      const nextLimit=Math.min(total,currentLimit+24);
-      if(nextLimit>currentLimit){
-        state.filterPage=nextLimit;
+      const grid=$("filterResultsGrid");
+      const current=grid?.querySelectorAll(".movie-card").length || 0;
+      if(current<total){
+        // The DOM is authoritative: recover even if a prior filter change left
+        // a stale page limit, then render the next batch synchronously.
+        const base=Math.max(24,current,Number(state.filterPage)||24);
+        state.filterPage=Math.min(total,base+24);
         renderFilterResults(false);
       }
     });
