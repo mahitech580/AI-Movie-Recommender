@@ -26,6 +26,10 @@ jobs:
           node-version: "22"
       - name: Check JavaScript syntax
         run: |
+          test -f index.html
+          grep -q 'id="intelligenceStudio"' index.html
+          grep -q 'id="studioSearchButton"' index.html
+          grep -q 'id="studioAskButton"' index.html
           node --check assets/app.js
           node --check scripts/browser_smoke.mjs
           node --check data/movies.js
