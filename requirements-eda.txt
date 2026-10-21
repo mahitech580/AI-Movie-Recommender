@@ -1,1 +1,3 @@
--r requirements.txt\nmatplotlib>=3.9,<4\nseaborn>=0.13,<1\n
+-r requirements.txt
+matplotlib>=3.9,<4
+seaborn>=0.13,<1
