@@ -8,14 +8,18 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import sys
 from pathlib import Path
 from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 import pandas as pd
 
 from backend.recommender import HybridRecommender
 
-ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "data" / "interactions.csv"
 DEFAULT_OUTPUT = ROOT / "reports" / "recommender_evaluation.json"
 RELEVANT_EVENTS = {"play", "list"}

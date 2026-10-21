@@ -3,7 +3,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 import matplotlib
 matplotlib.use("Agg")
@@ -13,7 +18,6 @@ import seaborn as sns
 
 from backend.analytics import build_catalog_analytics
 
-ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "movies.json"
 OUTPUT_DIR = ROOT / "reports"
 
