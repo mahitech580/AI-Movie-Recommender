@@ -214,6 +214,24 @@ async function testDesktop(browser) {
     throw new Error("local movie search did not surface Matrix");
   }
 
+
+  // AI Studio stays useful without an external API and exposes working controls.
+  await page.locator("#studioQuery").fill("space exploration time");
+  await page.locator("#studioSearchButton").click();
+  await page.waitForFunction(() =>
+    document.querySelectorAll("#studioRail .movie-card").length > 0 ||
+    document.querySelector("#studioRail .studio-empty")?.textContent.includes("No close matches"),
+    null, {timeout:6000}
+  );
+  const studioCards = await page.locator("#studioRail .movie-card").count();
+  if (studioCards < 1) throw new Error("studio search did not render local results");
+  await page.locator("#studioAskButton").click();
+  await page.waitForFunction(() =>
+    !document.querySelector("#studioAnswer")?.classList.contains("hidden"),
+    null, {timeout:6000}
+  );
+  const studioAnswer = await page.locator("#studioAnswerText").textContent();
+  if (!studioAnswer || studioAnswer.length < 12) throw new Error("studio ask fallback did not return a helpful answer");
   await search.fill("breaking bad");
   await sleep(250);
   const seriesSearchTitles = await page.locator("#aiRail .movie-card h3").allTextContents();

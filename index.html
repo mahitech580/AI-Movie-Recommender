@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/cineplay-icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css?v=20261006-spectrum01">
+  <link rel="stylesheet" href="assets/styles.css?v=20261021-studio01">
 </head>
 <body>
 
@@ -50,6 +50,7 @@
       <nav class="main-nav" id="mainNav">
         <a class="active" href="#home">Home</a>
         <a href="#discover">Discover</a>
+        <a href="#intelligenceStudio">AI Studio</a>
         <a href="#my-list">My List</a>
         <a href="#activity">Activity</a>
         <a href="#web-series">Web Series</a>
@@ -72,6 +73,7 @@
       <nav>
         <a href="#home" data-drawer-link>Home</a>
         <a href="#discover" data-drawer-link>Discover</a>
+        <a href="#intelligenceStudio" data-drawer-link>AI Studio</a>
         <a href="#my-list" data-drawer-link>My List</a>
         <a href="#activity" data-drawer-link>Activity</a>
         <a href="#web-series" data-drawer-link>Web Series</a>
@@ -215,6 +217,69 @@
           </div>
           <div class="rail" id="trendingRail"></div>
         </div>
+
+
+        <section class="studio-panel section-block" id="intelligenceStudio" aria-labelledby="studioTitle">
+          <div class="studio-header">
+            <div>
+              <span class="eyebrow">CINEPLAY INTELLIGENCE · STUDIO 02</span>
+              <h2 id="studioTitle">Tell us the feeling. <span>We’ll find the film.</span></h2>
+              <p>Explore by plot, atmosphere, genre or a memory of another movie—not just its title.</p>
+            </div>
+            <div class="studio-status" id="studioStatus" data-state="local" role="status" aria-live="polite">
+              <span class="studio-status-dot"></span><span id="studioStatusText">LOCAL ENGINE · READY</span>
+            </div>
+          </div>
+          <div class="studio-layout">
+            <div class="studio-workbench">
+              <label class="studio-label" for="studioQuery">What kind of movie are you looking for?</label>
+              <textarea id="studioQuery" rows="3" maxlength="500" placeholder="A haunting small town, supernatural secrets, slow-burn mystery, and a story that keeps unfolding…"></textarea>
+              <div class="studio-prompts" role="group" aria-label="Example movie searches">
+                <button type="button" data-studio-prompt="Visually stunning space exploration, time dilation, and existential science fiction">✦ Cosmic and mind-bending</button>
+                <button type="button" data-studio-prompt="Supernatural horror, a haunted town, ghosts, mysterious disappearances">◒ Supernatural mystery</button>
+                <button type="button" data-studio-prompt="A clever thriller with unreliable reality, twists, and an ambiguous ending">⌁ Reality-bending thrillers</button>
+              </div>
+              <div class="studio-actions">
+                <button class="btn btn-primary" id="studioSearchButton" type="button"><span>⌕</span> Find my next film</button>
+                <button class="btn btn-outline" id="studioAskButton" type="button"><span>✧</span> Ask CINEPLAY</button>
+                <button class="btn btn-ghost" id="studioApiButton" type="button">Connect API ↗</button>
+              </div>
+              <p class="studio-hint" id="studioHint">Starts locally. Connect your FastAPI service for semantic embeddings and grounded AI answers.</p>
+            </div>
+            <aside class="studio-showcase" aria-label="Movie artwork and catalog status">
+              <div class="studio-orbit studio-orbit-one"></div>
+              <div class="studio-orbit studio-orbit-two"></div>
+              <div class="studio-showcase-copy">
+                <span>YOUR NEXT OBSESSION</span>
+                <strong>Stories beyond<br>the obvious.</strong>
+                <small>DISCOVER · CONNECT · REPEAT</small>
+              </div>
+              <div class="studio-poster-wall" id="studioPosterWall" aria-label="Featured movie posters"></div>
+              <div class="studio-stats">
+                <div><span>LOCAL TITLES</span><strong id="studioCatalogCount">—</strong></div>
+                <div><span>RETRIEVAL</span><strong>HYBRID</strong></div>
+                <div><span>FALLBACK</span><strong>ALWAYS ON</strong></div>
+              </div>
+            </aside>
+          </div>
+          <div class="studio-answer hidden" id="studioAnswer" role="region" aria-labelledby="studioAnswerTitle">
+            <div class="studio-answer-heading">
+              <div><span class="eyebrow">GROUNDED RESPONSE</span><h3 id="studioAnswerTitle">CINEPLAY’s take</h3></div>
+              <button class="text-btn" id="studioAnswerClear" type="button">Dismiss ×</button>
+            </div>
+            <p id="studioAnswerText"></p>
+            <div class="studio-sources" id="studioSources" aria-label="Source titles"></div>
+          </div>
+          <div class="studio-results">
+            <div class="studio-results-heading">
+              <div><span class="eyebrow">YOUR RESULTS</span><h3 id="studioResultLabel">Ready when you are</h3></div>
+              <span class="studio-result-count" id="studioResultCount">LOCAL CATALOG</span>
+            </div>
+            <div class="rail rail-wide" id="studioRail">
+              <div class="studio-empty">Describe the atmosphere, story, or genre you want to explore.</div>
+            </div>
+          </div>
+        </section>
 
         <div class="feature-band">
           <div class="feature-copy">
@@ -407,6 +472,6 @@
   </script>
   <script src="data/movies.js?v=20261005-21"></script>
   <script src="data/series.js?v=20261005-21"></script>
-  <script src="assets/app.js?v=20261021-search-navigation03"></script>
+  <script src="assets/app.js?v=20261021-studio01"></script>
 </body>
 </html>

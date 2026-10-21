@@ -788,6 +788,7 @@
     const spotlightImages=document.querySelectorAll("#homeSpotlightRail .movie-card img");
     spotlightImages.forEach(img=>{ img.loading="eager"; img.fetchPriority="high"; img.decoding="async"; });
     renderSeries();
+    renderStudioPosterWall();
     $("teluguCount") && ($("teluguCount").textContent=telugu.length+" titles");
     updateFilterButtons();
     renderFilterResults(false);
@@ -1538,13 +1539,202 @@
     }
   }
 
+
+  function setStudioStatus(message, stateName="local") {
+    const root=$("studioStatus"), label=$("studioStatusText");
+    if(!root || !label) return;
+    root.dataset.state=stateName;
+    label.textContent=message;
+  }
+
+  async function refreshStudioBackendStatus() {
+    if(!backendUrl()) {
+      setStudioStatus("LOCAL ENGINE · READY","local");
+      if($("studioHint")) $("studioHint").textContent="Offline discovery is ready. Connect your FastAPI service for semantic embeddings and grounded AI answers.";
+      return;
+    }
+    setStudioStatus("PYTHON API · CHECKING","checking");
+    try {
+      const status=await backendFetch("/api/health");
+      const ready=status?.status==="ok";
+      setStudioStatus(ready?"PYTHON ML · CONNECTED":"API · DEGRADED",ready?"local":"offline");
+      if($("studioHint")) $("studioHint").textContent=ready
+        ?"FastAPI is connected. Search uses backend retrieval; Ask uses catalog-grounded answers."
+        :"The API answered but one or more services are degraded. Local discovery remains available.";
+    } catch {
+      setStudioStatus("API OFFLINE · LOCAL READY","offline");
+      if($("studioHint")) $("studioHint").textContent="The configured API could not be reached. Discovery will automatically fall back to the local catalog.";
+    }
+  }
+
+  function renderStudioPosterWall() {
+    const wall=$("studioPosterWall");
+    if(!wall) return;
+    const preferred=["Interstellar","The Matrix","Inception","The Conjuring","The Prestige"];
+    const picked=preferred.map(title=>state.movies.find(movie=>String(movie.title||"").toLowerCase()===title.toLowerCase()))
+      .filter(movie=>movie && movie.poster);
+    const used=new Set(picked.map(movie=>String(movie.id)));
+    for(const movie of state.movies.slice().sort((a,b)=>quality(b)-quality(a))) {
+      if(picked.length>=4) break;
+      if(movie.poster && !used.has(String(movie.id))) { picked.push(movie); used.add(String(movie.id)); }
+    }
+    wall.innerHTML=picked.slice(0,4).map((movie,index)=>
+      '<button class="studio-poster" type="button" data-studio-movie-id="'+esc(movie.id)+'" aria-label="Open '+esc(movie.title)+'">'+
+        '<span class="studio-poster-num">0'+(index+1)+'</span>'+
+        imageMarkup(poster(movie,"w342"),movie.title,"","eager",index===0?"high":"auto")+
+        '<span class="studio-poster-label">'+esc(movie.title)+'</span></button>'
+    ).join("");
+    wall.querySelectorAll("[data-studio-movie-id]").forEach(button=>button.addEventListener("click",()=>{
+      const movie=findTitle(button.dataset.studioMovieId);
+      if(movie) openMovie(movie);
+    }));
+    if($("studioCatalogCount")) $("studioCatalogCount").textContent=new Intl.NumberFormat().format(state.movies.length);
+  }
+
+  function localStudioMatches(query, limit=12) {
+    const terms=tokenize(query);
+    return state.movies.map(movie=>{
+      const text=movieText(movie).toLowerCase();
+      const termHits=terms.filter(term=>text.includes(term)).length;
+      const score=searchScore(movie,query.toLowerCase());
+      return {movie,score,termHits};
+    }).filter(item=>item.termHits>0 || item.score>=0.55)
+      .sort((a,b)=>b.score-a.score).slice(0,limit).map(item=>({
+        ...item.movie,match:Math.max(1,Math.min(99,Math.round(item.score*100))),
+        reason:item.termHits>0?"Local text and genre signals match your prompt.":"High-confidence local discovery fallback."
+      }));
+  }
+
+  function renderStudioResults(results,label) {
+    const normalized=(results||[]).map(entry=>{
+      const base=entry.movie || entry;
+      const score=Number(entry.similarity ?? entry.score ?? (Number(base.match||0)/100));
+      return {...base,
+        match:Number(base.match)>0?Number(base.match):Math.max(1,Math.min(99,Math.round(score*100))),
+        reason:base.reason || (entry.similarity!==undefined?"Semantic retrieval match.":"Local catalog match.")
+      };
+    }).filter(movie=>movie && movie.title);
+    renderRail("studioRail",normalized);
+    const node=$("studioRail");
+    if(node) {
+      const lookup=new Map(normalized.map(movie=>[String(movie.id),movie]));
+      node.querySelectorAll(".movie-card").forEach(article=>{
+        const movie=lookup.get(String(article.dataset.movieId));
+        if(!movie) return;
+        article.onclick=event=>{
+          if(event.target.closest(".mini-list") || event.target.closest(".play-dot")) return;
+          openMovie(findTitle(movie.id,movie.media_type) || movie);
+        };
+        article.onkeydown=event=>{
+          if((event.key==="Enter" || event.key===" ") && !event.target.closest("button")) {
+            event.preventDefault();openMovie(findTitle(movie.id,movie.media_type) || movie);
+          }
+        };
+      });
+    }
+    if($("studioResultLabel")) $("studioResultLabel").textContent=label || "Recommended for your prompt";
+    if($("studioResultCount")) $("studioResultCount").textContent=normalized.length+" TITLES";
+    if(node && !normalized.length) node.innerHTML='<div class="studio-empty">No close matches yet. Try a different mood, genre, or plot detail.</div>';
+    return normalized;
+  }
+
+  async function runStudioSearch() {
+    const input=$("studioQuery"), query=String(input?.value||"").trim();
+    if(query.length<2) {
+      if(input) input.focus();
+      if($("studioHint")) $("studioHint").textContent="Add at least a couple of words—for example, supernatural mystery or space and time.";
+      return;
+    }
+    const button=$("studioSearchButton");
+    if(button) button.disabled=true;
+    if($("studioAnswer")) $("studioAnswer").classList.add("hidden");
+    let results=[],method="LOCAL";
+    try {
+      if(backendUrl()) {
+        const payload=await backendFetch("/api/semantic/search?q="+encodeURIComponent(query)+"&limit=12");
+        results=(payload.results||[]).map(item=>({...item.movie,similarity:item.similarity,
+          reason:"Semantic similarity · "+String(payload.method||"backend retrieval")}));
+        method=String(payload.method||"PYTHON API").toUpperCase();
+      }
+    } catch { setStudioStatus("API OFFLINE · LOCAL READY","offline"); }
+    finally { if(button) button.disabled=false; }
+    if(!results.length) {
+      results=localStudioMatches(query,12);
+      if(!backendUrl()) method="LOCAL TF-IDF / HYBRID";
+      else method="LOCAL FALLBACK";
+    }
+    const rendered=renderStudioResults(results,"Matches for “"+query+"”");
+    if($("studioHint")) $("studioHint").textContent=rendered.length
+      ?rendered.length+" titles ranked from "+method+". Open any poster to see details and save it to My List."
+      :"No relevant titles found in the available catalog. Try a broader description.";
+    setStudioStatus(method.startsWith("LOCAL")?"LOCAL ENGINE · READY":"SEMANTIC SEARCH · CONNECTED","local");
+  }
+
+  async function runStudioAsk() {
+    const input=$("studioQuery"), question=String(input?.value||"").trim();
+    if(question.length<3) {
+      if(input) input.focus();
+      if($("studioHint")) $("studioHint").textContent="Write a short question or describe what you want to watch.";
+      return;
+    }
+    const button=$("studioAskButton");
+    if(button) button.disabled=true;
+    let payload=null;
+    try {
+      if(backendUrl()) payload=await backendFetch("/api/ai/ask",{method:"POST",body:JSON.stringify({question,top_k:5})});
+    } catch { setStudioStatus("API OFFLINE · LOCAL READY","offline"); }
+    finally { if(button) button.disabled=false; }
+
+    const answer=$("studioAnswer"), answerText=$("studioAnswerText"), sources=$("studioSources");
+    if(payload && answerText) {
+      answerText.textContent=String(payload.answer||"The backend returned no answer.");
+      const names=(payload.sources||[]).map(source=>({...source,title:String(source.title||"Untitled")}));
+      if(sources) {
+        sources.innerHTML=names.map(source=>'<button type="button" data-studio-source-id="'+esc(source.id)+'">'+esc(source.title)+(source.year?' · '+esc(source.year):"")+'</button>').join("");
+        sources.querySelectorAll("[data-studio-source-id]").forEach(button=>button.addEventListener("click",()=>{
+          const movie=findTitle(button.dataset.studioSourceId);
+          if(movie) openMovie(movie);
+        }));
+      }
+      renderStudioResults(names.map(source=>findTitle(source.id)||{...source,poster:"",backdrop:"",genres:source.genres||[],tags:[]}),"Titles cited by CINEPLAY");
+      if($("studioHint")) $("studioHint").textContent="Answer mode: "+String(payload.mode||"catalog retrieval")+" · sources are shown below the response.";
+      setStudioStatus(payload.mode==="llm-rag"?"GROUNDED AI · CONNECTED":"CATALOG RETRIEVAL · READY","local");
+    } else {
+      const fallback=localStudioMatches(question,8);
+      renderStudioResults(fallback,"Closest local titles for your question");
+      if(answerText) answerText.textContent=fallback.length
+        ?"The lightweight local catalog is active. I found "+fallback.length+" nearby title matches below. Connect the Python API to enable retrieved-source answers and optional LLM generation."
+        :"I couldn't find close title matches in the current local catalog. Try a broader description or connect the Python API for semantic retrieval.";
+      if(sources) sources.innerHTML="";
+      setStudioStatus(backendUrl()?"API OFFLINE · LOCAL READY":"LOCAL ENGINE · READY",backendUrl()?"offline":"local");
+      if($("studioHint")) $("studioHint").textContent="This is a local retrieval fallback, not an LLM-generated answer. No backend credentials are required.";
+    }
+    answer?.classList.remove("hidden");
+    answer?.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
+  }
+
   function initEvents() {
     $("searchInput").addEventListener("input",e=>performSearch(e.target.value,false));
     $("searchInput").addEventListener("focus",()=>{if(state.query)performSearch(state.query,false);});
     $("clearSearch").onclick=()=>{$("searchInput").value="";state.query="";$("searchPanel")?.classList.add("hidden");state.filter="all";updateFilterButtons();applyFilter();};
     $("searchTrigger").onclick=openSearch;
     $("liveBtn").onclick=openSettings;
-    $("saveBackend").onclick=saveBackendConfig;
+    $("saveBackend").onclick=()=>{saveBackendConfig();window.setTimeout(refreshStudioBackendStatus,500);};
+    $("studioSearchButton") && ($("studioSearchButton").onclick=runStudioSearch);
+    $("studioAskButton") && ($("studioAskButton").onclick=runStudioAsk);
+    $("studioApiButton") && ($("studioApiButton").onclick=openSettings);
+    $("studioAnswerClear") && ($("studioAnswerClear").onclick=()=>{
+      $("studioAnswer")?.classList.add("hidden");
+      if($("studioSources")) $("studioSources").innerHTML="";
+    });
+    $("studioQuery")?.addEventListener("keydown",event=>{
+      if(event.key==="Enter" && (event.ctrlKey||event.metaKey)){event.preventDefault();runStudioAsk();}
+    });
+    $("#intelligenceStudio [data-studio-prompt]").forEach(button=>button.addEventListener("click",()=>{
+      const input=$("studioQuery");
+      if(input){input.value=button.dataset.studioPrompt||"";input.focus();}
+      $("studioAnswer")?.classList.add("hidden");
+    }));
     $("profileBtn").onclick=()=>{renderLab();showModal("aiLabModal");};
     $("openAiLab").onclick=()=>{showModal("aiLabModal");renderLab();};
     $("shuffleAi").onclick=async()=>{ await loadBackendRecommendations(); const recs=recommendFor(null,18).sort(()=>Math.random()-0.5); renderRail("aiRail",recs); toast("AI queue refreshed"); };
@@ -1700,6 +1890,7 @@
     const key=localStorage.getItem(STORE.key);
     if (key && Date.now()-state.lastSync>8*60*1000) syncLive(false);
     refreshBackendStatus();
+    refreshStudioBackendStatus();
     setInterval(()=>{
       const liveKey=localStorage.getItem(STORE.key);
       if (liveKey && document.visibilityState==="visible") syncLive(false);
