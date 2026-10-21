@@ -30,20 +30,6 @@ async function testDesktop(browser) {
   if (!loaderDone) throw new Error("cinematic loader did not release");
   if (!heroTitle) throw new Error("hero title did not initialize");
   if (cards < 10) throw new Error("movie rails rendered fewer than 10 cards");
-  const soundtrack = page.locator("#musicDock");
-  if (await soundtrack.count() !== 1) throw new Error("Night Changes music dock was not rendered");
-  const musicSource = await page.locator("#nightChangesFrame").getAttribute("src");
-  if (!musicSource?.includes("youtube.com/embed/syFZfO_wfMQ") || !musicSource.includes("autoplay=1") || !musicSource.includes("enablejsapi=1")) {
-    throw new Error("Night Changes did not initialize with the official autoplay-enabled player API");
-  }
-  const musicViewport = await page.locator("#nightChangesFrame").evaluate(frame => ({ width: frame.getBoundingClientRect().width, height: frame.getBoundingClientRect().height }));
-  if (musicViewport.width < 200 || musicViewport.height < 200) {
-    throw new Error(`Night Changes player viewport is too small (${musicViewport.width}x${musicViewport.height}); YouTube requires at least 200x200`);
-  }
-  if (await page.locator("#musicRetry").count() !== 1 || await page.locator("#musicMinimize").count() !== 1) {
-    throw new Error("Night Changes playback controls are missing");
-  }
-
   const startupBindings = await page.evaluate(() => ({
     filterRowBound: document.querySelector("#filterRow")?.dataset.bound || "missing",
     paginationBound: document.querySelector("#filterShowMore")?.dataset.paginationBound || "missing",

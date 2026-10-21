@@ -518,10 +518,3 @@ The frontend uses remote TMDB poster/backdrop URLs when available, with the exis
 **Technology mapping:** Python, SQL, NumPy, Pandas, Matplotlib, Seaborn, statistics, data preprocessing, EDA, feature engineering, scikit-learn, regression, classification, clustering, model evaluation, hyperparameter tuning, XGBoost, TensorFlow/Keras, PyTorch, CNN/BiLSTM, Hugging Face Transformers, NLP, OpenCV, embeddings, RAG, vector store integration, FastAPI, REST, PostgreSQL/SQLite, MongoDB integration, Docker, Git/GitHub, Pytest, MLflow integration, data visualization, and MLOps/CI.
 
 **Cloud and credentials note:** AWS/Azure/GCP, public TMDB refreshes, remote LLM generation, vector database persistence, MLflow tracking, XGBoost, and deep learning are optional paths that require the matching service, secrets, installed dependencies, or explicit training commands. Do not list a cloud deployment or a measured model score unless you have configured, executed, and verified it.
-
-
-## Night Changes soundtrack
-
-CINEPLAY embeds the official YouTube-hosted **Night Changes** video and immediately requests autoplay when the page loads. The YouTube IFrame Player API retries playback when the player becomes ready, and the first normal click/tap/key interaction on the page retries playback if the browser blocks audible autoplay. The floating player stays visible with restart and stop/minimize controls.
-
-**Browser limitation:** Chrome and other browsers may refuse sound autoplay until a visitor interacts with the page or has granted autoplay permission. A website cannot override that browser-level rule.
