@@ -605,6 +605,78 @@
     $("liveLabel") && ($("liveLabel").textContent = state.live ? "LIVE" : "OFFLINE");
   }
 
+
+  function renderCatalogInsights() {
+    const movies=state.movies.filter(movie=>movie && movie.title);
+    if(!$("catalogPulse")) return;
+    if(!movies.length) {
+      if($("catalogPulseFootnote")) $("catalogPulseFootnote").textContent="No catalog records are available yet.";
+      return;
+    }
+    const genreCounts=new Map(), decadeCounts=new Map(), languages=new Set(), ratings=[];
+    let posters=0,backdrops=0,overviews=0;
+    for(const movie of movies) {
+      const movieGenres=Array.isArray(movie.genres)?movie.genres:(typeof movie.genres==="string"?movie.genres.split(","):[]);
+      for(const rawGenre of movieGenres) {
+        const genre=String(rawGenre||"").trim();
+        if(genre) genreCounts.set(genre,(genreCounts.get(genre)||0)+1);
+      }
+      const releaseYear=Number(movie.year || String(movie.release_date||"").slice(0,4));
+      if(Number.isFinite(releaseYear)&&releaseYear>=1870&&releaseYear<=2100) {
+        const decade=Math.floor(releaseYear/10)*10;
+        decadeCounts.set(decade,(decadeCounts.get(decade)||0)+1);
+      }
+      const rating=Number(movie.rating);
+      if(Number.isFinite(rating)&&rating>0&&rating<=10) ratings.push(rating);
+      const language=String(movie.language||movie.original_language||"").trim().toLowerCase();
+      if(language&&language!=="und") languages.add(language);
+      if(String(movie.poster||"").trim()) posters++;
+      if(String(movie.backdrop||"").trim()) backdrops++;
+      if(String(movie.overview||"").trim()) overviews++;
+    }
+    ratings.sort((a,b)=>a-b);
+    const mid=Math.floor(ratings.length/2);
+    const median=ratings.length?(ratings.length%2?ratings[mid]:(ratings[mid-1]+ratings[mid])/2):null;
+    const coverage=count=>Math.round(count/Math.max(1,movies.length)*100);
+    if($("insightMovieCount")) $("insightMovieCount").textContent=new Intl.NumberFormat().format(movies.length);
+    if($("insightMedianRating")) $("insightMedianRating").textContent=median===null?"—":median.toFixed(1);
+    if($("insightPosterCoverage")) $("insightPosterCoverage").textContent=coverage(posters)+"%";
+    if($("insightLanguageCount")) $("insightLanguageCount").textContent=String(languages.size);
+
+    const topGenres=[...genreCounts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,6);
+    const maxGenre=Math.max(1,...topGenres.map(row=>row[1]));
+    const genreNode=$("genreChart");
+    if(genreNode) genreNode.innerHTML=topGenres.length?topGenres.map(([name,count],index)=>{
+      const width=Math.max(3,Math.round(count/maxGenre*100));
+      return '<div class="catalog-genre-row"><div class="catalog-genre-label"><span>'+esc(name)+'</span><strong>'+count+'</strong></div><div class="catalog-bar-track"><i class="catalog-bar-tone-'+(index+1)+'" style="width:'+width+'%"></i></div></div>';
+    }).join(""):'<div class="catalog-chart-empty">Genre labels are not available.</div>';
+
+    const eras=[...decadeCounts.entries()].sort((a,b)=>a[0]-b[0]).slice(-7);
+    const maxEra=Math.max(1,...eras.map(row=>row[1]));
+    const decadeNode=$("decadeChart");
+    if(decadeNode) decadeNode.innerHTML=eras.length?eras.map(([decade,count],index)=>{
+      const height=Math.max(5,Math.round(count/maxEra*100));
+      return '<div class="catalog-decade-column" title="'+decade+'s: '+count+' titles"><div class="catalog-decade-value">'+count+'</div><i class="catalog-decade-bar catalog-bar-tone-'+((index%6)+1)+'" style="height:'+height+'%"></i><span>'+String(decade).slice(-2)+'s</span></div>';
+    }).join(""):'<div class="catalog-chart-empty">Release years are not available.</div>';
+
+    const artwork=[["Poster images",posters],["Backdrop images",backdrops],["Plot summaries",overviews]];
+    const artworkNode=$("artworkChart");
+    if(artworkNode) artworkNode.innerHTML=artwork.map(([label,count],index)=>{
+      const percent=coverage(count);
+      return '<div class="catalog-artwork-row"><div class="catalog-artwork-label"><span>'+label+'</span><strong>'+percent+'%</strong></div><div class="catalog-bar-track"><i class="catalog-bar-tone-'+(index+2)+'" style="width:'+percent+'%"></i></div></div>';
+    }).join("");
+
+    const source=$("catalogPulseSource");
+    if(source) {
+      source.dataset.mode=state.live?"live":"local";
+      if($("catalogPulseSourceText")) $("catalogPulseSourceText").textContent=state.live?"LIVE TMDB + LOCAL":"CURATED CATALOG";
+    }
+    if($("catalogPulseFootnote")) $("catalogPulseFootnote").textContent=state.live
+      ?"Metrics reflect the merged local catalog and live TMDB feed. Artwork uses online image URLs with the site's graceful fallback."
+      :"Metrics reflect the bundled offline catalog. Connect and sync TMDB to expand current titles and refresh artwork availability.";
+  }
+
+
   function setBackdrop(node, movie) {
     if (!node || !movie) return;
     const url = backdrop(movie);
@@ -1258,6 +1330,7 @@
       showSettingsStatus("Connected — "+liveMovies.length+" live movie records loaded.",true);
       applyLivePools(pools);
       renderStats();
+      renderCatalogInsights();
       toast("CINEPLAY synced with live TMDB data");
       return true;
     } catch (err) {
@@ -1377,29 +1450,26 @@
     const section=$("discover");
     const input=$("searchInput");
     $("commandPalette")?.classList.add("hidden");
-
-    // Navigate through the target element itself; this works when the document
-    // uses smooth scrolling or a browser chooses a nested scrolling root.
-    if(section){
-      const root=document.documentElement;
-      const body=document.body;
-      const previousRootBehavior=root.style.scrollBehavior;
-      const previousBodyBehavior=body?.style.scrollBehavior || "";
-      root.style.scrollBehavior="auto";
-      if(body) body.style.scrollBehavior="auto";
-      section.scrollIntoView({block:"start",inline:"nearest",behavior:"auto"});
-      // Keep instant scrolling through the next layout/paint.
-      window.setTimeout(()=>{
-        root.style.scrollBehavior=previousRootBehavior;
-        if(body) body.style.scrollBehavior=previousBodyBehavior;
-      },240);
+    if(section) {
+      const topbar=document.querySelector(".topbar");
+      const offset=(topbar?.getBoundingClientRect().height || 72)+12;
+      const top=Math.max(0,window.scrollY+section.getBoundingClientRect().top-offset);
+      // Direct scrollTop assignment is synchronous and bypasses CSS smooth-scroll animation.
+      document.documentElement.scrollTop=top;
+      if(document.body) document.body.scrollTop=top;
+      window.scrollTo(0,top);
+      requestAnimationFrame(()=>{
+        const nextTop=Math.max(0,window.scrollY+section.getBoundingClientRect().top-offset);
+        const rect=section.getBoundingClientRect();
+        if(rect.bottom<=0 || rect.top>=window.innerHeight) {
+          document.documentElement.scrollTop=nextTop;
+          if(document.body) document.body.scrollTop=nextTop;
+          window.scrollTo(0,nextTop);
+        }
+      });
     }
-
-    window.requestAnimationFrame(()=>{
-      if(input){
-        input.focus({preventScroll:true});
-        input.select();
-      }
+    requestAnimationFrame(()=>{
+      if(input) { input.focus({preventScroll:true}); input.select(); }
       const box=document.querySelector(".search-box");
       box?.classList.add("is-focused");
       window.setTimeout(()=>box?.classList.remove("is-focused"),1200);
@@ -1856,6 +1926,7 @@
   async function init() {
     await hydrateCatalog();
     renderStats();
+    renderCatalogInsights();
     renderMoods();
     buildHero();
     renderTop10();

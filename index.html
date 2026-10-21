@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/cineplay-icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css?v=20261021-studio01">
+  <link rel="stylesheet" href="assets/styles.css?v=20261021-catalog-pulse02">
 </head>
 <body>
 
@@ -281,6 +281,41 @@
           </div>
         </section>
 
+
+        <section class="catalog-pulse section-block" id="catalogPulse" aria-labelledby="catalogPulseTitle">
+          <div class="catalog-pulse-head">
+            <div>
+              <span class="eyebrow">DATA INTELLIGENCE · LIVE CATALOG</span>
+              <h2 id="catalogPulseTitle">The signals behind the <span>screen.</span></h2>
+              <p>Explore the real composition of the current movie index: genre mix, release eras, ratings and online artwork coverage.</p>
+            </div>
+            <div class="catalog-pulse-source" id="catalogPulseSource" data-mode="local" role="status" aria-live="polite">
+              <i></i><span id="catalogPulseSourceText">CURATED CATALOG</span>
+            </div>
+          </div>
+          <div class="catalog-pulse-stats" aria-label="Current movie catalog summary">
+            <article class="catalog-stat"><span>INDEXED FILMS</span><strong id="insightMovieCount">—</strong><small>Current movie catalog</small></article>
+            <article class="catalog-stat"><span>MEDIAN RATING</span><strong id="insightMedianRating">—</strong><small>Reported scale: 0–10</small></article>
+            <article class="catalog-stat"><span>POSTER COVERAGE</span><strong id="insightPosterCoverage">—</strong><small>Remote artwork available</small></article>
+            <article class="catalog-stat"><span>LANGUAGES</span><strong id="insightLanguageCount">—</strong><small>Distinct language codes</small></article>
+          </div>
+          <div class="catalog-chart-grid">
+            <article class="catalog-chart-card">
+              <div class="catalog-chart-heading"><div><span>01 / DISTRIBUTION</span><h3>Genre landscape</h3></div><small>TOP 6</small></div>
+              <div class="catalog-genre-chart" id="genreChart" role="img" aria-label="Most common genres in the current catalog"><div class="catalog-chart-empty">Building catalog statistics…</div></div>
+            </article>
+            <article class="catalog-chart-card">
+              <div class="catalog-chart-heading"><div><span>02 / TIMELINE</span><h3>Release eras</h3></div><small>DECADES</small></div>
+              <div class="catalog-decade-chart" id="decadeChart" role="img" aria-label="Movie counts by release decade"><div class="catalog-chart-empty">Building release-year profile…</div></div>
+            </article>
+            <article class="catalog-chart-card">
+              <div class="catalog-chart-heading"><div><span>03 / DATA QUALITY</span><h3>Artwork integrity</h3></div><small>ONLINE ASSETS</small></div>
+              <div class="catalog-artwork-chart" id="artworkChart" aria-label="Catalog metadata coverage"><div class="catalog-chart-empty">Checking remote artwork links…</div></div>
+            </article>
+          </div>
+          <p class="catalog-pulse-footnote" id="catalogPulseFootnote">Metrics are calculated from the current in-browser movie index. Posters and backdrops load from online TMDB image URLs when available.</p>
+        </section>
+
         <div class="feature-band">
           <div class="feature-copy">
             <span class="eyebrow">CINEPLAY INTELLIGENCE</span>
@@ -472,6 +507,6 @@
   </script>
   <script src="data/movies.js?v=20261005-21"></script>
   <script src="data/series.js?v=20261005-21"></script>
-  <script src="assets/app.js?v=20261021-studio01"></script>
+  <script src="assets/app.js?v=20261021-catalog-pulse02"></script>
 </body>
 </html>
