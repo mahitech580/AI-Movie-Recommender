@@ -522,4 +522,6 @@ The frontend uses remote TMDB poster/backdrop URLs when available, with the exis
 
 ## Night Changes soundtrack
 
-The static frontend includes a floating player for the official One Direction "Night Changes" music video hosted by YouTube. The embed attempts autoplay when CINEPLAY opens and provides an in-page restart/play control and a stop/minimize control. Browsers may block autoplay with sound until a user gesture; when that happens, press the in-page play button or the YouTube player controls. The video is embedded from the official artist-channel upload rather than copied into this repository.
+CINEPLAY embeds the official YouTube-hosted **Night Changes** video and immediately requests autoplay when the page loads. The YouTube IFrame Player API retries playback when the player becomes ready, and the first normal click/tap/key interaction on the page retries playback if the browser blocks audible autoplay. The floating player stays visible with restart and stop/minimize controls.
+
+**Browser limitation:** Chrome and other browsers may refuse sound autoplay until a visitor interacts with the page or has granted autoplay permission. A website cannot override that browser-level rule.
