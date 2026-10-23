@@ -17,7 +17,7 @@ The discovery filters cover common genres including Action, Adventure, Animation
 
 When TMDB live mode is connected, CINEPLAY supplements the local catalog with India-region popular, top-rated, now-playing, upcoming and India-origin discovery results. The local catalog remains the offline fallback.
 
-## Product direction
+# Product direction
 
 The interface is designed from modern OTT interaction patterns:
 
